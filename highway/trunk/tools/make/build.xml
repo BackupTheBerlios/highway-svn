@@ -13,7 +13,7 @@
 
 		<delete dir="bin/classes" />
 		<mkdir dir="bin/classes" />
-		<javac target="1.4" destdir="bin/classes" debug="true">
+		<javac target="1.5" destdir="bin/classes" debug="true">
 			<src path="src/java" />
 			<classpath refid="tools.classpath" />
 		</javac>
@@ -44,15 +44,15 @@
 		</unjar>
 
 		<mkdir dir="bin/pack" />
-		<jar destfile="bin/pack/socle-j2ee-tools.jar">
+		<jar destfile="bin/pack/highway-tools.jar">
 			<fileset dir="bin/classes" includes="**/*" />
 			<fileset dir="bin/external-classes" includes="**/*" />
 		</jar>
 
 		<!-- zip the tools project -->
-		<zip destfile="bin/socle-j2ee-tools-${tools.version}.zip" whenempty="fail">
+		<zip destfile="bin/highway-tools-${tools.version}.zip" whenempty="fail">
 			<!-- zip the toold jar -->
-			<zipfileset dir="bin/pack" includes="socle-j2ee-tools.jar" fullpath="tools/socle-j2ee-tools-${tools.version}.jar" />
+			<zipfileset dir="bin/pack" includes="highway-tools.jar" fullpath="tools/highway-tools-${tools.version}.jar" />
 			<!-- zip tools doc files -->
 			<zipfileset prefix="tools" dir="doc" includes="**/*" />
 		</zip>
