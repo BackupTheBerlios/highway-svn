@@ -1,0 +1,14 @@
+<body>
+Unique identifier generation package.
+2 types of generators.
+Simple generators return long identifiers.
+Complex generators return Object identifiers.
+Many instances could be used at the same time in an application
+but usually only one instance is used through out the entire system.
+This unique generator must be initialized at startup and set as default
+with the package home class (IdgenHome).
+An identifier must be unique in the scope of its generator implementation.
+2 instances of the same generator implementation in the same or in different
+processes can not return the same identifiers.
+This means the implementation must be chosen for good.
+</body>

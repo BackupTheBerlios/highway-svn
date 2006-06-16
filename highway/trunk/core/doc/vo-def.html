@@ -1,0 +1,1325 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="vo-def_fichiers/filelist.xml">
+<title>Value Object Generation</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="City"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="place"/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Gail</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>de Bevotte</o:LastAuthor>
+  <o:Revision>16</o:Revision>
+  <o:TotalTime>110</o:TotalTime>
+  <o:Created>2005-12-05T14:49:00Z</o:Created>
+  <o:LastSaved>2006-03-03T14:14:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1692</o:Words>
+  <o:Characters>9307</o:Characters>
+  <o:Lines>77</o:Lines>
+  <o:Paragraphs>21</o:Paragraphs>
+  <o:CharactersWithSpaces>10978</o:CharactersWithSpaces>
+  <o:Version>10.4219</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>91</w:Zoom>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:HyphenationZone>21</w:HyphenationZone>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+pre
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:640237358;
+	mso-list-template-ids:100160796;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Tableau Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+table.TableNormal
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]-->
+<meta name=CREATED content="20050128;15503107">
+<meta name=CHANGEDBY content="David Attias">
+<meta name=CHANGED content="20050817;18314315">
+</head>
+
+<body lang=FR link=blue vlink=blue style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<h1><span lang=EN-GB style='mso-ansi-language:EN-GB'>Value Object Generation<o:p></o:p></span></h1>
+
+<p><span lang=EN-GB style='mso-ansi-language:EN-GB'>The definition and
+therefore the generation of a ValueObject type of class <span class=GramE>is</span>
+done via a Java definition interface. This interface has a name ending in ef
+and extends directly or indirectly the org.highway.vo.ValueObject
+interface. For example, the mypackage.MyValueObjectDef package defines the
+mypackage.MyValueObject class.<o:p></o:p></span></p>
+
+<p><span lang=EN-GB style='mso-ansi-language:EN-GB'>The ValueObject type of
+class generated by <b>vogen</b> will implement the ef interface it defines. For
+example, the mypackage.MyValueObject class will implement the
+mypackage.MyValueObjectDef interface<br>
+NB: the class generated implements all the interfaces the ef interface inherits
+at the same time.<o:p></o:p></span></p>
+
+<p><span lang=EN-GB style='mso-ansi-language:EN-GB'>There are two ways of
+defining the value object properties: the constants and the getters. The
+constants method is deprecated and will be eliminated in version 1.3. The
+getters method is new and must be generalized.<o:p></o:p></span></p>
+
+<p><span lang=EN-GB style='mso-ansi-language:EN-GB'>The interface
+java.lang.String type constants will define the value object properties. The
+constant name must be the name of the property in capital letters with
+characters underlined to separate the words. The property value must be the
+precise name of the property and must therefore observe the JavaBeans naming
+convention. For example:<o:p></o:p></span></p>
+
+<pre style='margin-bottom:14.2pt'><span lang=EN-GB style='mso-ansi-language:
+EN-GB'><span style='mso-spacerun:yes'>  </span>String FIRST_NAME = &quot;firstName&quot;; // defines the JavaBean property firstName<o:p></o:p></span></pre>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>The interface JavaBean getter type
+of method will define the value object properties. For example:<o:p></o:p></span></p>
+
+<pre style='margin-bottom:14.2pt'><span lang=EN-GB style='mso-ansi-language:
+EN-GB'><span style='mso-spacerun:yes'>  </span>String getFirstName(); // defines the JavaBean property firstName<o:p></o:p></span></pre>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+font-weight:medium'><span lang=EN-GB style='mso-ansi-language:EN-GB'>There are
+two ways of having a value object generated by <b style='mso-bidi-font-weight:
+normal'>vogen</b> inherited. You can use the highway.vo.superclass tag and
+therefore give the name of the class to be extended. You can also use
+inheritance in the definition interfaces. If ADef extends BDef, the A class
+will extend the B class. If both methods are used the tag has priority. If the
+developer does not specify the super class, the class generated extends
+org.highway.vo.ValueObjectAbstract.<o:p></o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>The following table describes the
+javadoc tags that enable you to define the value object characteristics and its
+properties. The class <span class=GramE>type</span> tags are defined at
+interface level and define the value object overall characteristics. The
+property type tags are defined at constants level and define the
+characteristics for the value object properties, which these constants
+represent.<o:p></o:p></span></p>
+
+<table class=TableNormal border=1 cellspacing=0 cellpadding=0 width=877
+ style='width:657.75pt;mso-cellspacing:0cm;border:outset #111111 1.0pt;
+ mso-border-alt:outset #111111 .75pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+ <tr style='mso-yfti-irow:0'>
+  <td width=242 style='width:181.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt'><b><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>Tag</span></b><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=70 style='width:52.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='margin-top:5.65pt;text-align:center'><b><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>Type</span></b><span lang=EN-GB
+  style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=330 style='width:247.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt'><b><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>Description</span></b><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=217 style='width:162.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt'><b><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>Values</span></b><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=242 style='width:181.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'><pre style='font-weight:
+  medium'><span lang=EN-GB style='mso-ansi-language:EN-GB'>highway.vo.abstract<o:p></o:p></span></pre></td>
+  <td width=70 style='width:52.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='margin-top:5.65pt;text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>class<o:p></o:p></span></p>
+  </td>
+  <td width=330 style='width:247.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>Requires the generation of an abstract
+  class Xxxx from the XxxxDef interface. Useful for indicating the value object
+  abstract character.<o:p></o:p></span></p>
+  </td>
+  <td width=217 style='width:162.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>None, presence of tag = true<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=242 style='width:181.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'><pre style='font-weight:
+  medium'><span class=SpellE><span lang=EN-GB style='mso-ansi-language:EN-GB'>highway.vo.base.only</span></span><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre></td>
+  <td width=70 style='width:52.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='margin-top:5.65pt;text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>class<o:p></o:p></span></p>
+  </td>
+  <td width=330 style='width:247.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>Requires the generation of an abstract
+  class XxxxBase from the XxxxDef interface instead of class Xxxx. It is up top
+  you to supply the class Xxxx that must extend XxxxBase. Useful for adding
+  specific code to your value object. <o:p></o:p></span></p>
+  </td>
+  <td width=217 style='width:162.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>None, presence of tag = true<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=242 style='width:181.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'><pre style='font-weight:
+  medium'><span class=SpellE><span lang=EN-GB style='mso-ansi-language:EN-GB'>highway.vo.superclass</span></span><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre></td>
+  <td width=70 style='width:52.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='margin-top:5.65pt;text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>class<o:p></o:p></span></p>
+  </td>
+  <td width=330 style='width:247.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>Provides the name for the value
+  object super-class<o:p></o:p></span></p>
+  </td>
+  <td width=217 style='width:162.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>Name of a Java class<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=242 style='width:181.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'><pre style='font-weight:
+  medium'><span class=SpellE><span lang=EN-GB style='mso-ansi-language:EN-GB'>highway.vo.property.type</span></span><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre></td>
+  <td width=70 style='width:52.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='margin-top:5.65pt;text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>property<o:p></o:p></span></p>
+  </td>
+  <td width=330 style='width:247.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>Java type qualified by the
+  property (&quot;int&quot;, java.util.ArrayList<span class=GramE>&quot;, ...)</span>.
+  This tag is only required if the property is defined from a constant. In the
+  case of a getter, the type of return defines the type of property<o:p></o:p></span></p>
+  </td>
+  <td width=217 style='width:162.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>Name of a Java class<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=242 style='width:181.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'><pre style='font-weight:
+  medium'><span class=SpellE><span lang=EN-GB style='mso-ansi-language:EN-GB'>highway.mapping</span></span><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre></td>
+  <td width=70 style='width:52.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='margin-top:5.65pt;text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>class<o:p></o:p></span></p>
+  </td>
+  <td width=330 style='width:247.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>Indicates that the value object has
+  a mapping (triggers the generation of the mapping sheet)<o:p></o:p></span></p>
+  </td>
+  <td width=217 style='width:162.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>See the parameters below<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=242 style='width:181.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'><pre style='font-weight:
+  medium'><span lang=EN-GB style='mso-ansi-language:EN-GB'>highway.mapping.discriminator<o:p></o:p></span></pre></td>
+  <td width=70 style='width:52.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='margin-top:5.65pt;text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>class<o:p></o:p></span></p>
+  </td>
+  <td width=330 style='width:247.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>Used in the event of inheritance
+  of table-per-class-hierarchy type; specifies the table discriminatory column.
+  <o:p></o:p></span></p>
+  </td>
+  <td width=217 style='width:162.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>See the parameters below<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td width=242 style='width:181.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'><pre style='font-weight:
+  medium'><span lang=EN-GB style='mso-ansi-language:EN-GB'>highway.mapping.property<o:p></o:p></span></pre></td>
+  <td width=70 style='width:52.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='margin-top:5.65pt;text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>property<o:p></o:p></span></p>
+  </td>
+  <td width=330 style='width:247.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>States a persistent property<o:p></o:p></span></p>
+  </td>
+  <td width=217 style='width:162.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>See the parameters below<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8'>
+  <td width=242 style='width:181.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'><pre style='font-weight:
+  medium'><span lang=EN-GB style='mso-ansi-language:EN-GB'>highway.mapping.id<o:p></o:p></span></pre></td>
+  <td width=70 style='width:52.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='margin-top:5.65pt;text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>property<o:p></o:p></span></p>
+  </td>
+  <td width=330 style='width:247.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>States that the columns make up
+  the table primary code<o:p></o:p></span></p>
+  </td>
+  <td width=217 style='width:162.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>See the parameters below<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;mso-yfti-lastrow:yes'>
+  <td width=242 style='width:181.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'><pre style='font-weight:
+  medium'><span lang=EN-GB style='mso-ansi-language:EN-GB'>highway.mapping.generator-param <o:p></o:p></span></pre></td>
+  <td width=70 style='width:52.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='margin-top:5.65pt;text-align:center;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>property<o:p></o:p></span></p>
+  </td>
+  <td width=330 style='width:247.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>Enables you to specify the
+  configuration or initialization parameters for the ID generator if it has
+  any.<o:p></o:p></span></p>
+  </td>
+  <td width=217 style='width:162.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>See the parameters below<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<h2 style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>highway.mapping<o:p></o:p></span></h2>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>This tag must be associated with all
+the value objects for which mapping must be generated.<o:p></o:p></span></p>
+
+<table class=TableNormal border=1 cellspacing=0 cellpadding=0 width=877
+ style='width:657.75pt;mso-cellspacing:0cm;border:outset #111111 1.0pt;
+ mso-border-alt:outset #111111 .75pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+ <COL WIDTH=122><COL WIDTH=355><COL WIDTH=107><COL WIDTH=275>
+ <tr style='mso-yfti-irow:0'>
+  <td width=122 style='width:91.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt'><b><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>Parameters</span></b><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:266.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt'><b><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>Description</span></b><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=107 style='width:80.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='margin-top:5.65pt;text-align:center'><b><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>Compulsory</span></b><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=275 style='width:206.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt'><b><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>Values</span></b><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=122 style='width:91.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='font-weight:medium'><span lang=EN-GB style='mso-ansi-language:EN-GB'>table<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:266.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>Name of the table on
+  which the value object is mapped<o:p></o:p></span></p>
+  </td>
+  <td width=107 style='width:80.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='text-align:center'><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>No<o:p></o:p></span></p>
+  </td>
+  <td width=275 style='width:206.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>A table name; by default,
+  the unqualified class name<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+  <td width=122 style='width:91.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='font-weight:medium'><span lang=EN-GB style='mso-ansi-language:EN-GB'>discriminator-value<o:p></o:p></span></p>
+  </td>
+  <td width=355 style='width:266.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>A value that
+  distinguishes the subsidiary classes in the case of <a
+  href="#table-per-class-hierarchy|outline">table-per-class-hierarchy</a> type
+  inheritance<o:p></o:p></span></p>
+  </td>
+  <td width=107 style='width:80.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='text-align:center'><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>No<o:p></o:p></span></p>
+  </td>
+  <td width=275 style='width:206.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>Zero and non-zero are
+  authorized; by default, the unqualified class name.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>E.g.:<o:p></o:p></span></p>
+
+<pre style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;
+mso-ansi-language:EN-GB'>/**</span><span lang=EN-GB style='mso-ansi-language:
+EN-GB'><o:p></o:p></span></pre><pre style='margin-left:2.0cm'><span lang=EN-GB
+style='color:#3F5FBF;mso-ansi-language:EN-GB'> *</span><span lang=EN-GB
+style='mso-ansi-language:EN-GB'> <span style='color:#3F5FBF'>@highway.mapping</span> <span
+style='color:#3F5FBF'>table=&quot;FIRME&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> */</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span class=GramE><b><span lang=EN-GB
+style='color:#7F0055;mso-ansi-language:EN-GB'>public</span></b></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'> <b><span style='color:#7F0055'>interface</span></b> <span
+style='color:black'>FirmeDef</span> <b><span style='color:#7F0055'>extends</span></b> <span
+style='color:black'>ValueObject {...}</span><o:p></o:p></span></pre>
+
+<h2 style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>highway.mapping.discriminator<o:p></o:p></span></h2>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>This tag must be used in the event
+of <a href="#table-per-class-hierarchy|outline">table-per-class-hierarchy</a> type
+inheritance. It enables you to specify the table discriminatory column.<o:p></o:p></span></p>
+
+<table class=TableNormal border=1 cellspacing=0 cellpadding=0 width=877
+ style='width:657.75pt;mso-cellspacing:0cm;border:outset #111111 1.0pt;
+ mso-border-alt:outset #111111 .75pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+ <COL WIDTH=87><COL WIDTH=212><COL WIDTH=119><COL WIDTH=441>
+ <tr style='mso-yfti-irow:0'>
+  <td width=87 style='width:65.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt'><b><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>Parameters</span></b><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=212 style='width:159.0pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt'><b><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>Description</span></b><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=119 style='width:89.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='margin-top:5.65pt;text-align:center'><b><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>Compulsory</span></b><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=441 style='width:330.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt'><b><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>Values</span></b><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=87 style='width:65.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='font-weight:medium'><span lang=EN-GB style='mso-ansi-language:EN-GB'>type<o:p></o:p></span></p>
+  </td>
+  <td width=212 style='width:159.0pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>Type of discriminatory
+  column<o:p></o:p></span></p>
+  </td>
+  <td width=119 style='width:89.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='text-align:center'><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>No<o:p></o:p></span></p>
+  </td>
+  <td width=441 style='width:330.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>A qualified Java type
+  (&quot;int&quot;, &quot;java.util.ArrayList&quot;, ...) or a Hibernate type
+  (&quot;string&quot;, &quot;yes_no&quot;, &quot;true_false&quot;, ...) ; by
+  default: &quot;string&quot;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+  <td width=87 style='width:65.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='font-weight:medium'><span lang=EN-GB style='mso-ansi-language:EN-GB'>column<o:p></o:p></span></p>
+  </td>
+  <td width=212 style='width:159.0pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>Name of the
+  discriminatory column<o:p></o:p></span></p>
+  </td>
+  <td width=119 style='width:89.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='text-align:center'><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>No<o:p></o:p></span></p>
+  </td>
+  <td width=441 style='width:330.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>A column name; by
+  default: &quot;class&quot;<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>E.g.:<o:p></o:p></span></p>
+
+<pre style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;
+mso-ansi-language:EN-GB'>/**</span><span lang=EN-GB style='mso-ansi-language:
+EN-GB'><o:p></o:p></span></pre><pre style='margin-left:2.0cm'><span lang=EN-GB
+style='color:#3F5FBF;mso-ansi-language:EN-GB'> *</span><span lang=EN-GB
+style='mso-ansi-language:EN-GB'> <span style='color:#3F5FBF'>@highway.mapping</span> <span
+style='color:#3F5FBF'>table=&quot;EMPLOYE&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='mso-ansi-language:EN-GB'> <span
+style='color:#3F5FBF'>*</span><span style='mso-spacerun:yes'>                </span><span
+class=GramE><span style='color:#3F5FBF'>discriminator</span><span
+style='color:#7F7F9F'>-</span><span style='color:#3F5FBF'>value</span></span><span
+style='color:#3F5FBF'>=&quot;0&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> *</span><span lang=EN-GB style='mso-ansi-language:EN-GB'> <span
+style='color:#3F5FBF'>@<span class=SpellE>highway.mapping.discriminator</span></span> <span
+style='color:#3F5FBF'>type=&quot;char&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> *</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><span style='mso-spacerun:yes'>                              </span><span
+class=GramE><span style='color:#3F5FBF'>column</span></span><span
+style='color:#3F5FBF'>=&quot;TYPE&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> */</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span class=GramE><b><span lang=EN-GB
+style='color:#7F0055;mso-ansi-language:EN-GB'>public</span></b></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'> <b><span style='color:#7F0055'>interface</span></b> <span
+style='color:black'>EmployeDef</span> <b><span style='color:#7F0055'>extends</span></b> <span
+style='color:black'>ValueObject</span> <span style='color:black'>{...}</span><o:p></o:p></span></pre>
+
+<h2 style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>highway.mapping.property<o:p></o:p></span></h2>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>This tag must be associated with all
+the value object properties, which must be kept constantly in the base except
+for those corresponding to the primary code.<o:p></o:p></span></p>
+
+<table class=TableNormal border=1 cellspacing=0 cellpadding=0 width=877
+ style='width:657.75pt;mso-cellspacing:0cm;border:outset #111111 1.0pt;
+ mso-border-alt:outset #111111 .75pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+ <COL WIDTH=105><COL WIDTH=271><COL WIDTH=113><COL WIDTH=370>
+ <tr style='mso-yfti-irow:0'>
+  <td width=105 style='width:78.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt'><b><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>Parameters</span></b><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=271 style='width:203.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt'><b><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>Description</span></b><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=113 style='width:84.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='margin-top:5.65pt;text-align:center'><b><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>Compulsory</span></b><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=370 style='width:277.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt'><b><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>Values</span></b><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=105 style='width:78.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='font-weight:medium'><span lang=EN-GB style='mso-ansi-language:EN-GB'>column<o:p></o:p></span></p>
+  </td>
+  <td width=271 style='width:203.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>Name of the column
+  mapping the property<o:p></o:p></span></p>
+  </td>
+  <td width=113 style='width:84.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='text-align:center'><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>No<o:p></o:p></span></p>
+  </td>
+  <td width=370 style='width:277.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>A column name; by default
+  the name of the property<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+  <td width=105 style='width:78.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>type<o:p></o:p></span></p>
+  </td>
+  <td width=271 style='width:203.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>Type of the property<o:p></o:p></span></p>
+  </td>
+  <td width=113 style='width:84.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='text-align:center'><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>No<o:p></o:p></span></p>
+  </td>
+  <td width=370 style='width:277.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>A qualified Java type
+  (&quot;<span class=SpellE>int</span>&quot;, &quot;<span class=SpellE>java.util.ArrayList</span>&quot;,
+  ...) or a Hibernate type (&quot;string&quot;, &quot;<span class=SpellE>yes_no</span>&quot;,
+  &quot;<span class=SpellE>true_false</span>&quot;, ...); by default the Java
+  type of the property<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>E.g.:</p>
+
+<pre style='margin-left:2.0cm'><span style='color:#3F5FBF'>/**</span></pre><pre
+style='margin-left:2.0cm'><span style='color:#3F5FBF'> *</span> <span
+style='color:#3F5FBF'>@highway.<span class=SpellE>mapping.property</span></span> <span
+class=SpellE><span style='color:#3F5FBF'>column</span></span><span
+style='color:#3F5FBF'>=&quot;NOM&quot;</span></pre><pre style='margin-left:
+2.0cm'> <span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:EN-GB'>*/</span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:black;mso-ansi-language:
+EN-GB'>String</span><span lang=EN-GB style='mso-ansi-language:EN-GB'> <span
+class=SpellE><span class=GramE>getNom</span></span><span class=GramE>(</span>)<span
+style='color:black'>;</span><o:p></o:p></span></pre>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>In this example a converter is
+explicitly specified to map an array of byte with a Blob:<o:p></o:p></span></p>
+
+<pre style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;
+mso-ansi-language:EN-GB'>/**</span><span lang=EN-GB style='mso-ansi-language:
+EN-GB'><o:p></o:p></span></pre><pre style='margin-left:2.0cm'><span lang=EN-GB
+style='color:#3F5FBF;mso-ansi-language:EN-GB'> *</span><span lang=EN-GB
+style='mso-ansi-language:EN-GB'> <span style='color:#3F5FBF'>@<span
+class=SpellE>highway.mapping.property</span></span> <span style='color:#3F5FBF'>column=&quot;IMAGE&quot;<o:p></o:p></span></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> *<span style='mso-spacerun:yes'>                         </span><span
+class=GramE>type</span>=&quot;org.highway.database.hibernate.ByteArray2BlobHibernateType&quot;</span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> */</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span class=GramE><span lang=EN-GB style='color:black;
+mso-ansi-language:EN-GB'>byte[</span></span><span lang=EN-GB style='color:black;
+mso-ansi-language:EN-GB'>] <span class=SpellE>getImage</span></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>()<span style='color:black'>;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p>&nbsp;</o:p></span></pre>
+
+<h2 style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=SpellE><span lang=EN-GB style='mso-ansi-language:EN-GB'>highway.mapping.id</span></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></h2>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>This tag must be associated with all
+the properties forming the value object primary code in the base.<o:p></o:p></span></p>
+
+<table class=TableNormal border=1 cellspacing=0 cellpadding=0 width=877
+ style='width:657.75pt;mso-cellspacing:0cm;border:outset #111111 1.0pt;
+ mso-border-alt:outset #111111 .75pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+ <COL WIDTH=105><COL WIDTH=269><COL WIDTH=94><COL WIDTH=391>
+ <tr style='mso-yfti-irow:0'>
+  <td width=105 style='width:78.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt'><b><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>Parameters</span></b><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=269 style='width:201.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt'><b><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>Description</span></b><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=94 style='width:70.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='margin-top:5.65pt;text-align:center'><b><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>Compulsory</span></b><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=391 style='width:293.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt'><b><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>Values</span></b><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=105 style='width:78.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='font-weight:medium'><span lang=EN-GB style='mso-ansi-language:EN-GB'>column<o:p></o:p></span></p>
+  </td>
+  <td width=269 style='width:201.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>Name of the column
+  mapping the property<o:p></o:p></span></p>
+  </td>
+  <td width=94 style='width:70.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='text-align:center;font-weight:medium'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>No<o:p></o:p></span></p>
+  </td>
+  <td width=391 style='width:293.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>A column name; by default
+  the name of the property<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=105 style='width:78.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='font-weight:medium'><span lang=EN-GB style='mso-ansi-language:EN-GB'>type<o:p></o:p></span></p>
+  </td>
+  <td width=269 style='width:201.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>Type of the property<o:p></o:p></span></p>
+  </td>
+  <td width=94 style='width:70.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='text-align:center'><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>No<o:p></o:p></span></p>
+  </td>
+  <td width=391 style='width:293.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>A qualified Java type
+  (&quot;<span class=SpellE>int</span>&quot;, &quot;<span class=SpellE>java.util.ArrayList</span>&quot;,
+  ...) or a Hibernate type (&quot;string&quot;, &quot;<span class=SpellE>yes_no</span>&quot;,
+  &quot;<span class=SpellE>true_false</span>&quot;, ...); by default the Java
+  type of the property<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;mso-yfti-lastrow:yes'>
+  <td width=105 style='width:78.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='font-weight:medium'><span lang=EN-GB style='mso-ansi-language:EN-GB'>generator-class<o:p></o:p></span></p>
+  </td>
+  <td width=269 style='width:201.75pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>Indicates how the
+  identifier is generated<o:p></o:p></span></p>
+  </td>
+  <td width=94 style='width:70.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='text-align:center;font-weight:medium'><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>No<o:p></o:p></span></p>
+  </td>
+  <td width=391 style='width:293.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>The name of a
+  Hibernate-compatible Java class or Hibernate diminutive
+  (&quot;increment&quot;, &quot;identity&quot;, &quot;</span><st1:City><st1:place><span
+    lang=EN-GB style='mso-ansi-language:EN-GB'>hilo</span></st1:place></st1:City><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>&quot;, ...); by default
+  &quot;assigned&quot;<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>E.g.:<o:p></o:p></span></p>
+
+<pre style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;
+mso-ansi-language:EN-GB'>/**</span><span lang=EN-GB style='mso-ansi-language:
+EN-GB'><o:p></o:p></span></pre><pre style='margin-left:2.0cm'><span lang=EN-GB
+style='color:#3F5FBF;mso-ansi-language:EN-GB'> *</span><span lang=EN-GB
+style='mso-ansi-language:EN-GB'> <span style='color:#3F5FBF'>@highway.mapping.id</span> <span
+style='color:#3F5FBF'>column=&quot;ID&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> */</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:black;mso-ansi-language:
+EN-GB'>Long <span class=GramE>getId(</span>);</span><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>In the case of a multiple
+identifier, the highway.mapping.id tag is simply positioned on each property
+forming part of the identifier:<o:p></o:p></span></p>
+
+<pre style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;
+mso-ansi-language:EN-GB'>/**</span><span lang=EN-GB style='mso-ansi-language:
+EN-GB'><o:p></o:p></span></pre><pre style='margin-left:2.0cm'><span lang=EN-GB
+style='color:#3F5FBF;mso-ansi-language:EN-GB'> *</span><span lang=EN-GB
+style='mso-ansi-language:EN-GB'> <span style='color:#3F5FBF'>@highway.mapping.id</span> <span
+style='color:#3F5FBF'>column=&quot;EMPLOYE_ID&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> */</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:black;mso-ansi-language:
+EN-GB'>Long <span class=GramE>getEmployeId<span style='color:windowtext'>(</span></span></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>)<span style='color:black'>;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p>&nbsp;</o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'>/**</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> *</span><span lang=EN-GB style='mso-ansi-language:EN-GB'> <span
+style='color:#3F5FBF'>@highway.mapping.id</span> <span style='color:#3F5FBF'>column=&quot;PROJET_ID&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> */</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='mso-ansi-language:EN-GB'>Long <span
+class=GramE>getProjetId(</span>);<o:p></o:p></span></pre>
+
+<h2 style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+class=GramE><span lang=EN-GB style='mso-ansi-language:EN-GB'>highway.mapping.generator-param</span></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></h2>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>This tag enables you to specify the
+configuration or initialization parameters for the ID generator when this has
+them.<o:p></o:p></span></p>
+
+<table class=TableNormal border=1 cellspacing=0 cellpadding=0 width=877
+ style='width:657.75pt;mso-cellspacing:0cm;border:outset #111111 1.0pt;
+ mso-border-alt:outset #111111 .75pt;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+ <COL WIDTH=118><COL WIDTH=464><COL WIDTH=139><COL WIDTH=138>
+ <tr style='mso-yfti-irow:0'>
+  <td width=118 style='width:88.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt'><b><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>Parameters</span></b><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=464 style='width:348.0pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt'><b><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>Description</span></b><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=139 style='width:104.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='margin-top:5.65pt;text-align:center'><b><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>Compulsory</span></b><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=138 style='width:103.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;background:#CCCCCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='margin-top:5.65pt'><b><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>Values</span></b><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=118 style='width:88.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='font-weight:medium'><span lang=EN-GB style='mso-ansi-language:EN-GB'>name<o:p></o:p></span></p>
+  </td>
+  <td width=464 style='width:348.0pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>Parameter name<o:p></o:p></span></p>
+  </td>
+  <td width=139 style='width:104.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='text-align:center'><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>Yes <o:p></o:p></span></p>
+  </td>
+  <td width=138 style='width:103.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+  <td width=118 style='width:88.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p style='font-weight:medium'><span lang=EN-GB style='mso-ansi-language:EN-GB'>value<o:p></o:p></span></p>
+  </td>
+  <td width=464 style='width:348.0pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'>Parameter value<o:p></o:p></span></p>
+  </td>
+  <td width=139 style='width:104.25pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p align=center style='text-align:center'><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>Yes <o:p></o:p></span></p>
+  </td>
+  <td width=138 style='width:103.5pt;border:inset #111111 1.0pt;mso-border-alt:
+  inset #111111 .75pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>E.g.:<o:p></o:p></span></p>
+
+<pre style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;
+mso-ansi-language:EN-GB'>/**</span><span lang=EN-GB style='mso-ansi-language:
+EN-GB'><o:p></o:p></span></pre><pre style='margin-left:2.0cm'><span lang=EN-GB
+style='color:#3F5FBF;mso-ansi-language:EN-GB'> *</span><span lang=EN-GB
+style='mso-ansi-language:EN-GB'> <span style='color:#3F5FBF'>@highway.mapping.id</span> <span
+style='color:#3F5FBF'>column=&quot;ID&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> *</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><span style='mso-spacerun:yes'>                   </span><span
+class=GramE><span style='color:#3F5FBF'>generator</span><span style='color:
+#7F7F9F'>-</span><span style='color:#3F5FBF'>class</span></span><span
+style='color:#3F5FBF'>=&quot;<span class=SpellE>com.manpower.demo.domain.HiLoGenerator</span>&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> *</span><span lang=EN-GB style='mso-ansi-language:EN-GB'> <span
+style='color:#3F5FBF'>@<span class=SpellE>highway.mapping.generator<span
+style='color:#7F7F9F'>-</span>param</span></span> <span style='color:#3F5FBF'>name=&quot;name&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> *</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><span style='mso-spacerun:yes'>    </span><span style='mso-spacerun:yes'>                            </span><span
+style='color:#3F5FBF'>value=&quot;PROJET&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> */</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='mso-ansi-language:EN-GB'>Long <span
+class=GramE>getId(</span>)<span style='color:black'>;</span><o:p></o:p></span></pre>
+
+<h1 style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>Inheritance<o:p></o:p></span></h1>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>Several types of mapping are
+supported in the case of an inheritance relationship:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>- <a
+href="#table-per-class-hierarchy|outline"><span class=GramE>table-per-class-hierarchy</span></a>:
+a single table, with a discriminatory column<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>- <a
+href="#table-per-subclass|outline"><span class=GramE>table-per-subclass</span></a>:
+one table per class (one for the super-class and one per sub-class)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:14.2pt;
+margin-left:36.0pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>- <a
+href="#table-per-concrete-class|outline"><span class=GramE>table-per-concrete-class</span></a>:
+one table per sub-class (concrete class), but not for the (abstract)
+super-class <o:p></o:p></span></p>
+
+<h2 style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><a
+name="table-per-class-hierarchy|outline"></a><span class=GramE><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>table-per-class-hierarchy</span></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></h2>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>The properties of the super-class
+and the sub-classes are all mapped on a single table. A discriminatory column
+is added to determine the class corresponding to a given line.<o:p></o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>The highway.mapping tag must be
+positioned in the super-class as well as the sub-classes, with the
+discriminator-value parameter filled in.<br>
+The highway.mapping.discriminator tag, which enables you to specify the
+discriminatory <span class=GramE>column</span> only appears in the super-class.<o:p></o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>Limitation: the columns defined at
+sub-class level cannot have any NON-ZERO constraints.<o:p></o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>E.g.:<o:p></o:p></span></p>
+
+<pre style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;
+mso-ansi-language:EN-GB'>/**</span><span lang=EN-GB style='mso-ansi-language:
+EN-GB'><o:p></o:p></span></pre><pre style='margin-left:2.0cm'><span lang=EN-GB
+style='color:#3F5FBF;mso-ansi-language:EN-GB'> *</span><span lang=EN-GB
+style='mso-ansi-language:EN-GB'> <span style='color:#3F5FBF'>@highway.mapping</span> <span
+style='color:#3F5FBF'>table=&quot;EMPLOYE&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> *</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><span style='mso-spacerun:yes'>                </span><span
+class=GramE><span style='color:#3F5FBF'>discriminator</span><span
+style='color:#7F7F9F'>-</span><span style='color:#3F5FBF'>value</span></span><span
+style='color:#3F5FBF'>=&quot;0&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> *</span><span lang=EN-GB style='mso-ansi-language:EN-GB'> <span
+style='color:#3F5FBF'>@<span class=SpellE>highway.mapping.discriminator</span></span> <span
+style='color:#3F5FBF'>type=&quot;char&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> *</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><span style='mso-spacerun:yes'>                              </span><span
+class=GramE><span style='color:#3F5FBF'>column</span></span><span
+style='color:#3F5FBF'>=&quot;TYPE&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> */</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span class=GramE><b><span lang=EN-GB
+style='color:#7F0055;mso-ansi-language:EN-GB'>public</span></b></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'> <b><span style='color:#7F0055'>interface</span></b> <span
+style='color:black'>EmployeDef</span> <b><span style='color:#7F0055'>extends</span></b> <span
+style='color:black'>ValueObject</span> <span style='color:black'>{...}</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p>&nbsp;</o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'>/**</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> *</span><span lang=EN-GB style='mso-ansi-language:EN-GB'> <span
+style='color:#3F5FBF'>@highway.mapping</span> <span style='color:#3F5FBF'>discriminator</span><span
+style='color:#7F7F9F'>-</span><span style='color:#3F5FBF'>value=&quot;1&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> */</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span class=GramE><b><span lang=EN-GB
+style='color:#7F0055;mso-ansi-language:EN-GB'>public</span></b></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'> <b><span style='color:#7F0055'>interface</span></b> <span
+style='color:black'>CadreDef</span> <b><span style='color:#7F0055'>extends</span></b> <span
+style='color:black'>EmployeDef</span> <span style='color:black'>{...}</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p>&nbsp;</o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'>/**</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> *</span><span lang=EN-GB style='mso-ansi-language:EN-GB'> <span
+style='color:#3F5FBF'>@highway.mapping</span> <span style='color:#3F5FBF'>discriminator</span><span
+style='color:#7F7F9F'>-</span><span style='color:#3F5FBF'>value=&quot;2&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> */</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span class=GramE><b><span lang=EN-GB
+style='color:#7F0055;mso-ansi-language:EN-GB'>public</span></b></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'> <b><span style='color:#7F0055'>interface</span></b> <span
+style='color:black'>TechnicienDef</span> <b><span style='color:#7F0055'>extends</span></b> <span
+style='color:black'>EmployeDef</span> <span style='color:black'>{...}</span><o:p></o:p></span></pre>
+
+<h2 style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><a
+name="table-per-subclass|outline"></a><span class=GramE><span lang=EN-GB
+style='mso-ansi-language:EN-GB'>table-per-subclass</span></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></h2>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>Each class whether super-class or
+sub-class is mapped on a different table.<br>
+The ID column defined at super-class level is added to the sub-class tables.
+The link between the super-class and the sub-classes is controlled via this ID;
+a discriminatory column is not required.<o:p></o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>The highway.mapping tag must be
+positioned in the super-class and the sub-classes, but this time without any
+discriminator-value parameter.<br>
+The highway.mapping.discriminator tag is not used.<o:p></o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>Limitation: in the current version
+of Socle, the identifier defined at super-class level cannot be made up of
+several columns; it must necessarily be a simple identifier.<o:p></o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>E.g.:<o:p></o:p></span></p>
+
+<pre style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;
+mso-ansi-language:EN-GB'>/**</span><span lang=EN-GB style='mso-ansi-language:
+EN-GB'><o:p></o:p></span></pre><pre style='margin-left:2.0cm'><span lang=EN-GB
+style='color:#3F5FBF;mso-ansi-language:EN-GB'> *</span><span lang=EN-GB
+style='mso-ansi-language:EN-GB'> <span style='color:#3F5FBF'>@highway.mapping</span> <span
+style='color:#3F5FBF'>table=&quot;EMPLOYE&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> */</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span class=GramE><b><span lang=EN-GB
+style='color:#7F0055;mso-ansi-language:EN-GB'>public</span></b></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'> <b><span style='color:#7F0055'>interface</span></b> <span
+style='color:black'>EmployeDef</span> <b><span style='color:#7F0055'>extends</span></b> <span
+style='color:black'>ValueObject</span> <span style='color:black'>{...}</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p>&nbsp;</o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'>/**</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> *</span><span lang=EN-GB style='mso-ansi-language:EN-GB'> <span
+style='color:#3F5FBF'>@highway.mapping</span> <span style='color:#3F5FBF'>table=&quot;CADRE&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> */</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span class=GramE><b><span lang=EN-GB
+style='color:#7F0055;mso-ansi-language:EN-GB'>public</span></b></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'> <b><span style='color:#7F0055'>interface</span></b> <span
+style='color:black'>CadreDef</span> <b><span style='color:#7F0055'>extends</span></b> <span
+style='color:black'>EmployeDef</span> <span style='color:black'>{...}</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p>&nbsp;</o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'>/**</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> *</span><span lang=EN-GB style='mso-ansi-language:EN-GB'> <span
+style='color:#3F5FBF'>@highway.mapping</span> <span style='color:#3F5FBF'>table=&quot;TECHNICIEN&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> */</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span class=GramE><b><span lang=EN-GB
+style='color:#7F0055;mso-ansi-language:EN-GB'>public</span></b></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'> <b><span style='color:#7F0055'>interface</span></b> <span
+style='color:black'>TechnicienDef</span> <b><span style='color:#7F0055'>extends</span></b> <span
+style='color:black'>EmployeDef</span> <span style='color:black'>{...}</span><o:p></o:p></span></pre>
+
+<h2 style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><a
+name="table-per-concrete-class|outline"></a><span class=GramE><span lang=EN-GB
+style='mso-ansi-language:EN-GB'>table-per-concrete-class</span></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></h2>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>This approach can be envisaged when
+the super-class is abstract. A table is used for each sub-class, but not for
+the super-class. The super-class properties are mapped on the sub-class tables.<o:p></o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>The highway.mapping tag is not
+positioned in the super-class, but only in the sub-classes. On the other hand,
+the highway.mapping.id and highway.mapping.property tags can be used in the
+super-class.<br>
+The highway.mapping.discriminator tag is not used.<o:p></o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>Limitations:<o:p></o:p></span></p>
+
+<p style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo2;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-GB style='font-size:
+10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;mso-ansi-language:EN-GB'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-GB style='mso-ansi-language:EN-GB'>By
+definition, the super-class is necessary abstract.<o:p></o:p></span></p>
+
+<p style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo2;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN-GB style='font-size:
+10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;mso-ansi-language:EN-GB'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-GB style='mso-ansi-language:EN-GB'>Polymorphic
+loading and joins are not supported.<br>
+For example, a (super-class) employee cannot be loaded as follows:
+select(Employe.class, id)<o:p></o:p></span></p>
+
+<p style='tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+lang=EN-GB style='mso-ansi-language:EN-GB'>E.g.:<o:p></o:p></span></p>
+
+<pre style='margin-left:2.0cm'><span class=GramE><b><span lang=EN-GB
+style='color:#7F0055;mso-ansi-language:EN-GB'>public</span></b></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'> <b><span style='color:#7F0055'>interface</span></b> <span
+style='color:black'>EmployeDef</span> <b><span style='color:#7F0055'>extends</span></b> <span
+style='color:black'>ValueObject</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='mso-ansi-language:EN-GB'>{<o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'><span style='mso-spacerun:yes'>    </span>/**</span><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre style='margin-left:
+2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:EN-GB'><span style='mso-spacerun:yes'>     </span>*</span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'> <span style='color:#3F5FBF'>@<span
+class=SpellE>highway.mapping.id</span></span> <span style='color:#3F5FBF'>column=&quot;ID&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'><span style='mso-spacerun:yes'>     </span>*/</span><span lang=EN-GB
+style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre style='margin-left:
+2.0cm'><span lang=EN-GB style='mso-ansi-language:EN-GB'><span style='mso-spacerun:yes'>    </span>Long <span
+class=GramE>getId(</span>);<o:p></o:p></span></pre><pre style='margin-left:
+2.0cm'><span lang=EN-GB style='color:black;mso-ansi-language:EN-GB'>}</span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p>&nbsp;</o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'>/**</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> *</span><span lang=EN-GB style='mso-ansi-language:EN-GB'> <span
+style='color:#3F5FBF'>@highway.mapping</span> <span style='color:#3F5FBF'>table=&quot;CADRE&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> */</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span class=GramE><b><span lang=EN-GB
+style='color:#7F0055;mso-ansi-language:EN-GB'>public</span></b></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'> <b><span style='color:#7F0055'>interface</span></b> <span
+style='color:black'>CadreDef</span> <b><span style='color:#7F0055'>extends</span></b> <span
+style='color:black'>EmployeDef</span> <span style='color:black'>{...}</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p>&nbsp;</o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'>/**</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'> *</span><span lang=EN-GB style='mso-ansi-language:EN-GB'> <span
+style='color:#3F5FBF'>@highway.mapping</span> <span style='color:#3F5FBF'>table=&quot;TECHNICIEN&quot;</span><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span lang=EN-GB style='color:#3F5FBF;mso-ansi-language:
+EN-GB'>*/</span><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></pre><pre
+style='margin-left:2.0cm'><span class=GramE><b><span lang=EN-GB
+style='color:#7F0055;mso-ansi-language:EN-GB'>public</span></b></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'> <b><span style='color:#7F0055'>interface</span></b> <span
+style='color:black'>TechnicienDef</span> <b><span style='color:#7F0055'>extends</span></b> <span
+style='color:black'>EmployeDef</span> <span style='color:black'>{...}</span><o:p></o:p></span></pre></div>
+
+</body>
+
+</html>

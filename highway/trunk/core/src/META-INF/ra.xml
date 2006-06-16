@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE connector PUBLIC '-//Sun Microsystems, Inc.//DTD Connector 1.0//EN' 'http://java.sun.com/dtd/connector_1_0.dtd'>
+
+<connector>
+	<display-name>Transactional Mail Resource Adapter</display-name>
+	<vendor-name>Manpower J2EE Socle</vendor-name>
+	<spec-version>1.0</spec-version>
+	<eis-type>Transactional Mail Transport</eis-type>
+	<version>1.0</version>
+	<license>
+		<license-required>false</license-required>
+	</license>
+	<resourceadapter>
+		<managedconnectionfactory-class>org.highway.mail.jca.MailManagedConnectionFactory</managedconnectionfactory-class>
+		<connectionfactory-interface>org.highway.mail.jca.MailConnectionFactory</connectionfactory-interface>
+		<connectionfactory-impl-class>org.highway.mail.jca.MailConnectionFactoryImpl</connectionfactory-impl-class>
+		<connection-interface>org.highway.mail.jca.MailConnection</connection-interface>
+		<connection-impl-class>org.highway.mail.jca.MailConnectionImpl</connection-impl-class>
+		<transaction-support>XATransaction</transaction-support>
+		<authentication-mechanism>
+			<description></description>
+			<authentication-mechanism-type></authentication-mechanism-type>
+			<credential-interface></credential-interface>
+		</authentication-mechanism>
+        <reauthentication-support>false</reauthentication-support>
+    </resourceadapter>
+</connector>

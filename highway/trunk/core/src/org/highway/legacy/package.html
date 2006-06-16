@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.5  (Win32)">
+	<META NAME="CREATED" CONTENT="20051013;13005207">
+	<META NAME="CHANGEDBY" CONTENT="oliv">
+	<META NAME="CHANGED" CONTENT="20051021;15533162">
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<P>Provides access generic interfaces to a legacy system. 
+</P>
+<P><B>General use of the APIs:</B> 
+</P>
+<P>Here is a code sample for <I>CICS Transaction Gateway</I>
+implementation:</P>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=0>
+	<COL WIDTH=256*>
+	<THEAD>
+		<TR BGCOLOR="#e6e6ff">
+			<TD WIDTH=100% VALIGN=TOP BGCOLOR="#ccccff">
+				<P><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">...</FONT></FONT></P>
+				<P><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">Properties
+				props = new Properties();</FONT></FONT></P>
+				<P><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">props.setProperty(CtgServer.SOCLE_CTG_JNDI,
+				<FONT COLOR="#0000ff">&quot;CICSConnectionFactory&quot;</FONT>);</FONT></FONT></P>
+				<P><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">CtgServer
+				server = <FONT COLOR="#800000">new</FONT> CtgServer(props);</FONT></FONT></P>
+				<P><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">//open
+				the session </FONT></FONT>
+				</P>
+				<P><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">LegacySession
+				session = server.openSession();</FONT></FONT></P>
+				<P><FONT COLOR="#0047ff"><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">//ask
+				for a new call </FONT></FONT></FONT>
+				</P>
+				<P><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">LegacyRequest
+				interaction = session.newRequest();</FONT></FONT></P>
+				<P><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">interaction.setFunctionName(<FONT COLOR="#0000ff">&quot;MEVAPI&quot;</FONT>);</FONT></FONT></P>
+				<P><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">interaction.setInteractionVerb(InteractionSpec.SYNC_SEND_RECEIVE);</FONT></FONT></P>
+				<P><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">interaction.setTPNName(<FONT COLOR="#0000ff">&quot;INCS&quot;</FONT>);</FONT></FONT></P>
+				<P><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">interaction.setTranName(<FONT COLOR="#0000ff">&quot;INCS&quot;</FONT>);</FONT></FONT></P>
+				<P><FONT FACE="Courier New, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">...</FONT></FONT></P>
+			</TD>
+		</TR>
+	</THEAD>
+</TABLE>
+<P><SPAN STYLE="font-style: normal">Once the <FONT SIZE=2 STYLE="font-size: 11pt"><FONT FACE="Courier New, monospace">LegacyRequest</FONT></FONT>
+got back, the values must be written in order to create the commarea
+itself. <I>See javadoc of LegacyServer or LegacyResponse for more
+details</I>. </SPAN>
+</P>
+</BODY>
+</HTML>
