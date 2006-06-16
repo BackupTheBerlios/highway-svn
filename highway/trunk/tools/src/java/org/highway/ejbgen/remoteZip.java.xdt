@@ -1,0 +1,13 @@
+package <XDtPackage:packageName/>.ejb;
+
+import javax.ejb.EJBObject;
+
+public interface <XDtClass:className/>EjbRemote extends EJBObject
+{
+<XDtEjbGenMethod:forAllMethods>
+
+	public <XDtMethod:ifReturnsVoid> void </XDtMethod:ifReturnsVoid> <XDtEjbGenMethod:ifReturnsObject> byte[] </XDtEjbGenMethod:ifReturnsObject> <XDtEjbGenMethod:ifReturnsPrimitive> byte[]</XDtEjbGenMethod:ifReturnsPrimitive> <XDtMethod:methodName/><XDtEjbGenMethod:getIncrementIndex/>( <XDtParameter:ifHasParams>byte[] entry</XDtParameter:ifHasParams>)
+		<XDtMethod:exceptionList append="java.rmi.RemoteException"/>;
+
+</XDtEjbGenMethod:forAllMethods>
+}

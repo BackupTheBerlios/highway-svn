@@ -1,0 +1,105 @@
+package <XDtPackage:packageName/>.ejb;
+
+import org.highway.exception.TechnicalException;
+import org.highway.service.ejb.EjbRequest;
+import org.highway.service.ejb.ZipEjbBean;
+import org.highway.helper.ValueHelper;
+import org.highway.io.Deserializer;
+import org.highway.io.Serializer;
+import java.util.List;
+import java.util.ArrayList;
+
+public class <XDtClass:className/>EjbBean extends ZipEjbBean
+{
+	protected Class getServiceClass()
+	{
+		return <XDtClass:fullClassName/>.class;
+	}
+
+<XDtEjbGenMethod:forAllMethods>
+	public <XDtMethod:ifReturnsVoid> void </XDtMethod:ifReturnsVoid> <XDtEjbGenMethod:ifReturnsObject> byte[] </XDtEjbGenMethod:ifReturnsObject> <XDtEjbGenMethod:ifReturnsPrimitive> byte[]</XDtEjbGenMethod:ifReturnsPrimitive> <XDtMethod:methodName/><XDtEjbGenMethod:getIncrementIndex/>( <XDtParameter:ifHasParams>byte[] entry</XDtParameter:ifHasParams>)
+		<XDtMethod:exceptionList/>
+	{
+		try
+		{
+			EjbRequest request = init("<XDtMethod:methodName/>");
+			// decompression et deserialisation
+<XDtParameter:ifHasParams>
+			Deserializer deserializer =  getDeserializer(entry);
+</XDtParameter:ifHasParams>			
+			
+<XDtEjbGenParam:forAllMethodParams>
+
+
+
+	<XDtEjbGenParam:ifTypePrimitive>
+		<XDtEjbGenParam:ifIsOfType type="int">
+			<XDtParameter:methodParamType/> <XDtParameter:methodParamName/> = deserializer.readInt();
+		</XDtEjbGenParam:ifIsOfType>
+		<XDtEjbGenParam:ifIsOfType type="byte">
+			<XDtParameter:methodParamType/> <XDtParameter:methodParamName/> = deserializer.readByte();
+		</XDtEjbGenParam:ifIsOfType>
+		<XDtEjbGenParam:ifIsOfType type="short">
+			<XDtParameter:methodParamType/> <XDtParameter:methodParamName/> = deserializer.readShort();
+		</XDtEjbGenParam:ifIsOfType>
+		<XDtEjbGenParam:ifIsOfType type="long">
+			<XDtParameter:methodParamType/> <XDtParameter:methodParamName/> = deserializer.readLong();
+		</XDtEjbGenParam:ifIsOfType>
+		<XDtEjbGenParam:ifIsOfType type="boolean">
+			<XDtParameter:methodParamType/> <XDtParameter:methodParamName/> = deserializer.readBoolean();
+		</XDtEjbGenParam:ifIsOfType>
+		<XDtEjbGenParam:ifIsOfType type="char">
+			<XDtParameter:methodParamType/> <XDtParameter:methodParamName/> = deserializer.readChar();
+		</XDtEjbGenParam:ifIsOfType>
+		<XDtEjbGenParam:ifIsOfType type="double">
+			<XDtParameter:methodParamType/> <XDtParameter:methodParamName/> = deserializer.readDouble();
+		</XDtEjbGenParam:ifIsOfType>
+		<XDtEjbGenParam:ifIsOfType type="float">
+			<XDtParameter:methodParamType/> <XDtParameter:methodParamName/> = deserializer.readFloat();
+		</XDtEjbGenParam:ifIsOfType>
+	</XDtEjbGenParam:ifTypePrimitive>
+	<XDtEjbGenParam:ifTypeObject>
+		<XDtParameter:methodParamType/> <XDtParameter:methodParamName/> = (<XDtParameter:methodParamType/>)  deserializer.readObject();
+	</XDtEjbGenParam:ifTypeObject>
+			request.addParameter("<XDtParameter:methodParamName/>", <XDtParameter:methodParamType/>.class, ValueHelper.wrap(<XDtParameter:methodParamName/>));
+</XDtEjbGenParam:forAllMethodParams>
+
+
+
+			Object o1 =request.invoke();
+
+<XDtMethod:ifDoesntReturnVoid >
+			// compression serialisation
+			Serializer serializer = getSerializer();
+			serializer.write(o1);
+			byte[] response =  serializer.toByteArray();;
+			return response;
+</XDtMethod:ifDoesntReturnVoid >
+
+
+		}
+<XDtEjbGenMethod:forAllExceptions>
+		catch (<XDtEjbGenMethod:currentException/> e)
+		{
+			throw e;
+		}
+</XDtEjbGenMethod:forAllExceptions>
+		catch (TechnicalException e)
+		{
+			throw e;
+		}
+		catch (Error e)
+		{
+			throw e;
+		}
+		catch (Throwable e)
+		{
+			throw new TechnicalException("Service <XDtMethod:methodName/> unexpectedly failed", e);
+		}
+		finally
+		{
+			reset();
+		}
+	}
+</XDtEjbGenMethod:forAllMethods>
+}

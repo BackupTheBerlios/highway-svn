@@ -1,0 +1,389 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>Socle Build Tools</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.9.122  (Win32)">
+	<META NAME="CREATED" CONTENT="20050128;12310218">
+	<META NAME="CHANGEDBY" CONTENT="David Attias">
+	<META NAME="CHANGED" CONTENT="20060127;16055518">
+	<META NAME="ProgId" CONTENT="Word.Document">
+	<META NAME="Originator" CONTENT="Microsoft Word 10">
+	<!-- saved from url=(0022)http://internet.e-mail -->
+	<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Gail</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Gail</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>45</o:TotalTime>
+  <o:Created>2005-12-05T13:51:00Z</o:Created>
+  <o:LastSaved>2005-12-05T14:36:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>638</o:Words>
+  <o:Characters>4124</o:Characters>
+  <o:Lines>118</o:Lines>
+  <o:Paragraphs>90</o:Paragraphs>
+  <o:CharactersWithSpaces>4704</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+	<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+	<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]-->
+	<STYLE>
+	<!--
+		TD P { color: #000000 }
+		H1 { color: #000000 }
+		P { color: #000000 }
+		H2 { color: #000000 }
+		PRE { color: #000000 }
+		A:link { color: #0000ff }
+		A:visited { color: #0000ff }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" LINK="#0000ff" VLINK="#0000ff" DIR="LTR">
+<H1><STRONG><SPAN LANG="en-GB">Socle Build Tools</SPAN></STRONG></H1>
+<P><STRONG><SPAN LANG="en-GB">socle-j2ee-tools-x.y.z.jar</SPAN>
+<SPAN LANG="en-GB">contains three distinct tools. These tools are ANT
+code generation tasks.</SPAN></STRONG></P>
+<P><SPAN LANG="en-GB">1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><STRONG><SPAN LANG="en-GB">ejbgen
+</SPAN></STRONG><SPAN LANG="en-GB">generates entirely the classes and
+the EJB descriptors required for accessing the services</SPAN></P>
+<P><SPAN LANG="en-GB">2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><STRONG><SPAN LANG="en-GB">vogen</SPAN></STRONG>
+<SPAN LANG="en-GB">generates the value objects</SPAN></P>
+<P><SPAN LANG="en-GB">3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><STRONG><SPAN LANG="en-GB">metagen</SPAN></STRONG>
+<SPAN LANG="en-GB">generates the classes that contain all the javadoc
+tags for the java sources</SPAN></P>
+<H2 LANG="en-GB">Installation</H2>
+<P><STRONG><SPAN LANG="en-GB">socle-j2ee-tools-x.y.z.jar</SPAN></STRONG>
+<SPAN LANG="en-GB">had no dependencies; it contains all the
+frameworks it needs. This JAR operates with <B>ANT version 1.6.2</B>
+and <B>jdk 1.4.</B> It must be located in the ANT classpath. If you
+use ANT for the commands, you only have to put it in the <B>ant/lib</B>
+directory. If you use ANT in Eclipse or WSAD, you must modify the
+preferences and add this JAR to the ANT Home Entries. The JAR
+contains an <B>anttasks.properties</B> file defining the tasks in the
+<B>org.highway</B> package. To define the tasks simply, all
+you have to do is put the following line in its build.xml file:</SPAN></P>
+<PRE LANG="en-GB" STYLE="margin-top: 0.2cm; margin-bottom: 0.5cm">&lt;taskdef resource=&quot;org/highway/anttasks.properties&quot;/&gt;</PRE><H2 LANG="en-GB">
+ejbgen</H2>
+<P><SPAN LANG="en-GB">The ANT <STRONG>ejbgen</STRONG> file generates
+the classes and the EJB descriptors.</SPAN></P>
+<P LANG="en-GB">An EJB is generated for each Java interface
+containing the <B>highway.service.generate.ejb</B> tag and directly or
+indirectly extending the org.highway.service.Service Java
+interface.</P>
+<P LANG="en-GB">The generation of an EJB for the <B>mypackage.MyServices
+</B>interface involves the generation of the following files:</P>
+<PRE STYLE="margin-bottom: 0.5cm"><SPAN LANG="en-GB"><FONT FACE="Symbol">&middot; </FONT>mypackage/ejb/MyServicesEjbHome.java</SPAN>
+<SPAN LANG="en-GB"><FONT FACE="Symbol">&middot; </FONT>mypackage/ejb/MyServicesEjbRemote.java</SPAN>
+<SPAN LANG="en-GB"><FONT FACE="Symbol">&middot; </FONT>mypackage/ejb/MyServicesEjbBean.java</SPAN>
+<SPAN LANG="en-GB"><FONT FACE="Symbol">&middot; </FONT>mypackage/ejb/MyServicesEjbProxy.java</SPAN></PRE><P LANG="en-GB">
+
+<P LANG="en-GB">To generate Zip EJB used the <B>highway.service.generate.ejbzip</B> tag. The generation files are the same</p>
+<p	LANG="en-GB">
+	The following description files are generated for all the services
+interfaces:</P>
+<PRE STYLE="margin-bottom: 0.5cm"><SPAN LANG="en-GB"><FONT FACE="Symbol">&middot; </FONT>ejb-jar.xml</SPAN>
+<SPAN LANG="en-GB"><FONT FACE="Symbol">&middot; </FONT>ibm-ejb-jar-bnd.xmi</SPAN>
+<SPAN LANG="en-GB"><FONT FACE="Symbol">&middot; </FONT>ibm-ejb-jar-ext.xmi</SPAN></PRE><P>
+<A NAME="AutoNumber1"></A><SPAN LANG="en-GB">The <STRONG>ejbgen</STRONG>
+tasks take three parameters:</SPAN></P>
+<TABLE WIDTH=878 BORDER=1 CELLPADDING=0 CELLSPACING=0>
+	<COL WIDTH=144>
+	<COL WIDTH=118>
+	<COL WIDTH=602>
+	<TR>
+		<TD WIDTH=144>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			<B>Parameters</B></P>
+		</TD>
+		<TD WIDTH=118>
+			<P LANG="en-GB" ALIGN=CENTER STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			<B>Compulsory</B></P>
+		</TD>
+		<TD WIDTH=602>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			<B>Description</B></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=144>
+			<PRE LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">javaInputDir</PRE>
+		</TD>
+		<TD WIDTH=118>
+			<P LANG="en-GB" ALIGN=CENTER STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			Yes</P>
+		</TD>
+		<TD WIDTH=602>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			Directory of Java sources to be parsed to find the interfaces
+			requiring EJB generation</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=144>
+			<PRE LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">javaOutputDir</PRE>
+		</TD>
+		<TD WIDTH=118>
+			<P LANG="en-GB" ALIGN=CENTER STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			Yes</P>
+		</TD>
+		<TD WIDTH=602>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			Destination directory for the Java files generated</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=144>
+			<PRE LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">cfgOutputDir</PRE>
+		</TD>
+		<TD WIDTH=118>
+			<P LANG="en-GB" ALIGN=CENTER STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			Yes</P>
+		</TD>
+		<TD WIDTH=602>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			Destination directory for the xml and xmi description files</P>
+		</TD>
+	</TR>
+</TABLE>
+<P LANG="en-GB">E.g.:</P>
+<PRE STYLE="margin-bottom: 0.5cm">&nbsp; <SPAN LANG="en-GB">&lt;ejbgen</SPAN>
+&nbsp;&nbsp;&nbsp; <SPAN LANG="en-GB">javaInputDir=&quot;src&quot;</SPAN>
+&nbsp;&nbsp;&nbsp; <SPAN LANG="en-GB">javaOutputDir=&quot;bin/gensrc&quot;</SPAN>
+&nbsp;&nbsp;&nbsp; <SPAN LANG="en-GB">cfgOutputDir=&quot;bin/gencfg/META-INF&quot;/&gt;</SPAN></PRE><H2 LANG="en-GB">
+vogen</H2>
+<P LANG="en-GB">The ANT <B>vogen</B> task generates your
+application&rsquo;s value objects.</P>
+<P LANG="en-GB">A value object is generated for each definition
+interface found in the Java sources. A definition interface is an
+interface whose name ends in &ldquo;Def&rdquo; and which directly or
+indirectly extends the <B>org.highway.vo.ValueObject</B>
+interface.</P>
+<P><B><SPAN LANG="en-GB">vogen</SPAN></B> <SPAN LANG="en-GB">generates
+the following files for the <B>mypackage.MyValueObjectDef</B>
+interface:</SPAN></P>
+<TABLE WIDTH=878 BORDER=1 CELLPADDING=0 CELLSPACING=0>
+	<COL WIDTH=294>
+	<COL WIDTH=280>
+	<COL WIDTH=290>
+	<TR>
+		<TD WIDTH=294>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			<B>File</B></P>
+		</TD>
+		<TD WIDTH=280>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			<B>Description</B></P>
+		</TD>
+		<TD WIDTH=290>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			<B>When?</B></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=294>
+			<PRE LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">mypackage/MyValueObject.java</PRE>
+		</TD>
+		<TD WIDTH=280>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			Implementation of this value object</P>
+		</TD>
+		<TD WIDTH=290>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			If no <I>highway.vo.abstract or = false</I> tag</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=294>
+			<PRE LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">mypackage/MyValueObjectAbstract.java</PRE>
+		</TD>
+		<TD WIDTH=280>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			Abstract implementation of this value object</P>
+		</TD>
+		<TD WIDTH=290>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			If <I>highway.vo.abstract = true </I>tag</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=294>
+			<PRE LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">mypackage/MyValueObject.hbm.xml</PRE>
+		</TD>
+		<TD WIDTH=280>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			Contains the Hibernate mapping for this value object</P>
+		</TD>
+		<TD WIDTH=290>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			If the definition interface contains an object mapping/relational
+			tag</P>
+		</TD>
+	</TR>
+</TABLE>
+<P><SPAN LANG="en-GB">The definition interface contains all the
+information required for generating these files as Java constants and
+javadoc tags. For more information on the coding for a definition
+interface, <A HREF="vo-def.html">see here</A></SPAN></P>
+<P><SPAN LANG="en-GB">An XML Hibernate configuration file is
+generated for all the definition interfaces. If the <FONT SIZE=2><FONT FACE="Courier New">hibernateCfgFile</FONT></FONT></SPAN>
+<SPAN LANG="en-GB">tag is not filled in, this file is generated by
+default in the root of the output directory (<FONT SIZE=2><FONT FACE="Courier New">outputDir</FONT></FONT>)
+with the name of &quot;hibernate.cfg.xml&quot;. It contains the list
+of Hibernate mapping files generated for each definition interface.</SPAN></P>
+<P><A NAME="AutoNumber11"></A><SPAN LANG="en-GB">The <B>vo<STRONG>gen</STRONG></B>
+task takes three parameters:</SPAN></P>
+<TABLE WIDTH=878 BORDER=1 CELLPADDING=0 CELLSPACING=0>
+	<COL WIDTH=147>
+	<COL WIDTH=156>
+	<COL WIDTH=561>
+	<TR>
+		<TD WIDTH=147>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			<B>Parameters</B></P>
+		</TD>
+		<TD WIDTH=156>
+			<P LANG="en-GB" ALIGN=CENTER STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			<B>Compulsory</B></P>
+		</TD>
+		<TD WIDTH=561>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			<B>Description</B></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=147>
+			<PRE LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">inputDir</PRE>
+		</TD>
+		<TD WIDTH=156>
+			<P LANG="en-GB" ALIGN=CENTER STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			Yes</P>
+		</TD>
+		<TD WIDTH=561>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			Directory of Java sources to be parsed to find the value object
+			definition interfaces</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=147>
+			<PRE LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">outputDir</PRE>
+		</TD>
+		<TD WIDTH=156>
+			<P LANG="en-GB" ALIGN=CENTER STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			Yes</P>
+		</TD>
+		<TD WIDTH=561>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			Destination directory for the Java files generated</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=147>
+			<PRE LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">hibernateCfgFile</PRE>
+		</TD>
+		<TD WIDTH=156>
+			<P LANG="en-GB" ALIGN=CENTER STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			No</P>
+		</TD>
+		<TD WIDTH=561>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			XML Hibernate configuration files (by default &quot;hibernate.cfg.xml&quot;)</P>
+		</TD>
+	</TR>
+</TABLE>
+<P LANG="en-GB">E.g.:</P>
+<PRE STYLE="margin-bottom: 0.5cm">&nbsp; <SPAN LANG="en-GB">&lt;vogen</SPAN>
+&nbsp;&nbsp;&nbsp; <SPAN LANG="en-GB">inputDir=&quot;src&quot;</SPAN>
+&nbsp;&nbsp;&nbsp; <SPAN LANG="en-GB">outputDir=&quot;bin/gensrc&quot;</SPAN>
+&nbsp;&nbsp;&nbsp; <SPAN LANG="en-GB">hibernateCfgFile=&quot;corg/highway/demo/domain/hibernate.cfg.xml&quot;</SPAN>
+&nbsp; <SPAN LANG="en-GB">/&gt;</SPAN></PRE><H2 LANG="en-GB">
+metagen</H2>
+<P LANG="en-GB">The ANT <B>metagen</B> task generates the metadata
+for your application. <B>metagen</B> generates a metadata file for
+each Java source file. The metadata file generated is itself a Java
+class containing all the javadoc tags that metagen finds in the Java
+source file. <B>metagen</B> therefore generates for the
+mypackage.MyClass lJava class the mypackage.MyClassJavadoc Java
+class.</P>
+<P LANG="en-GB">All the tags for the classes for which a metadata
+file is generated are therefore accessible at application runtime
+because of the org.highway.javadoc package. The metadat files
+that metagen generates are accessible if you use the
+MetagenJavadocCache implementation of the JavadocCache interface.</P>
+<P><A NAME="AutoNumber111"></A><SPAN LANG="en-GB">The <B>meta<STRONG>gen</STRONG></B>
+task therefore takes two parameters:</SPAN></P>
+<TABLE WIDTH=878 BORDER=1 CELLPADDING=0 CELLSPACING=0>
+	<COL WIDTH=147>
+	<COL WIDTH=156>
+	<COL WIDTH=561>
+	<TR>
+		<TD WIDTH=147>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			<B>Parameters</B></P>
+		</TD>
+		<TD WIDTH=156>
+			<P LANG="en-GB" ALIGN=CENTER STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			<B>Compulsory</B></P>
+		</TD>
+		<TD WIDTH=561>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			<B>Description</B></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=147>
+			<PRE LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">inputDir</PRE>
+		</TD>
+		<TD WIDTH=156>
+			<P LANG="en-GB" ALIGN=CENTER STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			yes</P>
+		</TD>
+		<TD WIDTH=561>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			Directory of the Java sources to be parsed</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=147>
+			<PRE LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">outputDir</PRE>
+		</TD>
+		<TD WIDTH=156>
+			<P LANG="en-GB" ALIGN=CENTER STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			Yes</P>
+		</TD>
+		<TD WIDTH=561>
+			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
+			Destination directory for the Java files generated</P>
+		</TD>
+	</TR>
+</TABLE>
+<P LANG="en-GB">E.g.:</P>
+<PRE STYLE="margin-top: 0.2cm; margin-bottom: 0.5cm">&nbsp; <SPAN LANG="en-GB">&lt;metagen inputDir=&quot;src&quot; outputDir=&quot;bin/gensrc&quot;/&gt;</SPAN></PRE>
+</BODY>
+</HTML>
