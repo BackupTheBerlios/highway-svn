@@ -9,11 +9,11 @@
 	</path>
 
 	<target name="core.build" depends="core.compile, core.generate.javadoc.if.necessary, core.pack">
-		<zip destfile="bin/socle-j2ee-core-${core.version}.zip" whenempty="fail">
+		<zip destfile="bin/highway-core-${core.version}.zip" whenempty="fail">
 			<!-- zip the core jar -->
-			<zipfileset dir="bin/pack" includes="socle-j2ee-core.jar" fullpath="core/socle-j2ee-core-${core.version}.jar" />
+			<zipfileset dir="bin/pack" includes="highway-core.jar" fullpath="core/highway-core-${core.version}.jar" />
 			<!-- zip the core src zip -->
-			<zipfileset dir="bin/pack" includes="socle-j2ee-core-src.zip" fullpath="core/socle-j2ee-core-${core.version}-src.zip" />
+			<zipfileset dir="bin/pack" includes="highway-core-src.zip" fullpath="core/highway-core-${core.version}-src.zip" />
 			<!-- zip the core doc files -->
 			<zipfileset prefix="core" dir="doc" includes="**/*" />
 			<!-- zip core lib files -->
@@ -26,7 +26,7 @@
 	<target name="core.compile">
 		<delete dir="bin/classes" />
 		<mkdir dir="bin/classes" />
-		<javac target="1.3" destdir="bin/classes" debug="true">
+		<javac target="1.5" destdir="bin/classes" debug="true">
 			<src path="src" />
 			<classpath refid="core.classpath" />
 		</javac>
@@ -41,10 +41,10 @@
 
 	<target name="core.pack">
 		<mkdir dir="bin/pack" />
-		<jar destfile="bin/pack/socle-j2ee-core.jar">
+		<jar destfile="bin/pack/highway-core.jar">
 			<fileset dir="bin/classes" includes="**/*" />
 		</jar>
-		<zip destfile="bin/pack/socle-j2ee-core-src.zip">
+		<zip destfile="bin/pack/highway-core-src.zip">
 			<fileset dir="src" includes="**/*" />
 		</zip>
 	</target>
@@ -70,7 +70,7 @@
 	<!-- this target generates the javadoc if the property -->
 	<!-- javadoc.is.uptodate is not set -->
 	<target name="core.generate.javadoc" unless="javadoc.is.uptodate">
-		<javadoc destdir="bin/javadoc" access="protected" use="true" notree="false" nonavbar="false" noindex="false" splitindex="true" author="true" version="true" nodeprecatedlist="false" nodeprecated="false" overview="src/com/manpower/socle/overview.html" doctitle="Socle JEE CORE Framework Version ${core.version}">
+		<javadoc destdir="bin/javadoc" access="protected" use="true" notree="false" nonavbar="false" noindex="false" splitindex="true" author="true" version="true" nodeprecatedlist="false" nodeprecated="false" overview="src/org/highway/overview.html" doctitle="Socle JEE CORE Framework Version ${core.version}">
 			<!-- no package pattern means take all packages -->
 			<packageset dir="src" />
 			<!-- the classpath is usefull to avoid unknown references warnings -->
