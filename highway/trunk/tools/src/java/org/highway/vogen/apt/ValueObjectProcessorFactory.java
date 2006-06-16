@@ -6,7 +6,8 @@ import java.util.Collections;
 import java.util.Set;
 
 import org.highway.annotation.GenerateEjb;
-import org.highway.vo.ValueObject;
+import org.highway.annotation.ValueObject;
+
 
 import com.sun.mirror.apt.AnnotationProcessor;
 import com.sun.mirror.apt.AnnotationProcessorEnvironment;
