@@ -1,4 +1,4 @@
-package org.highway.vogen.apt;
+package org.highway.vogen;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -7,7 +7,6 @@ import java.util.Set;
 
 import org.highway.annotation.GenerateEjb;
 import org.highway.annotation.ValueObject;
-
 
 import com.sun.mirror.apt.AnnotationProcessor;
 import com.sun.mirror.apt.AnnotationProcessorEnvironment;
@@ -52,11 +51,6 @@ public class ValueObjectProcessorFactory implements AnnotationProcessorFactory {
 		if (atds.isEmpty())
 			return AnnotationProcessors.NO_OP;
 		else {
-			System.out.println("size = " + atds.size());
-			for (AnnotationTypeDeclaration declaration : atds) {
-				System.out.println(declaration.getQualifiedName());
-			}
-			System.out.println("");
 			return new ValueObjectProcessor(env);
 		}
 	}

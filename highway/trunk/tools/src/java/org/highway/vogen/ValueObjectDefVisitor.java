@@ -1,12 +1,9 @@
-package org.highway.vogen.apt;
+package org.highway.vogen;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.highway.annotation.VoMapping;
-import org.highway.vogen.freemarker.HibernateHelper;
-import org.highway.vogen.freemarker.MappingGenerator;
-import org.highway.vogen.freemarker.ValueObjectGenerator;
 
 import com.sun.mirror.apt.AnnotationProcessorEnvironment;
 import com.sun.mirror.declaration.InterfaceDeclaration;

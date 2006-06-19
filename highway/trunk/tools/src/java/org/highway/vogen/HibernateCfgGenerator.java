@@ -1,43 +1,42 @@
-package org.highway.vogen.freemarker;
+package org.highway.vogen;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-
-import com.sun.mirror.declaration.InterfaceDeclaration;
 
 import freemarker.template.Configuration;
 import freemarker.template.DefaultObjectWrapper;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
-public class ValueObjectGenerator {
-	public void generate(InterfaceDeclaration declaration){
+public class HibernateCfgGenerator {
+	public void generate(List<String> resourcesName){
         try {
 			/* Create and adjust the configuration */
 			Configuration cfg = new Configuration();
-			cfg.setDirectoryForTemplateLoading(new File("./cfg/templates"));
+			cfg.setDirectoryForTemplateLoading(
+			        new File("./cfg/templates"));
 			cfg.setObjectWrapper(new DefaultObjectWrapper());
 
 			/* ------------------------------------------------------------------- */    
 			/* You usually do these for many times in the application life-cycle:  */    
 			        
 			/* Get or create a template */
-			Template tempVO = cfg.getTemplate("valueoject.java.ftl");
-	      
+			Template tempHibernate = cfg.getTemplate("hibernate.cfg.xml.ftl");
+		              
 			/* Create a data model */
-			Map<String, VoGenHelper> rootVO = new HashMap<String, VoGenHelper>();
-			VoGenHelper helperVO = new VoGenHelper(declaration);
-			rootVO.put("declaration", helperVO);
+			Map<String,List> rootHibernate = new HashMap<String, List>();
+			
+			rootHibernate.put("resources", resourcesName);
 	        /* Merge data model with template */
-	        Writer out = new OutputStreamWriter(System.out);
-	        tempVO.process(rootVO, out);
-	        out.flush();
+	        Writer outHbCfg = new OutputStreamWriter(System.out);
+	        tempHibernate.process(rootHibernate, outHbCfg);
+	        outHbCfg.flush();
 	        
-        
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

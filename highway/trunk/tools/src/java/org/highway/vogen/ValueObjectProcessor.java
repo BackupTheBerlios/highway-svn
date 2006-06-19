@@ -1,6 +1,5 @@
-package org.highway.vogen.apt;
+package org.highway.vogen;
 
-import org.highway.vogen.freemarker.HibernateCfgGenerator;
 
 import com.sun.mirror.apt.AnnotationProcessor;
 import com.sun.mirror.apt.AnnotationProcessorEnvironment;
@@ -16,7 +15,6 @@ public class ValueObjectProcessor implements AnnotationProcessor {
 	public void process() {
 		ValueObjectDefVisitor voVisitor = new ValueObjectDefVisitor(env);
 		for ( Declaration d : env.getTypeDeclarations()) {
-			System.out.println("declaration : " + d.getSimpleName());
 			d.accept(  DeclarationVisitors.getSourceOrderDeclarationScanner(
 					voVisitor, DeclarationVisitors.NO_OP) );
 		}
