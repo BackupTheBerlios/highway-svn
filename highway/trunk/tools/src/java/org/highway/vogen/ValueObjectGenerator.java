@@ -7,7 +7,6 @@ import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.highway.vogen.freemarker.VoGenHelper;
 
 import com.sun.mirror.declaration.InterfaceDeclaration;
 

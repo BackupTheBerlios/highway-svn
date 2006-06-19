@@ -1,4 +1,4 @@
-package org.highway.vogen.freemarker;
+package org.highway.vogen;
 
 import java.util.Collection;
 
@@ -7,8 +7,6 @@ import org.highway.annotation.VoAbstract;
 import org.highway.annotation.VoBaseOnly;
 import org.highway.annotation.VoSerialVersionUID;
 import org.highway.annotation.VoSuperClass;
-import org.highway.vogen.VoGenConstantsHibernate2;
-import org.highway.vogen.VoGenConstantsHibernate3;
 
 import com.sun.mirror.declaration.InterfaceDeclaration;
 import com.sun.mirror.declaration.MethodDeclaration;

@@ -12,7 +12,6 @@ import org.highway.annotation.VoMappingDiscriminatorValue;
 import org.highway.annotation.VoMappingGeneratorParam;
 import org.highway.annotation.VoMappingId;
 import org.highway.annotation.VoMappingProperty;
-import org.highway.vogen.freemarker.VoGenHelper;
 
 import com.sun.mirror.declaration.InterfaceDeclaration;
 import com.sun.mirror.declaration.MethodDeclaration;
