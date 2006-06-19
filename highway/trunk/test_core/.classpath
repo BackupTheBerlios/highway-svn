@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="bin/gensrc"/>
+	<classpathentry kind="src" path="/highway_core"/>
+	<classpathentry kind="lib" path="lib/xerces-2.4.0.jar"/>
+	<classpathentry kind="lib" path="lib/db2jcc_license_cisuz.jar"/>
+	<classpathentry kind="lib" path="lib/db2jcc-8.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry sourcepath="ECLIPSE_HOME/plugins/org.eclipse.jdt.source_3.1.1/src/org.junit_3.8.1/junitsrc.zip" kind="var" path="JUNIT_HOME/junit.jar"/>
+	<classpathentry kind="output" path="bin/eclipse"/>
+</classpath>
