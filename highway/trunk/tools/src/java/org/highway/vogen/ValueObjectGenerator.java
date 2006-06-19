@@ -1,6 +1,7 @@
 package org.highway.vogen;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
@@ -34,6 +35,9 @@ public class ValueObjectGenerator {
 			VoGenHelper helperVO = new VoGenHelper(declaration);
 			rootVO.put("declaration", helperVO);
 	        /* Merge data model with template */
+			File file = new File("/bin/gensrc/");
+			Writer out = new FileWriter(file);
+			
 	        Writer out = new OutputStreamWriter(System.out);
 	        tempVO.process(rootVO, out);
 	        out.flush();
