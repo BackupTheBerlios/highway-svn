@@ -131,7 +131,9 @@ public class HibernateHelper implements  VoGenConstantsHibernate3{
 		return propertyType + HIBERNATE_TYPE_SUFFIX;
 
 	// case where the property type extends Decimal
-	if (propertyType.getClass().isAssignableFrom(org.highway.vo.Decimal.class))
+	// TODO :  temporaire
+	//if (propertyType.getClass().isAssignableFrom(org.highway.vo.Decimal.class))
+	if (propertyType.getClass().isAssignableFrom(Number.class))
 		return DECIMAL_HIBERNATE_TYPE_CLASS_NAME;
 
 	// case where the property type is not an enum:
