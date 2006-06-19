@@ -1,0 +1,69 @@
+
+proc ex1 {serverName args} {
+
+   #--------------------------------------------------------------
+   # check for optional argument 
+   #--------------------------------------------------------------
+   set app [lindex $args 0]
+   if {[llength $args] > 1} {
+      set appName [lindex $args 1]
+   } else {
+      set appName ""
+   }
+
+   #--------------------------------------------------------------
+   # set up globals
+   #--------------------------------------------------------------
+   global AdminConfig
+   global AdminControl
+   global AdminApp
+
+
+
+   #--------------------------------------------------------------
+   #     -- was a earfile name supplied 
+   #--------------------------------------------------------------
+   if {[llength $app] == 0} {
+      puts "ex1: Error -- No application specified."
+      return 
+   }
+
+
+
+   #--------------------------------------------------------------
+   # Install an application onto this server
+   #--------------------------------------------------------------
+   puts "ex1: installing the application"
+   set app_options [list  -server $serverName]
+   if {[llength $appName] > 0} {
+      lappend app_options -appname $appName
+   }
+   $AdminApp install $app $app_options 
+
+   #--------------------------------------------------------------
+   # Save all the changes 
+   #--------------------------------------------------------------
+   puts "ex1: saving the configuration"
+   $AdminConfig save
+
+
+   #--------------------------------------------------------------
+   # start the server 
+   #--------------------------------------------------------------
+   $AdminControl invoke [$AdminControl queryNames type=ApplicationManager,*] startApplication $appName
+
+}
+
+#-----------------------------------------------------------------
+# Main
+#-----------------------------------------------------------------
+if { !($argc == 2 || $argc == 3) } {
+   puts "ex1: this script requires 3 or 4 parameters: server name,  ear file, and (optionally) application name"
+   puts "e.g.:     ex1  server2  c:/WebSphere/AppServer/installableApps/jmsample.ear myapp1" 
+} else { 
+   set serverName       [lindex $argv 0]  
+   set application      [lindex $argv 1]
+   set appName          [lindex $argv 2]
+
+   ex1 $serverName  $application $appName
+}

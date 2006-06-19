@@ -1,0 +1,160 @@
+proc exInstallDataSource {cellName nodeName providerName classpathName dataSourceName aliasName userName passwordName} {
+
+#--------------------------------------------------------------
+# set up globals
+#--------------------------------------------------------------
+global AdminConfig
+global AdminControl
+
+
+# script jacl d'installation d'une datasource
+
+
+# création d'un nouveau fournisseur JDBC
+set node [$AdminConfig  getid  /Cell:$cellName/Node:$nodeName/]
+puts "récupération du noeud"
+# récupération des attributs obligatoires
+$AdminConfig required JDBCProvider
+
+set n1 [list name $providerName]
+set implCN [list implementationClassName COM.ibm.db2.jdbc.DB2XADataSource]
+set  jdbcAttrs [list $n1 $implCN]
+
+$AdminConfig create JDBCProvider $node $jdbcAttrs
+
+puts "création du JDBC provider effectué"
+$AdminConfig save
+puts "sauvegarde du provider"
+
+# création de la datasource
+set newjdbc [$AdminConfig getid /Cell:$cellName/Node:$nodeName/JDBCProvider:$providerName/]
+puts "récupération du provider"
+
+#ajout d'un nom jndi
+#set classpath_attr [list classpath "C:/Program Files/DB2/java/db2java.zip"]
+set classpath_attr [list classpath $classpathName]
+set attrs [list $classpath_attr ]
+$AdminConfig modify $newjdbc $attrs
+puts "mise à jour du classpath"
+
+
+# récupération des attributs obligatoires
+$AdminConfig required DataSource
+# définition des attributs obligatoires
+set name [list name $dataSourceName]
+set dsAttrs [list $name]
+
+# création de la source de donnée
+set newds [$AdminConfig create DataSource $newjdbc $dsAttrs]
+puts "création de la datasource effectuée"
+#sauvegarde
+$AdminConfig save
+
+puts "sauvegarde de la datasource"
+# configuration du pool de connection
+#identification du parent
+set newds [$AdminConfig getid /Cell:$cellName/Node:$nodeName/JDBCProvider:$providerName/DataSource:$dataSourceName/]
+
+puts "récupération de la datasource"
+# création du pool
+$AdminConfig create ConnectionPool $newds {}
+puts "création du pool de connection effectué"
+#sauvegarde
+$AdminConfig save
+puts "sauvegarde du pool de connection"
+
+
+
+# configuration des propriétés personnalisées de la datasource
+
+set newds [$AdminConfig getid /Cell:$cellName/Node:$nodeName/JDBCProvider:$providerName/DataSource:$dataSourceName/]
+set J2EEResourcePropertySetId [$AdminConfig create J2EEResourcePropertySet $newds {}]
+puts "création des données personnalisées de la datasource"
+# récupération de l'ensemble des ressources J2EE
+set propSet [$AdminConfig showAttribute $newds propertySet]
+
+# récupération des attributs obligatoires
+$AdminConfig required J2EEResourceProperty
+# définition des attributs
+set name [list name databaseName]
+set values [list value SOCLE]
+set rpAttrs [list $name $values]
+# création de la propriété de ressource J2EE
+$AdminConfig create J2EEResourceProperty $propSet $rpAttrs
+puts "création des données personnalisées effectuées"
+#sauvegarde
+$AdminConfig save
+
+#ajout d'un nom jndi
+set jndiName_attr [list jndiName jdbc/$dataSourceName]
+set attrs [list $jndiName_attr ]
+$AdminConfig modify $newds $attrs
+puts "mise à jour du nom JNDI effectué"
+
+# Configuration données d'authentification J2C
+puts "création des données d'authentification"
+set security [$AdminConfig getid /Cell:$cellName/Security:/]
+# définition des paramètres
+set alias [list alias $aliasName]
+set userid [list userId $userName]
+set password [list password $passwordName]
+set jaasAttrs [list $alias $userid $password]
+# création des données d'authenfication JAAS
+set autherData [$AdminConfig create JAASAuthData $security $jaasAttrs]
+puts "création des données d'authentification effectuée"
+#sauvegarde
+$AdminConfig save
+
+
+
+set ParentServerId [$AdminConfig getid /Server:server1/]
+set J2CResourceAdapterId [$AdminConfig getid "/Node:$nodeName/J2CResourceAdapter:WebSphere Relational Resource Adapter/"]
+puts "création du ressource adapteur effectué"
+
+set DatasourceHelperClassname "com.ibm.websphere.rsadapter.GenericDataStoreHelper"
+set DataSourceAttrs02 [subst {{authMechanismPreference "BASIC_PASSWORD"}  {statementCacheSize 10} {datasourceHelperClassname $DatasourceHelperClassname} {relationalResourceAdapter $J2CResourceAdapterId}}]
+
+$AdminConfig modify $newds $DataSourceAttrs02
+puts "modification des données de la datasource"
+
+set alias_attr [list authDataAlias $aliasName]
+set attrs [list $alias_attr ]
+$AdminConfig modify $newds $attrs
+
+
+set MappingModuleAttrs [subst {{mappingConfigAlias "DefaultPrincipalMapping"} }]
+set MappingModuleId [$AdminConfig create MappingModule $newds $MappingModuleAttrs]
+$AdminConfig modify $MappingModuleId $attrs
+puts "modification du mapping de la datasource"
+
+$AdminConfig save
+
+#connection à las source de donnée
+set ds [$AdminConfig getid /DataSource:$dataSourceName/]
+$AdminControl testConnection $ds
+puts "test de connection effectué"
+
+}
+
+#-----------------------------------------------------------------
+# Main
+#-----------------------------------------------------------------
+if { !($argc == 8) } {
+   puts "this script requires 8 parameters: the name of the cell name and node under which to create resources,"
+   puts "     the name of the provider, the classpath of the datasource jar the datasourcename, the alias, the user name and the password of the databaseuser."
+   puts ""
+   puts "e.g.:     w0005288Node01Cell  w0005288 provider1 C:/Program Files/DB2/java/db2java.zip demoDs myalias db2admin admin" 
+} else { 
+   set cellName [lindex $argv 0]
+   set nodeName      [lindex $argv 1]  
+   set providerName      [lindex $argv 2] 
+   set classpathName [lindex $argv 3]
+   set dataSourceName      [lindex $argv 4]
+   set aliasName      [lindex $argv 5]
+   set userName      [lindex $argv 6]
+   set passwordName      [lindex $argv 7]
+  
+   exInstallDataSource $cellName $nodeName $providerName $classpathName $dataSourceName $aliasName $userName $passwordName
+}
+
+

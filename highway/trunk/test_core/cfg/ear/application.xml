@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE application PUBLIC
+	"-//Sun Microsystems, Inc.//DTD J2EE Application 1.3//EN"
+	"http://java.sun.com/dtd/application_1_3.dtd">
+	
+<application id="Application_ID">
+	
+	<display-name>socle-j2ee-service-test</display-name>
+	
+	<module id="WebModule_ID">
+		<web>
+			<web-uri>socle-j2ee-service-test.war</web-uri>
+			<context-root>servicetest</context-root>
+		</web>
+	</module>
+	
+	<module id="EjbModule_ID">
+		<ejb>socle-j2ee-service-test_ejb.jar</ejb>
+	</module>
+	
+	<module id="JcaModule_ID">
+		<connector>socle-j2ee-core.jar</connector> 
+	</module>
+	
+</application>

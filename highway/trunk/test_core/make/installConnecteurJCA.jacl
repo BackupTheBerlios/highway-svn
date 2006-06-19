@@ -1,0 +1,86 @@
+proc exInstallConnecteur {cellName nodeName rarPath serverName urlIP port} {
+
+global AdminConfig
+
+
+set node [$AdminConfig  getid  /Cell:$cellName/Node:$nodeName/]
+
+set J2CResourceAdapterId [$AdminConfig list J2CResourceAdapter $node]
+puts "création du ressource adapteur effectué"
+
+set rarFile $rarPath
+set option  [list  -rar.name  ECIRessourceAdapter]
+puts "$rarPath"
+set newra [$AdminConfig installResourceAdapter $rarFile $nodeName $option]
+puts "création adapteur effectué"
+#$AdminConfig save
+
+
+# création des propriétés personnalisées
+set propSet [$AdminConfig showAttribute $newra propertySet]
+
+
+set J2EEResourcePropertySetId [$AdminConfig create J2EEResourcePropertySet $newra {}]
+
+set attrs01 [subst {{name ServerName} {type java.lang.String} {value "$serverName"} {required "false"} {description "ServerName"}}]
+set attrs02 [subst {{name ConnectionURL} {type java.lang.String} {value "$urlIP"} {required "false"} {description "ConnectionURL"}}]
+set attrs03 [subst {{name PortNumber} {type java.lang.String} {value "$port"} {required "false"} {description "PortNumber"}}]
+set attrs04 [subst {{name UserName} {type java.lang.String} {value ""} {required "false"} {description "UserName"}}]
+set attrs05 [subst {{name Password} {type java.lang.String} {value ""} {required "false"} {description "Password"}}]
+set attrs06 [subst {{name ClientSecurity} {type java.lang.String} {value ""} {required "false"} {description "ClientSecurity"}}]
+set attrs07 [subst {{name ServerSecurity} {type java.lang.String} {value ""} {required "false"} {description "ServerSecurity"}}]
+set attrs08 [subst {{name KeyRingClass} {type java.lang.String} {value ""} {required "false"} {description "KeyRingClass"}}]
+set attrs09 [subst {{name KeyRingPassword} {type java.lang.String} {value ""} {required "false"} {description "KeyRingPassword"}}]
+set attrs10 [subst {{name TranName} {type java.lang.String} {value ""} {required "false"} {description "TranName"}}]
+set attrs11 [subst {{name TPNName} {type java.lang.String} {value ""} {required "false"} {description "TPNName"}}]
+set attrs12 [subst {{name TraceLevel} {type java.lang.Integer} {value "1"} {required "false"} {description "TraceLevel"}}]
+
+$AdminConfig create J2EEResourceProperty $J2EEResourcePropertySetId [subst $attrs01]
+$AdminConfig create J2EEResourceProperty $J2EEResourcePropertySetId [subst $attrs02]
+$AdminConfig create J2EEResourceProperty $J2EEResourcePropertySetId [subst $attrs03]
+$AdminConfig create J2EEResourceProperty $J2EEResourcePropertySetId [subst $attrs04]
+$AdminConfig create J2EEResourceProperty $J2EEResourcePropertySetId [subst $attrs05]
+$AdminConfig create J2EEResourceProperty $J2EEResourcePropertySetId [subst $attrs06]
+$AdminConfig create J2EEResourceProperty $J2EEResourcePropertySetId [subst $attrs07]
+$AdminConfig create J2EEResourceProperty $J2EEResourcePropertySetId [subst $attrs08]
+$AdminConfig create J2EEResourceProperty $J2EEResourcePropertySetId [subst $attrs09]
+$AdminConfig create J2EEResourceProperty $J2EEResourcePropertySetId [subst $attrs10]
+$AdminConfig create J2EEResourceProperty $J2EEResourcePropertySetId [subst $attrs11]
+set J2EEResourcePropertyId [$AdminConfig create J2EEResourceProperty $J2EEResourcePropertySetId [subst $attrs12]]
+#puts "création des propriétés personnalisées effectuées"
+
+
+set name [list name CICSConnectionFactory]
+set jname [list jndiName CICSConnectionFactory]
+set description [list description ConnectionFactory permet de se connecter au serveur CICS]
+set j2ccfAttrs [list $name $jname]
+
+$AdminConfig create J2CConnectionFactory $newra $j2ccfAttrs
+puts "création de la fabrique J2C"
+
+
+$AdminConfig save
+
+}
+
+#-----------------------------------------------------------------
+# Main
+#-----------------------------------------------------------------
+if { !($argc == 6) } {
+   puts "ex7: this script requires 6 parameters: the name of the cell and the node under which to create resources,"
+   puts "     the name rar path of ctg rar, the parameter for mevapi ie the server name, the connection url and the port number."
+   puts ""
+   puts "e.g.:     w0005288Node01Cell  w0005288 C:/Projets/socle_EVO/socle_j2ee_ctg/lib/cicseci.rar CID6 tcp://10.0.32.96 11521" 
+} else { 
+set cellName    [lindex $argv 0]
+set nodeName      [lindex $argv 1]  
+   set rarPath      [lindex $argv 2]  
+   set serverName      [lindex $argv 3]  
+   set urlIP      [lindex $argv 4]  
+   set port      [lindex $argv 5]  
+   exInstallConnecteur $cellName $nodeName $rarPath $serverName $urlIP $port
+}
+
+
+
+

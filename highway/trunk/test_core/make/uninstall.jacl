@@ -1,0 +1,44 @@
+
+proc ex2 {serverName args} {
+
+
+   #--------------------------------------------------------------
+   # check for optional argument 
+   #--------------------------------------------------------------
+   set app [lindex $args 0]
+   if {[llength $args] > 1} {
+      set appName [lindex $args 1]
+   } else {
+      set appName ""
+   }
+
+   #--------------------------------------------------------------
+   # set up globals
+   #--------------------------------------------------------------
+   global AdminConfig
+   global AdminControl
+   global AdminApp
+
+$AdminApp list
+set appMgr [$AdminControl queryNames type=ApplicationManager,*] 
+$AdminControl invoke $appMgr stopApplication $appName
+$AdminApp uninstall $appName
+$AdminApp list
+$AdminConfig save 
+
+}
+
+
+#-----------------------------------------------------------------
+# Main
+#-----------------------------------------------------------------
+if { !($argc == 2 || $argc == 3) } {
+   puts "ex1: this script requires 3 or 4 parameters: server name,  ear file, and (optionally) application name"
+   puts "e.g.:     ex1  server2  c:/WebSphere/AppServer/installableApps/jmsample.ear myapp1" 
+} else { 
+   set serverName       [lindex $argv 0]  
+   set application      [lindex $argv 1]
+   set appName          [lindex $argv 2]
+
+   ex2 $serverName  $application $appName
+}
