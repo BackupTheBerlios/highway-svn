@@ -1,4 +1,4 @@
-package com.manpower.socle.helper;
+package org.highway.helper;
 
 import org.highway.helper.StringHelper;
 

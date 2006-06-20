@@ -1,8 +1,8 @@
-package com.manpower.socle.legacy;
+package org.highway.legacy;
 
-import com.manpower.socle.legacy.AnnotationConverter;
-import com.manpower.socle.legacy.BasicConverter;
-import com.manpower.socle.legacy.ConverterMap;
+import org.highway.legacy.AnnotationConverter;
+import org.highway.legacy.BasicConverter;
+import org.highway.legacy.ConverterMap;
 
 public class ConverterMapMock extends ConverterMap
 {

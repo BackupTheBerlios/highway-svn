@@ -1,4 +1,4 @@
-package com.manpower.socle.legacy;
+package org.highway.legacy;
 
 import java.io.InputStream;
 import java.io.OutputStream;

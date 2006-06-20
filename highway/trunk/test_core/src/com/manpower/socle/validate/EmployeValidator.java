@@ -1,4 +1,4 @@
-package com.manpower.socle.validate;
+package org.highway.validate;
 
 import org.highway.helper.Wrapper;
 import org.highway.validate.JavaBeanValidator;

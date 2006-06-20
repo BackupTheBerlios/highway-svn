@@ -1,6 +1,6 @@
-package com.manpower.socle.legacy;
+package org.highway.legacy;
 
-import com.manpower.socle.vo.ValueObject;
+import org.highway.vo.ValueObject;
 
 public interface StringMockDef extends ValueObject
 {

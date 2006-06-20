@@ -1,11 +1,12 @@
-package com.manpower.socle.legacy;
+package org.highway.legacy;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 
+import org.highway.vo.Decimal;
+
 import junit.framework.TestCase;
 
-import com.manpower.socle.vo.Decimal;
 
 public class DecimalConverterTest extends TestCase
 {

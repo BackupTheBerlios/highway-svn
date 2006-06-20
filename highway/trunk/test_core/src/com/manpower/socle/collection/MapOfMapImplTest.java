@@ -1,4 +1,4 @@
-package com.manpower.socle.collection;
+package org.highway.collection;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,8 +1,9 @@
-package com.manpower.socle.vo;
+package org.highway.vo;
 
 import java.math.BigDecimal;
 
-import com.manpower.socle.helper.Serializer;
+import org.highway.helper.Serializer;
+
 
 import junit.framework.TestCase;
 

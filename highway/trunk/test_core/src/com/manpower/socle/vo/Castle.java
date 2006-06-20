@@ -1,4 +1,4 @@
-package com.manpower.socle.vo;
+package org.highway.vo;
 
 public class Castle extends CastleBase
 {

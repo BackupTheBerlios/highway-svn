@@ -1,10 +1,11 @@
-package com.manpower.socle.legacy;
+package org.highway.legacy;
 
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import com.manpower.socle.legacy.AnnotationConverter;
-import com.manpower.socle.legacy.ConvertException;
+import org.highway.legacy.AnnotationConverter;
+import org.highway.legacy.ConvertException;
+
 
 public class AnnotationConverterMockImpl implements AnnotationConverter
 {

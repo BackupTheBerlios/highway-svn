@@ -1,12 +1,15 @@
-package com.manpower.socle.vo;
+package org.highway.vo;
 
 import java.util.Date;
 
+import org.highway.annotation.BeanPropertyMandatory;
+import org.highway.annotation.BeanPropertySize;
 import org.highway.vo.ValueObject;
 
 /**
  * @author David Attias
  */
+@org.highway.annotation.ValueObject
 public interface BuildingDef extends ValueObject
 {
 	/**
@@ -14,26 +17,17 @@ public interface BuildingDef extends ValueObject
 	 */
 	long getId();
 	
-	/**
-	 * @socle.vo.property.min 3
-	 * @socle.vo.property.max 30
-	 * @socle.vo.property.mandatory true
-	 */
+	@BeanPropertySize(min=3,max=30)
+	@BeanPropertyMandatory
 	String getName();
 	
-	/**
-	 * @socle.vo.property.mandatory true
-	 */
+	@BeanPropertyMandatory
 	double getSurface();
 	
-	/**
-	 * @socle.vo.property.mandatory true
-	 */
+	@BeanPropertyMandatory
 	Date getConstructionDate();
 	
-	/**
-	 * @socle.vo.property.mandatory true
-	 */
+	 @BeanPropertyMandatory
 	int getFloorNumber();
 	
 	/**

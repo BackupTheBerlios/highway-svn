@@ -1,4 +1,4 @@
-package com.manpower.socle.database.hibernate;
+package org.highway.database.hibernate;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -140,13 +140,13 @@ public interface MappingTestVoDef extends ValueObject
 	
 	/**
 	 * @socle.mapping.property column="BLOB" 
-	 *                         type="com.manpower.socle.database.hibernate.ByteArray2BlobHibernateType"
+	 *                         type="org.highway.database.hibernate.ByteArray2BlobHibernateType"
 	 */
 	byte[] getByteArrayBlobProperty();
 	
 	/**
 	 * @socle.mapping.property column="CLOB"
-	 *                         type="com.manpower.socle.database.hibernate.String2ClobHibernateType"
+	 *                         type="org.highway.database.hibernate.String2ClobHibernateType"
 	 */
 	String getStringClobProperty();
 }

@@ -1,4 +1,4 @@
-package com.manpower.socle.vo;
+package org.highway.vo;
 
 import java.util.List;
 

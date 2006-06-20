@@ -1,4 +1,4 @@
-package com.manpower.socle.io;
+package org.highway.io;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import junit.framework.TestCase;
 
 import org.highway.io.StandardZipSerializer;
 
-import com.manpower.socle.validate.Firme;
+import org.highway.validate.Firme;
 
 public class CompressionWeightTest extends TestCase {
 

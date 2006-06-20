@@ -1,4 +1,4 @@
-package com.manpower.socle.cache;
+package org.highway.cache;
 
 import java.util.Properties;
 
@@ -12,10 +12,10 @@ import org.highway.debug.Log4jDebugLog;
 
 
 /**
- * Unit tests for {@link com.manpower.socle.cache.FileDataCache}.
+ * Unit tests for {@link org.highway.cache.FileDataCache}.
  * 
- * @see com.manpower.socle.cache.MyRefreshableData
- * @see com.manpower.socle.cache.MyRefreshableDataSet
+ * @see org.highway.cache.MyRefreshableData
+ * @see org.highway.cache.MyRefreshableDataSet
  * 
  * @author Christian de Bevotte
  * @since 1.4.5

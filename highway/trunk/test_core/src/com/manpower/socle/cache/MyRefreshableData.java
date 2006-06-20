@@ -1,4 +1,4 @@
-package com.manpower.socle.cache;
+package org.highway.cache;
 
 import org.highway.cache.DataVersion;
 import org.highway.cache.RefreshableData;
@@ -11,7 +11,7 @@ import org.highway.io.ChecksumHelper;
  * a refresh occurs. In case the value changed, a data transfer is simulated by
  * waiting for a given time.
  * 
- * @see com.manpower.socle.cache.FileDataCacheTest
+ * @see org.highway.cache.FileDataCacheTest
  * 
  * @author Christian de Bevotte
  * @since 1.4.5

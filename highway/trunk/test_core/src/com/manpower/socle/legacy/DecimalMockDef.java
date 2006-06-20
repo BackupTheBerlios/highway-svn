@@ -1,7 +1,7 @@
-package com.manpower.socle.legacy;
+package org.highway.legacy;
 
-import com.manpower.socle.vo.Decimal;
-import com.manpower.socle.vo.ValueObject;
+import org.highway.vo.Decimal;
+import org.highway.vo.ValueObject;
 
 public interface DecimalMockDef extends ValueObject
 {

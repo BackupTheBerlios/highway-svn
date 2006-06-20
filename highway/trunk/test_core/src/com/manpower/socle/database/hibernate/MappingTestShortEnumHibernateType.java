@@ -1,4 +1,4 @@
-package com.manpower.socle.database.hibernate;
+package org.highway.database.hibernate;
 
 import org.highway.database.hibernate.EnumHibernateType;
 

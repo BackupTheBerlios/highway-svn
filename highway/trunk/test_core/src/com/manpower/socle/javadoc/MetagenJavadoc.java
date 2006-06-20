@@ -1,4 +1,4 @@
-package com.manpower.socle.javadoc;
+package org.highway.javadoc;
 
 import java.util.List;
 

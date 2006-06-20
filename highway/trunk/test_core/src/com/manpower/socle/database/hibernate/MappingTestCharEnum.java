@@ -1,4 +1,4 @@
-package com.manpower.socle.database.hibernate;
+package org.highway.database.hibernate;
 
 import java.util.ArrayList;
 import java.util.List;

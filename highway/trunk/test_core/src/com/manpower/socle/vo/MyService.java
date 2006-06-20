@@ -1,4 +1,4 @@
-package com.manpower.socle.vo;
+package org.highway.vo;
 
 import org.highway.service.ejb.EjbService;
 

@@ -1,8 +1,9 @@
-package com.manpower.socle.legacy;
+package org.highway.legacy;
+
+import org.highway.init.InitException;
 
 import junit.framework.TestCase;
 
-import com.manpower.socle.init.InitException;
 
 /**
  * 

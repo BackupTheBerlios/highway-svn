@@ -1,11 +1,12 @@
-package com.manpower.socle.io;
+package org.highway.io;
 
-import com.manpower.socle.helper.ValueHelper;
-import com.manpower.socle.validate.Employe;
-import com.manpower.socle.validate.Firme;
-import com.manpower.socle.validate.Human;
-import com.manpower.socle.vo.Building;
-import com.manpower.socle.vo.ValueObjectAbstract;
+import org.highway.helper.ValueHelper;
+import org.highway.validate.Employe;
+import org.highway.validate.Human;
+import org.highway.vo.Building;
+import org.highway.vo.ValueObjectAbstract;
+
+import org.highway.validate.Firme;
 
 public class ObjectToCompress  extends ValueObjectAbstract {
 

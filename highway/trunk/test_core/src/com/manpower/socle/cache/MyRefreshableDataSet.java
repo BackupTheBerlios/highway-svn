@@ -1,4 +1,4 @@
-package com.manpower.socle.cache;
+package org.highway.cache;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,9 +10,9 @@ import org.highway.cache.RefreshableDataSet;
 
 /**
  * <tt>RefreshableDataSet</tt> test implementation based on a map of
- * {@link com.manpower.socle.cache.RefreshableData}.
+ * {@link org.highway.cache.RefreshableData}.
  * 
- * @see com.manpower.socle.cache.FileDataCacheTest
+ * @see org.highway.cache.FileDataCacheTest
  * 
  * @author Christian de Bevotte
  * @since 1.4.5

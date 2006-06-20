@@ -1,4 +1,4 @@
-package com.manpower.socle.legacy;
+package org.highway.legacy;
 
 
 public class ConverterMap2Mock extends ConverterMap

@@ -1,4 +1,4 @@
-package com.manpower.socle.database.hibernate;
+package org.highway.database.hibernate;
 
 import org.highway.database.hibernate.TrimInterceptor;
 import org.highway.database.hibernate.TrimmedStringHibernateType;
@@ -25,7 +25,7 @@ public interface TrimTestVoDef extends ValueObject
 	 * This property is trimmed through {@link TrimmedStringHibernateType}.
 	 * 
 	 * @socle.mapping.property column="PROPERTY_2"
-	 *                         type="com.manpower.socle.database.hibernate.TrimmedStringHibernateType"
+	 *                         type="org.highway.database.hibernate.TrimmedStringHibernateType"
 	 */
 	String getProperty2();
 	

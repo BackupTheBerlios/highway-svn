@@ -1,4 +1,4 @@
-package com.manpower.socle.collection;
+package org.highway.collection;
 
 import junit.framework.TestCase;
 

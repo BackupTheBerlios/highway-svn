@@ -1,8 +1,9 @@
-package com.manpower.socle.validate;
+package org.highway.validate;
 
 import java.util.Collections;
 
-import com.manpower.socle.helper.Serializer;
+import org.highway.helper.Serializer;
+
 
 import junit.framework.TestCase;
 

@@ -1,7 +1,7 @@
-package com.manpower.socle.validate;
+package org.highway.validate;
 
-import com.manpower.socle.helper.ValueHelper;
-import com.manpower.socle.vo.ValueObjectAbstract;
+import org.highway.helper.ValueHelper;
+import org.highway.vo.ValueObjectAbstract;
 
 /**
  * @author attias

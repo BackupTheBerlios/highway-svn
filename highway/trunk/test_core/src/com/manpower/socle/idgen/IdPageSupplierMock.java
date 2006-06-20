@@ -1,4 +1,4 @@
-package com.manpower.socle.idgen;
+package org.highway.idgen;
 
 import java.util.HashMap;
 import java.util.Map;
