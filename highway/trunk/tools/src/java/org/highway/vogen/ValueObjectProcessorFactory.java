@@ -21,7 +21,7 @@ public class ValueObjectProcessorFactory implements AnnotationProcessorFactory {
 	
 	/** Collection contenant le nom des Annotations supportées. */
 	protected Collection<String> supportedAnnotationTypes = 
-		Arrays.asList(GenerateEjb.class.getName(),  ValueObject.class.getName() );
+		Arrays.asList(ValueObject.class.getName() );
 
 	
 	/** Collection des options supportées. */

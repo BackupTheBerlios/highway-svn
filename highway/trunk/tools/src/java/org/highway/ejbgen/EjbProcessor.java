@@ -1,9 +1,6 @@
 package org.highway.ejbgen;
 
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 import com.sun.mirror.apt.AnnotationProcessor;
 import com.sun.mirror.apt.AnnotationProcessorEnvironment;
 import com.sun.mirror.declaration.Declaration;
