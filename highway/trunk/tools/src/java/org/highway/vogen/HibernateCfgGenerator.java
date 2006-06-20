@@ -18,8 +18,8 @@ public class HibernateCfgGenerator {
         try {
 			/* Create and adjust the configuration */
 			Configuration cfg = new Configuration();
-			cfg.setDirectoryForTemplateLoading(
-			        new File("./cfg/templates"));
+//			cfg.setDirectoryForTemplateLoading(new File("org.highway.vogen"));
+			cfg.setClassForTemplateLoading(getClass(), "");
 			cfg.setObjectWrapper(new DefaultObjectWrapper());
 
 			/* ------------------------------------------------------------------- */    

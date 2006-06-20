@@ -8,6 +8,8 @@ import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.highway.annotation.ValueObject;
+
 
 import com.sun.mirror.declaration.InterfaceDeclaration;
 
@@ -21,7 +23,8 @@ public class ValueObjectGenerator {
         try {
 			/* Create and adjust the configuration */
 			Configuration cfg = new Configuration();
-			cfg.setDirectoryForTemplateLoading(new File("./cfg/templates"));
+//			cfg.setDirectoryForTemplateLoading(new File("org.highway.vogen"));
+			cfg.setClassForTemplateLoading(getClass(), "");
 			cfg.setObjectWrapper(new DefaultObjectWrapper());
 
 			/* ------------------------------------------------------------------- */    
@@ -35,8 +38,8 @@ public class ValueObjectGenerator {
 			VoGenHelper helperVO = new VoGenHelper(declaration);
 			rootVO.put("declaration", helperVO);
 	        /* Merge data model with template */
-			File file = new File("/bin/gensrc/");
-			Writer out = new FileWriter(file);
+			
+//			Writer out = new FileWriter("/bin/gensrc/"+declaration.getPackage().getQualifiedName().replace('.', '\\')+"\\"+declaration.getSimpleName()+".java"	);
 			
 	        Writer out = new OutputStreamWriter(System.out);
 	        tempVO.process(rootVO, out);
