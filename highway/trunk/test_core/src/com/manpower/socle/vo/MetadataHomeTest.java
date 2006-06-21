@@ -2,8 +2,6 @@ package org.highway.vo;
 
 import junit.framework.TestCase;
 
-import org.highway.vo.MetadataHome;
-
 /**
  * @author David Attias
  */
