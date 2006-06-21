@@ -1,3 +1,4 @@
+<@file name="hibernate.cfg.xml">
 <?xml version="1.0" encoding="<XDtConfig:configParameterValue paramName='Xmlencoding'/>"?>
 
 <!DOCTYPE hibernate-configuration PUBLIC "<XDtXml:publicId/>" "<XDtXml:systemId/>">
@@ -7,8 +8,10 @@
 <hibernate-configuration>
 
 	<session-factory>
-		<#list resources as resource><mapping resource="${resource}"/>
-    	</#list>
+<@forAllTypes var="type" annotation="org.highway.annotation.VoMapping" includeInterfaces="true">
+<mapping resource="${type.resourceHibernateFileName}"/>
+</@forAllTypes>
 	</session-factory>
 
 </hibernate-configuration>
+</@file>

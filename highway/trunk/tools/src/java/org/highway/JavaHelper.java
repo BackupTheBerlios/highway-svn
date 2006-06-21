@@ -106,7 +106,10 @@ public class JavaHelper
 			return s;
 		}
 	}
-
+	public static String removeDefSuffix(String className)
+	{
+		return className.substring(0, className.length() - 3);
+	}
 	public static String getGetterName(String propertyName)
 	{
 		return "get" + firstCharToUpperCase(propertyName);

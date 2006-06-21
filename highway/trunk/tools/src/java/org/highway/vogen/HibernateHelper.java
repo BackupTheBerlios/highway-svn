@@ -17,7 +17,7 @@ import com.sun.mirror.declaration.InterfaceDeclaration;
 import com.sun.mirror.declaration.MethodDeclaration;
 import com.sun.mirror.type.TypeMirror;
 
-public class HibernateHelper implements  VoGenConstantsHibernate3{
+public class HibernateHelper {
 	private static final String HIBERNATE_TYPE_SUFFIX = "HibernateType";
 	private static final String DECIMAL_HIBERNATE_TYPE_CLASS_NAME =
 		"org.highway.database.hibernate.DecimalHibernateType";
@@ -27,12 +27,7 @@ public class HibernateHelper implements  VoGenConstantsHibernate3{
 	public HibernateHelper(InterfaceDeclaration anInterfaceDeclaration) {
 		declaration = anInterfaceDeclaration;
 	}
-	public String getHibernateMappingSystemId(){
-		return HIBERNATE_CONFIGURATION_SYSTEM_ID;
-	}
-	public String getHibernateMappingPublicId(){
-		return HIBERNATE_CONFIGURATION_PUBLIC_ID;
-	}
+
 
 	public String getEntityFullClassName()
 	{
@@ -51,15 +46,15 @@ public class HibernateHelper implements  VoGenConstantsHibernate3{
 	public boolean getHasMapping(){
 		return declaration.getAnnotation(VoMapping.class)!=null;
 	}
-	public boolean getHasPrimitiveId(){
-		return countId()==1;
+	public static boolean hasPrimitiveId(InterfaceDeclaration aDeclaration){
+		return countId(aDeclaration)==1;
 	}
-	private int countId()
+	private static int countId(InterfaceDeclaration aDeclaration)
 	{
 		int count = 0;
 
 		
-		for (MethodDeclaration method : declaration.getMethods()) {
+		for (MethodDeclaration method : aDeclaration.getMethods()) {
 			if (method.getAnnotation(VoMappingId.class)!=null)
 			{
 				count++;
@@ -162,8 +157,8 @@ public class HibernateHelper implements  VoGenConstantsHibernate3{
 	public String getGeneratorParamValue(MethodDeclaration aMethod){
 		return aMethod.getAnnotation(VoMappingGeneratorParam.class).value();
 	}
-	public boolean getHasCompositeId(String template, Properties attributes) {
-		return countId() > 1;
+	public static boolean hasCompositeId(InterfaceDeclaration aDeclaration) {
+		return countId(aDeclaration) > 1;
 	}
 	public boolean getHasDiscriminator(){
 		return declaration.getAnnotation(VoMappingDiscriminator.class)!=null;
@@ -226,14 +221,5 @@ public class HibernateHelper implements  VoGenConstantsHibernate3{
 	public String getMappingTableValue(MethodDeclaration aMethod){
 		return "";
 	}
-	public static String getResourceNameForHibernate(InterfaceDeclaration declaration)
-	{
-		String result = VoGenHelper.getEntityClassName(declaration);
-		result = result.replace('.', '/');
-		result =
-			MessageFormat.format(
-				HIBERNATE_MAPPING_OUTPUT_FILE_NAME, new Object[] { result });
 
-		return result;
-	}
 }
