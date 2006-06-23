@@ -4,20 +4,20 @@ package org.highway.vogen;
 
 import net.sf.jelly.apt.decorations.declaration.DecoratedInterfaceDeclaration;
 
+import org.highway.ejbgen.EjbGenSessionHelper;
+
 import com.sun.mirror.declaration.InterfaceDeclaration;
 
-public class ValueObjectDecoratedInterfaceDeclaration extends
+public class HighwayDecoratedInterfaceDeclaration extends
 		DecoratedInterfaceDeclaration {
 
-	public ValueObjectDecoratedInterfaceDeclaration(InterfaceDeclaration delegate) {
+	public HighwayDecoratedInterfaceDeclaration(InterfaceDeclaration delegate) {
 		super(delegate);
 	}
-	public String getGeneratedClassName()
-	{
+	public String getGeneratedClassName(){
 		return VoGenHelper.getGeneratedClassName((InterfaceDeclaration) this.delegate);
 	}
-	public String getGeneratedShortClassName()
-	{
+	public String getGeneratedShortClassName(){
 		return VoGenHelper.getGeneratedShortClassName((InterfaceDeclaration) this.delegate);
 	}
 	public String getSuperClassName(){
@@ -34,5 +34,17 @@ public class ValueObjectDecoratedInterfaceDeclaration extends
 	}
 	public String getResourceHibernateFileName(){
 		return VoGenHelper.getResource((InterfaceDeclaration) this.delegate);
+	}
+	public String getHomeJndiName(){
+		return EjbGenSessionHelper.homeJNDIName((InterfaceDeclaration) this.delegate);
+	}
+	public String beanFullClassName(){
+		return EjbGenSessionHelper.beanFullClassName((InterfaceDeclaration) this.delegate);
+	}
+	public String homeFullClassName(){
+		return EjbGenSessionHelper.homeFullClassName((InterfaceDeclaration) this.delegate);
+	}
+	public String remoteFullClassName(){
+		return EjbGenSessionHelper.remoteFullClassName((InterfaceDeclaration) this.delegate);
 	}
 }
