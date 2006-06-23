@@ -33,7 +33,7 @@ public class EjbGenHelper implements EjbGenConstants
 		return JavaHelper.getShortClassName(getGeneratedFullClassName());
 	}
 
-	public String getParametersDeclaration(MethodDeclaration method){
+	public static String getParametersDeclaration(MethodDeclaration method){
 		if (method != null)
 		{
 			StringBuilder builder = new StringBuilder("");
@@ -55,14 +55,14 @@ public class EjbGenHelper implements EjbGenConstants
 		else
 			return Collections.EMPTY_LIST;
 	}
-	public String getExceptionsDeclaration(MethodDeclaration method){
+	public static String getExceptionsDeclaration(MethodDeclaration method){
 		if (method != null)
 		{
 			StringBuilder builder = new StringBuilder();
 			if (!method.getThrownTypes().isEmpty())
-				builder.append("throws");
+				builder.append("throws ");
 			for (ReferenceType exception : method.getThrownTypes()) {
-				if (builder.length()>0)
+				if (builder.length()>7)
 					builder.append(", ");
 				builder.append(exception.toString());
 			}
@@ -71,7 +71,7 @@ public class EjbGenHelper implements EjbGenConstants
 		else
 			return "";
 	}
-	public String getExceptionsDeclaration(MethodDeclaration method, String append){
+	public static String getExceptionsDeclaration(MethodDeclaration method, String append){
 		String decl = getExceptionsDeclaration(method);
 		if (decl.length()>0)
 			return decl+", "+append;

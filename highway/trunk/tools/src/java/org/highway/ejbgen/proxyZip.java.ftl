@@ -1,4 +1,6 @@
-package ${declaration.packageName}.ejb;
+<@forAllTypes var="type" includeInterfaces="true">
+<@javaSource name="${type.package.qualifiedName}.ejb.${type.generatedShortClassName}EjbProxy">
+package ${type.package.qualifiedName}.ejb;
 
 import org.highway.exception.TechnicalException;
 import org.highway.service.ejb.ZipEjbProxyRequest;
@@ -7,53 +9,53 @@ import org.highway.helper.ValueHelper;
 import java.util.List;
 import java.util.ArrayList;
 
-public class  ${declaration.generatedShortClassName}EjbProxy extends ZipEjbProxy
-	implements ${declaration.generatedFullClassName}
+public class  ${type.generatedShortClassName}EjbProxy extends ZipEjbProxy
+	implements ${declaration.generatedClassName}
 {
 	protected Class getServiceClass()
 	{
-		return ${declaration.generatedFullClassName}.class;
+		return ${declaration.generatedClassName}.class;
 	}
 
-<#list declaration.methods as method>
-	public ${method.returnType} ${method.simpleName}(${declaration.getParametersDeclaration(method)})
-		${declaration.getExceptionsDeclaration(method)}
+<@forAllMethods var="method" indexVar="inc">
+	public ${method.returnType} ${method.simpleName}(${method.parametersDeclaration})
+	  ${method.exceptionsDeclaration}
 	{
 		try
 		{
-			ZipEjbProxyRequest request = init("${method.simpleName}","${method.simpleName}${declaration.incrementIndex}");
+			ZipEjbProxyRequest request = init("${method.simpleName}","${method.simpleName}${inc}");
 
-<#list declaration.parameters as parameter>
+<@forAllParameters var="parameter">
 			request.addParameter("${parameter.simpleName}", ${parameter.type}.class, ValueHelper.wrap(${parameter.simpleName}));
-</#list>
-<#if declaration.ifReturnsVoid(method)>
+</@forAllParameters>
+<#if method.returnType.void>
 			request.invoke();
-<#elseif declaration.ifReturnsObject(method)>
-			return (<XDtMethod:methodType/>) request.invoke();
-<#elseif declaration.ifReturns(method, "int")>
+<#elseif method.returnType.primitive && method.returnType.keyword="int">
 			return ((Integer) request.invoke()).intValue();
-<#elseif declaration.ifReturns(method, "byte")>
+<#elseif method.returnType.primitive &&  method.returnType.keyword="byte">
 			return ((Byte) request.invoke()).byteValue();
-<#elseif declaration.ifReturns(method, "short")>
+<#elseif method.returnType.primitive &&  method.returnType.keyword="short">
 			return ((Short) request.invoke()).shortValue();
-<#elseif declaration.ifReturns(method, "long")>
+<#elseif method.returnType.primitive &&  method.returnType.keyword="long">
 			return ((Long) request.invoke()).longValue();
-<#elseif declaration.ifReturns(method, "boolean")>
+<#elseif method.returnType.primitive &&  method.returnType.keyword="boolean">
 			return ((Boolean) request.invoke()).booleanValue();
-<#elseif declaration.ifReturns(method, "char")>
+<#elseif method.returnType.primitive &&  method.returnType.keyword="char">
 			return ((Character) request.invoke()).charValue();
-<#elseif declaration.ifReturns(method, "double")>
+<#elseif method.returnType.primitive &&  method.returnType.keyword="double">
 			return ((Double) request.invoke()).doubleValue();
-<#elseif declaration.ifReturns(method, "float")>
+<#elseif method.returnType.primitive &&  method.returnType.keyword="float">
 			return ((Float) request.invoke()).floatValue();
+<#elseif method.returnType.class>
+			return (${method.returnType}) request.invoke();
 </#if>
 		}
-<#list declaration.exceptions as exception>
-		catch (${exception.toString()} e)
+<@forAllThrownTypes var="exception">
+		catch (${exception} e)
 		{
 			throw e;
 		}
-</#list>
+</@forAllThrownTypes>
 		catch (TechnicalException e)
 		{
 			throw e;
@@ -71,5 +73,7 @@ public class  ${declaration.generatedShortClassName}EjbProxy extends ZipEjbProxy
 			reset();
 		}
 	}
-</#list>
+</@forAllMethods>
 }
+</@javaSource>
+</@forAllTypes>
