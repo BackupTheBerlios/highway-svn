@@ -1,0 +1,13 @@
+<application>
+  <display-name>friscoServer</display-name>
+  <description>Application description</description>
+  <module>
+    <ejb>ejbs/frisco.ejb.metier1.0.jar</ejb>
+  </module>
+	<module>
+	  <web>
+	    <web-uri>webs/WebApplication1.war</web-uri>
+	     <context-root>/WebApplication1</context-root>
+	  </web>
+	</module>
+</application>

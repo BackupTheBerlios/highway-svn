@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<project name="frisco_poc_metier" default="build_ear" basedir=".">
+
+        <!-- set global properties for this build -->
+        <property name="version" 	value="1.0"/>
+        <property name="jdk.home" 	value="/jdk1.5"/>
+        <property name="source" 	value="${basedir}/src"/>
+        <property name="build" 		value="${basedir}/dist"/>
+        <property name="dist" 		value="${basedir}/dist"/>
+        <property name="java.lib" 	value="${basedir}/lib"/>
+
+
+	<path id="classpath.compilation">
+		<pathelement location="${build}/classes"/>
+		<fileset dir="${java.lib}">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<!-- =================================================================== -->
+	<!-- Init                                                               -->
+	<!-- =================================================================== -->
+	<target name="init">
+	         <tstamp>
+	            <format property="TODAY" pattern="d-MM-yy"/>
+	        </tstamp>
+	        <mkdir dir="${build}"/>
+	</target>
+        
+	<!-- =================================================================== -->
+	<!-- Compile all                                                         -->
+	<!-- =================================================================== -->
+
+
+
+	<!-- =================================================================== -->
+	<!-- Build wars                                                           -->
+	<!-- =================================================================== -->
+        <target name="build_wars" depends="init">
+                <echo>Building wars ...</echo>
+            <war destfile="${build}/frisco.referentieltiersµ.entreprise.war" 
+                          webxml="web/WEB-INF/web.xml">
+                    <fileset dir="web"/>
+                    <classes dir="${build}/classes">
+                            <include name="**/*.class"/>
+                            <exclude name="fr/chronopost/codeact/ejb/**/*.class"/>
+                    </classes>
+                    <classes dir="${source}/java">
+                            <include name="fr/chronopost/codeact/ressources/**/*.properties"/>
+                    </classes>
+                    <lib dir="${java.lib}/web-ejb">
+                            <include name="*.jar"/>
+                    </lib>
+                    <lib dir="${java.lib}/struts1.1">
+                            <include name="*.jar"/>
+                    </lib>
+                    <lib dir="${java.lib}/jakarta">
+                            <include name="*.jar"/>
+                    </lib>
+                    <lib dir="${java.lib}/xerces">
+                            <include name="*.jar"/>
+                    </lib>
+            </war>
+        </target>
+
+
+	<!-- =================================================================== -->
+	<!-- Build ear                                                           -->
+	<!-- =================================================================== -->
+        <target name="build_ear" >
+        	<echo>Build  ear ... </echo>
+                <ear destfile="${dist}/frisco.metier${version}.ear" 
+                     appxml="${source}/ear/META-INF/application.xml">
+
+                        <zipfileset 	dir="${build}/wars" 		
+                        		includes="*.war" 
+                        		prefix="webs" />
+
+                        <zipfileset 	dir="${build}/ejbs" 		
+                        		includes="*.jar" 
+                        		prefix="ejbs" />
+	                    <!--zipfileset 	dir="${java.lib}/hibernate3.0/" 		
+	                		includes="*.jar" 
+	                		prefix="APP-INF/lib"/-->
+	                    <zipfileset 	dir="${build}" 		
+	                		includes="metier.jar" 
+	                		prefix="" />
+	                    <zipfileset 	dir="${java.lib}/friscoTools" 		
+	                		includes="*.jar" 
+	                		prefix="" />
+	                    <zipfileset 	dir="${java.lib}/apache" 		
+	                		includes="*.jar" 
+	                		prefix="" />
+				      <manifest>
+				            <attribute name="Built-By" value="${user.name}"/>
+				            <attribute name="Implementation-Version" value="${version} ${TODAY}" />
+				      </manifest>
+
+                </ear>
+        </target>
+
+	<!-- =================================================================== -->
+	<!-- Clean                                                           	-->
+	<!-- =================================================================== -->
+        
+        <target name="clean">
+                <delete dir="${build}"/>
+        </target>
+</project>
+

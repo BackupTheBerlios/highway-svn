@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration
+    PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory><!--
+        <property name="hibernate.connection.datasource">java:/sofaxis.TXDataSourceDexiaSofaxis</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+        <property name="hibernate.transaction.manager_lookup_class">org.hibernate.transaction.JBossTransactionManagerLookup</property>
+        <property name="hibernate.transaction.factory_class">org.hibernate.transaction.CMTTransactionFactory</property>
+    -->
+        <property name="hibernate.connection.driver_class">com.inet.tds.TdsDriver</property>
+        <property name="hibernate.connection.url">jdbc:inetdae7:172.29.11.24/JAVA?database=DEXIASOFAXIS&amp;sql7=true&amp;appname=Frisco_nle&amp;logging=false&amp;prepare=false</property>
+        <property name="hibernate.connection.username">dev</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+        <property name="hibernate.connection.password"></property> 
+
+    </session-factory>
+</hibernate-configuration>

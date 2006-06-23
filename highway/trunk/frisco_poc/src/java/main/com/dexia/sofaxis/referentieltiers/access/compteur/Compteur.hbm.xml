@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.dexia.sofaxis.referentieltiers.access.compteur.Compteur" table="COMPTEURFACTURE" >
+        <id name="domaine"  access="field">
+            <column name="DOMAINE" />
+            <generator class="assigned" />
+        </id>
+        <property name="compteur" access="field">
+            <column name="COMPTEUR"/>
+        </property>
+        <property name="dateDerniereFacture" access="field">
+            <column name="DATEDERNIEREFACTURE" />
+        </property>
+    </class>
+</hibernate-mapping>
