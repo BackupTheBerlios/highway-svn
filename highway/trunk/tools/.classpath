@@ -15,5 +15,5 @@
 	<classpathentry kind="lib" path="lib/apt-jelly-core.jar"/>
 	<classpathentry kind="lib" path="lib/apt-jelly-freemarker.jar"/>
 	<classpathentry kind="lib" path="lib/apt-jelly-jelly.jar"/>
-	<classpathentry kind="output" path="bin/eclipse"/>
+	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
