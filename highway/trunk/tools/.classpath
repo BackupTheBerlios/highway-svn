@@ -8,16 +8,14 @@
 	<classpathentry kind="lib" path="src/lib/commons-logging.jar"/>
 	<classpathentry kind="lib" path="src/lib/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="src/lib/j2ee.jar"/>
-	<classpathentry kind="lib" path="src/lib/xdoclet-1.2.2.jar"/>
-	<classpathentry kind="lib" path="src/lib/xdoclet-ejb-module-1.2.2.jar"/>
-	<classpathentry kind="lib" path="src/lib/xdoclet-ibm-module-1.2.2.jar"/>
-	<classpathentry kind="lib" path="src/lib/xdoclet-web-module-1.2.2.jar"/>
-	<classpathentry kind="lib" path="src/lib/xjavadoc-1.1.jar"/>
 	<classpathentry kind="lib" path="lib/ant-1.6.5.jar"/>
 	<classpathentry kind="lib" path="lib/checkstyle-all-4.0-beta6.jar"/>
 	<classpathentry kind="lib" path="lib/freemarker.jar"/>
 	<classpathentry kind="src" path="cfg/templates"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/highway_core"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.5.0_06"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/highway_core"/>
+	<classpathentry kind="lib" path="lib/apt-jelly-core.jar"/>
+	<classpathentry kind="lib" path="lib/apt-jelly-freemarker.jar"/>
+	<classpathentry kind="lib" path="lib/apt-jelly-jelly.jar"/>
 	<classpathentry kind="output" path="bin/eclipse"/>
 </classpath>
