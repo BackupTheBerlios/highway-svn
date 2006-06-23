@@ -1,6 +1,8 @@
 package com.dexia.sofaxis.referentieltiers.access.adresse;
 
 
+import java.util.Collection;
+
 import org.highway.vo.ValueObject;
 
 @org.highway.annotation.ValueObject
@@ -14,7 +16,7 @@ public interface AdresseDef  extends ValueObject {
     public String getComplementRemise();
     
 
-    public String getTypeVoie();
+    public Collection<String> getTypeVoie();
     
 
     public String getNumero();

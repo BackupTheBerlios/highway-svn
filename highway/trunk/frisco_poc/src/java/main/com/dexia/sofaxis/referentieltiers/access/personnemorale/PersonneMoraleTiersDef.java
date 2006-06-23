@@ -1,19 +1,18 @@
 package com.dexia.sofaxis.referentieltiers.access.personnemorale;
 
+import org.highway.annotation.BeanPropertyMandatory;
+
 
 @org.highway.annotation.ValueObject
 public interface PersonneMoraleTiersDef  extends ReferentielTiersDef {
 
 
-	/**
-	 * @socle.vo.property.mandatory true
-	 */
+	@BeanPropertyMandatory
 	public String getNomPostalLigne1();
   
     public String getNomPostalLigne2();
-	/**
-	 * @socle.vo.property.mandatory true
-	 */
+
+    @BeanPropertyMandatory
     public String getNom();
 
 

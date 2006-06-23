@@ -2,6 +2,8 @@ package com.dexia.sofaxis.referentieltiers.access.medecin;
 
 import java.util.Date;
 
+import org.highway.annotation.BeanPropertyMandatory;
+
 import com.dexia.sofaxis.referentieltiers.access.personnemorale.PersonneMoraleTiersDef;
 
 @org.highway.annotation.ValueObject
@@ -19,9 +21,7 @@ public interface MedecinDef extends PersonneMoraleTiersDef
 
     public Date getDateFinAgrement();
 
-	/**
-	 * @socle.vo.property.mandatory true
-	 */
+	@BeanPropertyMandatory
     public String getPrenom();
     
     public String getTypeCivilite();
