@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project default="make.jar" basedir="..">
+
+	<taskdef resource="org/highway/anttasks.properties">
+		<classpath path="lib/highway/highway-j2ee-tools-0.8.jar" />
+	</taskdef>
+
+	<target name="metier.generate">
+		<vogen inputDir="src/java/main" outputDir="gen/src" />
+		<ejbgen javaInputDir="src/java/main" javaOutputDir="gen/src" cfgOutputDir="gen/cfg/META-INF" />
+		<metagen inputDir="src/java/main" outputDir="gen/src" />
+	</target>
+
+	<target name="metier.clean">
+		<delete dir="gen/src" />
+		<delete dir="gen/cfg" />
+	</target>
+
+	<target name="metier.build" depends="metier.clean, metier.generate">
+	</target>
+	<target name="make.jar">
+		<jar destfile="dist/frisco_poc.jar">
+			<fileset dir="bin/" includes="**/*" />
+		</jar>
+	</target>
+</project>
