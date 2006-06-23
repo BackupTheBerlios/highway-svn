@@ -32,7 +32,7 @@ public class MetadataHomeTest extends TestCase
 		
 		assertEquals(true,
 				MetadataHome.isPropertyMandatory(
-						Castle.class, Castle.TOWER_NUMBER));
+						Castle.class, Castle.KEEP_HEIGHT));
 		
 		assertEquals(1,
 				MetadataHome.getPropertySizeMin(

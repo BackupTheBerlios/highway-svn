@@ -3,6 +3,8 @@ package org.highway.database.hibernate;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.highway.vo.Enum;
+
 public class MappingTestStringEnum extends Enum
 {
 	public static final MappingTestStringEnum VALUE_1 = new MappingTestStringEnum("01");

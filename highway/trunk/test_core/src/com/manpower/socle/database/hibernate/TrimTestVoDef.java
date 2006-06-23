@@ -7,6 +7,7 @@ import org.highway.vo.ValueObject;
 /**
  * @socle.mapping table="TRIM_TEST"
  */
+@org.highway.annotation.ValueObject
 public interface TrimTestVoDef extends ValueObject
 {
 	/**

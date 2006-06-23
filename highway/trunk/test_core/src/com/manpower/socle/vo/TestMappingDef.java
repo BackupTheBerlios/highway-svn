@@ -1,6 +1,7 @@
 package org.highway.vo;
 
 import org.highway.annotation.GenerateEjb;
+
 import org.highway.annotation.VoMapping;
 import org.highway.annotation.VoMappingDiscriminator;
 import org.highway.annotation.VoMappingDiscriminatorValue;
@@ -14,6 +15,7 @@ import org.highway.annotation.VoSerialVersionUID;
 @VoMapping(table="nomTable")
 @VoMappingDiscriminatorValue("VO_HIGHWAY")
 @VoMappingDiscriminator(column="type_vo")
+@org.highway.annotation.ValueObject
 public interface TestMappingDef {
 	
 	@VoMappingGeneratorParam(name="paramName1", value="paramValue1")

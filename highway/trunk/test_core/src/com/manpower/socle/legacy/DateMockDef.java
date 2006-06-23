@@ -4,7 +4,7 @@ import java.util.Date;
 
 import org.highway.vo.ValueObject;
 
-
+@org.highway.annotation.ValueObject
 public interface DateMockDef extends ValueObject
 {
     /**

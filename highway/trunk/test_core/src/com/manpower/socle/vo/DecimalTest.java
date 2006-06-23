@@ -13,6 +13,7 @@ import junit.framework.TestCase;
  * @since 1.3
  * 
  */
+@org.highway.annotation.ValueObject
 public class DecimalTest extends TestCase
 {
     /**

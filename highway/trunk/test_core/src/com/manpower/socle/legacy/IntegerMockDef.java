@@ -1,7 +1,7 @@
 package org.highway.legacy;
 
 import org.highway.vo.ValueObject;
-
+@org.highway.annotation.ValueObject
 public interface IntegerMockDef extends ValueObject
 {
     /**

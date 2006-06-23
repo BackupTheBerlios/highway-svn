@@ -5,6 +5,7 @@ import org.highway.vo.ValueObject;
 /**
  * @author attias
  */
+@org.highway.annotation.ValueObject
 public interface EmployeDef extends ValueObject
 {
 	Long getId();

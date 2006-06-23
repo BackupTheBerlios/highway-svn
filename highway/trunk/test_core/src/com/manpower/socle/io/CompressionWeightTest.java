@@ -6,9 +6,10 @@ import java.io.ObjectOutputStream;
 
 import junit.framework.TestCase;
 
-import org.highway.io.StandardZipSerializer;
-
+import org.highway.validate.Employe;
 import org.highway.validate.Firme;
+import org.highway.validate.Human;
+import org.highway.vo.Building;
 
 public class CompressionWeightTest extends TestCase {
 

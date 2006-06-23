@@ -2,7 +2,7 @@ package org.highway.legacy;
 
 import org.highway.vo.Decimal;
 import org.highway.vo.ValueObject;
-
+@org.highway.annotation.ValueObject
 public interface DecimalMockDef extends ValueObject
 {
     /**
