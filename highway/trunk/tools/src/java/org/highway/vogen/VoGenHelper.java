@@ -59,7 +59,6 @@ public class VoGenHelper {
 	}
 
 	public static String getSuperClassName(InterfaceDeclaration decl)
-
 	{
 		boolean hasSuperClass = decl.getAnnotation(VoSuperClass.class) != null;
 
@@ -67,8 +66,7 @@ public class VoGenHelper {
 			Collection<InterfaceType> interfaces = decl.getSuperinterfaces();
 
 			for (InterfaceType type : interfaces) {
-				String interfaceFullName = type.getDeclaration()
-						.getQualifiedName();
+				String interfaceFullName = type.getDeclaration().getQualifiedName();
 				if (isDefInterface(interfaceFullName)) {
 					return removeDefSuffix(interfaceFullName);
 				}
