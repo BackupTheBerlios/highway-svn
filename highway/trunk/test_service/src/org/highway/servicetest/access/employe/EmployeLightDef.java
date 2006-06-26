@@ -1,0 +1,10 @@
+package org.highway.servicetest.access.employe;
+
+import org.highway.vo.ValueObject;
+
+/**
+ * @socle.vo.base.only
+ */
+public interface EmployeLightDef extends ValueObject {
+
+}
