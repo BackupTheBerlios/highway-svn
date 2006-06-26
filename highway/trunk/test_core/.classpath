@@ -10,5 +10,6 @@
 	<classpathentry sourcepath="/highway_core/lib/hibernate-2.1.8-src.zip" kind="lib" path="/highway_core/lib/hibernate-2.1.8.jar"/>
 	<classpathentry kind="lib" path="lib/highway/highway-core.jar"/>
 	<classpathentry kind="lib" path="lib/highway/highway-tools.jar"/>
+	<classpathentry kind="src" path="gen/src"/>
 	<classpathentry kind="output" path="bin/eclipse"/>
 </classpath>
