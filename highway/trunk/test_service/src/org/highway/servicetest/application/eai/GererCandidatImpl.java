@@ -1,8 +1,8 @@
 package org.highway.servicetest.application.eai;
 
 import org.highway.debug.DebugHome;
-
 import org.highway.servicetest.ServiceTestServices;
+import org.highway.servicetest.access.candidat.Candidat;
 import org.highway.servicetest.access.candidat.CandidatAccess;
 
 public class GererCandidatImpl implements GererCandidat

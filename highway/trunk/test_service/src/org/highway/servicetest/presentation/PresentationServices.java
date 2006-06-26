@@ -2,7 +2,6 @@ package org.highway.servicetest.presentation;
 
 import org.highway.service.ServiceLocator;
 import org.highway.service.ejb.EjbLocator;
-
 import org.highway.servicetest.application.ApplicationService;
 
 public class PresentationServices {

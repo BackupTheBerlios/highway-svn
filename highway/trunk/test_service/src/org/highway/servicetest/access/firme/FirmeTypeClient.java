@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.highway.servicetest.access.facture.FactureEcheance;
+import org.highway.vo.Enum;
 
 /**
  * @author PLOURIN-Y

@@ -1,7 +1,9 @@
 package org.highway.servicetest.presentation.mail;
 
-import org.highway.idgen.IdGenHome;
+import junit.framework.TestCase;
 
+import org.highway.idgen.IdGenHome;
+import org.highway.servicetest.access.employee.Employee;
 import org.highway.servicetest.application.mail.MailException;
 import org.highway.servicetest.application.mail.MailService;
 import org.highway.servicetest.presentation.PresentationInit;
@@ -13,7 +15,7 @@ import org.highway.servicetest.presentation.PresentationServices;
  * @author Christian de Bevotte
  * @since 1.4.5
  */
-public class MailTest extends TestCase
+public class MailTest extends TestCase 
 {
 	private static final String FIRSTNAME = "Test";
 	

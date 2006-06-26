@@ -2,6 +2,8 @@ package org.highway.servicetest.application.gereemploye;
 
 import java.io.Serializable;
 
+import org.highway.servicetest.access.telephone.Telephone;
+
 public class TestFirme implements Serializable{
 
 	

@@ -1,5 +1,8 @@
 package org.highway.servicetest.presentation.eai;
 
+import junit.framework.TestCase;
+
+import org.highway.servicetest.access.candidat.Candidat;
 import org.highway.servicetest.application.eai.GererCandidat;
 import org.highway.servicetest.presentation.PresentationServices;
 

@@ -1,5 +1,6 @@
 package org.highway.servicetest.application.mail;
 
+import org.highway.servicetest.access.employee.Employee;
 import org.highway.servicetest.application.ApplicationService;
 
 /**

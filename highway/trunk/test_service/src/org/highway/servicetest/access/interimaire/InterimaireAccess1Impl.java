@@ -5,7 +5,6 @@ import javax.resource.cci.InteractionSpec;
 import org.highway.legacy.LegacyRequest;
 import org.highway.legacy.LegacyResponse;
 import org.highway.legacy.LegacySession;
-
 import org.highway.servicetest.access.LegacyAccessImplAbstract;
 
 public class InterimaireAccess1Impl extends LegacyAccessImplAbstract

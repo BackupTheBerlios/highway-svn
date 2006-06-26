@@ -2,7 +2,11 @@ package org.highway.servicetest.presentation.gereremploye;
 
 import java.util.Date;
 
+import junit.framework.TestCase;
+
 import org.highway.servicetest.access.employe.EmployeSexe;
+import org.highway.servicetest.access.projet.Projet;
+import org.highway.servicetest.access.telephone.Telephone;
 import org.highway.servicetest.application.gereemploye.GererEmploye;
 import org.highway.servicetest.application.gereemploye.GererEmployeCompress;
 import org.highway.servicetest.application.gereemploye.TestEmploye;

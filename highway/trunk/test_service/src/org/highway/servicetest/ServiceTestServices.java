@@ -2,7 +2,6 @@ package org.highway.servicetest;
 
 import org.highway.service.ServiceLocator;
 import org.highway.service.dynamic.DynamicLocator;
-
 import org.highway.servicetest.access.AccessService;
 import org.highway.servicetest.application.ApplicationService;
 

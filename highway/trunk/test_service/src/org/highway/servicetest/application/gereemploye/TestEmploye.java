@@ -3,6 +3,8 @@ package org.highway.servicetest.application.gereemploye;
 import java.io.Serializable;
 
 import org.highway.servicetest.access.employe.EmployeSexe;
+import org.highway.servicetest.access.projet.Projet;
+import org.highway.servicetest.access.telephone.Telephone;
 
 public class TestEmploye  implements Serializable{
 

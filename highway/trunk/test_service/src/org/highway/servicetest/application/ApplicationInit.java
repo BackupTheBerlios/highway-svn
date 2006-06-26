@@ -3,17 +3,16 @@ package org.highway.servicetest.application;
 import java.util.Collections;
 import java.util.Properties;
 
-import org.highway.servicetest.access.AccessInit;
-import org.highway.servicetest.access.candidat.Candidat;
 import org.highway.debug.DebugHome;
 import org.highway.debug.DebugLog;
 import org.highway.debug.Log4jDebugLog;
 import org.highway.eai.EAIHome;
-import org.highway.eai.wbi.WBIEAIProvider;
 import org.highway.helper.PropertiesHelper;
 import org.highway.mail.MailHome;
 import org.highway.mail.MailService;
 import org.highway.mail.XAMailService;
+import org.highway.servicetest.access.AccessInit;
+import org.highway.servicetest.access.candidat.Candidat;
 import org.highway.transaction.TransactionHelper;
 import org.highway.transaction.TransactionHome;
 

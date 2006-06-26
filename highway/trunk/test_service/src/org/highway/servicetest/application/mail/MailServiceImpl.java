@@ -10,8 +10,8 @@ import javax.mail.internet.MimeMessage;
 import org.highway.exception.Assert;
 import org.highway.exception.TechnicalException;
 import org.highway.mail.MailHome;
-
 import org.highway.servicetest.ServiceTestServices;
+import org.highway.servicetest.access.employee.Employee;
 import org.highway.servicetest.access.employee.EmployeeAccess;
 
 public class MailServiceImpl implements MailService

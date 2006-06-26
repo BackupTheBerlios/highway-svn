@@ -3,6 +3,8 @@ package org.highway.servicetest.access.employe;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.highway.vo.Enum;
+
 public class EmployeSexe extends Enum 
 {
     public static final EmployeSexe MASCULIN = new EmployeSexe((short)0, "MASCULIN");

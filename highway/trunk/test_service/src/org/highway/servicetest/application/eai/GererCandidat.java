@@ -1,5 +1,6 @@
 package org.highway.servicetest.application.eai;
 
+import org.highway.servicetest.access.candidat.Candidat;
 import org.highway.servicetest.application.ApplicationService;
 
 /**

@@ -2,8 +2,11 @@ package org.highway.servicetest.presentation.ctg;
 
 import java.util.Calendar;
 
-import org.highway.debug.DebugHome;
+import junit.framework.TestCase;
 
+import org.highway.debug.DebugHome;
+import org.highway.servicetest.access.interimaire.Input1;
+import org.highway.servicetest.access.interimaire.Output1;
 import org.highway.servicetest.application.ctg.CtgService;
 import org.highway.servicetest.presentation.PresentationServices;
 
