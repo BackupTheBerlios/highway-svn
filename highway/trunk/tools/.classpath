@@ -9,7 +9,6 @@
 	<classpathentry kind="lib" path="src/lib/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="src/lib/j2ee.jar"/>
 	<classpathentry kind="lib" path="lib/ant-1.6.5.jar"/>
-	<classpathentry kind="src" path="cfg/templates"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk150"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/highway_core"/>
 	<classpathentry sourcepath="lib/apt-jelly-2.0.1-src.zip" kind="lib" path="lib/apt-jelly-core.jar"/>
