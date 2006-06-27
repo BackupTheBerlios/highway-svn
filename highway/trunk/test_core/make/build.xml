@@ -2,9 +2,9 @@
 
 <project name="socle-j2ee-core-test" default="core.test.build" basedir="..">
 
-	<!--taskdef resource="org/highway/anttasks.properties">
+	<taskdef resource="org/highway/anttasks.properties">
 		<classpath path="../highway_tools/bin/pack/highway-tools.jar"/>
-	</taskdef-->
+	</taskdef>
 	
 	<path id="core.test.classpath">
 		<pathelement location="bin/classes" />
@@ -18,9 +18,19 @@
 		<mkdir dir="bin/gensrc"/>
 		<delete dir="bin/cfg"/>
 		<mkdir dir="bin/cfg"/>
-		<vogen inputDir="src" outputDir="bin/gensrc"/>
+		
+		<apt    
+		    destdir="bin/classes"
+		    sourcedestdir="bin/gensrc"
+		    sourcepath="src"
+			factory="org.highway.vogen.HighwayProcessorFactory">
+			<classpath refid="core.test.classpath"/>
+		    <source dir="src" includes="**/*Def.java"/>
+		</apt>
+			
+<!--		<vogen inputDir="src" outputDir="bin/gensrc"/>
 		<metagen inputDir="src" outputDir="bin/gensrc" />
-		<ejbgen javaInputDir="src" javaOutputDir="bin/gensrc" cfgOutputDir="bin/cfg" />
+		<ejbgen javaInputDir="src" javaOutputDir="bin/gensrc" cfgOutputDir="bin/cfg" />-->
 	</target>
 
 	<target name="core.test.compile">
