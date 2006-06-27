@@ -1,9 +1,9 @@
 package org.highway.servicetest.access.participant;
 
+import org.highway.database.DatabaseAccessBase;
 import org.highway.database.DatabaseSession;
-import org.highway.domain.AccessImplAbstract;
 
-public class ParticipantAccessImpl extends AccessImplAbstract implements ParticipantAccess {
+public class ParticipantAccessImpl extends DatabaseAccessBase implements ParticipantAccess {
 	
 	public Participant charger(Participant participant) {
 		DatabaseSession session = getSession();

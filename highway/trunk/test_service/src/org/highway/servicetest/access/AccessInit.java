@@ -5,13 +5,13 @@ import java.util.Properties;
 import net.sf.hibernate.cfg.Configuration;
 
 import org.highway.database.Database;
+import org.highway.database.DatabaseAccessBase;
 import org.highway.database.hibernate.HibernateDatabase;
 import org.highway.debug.DebugHome;
-import org.highway.domain.AccessImplAbstract;
 import org.highway.helper.PropertiesHelper;
 import org.highway.helper.ResourceHelper;
-import org.highway.init.InitException;
 import org.highway.legacy.ConverterMap;
+import org.highway.lifecycle.InitException;
 
 public class AccessInit
 {
@@ -30,7 +30,7 @@ public class AccessInit
 			configuration.addClass(org.highway.eai.wbi.database.Event.class);
 
 			Database database = new HibernateDatabase(configuration);
-			AccessImplAbstract.setDatabase(database);
+			DatabaseAccessBase.setDatabase(database);
 		}
 		catch (Throwable throwable)
 		{

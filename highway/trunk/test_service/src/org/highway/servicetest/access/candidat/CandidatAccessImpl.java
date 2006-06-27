@@ -1,10 +1,10 @@
 package org.highway.servicetest.access.candidat;
 
+import org.highway.database.DatabaseAccessBase;
 import org.highway.database.DatabaseSession;
-import org.highway.domain.AccessImplAbstract;
 import org.highway.eai.EAIHome;
 
-public class CandidatAccessImpl extends AccessImplAbstract implements
+public class CandidatAccessImpl extends DatabaseAccessBase implements
 		CandidatAccess
 {
 

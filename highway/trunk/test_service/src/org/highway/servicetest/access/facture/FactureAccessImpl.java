@@ -2,10 +2,10 @@ package org.highway.servicetest.access.facture;
 
 import java.util.List;
 
+import org.highway.database.DatabaseAccessBase;
 import org.highway.database.DatabaseSession;
-import org.highway.domain.AccessImplAbstract;
 
-public class FactureAccessImpl extends AccessImplAbstract implements FactureAccess 
+public class FactureAccessImpl extends DatabaseAccessBase implements FactureAccess 
 {
 
 	public Facture charger(Long factureId) {

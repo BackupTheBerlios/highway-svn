@@ -2,12 +2,12 @@ package org.highway.servicetest.access.firme;
 
 import java.util.List;
 
+import org.highway.database.DatabaseAccessBase;
 import org.highway.database.DatabaseSession;
 import org.highway.database.SelectQuery;
-import org.highway.domain.AccessImplAbstract;
 import org.highway.idgen.IdGenHome;
 
-public class FirmeAccessImpl extends AccessImplAbstract implements FirmeAccess {
+public class FirmeAccessImpl extends DatabaseAccessBase implements FirmeAccess {
 	
 	public Firme charger(Long firmeId) {
 	    DatabaseSession session = getSession();

@@ -2,10 +2,10 @@ package org.highway.servicetest.access.employee;
 
 import java.util.List;
 
+import org.highway.database.DatabaseAccessBase;
 import org.highway.database.DatabaseSession;
-import org.highway.domain.AccessImplAbstract;
 
-public class EmployeeAccessImpl extends AccessImplAbstract implements EmployeeAccess
+public class EmployeeAccessImpl extends DatabaseAccessBase implements EmployeeAccess
 {
 	public void create(Employee employee)
 	{

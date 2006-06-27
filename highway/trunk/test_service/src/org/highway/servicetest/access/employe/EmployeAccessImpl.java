@@ -1,9 +1,9 @@
 package org.highway.servicetest.access.employe;
 
+import org.highway.database.DatabaseAccessBase;
 import org.highway.database.DatabaseSession;
-import org.highway.domain.AccessImplAbstract;
 
-public class EmployeAccessImpl extends AccessImplAbstract implements
+public class EmployeAccessImpl extends DatabaseAccessBase implements
 		EmployeAccess {
 
 	public Employe charger(Long employeId) {

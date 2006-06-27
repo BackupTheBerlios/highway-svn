@@ -1,9 +1,9 @@
 package org.highway.servicetest.access;
 
-import org.highway.init.InitException;
 import org.highway.legacy.ConverterMap;
 import org.highway.legacy.LegacyServer;
 import org.highway.legacy.LegacySession;
+import org.highway.lifecycle.InitException;
 import org.highway.service.context.RequestContext;
 import org.highway.service.context.RequestContextHome;
 

@@ -2,10 +2,10 @@ package org.highway.servicetest.access.projet;
 
 import java.util.List;
 
+import org.highway.database.DatabaseAccessBase;
 import org.highway.database.DatabaseSession;
-import org.highway.domain.AccessImplAbstract;
 
-public class ProjetAccessImpl extends AccessImplAbstract implements ProjetAccess {
+public class ProjetAccessImpl extends DatabaseAccessBase implements ProjetAccess {
 	
 	public Projet charger(Long projetId) {
 	    DatabaseSession session = getSession();
