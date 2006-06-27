@@ -4,5 +4,13 @@
 	<classpathentry excluding="client/|server/" kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="/highway_core"/>
+	<classpathentry kind="lib" path="lib/apt-jelly/apt-jelly-core.jar"/>
+	<classpathentry kind="lib" path="lib/freemarker/freemarker.jar"/>
+	<classpathentry kind="lib" path="lib/highway/highway-core.jar"/>
+	<classpathentry kind="lib" path="lib/apt-jelly/apt-jelly-freemarker.jar"/>
+	<classpathentry kind="lib" path="lib/apt-jelly/apt-jelly-jelly.jar"/>
+	<classpathentry kind="lib" path="lib/highway/highway-tools.jar"/>
+	<classpathentry kind="src" path="gen/src"/>
+	<classpathentry sourcepath="ECLIPSE_HOME/plugins/org.eclipse.jdt.source_3.1.1/src/org.junit_3.8.1/junitsrc.zip" kind="var" path="JUNIT_HOME/junit.jar"/>
 	<classpathentry kind="output" path="bin/eclipse"/>
 </classpath>
