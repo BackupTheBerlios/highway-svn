@@ -1,10 +1,12 @@
 package org.highway.validate;
 
+import org.highway.annotation.BeanPropertySize;
 import org.highway.vo.ValueObject;
 
 /**
  * @author attias
  */
+@org.highway.annotation.ValueObject
 public interface EmployeDef extends ValueObject
 {
 	Long getId();
@@ -15,6 +17,7 @@ public interface EmployeDef extends ValueObject
 	 * @socle.vo.property.min 2
 	 * @socle.vo.property.max 5
 	 */
+	@BeanPropertySize(min=2, max=5)
 	String getNom();
 	
 	String getPrenom();
