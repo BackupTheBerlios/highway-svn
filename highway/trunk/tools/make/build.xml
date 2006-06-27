@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project default="tools.build" basedir="..">
+<project name="highway_tools" default="tools.build" basedir="..">
 
 	<property name="tools.version" value="2.0.0" />
 
@@ -54,7 +54,7 @@
 			<!-- zip the toold jar -->
 			<zipfileset dir="bin/pack" includes="highway-tools.jar" fullpath="tools/highway-tools-${tools.version}.jar" />
 			<!-- zip tools doc files -->
-			<zipfileset prefix="tools" dir="doc" includes="**/*" />
+			<zipfileset prefix="tools/doc" dir="doc" includes="**/*" />
 		</zip>
 	</target>
 
