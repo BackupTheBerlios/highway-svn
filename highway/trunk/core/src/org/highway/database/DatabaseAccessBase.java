@@ -2,10 +2,8 @@
  * Copyright (c) 2005. All rights reserved.
  */
 
-package org.highway.domain;
+package org.highway.database;
 
-import org.highway.database.Database;
-import org.highway.database.DatabaseSession;
 import org.highway.init.InitException;
 import org.highway.service.context.RequestContext;
 import org.highway.service.context.RequestContextHome;
@@ -15,7 +13,7 @@ import org.highway.service.context.RequestContextHome;
  * provides easy management of database sessions.
  * @author attias
  */
-public class AccessImplAbstract
+public class DatabaseAccessBase
 {
 	/**
 	 * Field SESSION_CONTEXT_KEY
@@ -33,7 +31,7 @@ public class AccessImplAbstract
 	 */
 	public static void setDatabase(Database database)
 	{
-		AccessImplAbstract.database = database;
+		DatabaseAccessBase.database = database;
 	}
 
 	/**
