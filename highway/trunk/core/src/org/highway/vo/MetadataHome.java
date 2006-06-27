@@ -6,7 +6,7 @@ package org.highway.vo;
 
 import org.highway.debug.DebugHome;
 import org.highway.exception.DoNotInstantiateException;
-import org.highway.init.InitException;
+import org.highway.lifecycle.InitException;
 
 /**
  * Use the static methods of this class to access the default MetadataManager

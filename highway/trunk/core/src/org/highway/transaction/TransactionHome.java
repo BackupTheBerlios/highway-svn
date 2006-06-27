@@ -6,7 +6,8 @@ package org.highway.transaction;
 
 import org.highway.debug.DebugHome;
 import org.highway.exception.DoNotInstantiateException;
-import org.highway.init.InitException;
+import org.highway.lifecycle.InitException;
+
 import javax.transaction.HeuristicMixedException;
 import javax.transaction.HeuristicRollbackException;
 import javax.transaction.InvalidTransactionException;

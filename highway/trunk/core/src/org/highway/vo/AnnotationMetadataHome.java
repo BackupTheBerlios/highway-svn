@@ -12,7 +12,7 @@ import org.highway.annotation.BeanPropertySize;
 import org.highway.annotation.BeanPropertyUpperCase;
 import org.highway.debug.DebugHome;
 import org.highway.exception.DoNotInstantiateException;
-import org.highway.init.InitException;
+import org.highway.lifecycle.InitException;
 
 
 /**

@@ -6,7 +6,8 @@ package org.highway.javadoc;
 
 import org.highway.debug.DebugHome;
 import org.highway.exception.DoNotInstantiateException;
-import org.highway.init.InitException;
+import org.highway.lifecycle.InitException;
+
 import java.lang.reflect.Method;
 import java.util.Iterator;
 

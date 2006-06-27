@@ -6,7 +6,8 @@ package org.highway.mail;
 
 import org.highway.debug.DebugHome;
 import org.highway.exception.DoNotInstantiateException;
-import org.highway.init.InitException;
+import org.highway.lifecycle.InitException;
+
 import javax.mail.Address;
 import javax.mail.Message;
 import javax.mail.MessagingException;

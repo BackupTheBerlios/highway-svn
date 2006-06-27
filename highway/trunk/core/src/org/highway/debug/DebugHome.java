@@ -5,7 +5,7 @@
 package org.highway.debug;
 
 import org.highway.exception.DoNotInstantiateException;
-import org.highway.init.InitException;
+import org.highway.lifecycle.InitException;
 
 /**
  * Home class of the debug package.

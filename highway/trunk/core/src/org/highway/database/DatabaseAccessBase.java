@@ -4,7 +4,7 @@
 
 package org.highway.database;
 
-import org.highway.init.InitException;
+import org.highway.lifecycle.InitException;
 import org.highway.service.context.RequestContext;
 import org.highway.service.context.RequestContextHome;
 

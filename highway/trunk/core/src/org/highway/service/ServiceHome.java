@@ -6,7 +6,7 @@ package org.highway.service;
 
 import org.highway.debug.DebugHome;
 import org.highway.exception.DoNotInstantiateException;
-import org.highway.init.InitException;
+import org.highway.lifecycle.InitException;
 
 /**
  * Service package home class.

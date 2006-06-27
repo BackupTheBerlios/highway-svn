@@ -5,7 +5,8 @@
 package org.highway.translate;
 
 import org.highway.debug.DebugHome;
-import org.highway.init.InitException;
+import org.highway.lifecycle.InitException;
+
 import java.util.Locale;
 
 /**
