@@ -1,10 +1,10 @@
 package org.highway.vogen;
 
+import net.sf.jelly.apt.decorations.declaration.DecoratedMethodDeclaration;
+
 import org.highway.ejbgen.EjbGenHelper;
 
 import com.sun.mirror.declaration.MethodDeclaration;
-
-import net.sf.jelly.apt.decorations.declaration.DecoratedMethodDeclaration;
 
 public class HighwayDecoratedMethodDeclaration extends
 		DecoratedMethodDeclaration {

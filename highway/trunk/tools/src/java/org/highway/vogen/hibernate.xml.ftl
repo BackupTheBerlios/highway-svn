@@ -1,4 +1,4 @@
-<@forAllTypes var="type" annotation="org.highway.annotation.VoMapping" includeInterfaces="true">
+<@forAllTypes var="type" includeInterfaces="true">
 <@file name="${type.generatedShortClassName}.hbm.xml" package="${type.package.qualifiedName}">
 
 <!DOCTYPE hibernate-mapping PUBLIC
@@ -94,7 +94,6 @@
         </@ifHasAnnotation>
     >
 
-       <!--key column="${helper.keyColumn}"/-->
 
        <@forAllMethods annotation="org.highway.annotation.VoMappingProperty" var="method" annotationVar="ann">
         <property
