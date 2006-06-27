@@ -112,7 +112,10 @@ public class AnnotationMetadataHome
 	public static Integer getPropertySizeMin(
 		Class beanClass, String propertyName)
 	{
-		return getPropertyMetaValue(beanClass, propertyName, BeanPropertySize.class).min();
+		BeanPropertySize meta = getPropertyMetaValue(beanClass, propertyName, BeanPropertySize.class);
+		if (meta==null)
+			return null;
+		return meta.min();
 	}
 
 	/**
@@ -125,7 +128,10 @@ public class AnnotationMetadataHome
 	public static Integer getPropertySizeMax(
 		Class beanClass, String propertyName)
 	{
-		return getPropertyMetaValue(beanClass, propertyName, BeanPropertySize.class).max();
+		BeanPropertySize meta = getPropertyMetaValue(beanClass, propertyName, BeanPropertySize.class);
+		if (meta==null)
+			return null;
+		return meta.max();
 	}
 
 	/**
@@ -138,7 +144,10 @@ public class AnnotationMetadataHome
 	public static String getPropertyPattern(
 		Class beanClass, String propertyName)
 	{
-		return getPropertyMetaValue(beanClass, propertyName, BeanPropertyPattern.class).value();
+		BeanPropertyPattern meta = getPropertyMetaValue(beanClass, propertyName, BeanPropertyPattern.class);
+		if (meta==null)
+			return null;
+		return meta.value();
 	}
 
 	/**
@@ -190,7 +199,10 @@ public class AnnotationMetadataHome
 	public static String getPropertyShortDescription(
 		Class beanClass, String propertyName)
 	{
-		return getPropertyMetaValue(beanClass, propertyName, BeanPropertyDescriptionShort.class).value();
+		BeanPropertyDescriptionShort meta = getPropertyMetaValue(beanClass, propertyName, BeanPropertyDescriptionShort.class);
+		if (meta==null)
+			return null;
+		return meta.value();
 	}
 
 	/**
@@ -203,7 +215,10 @@ public class AnnotationMetadataHome
 	public static String getPropertyLongDescription(
 		Class beanClass, String propertyName)
 	{
-		return getPropertyMetaValue(beanClass, propertyName, BeanPropertyDescriptionLong.class).value();
+		BeanPropertyDescriptionLong meta = getPropertyMetaValue(beanClass, propertyName, BeanPropertyDescriptionLong.class);
+		if (meta==null)
+			return null;
+		return meta.value();
 	}
 
 
@@ -217,7 +232,10 @@ public class AnnotationMetadataHome
 	public static Integer getPropertyDecimalScale(
 		Class beanClass, String propertyName)
 	{
-		return getPropertyMetaValue(beanClass, propertyName, BeanPropertyScale.class).value();
+		BeanPropertyScale meta = getPropertyMetaValue(beanClass, propertyName, BeanPropertyScale.class);
+		if (meta==null)
+			return null;
+		return meta.value();
 	}
 
 	////////////////////////
