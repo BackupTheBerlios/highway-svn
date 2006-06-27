@@ -12,6 +12,7 @@ import org.highway.vo.ValueObject;
  * @socle.mapping table="FACTURE"
  */
 @VoMapping(table="FACTURE")
+@org.highway.annotation.ValueObject
 public interface FactureDef extends ValueObject
 {
 

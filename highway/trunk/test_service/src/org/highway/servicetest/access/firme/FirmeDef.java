@@ -9,6 +9,7 @@ import org.highway.vo.ValueObject;
  * @socle.mapping table="FIRME"
  */
 @VoMapping(table="FIRME")
+@org.highway.annotation.ValueObject
 public interface FirmeDef extends ValueObject {
 	
 	/**

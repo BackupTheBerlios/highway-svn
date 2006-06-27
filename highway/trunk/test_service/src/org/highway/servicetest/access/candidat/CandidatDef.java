@@ -14,6 +14,7 @@ import org.highway.vo.ValueObject;
  */
 @VoMapping(table="CANDIDAT")
 @VoSerialVersionUID(1)
+@org.highway.annotation.ValueObject
 public interface CandidatDef extends ValueObject
 {
 	/**

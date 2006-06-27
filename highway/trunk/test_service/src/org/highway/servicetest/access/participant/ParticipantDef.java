@@ -9,6 +9,7 @@ import org.highway.vo.ValueObject;
  * @socle.mapping table="PARTICIPANT"
  */
 @VoMapping(table="PARTICIPANT")
+@org.highway.annotation.ValueObject
 public interface ParticipantDef extends ValueObject {
 
 	/**

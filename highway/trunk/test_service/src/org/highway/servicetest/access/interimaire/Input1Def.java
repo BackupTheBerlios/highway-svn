@@ -8,6 +8,7 @@ import org.highway.vo.ValueObject;
  * @since 1.3
  * 
  */
+@org.highway.annotation.ValueObject
 public interface Input1Def extends ValueObject
 {
     /**

@@ -12,6 +12,7 @@ import org.highway.vo.ValueObject;
  * @socle.mapping table="PROJET"
  */
 @VoMapping(table="PROJET")
+@org.highway.annotation.ValueObject
 public interface ProjetDef extends ValueObject {
 	
 	/**

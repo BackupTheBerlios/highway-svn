@@ -9,6 +9,7 @@ import org.highway.vo.ValueObject;
  * @socle.mapping table="TELEPHONE"
  */
 @VoMapping(table="TELEPHONE")
+@org.highway.annotation.ValueObject
 public interface TelephoneDef extends ValueObject {
 	
 	/**
