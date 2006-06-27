@@ -11,5 +11,6 @@
 	<classpathentry sourcepath="/highway_core/src/" kind="lib" path="lib/highway/highway-core.jar"/>
 	<classpathentry kind="lib" path="lib/highway/highway-tools.jar"/>
 	<classpathentry kind="src" path="gen/src"/>
+	<classpathentry kind="lib" path="/highway_core/lib/patbinfree-1.5.3.jar"/>
 	<classpathentry kind="output" path="bin/eclipse"/>
 </classpath>
