@@ -16,7 +16,7 @@ import org.highway.annotation.VoSerialVersionUID;
 @VoMappingDiscriminatorValue("VO_HIGHWAY")
 @VoMappingDiscriminator(column="type_vo")
 @ValueObject
-public interface TestMappingDef {
+public interface TestMappingDef extends org.highway.vo.ValueObject {
 	
 	@VoMappingGeneratorParam(name="paramName1", value="paramValue1")
 	@VoMappingId(column="myColumn", type="string", generatorClass="native")

@@ -8,22 +8,22 @@
 	
 	<path id="core.test.classpath">
 		<pathelement location="src" />
-		<!--pathelement location="bin/eclipse" />
-		<pathelement location="bin/classes" /-->
+		<!--pathelement location="bin/eclipse" /-->
+		<pathelement location="bin/classes" />
 		<pathelement location="../highway_tools/bin/pack/highway-tools.jar" />
 		<fileset dir="lib" includes="**/*.jar" />
 		<fileset dir="../highway_core/lib" includes="**/*.jar" />
 		<fileset dir="../highway_core/bin/pack" includes="**/*.jar" />
 	</path>
 	
-	<target name="core.test.generate">
+	<target name="core.test.generate.apt">
 		<delete dir="bin/gensrc"/>
 		<mkdir dir="bin/gensrc"/>
 		<delete dir="bin/cfg"/>
 		<mkdir dir="bin/cfg"/>
 		
 		<apt    
-		    destdir="bin/classes"
+			nocompile="true"
 		    sourcedestdir="bin/gensrc"
 		    sourcepath="src"
 			factory="org.highway.vogen.HighwayProcessorFactory">
@@ -35,7 +35,24 @@
 		<metagen inputDir="src" outputDir="bin/gensrc" />
 		<ejbgen javaInputDir="src" javaOutputDir="bin/gensrc" cfgOutputDir="bin/cfg" />-->
 	</target>
-
+	
+	<target name="core.test.generate.vogen">
+		<delete dir="bin/gensrc"/>
+		<mkdir dir="bin/gensrc"/>
+		<delete dir="bin/cfg"/>
+		<mkdir dir="bin/cfg"/>
+		
+		<vogen    
+		    sourcedestdir="bin/gensrc"
+		    sourcepath="src">
+			<classpath refid="core.test.classpath"/>
+		</vogen>
+			
+<!--		<vogen inputDir="src" outputDir="bin/gensrc"/>
+		<metagen inputDir="src" outputDir="bin/gensrc" />
+		<ejbgen javaInputDir="src" javaOutputDir="bin/gensrc" cfgOutputDir="bin/cfg" />-->
+	</target>
+	
 	<target name="core.test.compile">
 		<delete dir="bin/classes"/>
 		<mkdir dir="bin/classes"/>
@@ -56,7 +73,7 @@
 		</copy>
 	</target>
 	
-	<target name="core.test.build" depends="core.test.generate, core.test.compile"/>
+	<target name="core.test.build" depends="core.test.generate.apt, core.test.compile"/>
 	
 	<target name="core.test.run" depends="core.test.build">
 		
