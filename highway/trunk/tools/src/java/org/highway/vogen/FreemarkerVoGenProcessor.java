@@ -53,8 +53,11 @@ public class FreemarkerVoGenProcessor implements AnnotationProcessor {
 	      Template templateVo = configuration.getTemplate(urlTemplateValueObject.toString());
 	      Template templateHbm = configuration.getTemplate(urlTemplateHibernate.toString());
 	      Template templateHbmCfg = configuration.getTemplate(urlTemplateHibernateCfg.toString());
+	      System.out.println("process Hbm");
 	      templateHbm.process(getRootModel(), new OutputStreamWriter(System.out));
+	      System.out.println("process Vo");
 	      templateVo.process(getRootModel(), new OutputStreamWriter(System.out));
+	      System.out.println("process Cfg");
 	      templateHbmCfg.process(getRootModel(), new OutputStreamWriter(System.out));
 	    }
 	    catch (IOException e) {

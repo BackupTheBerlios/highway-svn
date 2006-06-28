@@ -10,7 +10,7 @@
 <hibernate-mapping>
 
     <class
-    	name=${type.generatedClassName}
+     	name=${type.generatedClassName}
     	<@ifHasAnnotation var="ann" annotation="org.highway.annotation.VoMapping">
         table="${ann.value}"
         </@ifHasAnnotation>
@@ -27,9 +27,7 @@
             type="${ann.type}">
         
             <generator class="${ann.generatorClass}">
-            	<@forAllMethods declaration="type" annotation="org.highway.annotation.VoMappingGeneratorParam" var="generatorParamMethod" annotationVar="annGeneratorParam">
-                <param name="${annGeneratorParam.name}">${annGeneratorParam.value}</param>
-                </@forAllMethods>
+
             </generator>
         </id>
 	    </@forAllMethods>
