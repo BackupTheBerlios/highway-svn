@@ -1,6 +1,5 @@
 package org.highway.servicetest.application;
 
-import java.util.Collections;
 import java.util.Properties;
 
 import org.highway.debug.DebugHome;
@@ -26,18 +25,7 @@ public class ApplicationInit
 		// TransactionManager
 		TransactionHome.setTransactionManager(TransactionHelper.lookupWebSphereTransactionManagerV6());
 		
-//		// MailService
-//		properties = new Properties();
-//		properties.setProperty(XAMailService.CONNECTION_FACTORY, "jca/testMailAdapter");
-//		properties.setProperty(XAMailService.SESSION, "mail/testMailSession");
-//		MailService mailService = new XAMailService(properties);
-//		MailHome.setMailService(mailService);
-//
-//		// Access
-//		AccessInit.init();
-//		
-//		// EAI
-//		WBIEAIProvider wbiEaiProvider = new WBIEAIProvider(Collections.singletonList(Candidat.class));
-//		EAIHome.setEAIProvider(wbiEaiProvider);
+		// Access
+		AccessInit.init();
 	}
 }
