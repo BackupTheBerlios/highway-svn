@@ -14,7 +14,6 @@ import org.highway.vo.ValueObject;
 /**
  * @socle.mapping table="MAPPING_TEST"
  */
-@org.highway.annotation.ValueObject
 @VoMapping(table="MAPPING_TEST")
 public interface MappingTestVoDef extends ValueObject
 {

@@ -10,7 +10,6 @@ import org.highway.vo.ValueObject;
 /**
  * @author David Attias
  */
-@org.highway.annotation.ValueObject
 public interface HumanDef extends ValueObject
 {
 	/**
