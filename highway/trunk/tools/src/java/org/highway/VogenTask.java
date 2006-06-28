@@ -4,6 +4,7 @@ import java.io.File;
 
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.types.FileSet;
+import org.apache.tools.ant.types.Path;
 
 public class VogenTask extends AptTask {
 
@@ -24,4 +25,10 @@ public class VogenTask extends AptTask {
 		addConfiguredSource(fileSet);
 		super.execute();
 	}
+    /******************** -inputdir option **********************/
+    public Path getInputDir() { return getSourcepath(); }
+    public void setInputDir(Path inputDir) { setSourcepath(inputDir); }
+    /******************** -outputdir option **********************/
+    public File getOutputDir() { return getSourcedestdir(); }
+    public void setOutputDir(File outputDir) { setSourcedestdir(outputDir); }
 }
