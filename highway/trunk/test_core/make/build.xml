@@ -43,8 +43,8 @@
 		<mkdir dir="bin/cfg"/>
 		
 		<vogen    
-		    sourcedestdir="bin/gensrc"
-		    sourcepath="src">
+		    outputdir="bin/gensrc"
+		    inputdir="src">
 			<classpath refid="core.test.classpath"/>
 		</vogen>
 			
