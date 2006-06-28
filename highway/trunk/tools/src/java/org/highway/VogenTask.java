@@ -9,7 +9,6 @@ public class VogenTask extends AptTask {
 
 	public VogenTask() {
 		super();
-
 	}
 
 	@Override
@@ -25,5 +24,4 @@ public class VogenTask extends AptTask {
 		addConfiguredSource(fileSet);
 		super.execute();
 	}
-	
 }
