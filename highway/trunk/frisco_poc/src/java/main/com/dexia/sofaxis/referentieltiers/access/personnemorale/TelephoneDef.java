@@ -4,7 +4,6 @@ import org.highway.annotation.VoMapping;
 import org.highway.annotation.VoMappingId;
 import org.highway.annotation.VoMappingProperty;
 import org.highway.vo.ValueObject;
-@org.highway.annotation.ValueObject
 @VoMapping(table="TELEPHONE")
 public interface TelephoneDef  extends ValueObject {
 

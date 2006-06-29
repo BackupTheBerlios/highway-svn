@@ -9,7 +9,7 @@ import org.highway.annotation.VoMappingProperty;
 
 import com.dexia.sofaxis.referentieltiers.access.personnemorale.PersonneMoraleTiersDef;
 
-@org.highway.annotation.ValueObject
+
 @VoMapping(table="ENTREPRISE")
 @VoMappingDiscriminatorValue(value="ENTREP")
 public interface EntrepriseDef extends PersonneMoraleTiersDef

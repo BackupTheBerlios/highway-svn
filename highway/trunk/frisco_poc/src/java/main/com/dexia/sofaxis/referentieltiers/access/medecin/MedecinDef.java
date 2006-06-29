@@ -9,8 +9,7 @@ import org.highway.annotation.VoMappingDiscriminatorValue;
 import org.highway.annotation.VoMappingProperty;
 
 import com.dexia.sofaxis.referentieltiers.access.personnemorale.PersonneMoraleTiersDef;
-@GenerateEjb
-@org.highway.annotation.ValueObject
+
 @VoMapping(table="MEDECINTIERS")
 @VoMappingDiscriminatorValue(value="MEDECIN")
 public interface MedecinDef extends PersonneMoraleTiersDef

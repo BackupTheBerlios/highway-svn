@@ -3,7 +3,6 @@ package com.dexia.sofaxis.referentieltiers.access.rib;
 import org.highway.vo.ValueObject;
 
 
-@org.highway.annotation.ValueObject
 public interface RibDef extends ValueObject{
 
     public String getRibId();

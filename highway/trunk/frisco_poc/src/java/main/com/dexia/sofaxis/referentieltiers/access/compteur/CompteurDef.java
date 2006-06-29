@@ -7,7 +7,7 @@ import org.highway.annotation.VoMappingId;
 import org.highway.annotation.VoMappingProperty;
 import org.highway.vo.ValueObject;
 
-@org.highway.annotation.ValueObject
+
 @VoMapping(table="COMPTEURFACTURE")
 public interface CompteurDef  extends ValueObject {
 	

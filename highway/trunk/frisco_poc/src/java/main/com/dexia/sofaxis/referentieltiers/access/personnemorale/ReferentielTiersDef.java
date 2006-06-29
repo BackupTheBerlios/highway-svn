@@ -8,7 +8,6 @@ import org.highway.annotation.VoMappingProperty;
 import org.highway.vo.ValueObject;
 
 
-@org.highway.annotation.ValueObject
 @VoMapping(table="REFERENTIELTIERS")
 @VoMappingDiscriminator(column="TYPETIERS", type="string")
 public interface ReferentielTiersDef extends ValueObject {

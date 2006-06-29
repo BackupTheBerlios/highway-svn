@@ -8,7 +8,6 @@ import org.highway.annotation.VoMappingId;
 import org.highway.annotation.VoMappingProperty;
 import org.highway.vo.ValueObject;
 
-@org.highway.annotation.ValueObject
 @VoMapping(table="ADRESSE")
 public interface AdresseDef  extends ValueObject {
 
