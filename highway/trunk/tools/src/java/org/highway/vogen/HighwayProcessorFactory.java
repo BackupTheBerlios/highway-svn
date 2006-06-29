@@ -6,14 +6,10 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
 
-import net.sf.jelly.apt.Context;
 import net.sf.jelly.apt.ProcessorFactory;
 import net.sf.jelly.apt.decorations.DeclarationDecorator;
-import net.sf.jelly.apt.decorations.TypeMirrorDecorator;
 
 import com.sun.mirror.apt.AnnotationProcessor;
-import com.sun.mirror.apt.AnnotationProcessorEnvironment;
-import com.sun.mirror.apt.AnnotationProcessors;
 import com.sun.mirror.declaration.AnnotationTypeDeclaration;
 
 public class HighwayProcessorFactory extends ProcessorFactory {

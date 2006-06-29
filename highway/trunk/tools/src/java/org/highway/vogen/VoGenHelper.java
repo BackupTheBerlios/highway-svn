@@ -14,8 +14,6 @@ import com.sun.mirror.type.InterfaceType;
 
 public class VoGenHelper {
 
-	private static InterfaceDeclaration declaration;
-
 	private static String VALUE_OBJECT_ABSTRACT_CLASS_NAME = "org.highway.vo.ValueObjectAbstract";
 
 	private static String HIBERNATE_MAPPING_OUTPUT_FILE_NAME = "{0}.hbm.xml";
@@ -77,11 +75,6 @@ public class VoGenHelper {
 			return decl.getAnnotation(VoSuperClass.class).value();
 		}
 	}
-
-	public static void setDeclaration(InterfaceDeclaration aDeclaration) {
-		declaration = aDeclaration;
-	}
-
 	public static String getSetMethodName(MethodDeclaration aDeclaration) {
 		return JavaHelper.getSetterName(getPropertyName(aDeclaration));
 	}
