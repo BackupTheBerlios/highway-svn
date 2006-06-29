@@ -4,7 +4,7 @@
 	<classpathentry kind="lib" path="lib/ant-1.6.5.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk150"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/highway_core"/>
-	<classpathentry kind="lib" path="src/lib/apt-jelly-core.jar"/>
+	<classpathentry sourcepath="src/lib/apt-jelly-2.0.1-src.zip" kind="lib" path="src/lib/apt-jelly-core.jar"/>
 	<classpathentry sourcepath="src/lib/apt-jelly-2.0.1-src.zip" kind="lib" path="src/lib/apt-jelly-freemarker.jar"/>
 	<classpathentry kind="lib" path="src/lib/apt-jelly-jelly.jar"/>
 	<classpathentry sourcepath="src/lib/freemarker-src.zip" kind="lib" path="src/lib/freemarker.jar"/>
