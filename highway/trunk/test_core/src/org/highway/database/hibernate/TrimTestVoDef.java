@@ -1,47 +1,32 @@
 package org.highway.database.hibernate;
 
+import org.highway.bean.PropertyTrimPolicy;
 import org.highway.bean.ValueObject;
-import org.highway.database.Mapped;
 import org.highway.database.Identity;
-import org.highway.database.VoMappingProperty;
-import org.highway.database.hibernate.TrimInterceptor;
-import org.highway.database.hibernate.TrimmedStringHibernateType;
+import org.highway.database.Mapped;
+import org.highway.database.MappedOn;
+import org.highway.database.MappingSpecialType;
+import org.highway.helper.StringHelper.TrimPolicy;
 
 /**
  * @socle.mapping table="TRIM_TEST"
  */
-@Mapped(table="TRIM_TEST")
+@Mapped
+@MappedOn("TRIM_TEST")
 public interface TrimTestVoDef extends ValueObject
 {
-	/**
-	 * @socle.mapping.id column="ID"
-	 */
-	@Identity(column="ID", type="long")
+	@Identity
+	@MappedOn("ID")
 	long getId();
 	
-	/**
-	 * This property is not trimmed.
-	 * 
-	 * @socle.mapping.property column="PROPERTY_1"
-	 */
-	@VoMappingProperty(column="PROPERTY_1", type="string")
+	@MappedOn("PROPERTY_1")
 	String getProperty1();
 	
-	/**
-	 * This property is trimmed through {@link TrimmedStringHibernateType}.
-	 * 
-	 * @socle.mapping.property column="PROPERTY_2"
-	 *                         type="org.highway.database.hibernate.TrimmedStringHibernateType"
-	 */
-	@VoMappingProperty(column="PROPERTY_2", type="string")
+	@MappedOn("PROPERTY_2")
+	@MappingSpecialType(TrimmedStringHibernateType.class)
 	String getProperty2();
 	
-	/**
-	 * This property is trimmed through {@link TrimInterceptor}.
-	 * 
-	 * @socle.mapping.property column="PROPERTY_3"
-	 * @socle.vo.property.trimpolicy spaceboth
-	 */
-	@VoMappingProperty(column="PROPERTY_3", type="string")
+	@MappedOn("PROPERTY_3")
+	@PropertyTrimPolicy(TrimPolicy.SPACE_BOTH)
 	String getProperty3();
 }

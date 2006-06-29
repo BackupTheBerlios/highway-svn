@@ -1,6 +1,7 @@
 package org.highway.helper;
 
 import org.highway.helper.StringHelper;
+import org.highway.helper.StringHelper.TrimPolicy;
 
 import junit.framework.TestCase;
 
@@ -102,41 +103,37 @@ public class StringHelperTest extends TestCase
 		assertEquals(StringHelper.trim(null, ""), "");
 		assertEquals(StringHelper.trim(null, "   toto  titi   "), "   toto  titi   ");
 		
-		assertNull(StringHelper.trim("UNKNOWN", null));
-		assertEquals(StringHelper.trim("UNKNOWN", ""), "");
-		assertEquals(StringHelper.trim("UNKNOWN", "   toto  titi   "), "   toto  titi   ");
-
-		assertNull(StringHelper.trim(StringHelper.TRIM_SPACE_LEFT, null));
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_LEFT, ""), "");
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_LEFT, "   "), "");
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_LEFT, "toto  titi"), "toto  titi");
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_LEFT, "toto  titi   "), "toto  titi   ");
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_LEFT, "   toto  titi"), "toto  titi");
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_LEFT, "   toto  titi   "), "toto  titi   ");
+		assertNull(StringHelper.trim(TrimPolicy.SPACE_LEFT, null));
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_LEFT, ""), "");
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_LEFT, "   "), "");
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_LEFT, "toto  titi"), "toto  titi");
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_LEFT, "toto  titi   "), "toto  titi   ");
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_LEFT, "   toto  titi"), "toto  titi");
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_LEFT, "   toto  titi   "), "toto  titi   ");
 		
-		assertNull(StringHelper.trim(StringHelper.TRIM_SPACE_RIGHT, null));
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_RIGHT, ""), "");
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_RIGHT, "   "), "");
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_RIGHT, "toto  titi"), "toto  titi");
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_RIGHT, "toto  titi   "), "toto  titi");
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_RIGHT, "   toto  titi"), "   toto  titi");
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_RIGHT, "   toto  titi   "), "   toto  titi");
+		assertNull(StringHelper.trim(TrimPolicy.SPACE_RIGHT, null));
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_RIGHT, ""), "");
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_RIGHT, "   "), "");
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_RIGHT, "toto  titi"), "toto  titi");
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_RIGHT, "toto  titi   "), "toto  titi");
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_RIGHT, "   toto  titi"), "   toto  titi");
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_RIGHT, "   toto  titi   "), "   toto  titi");
 		
-		assertNull(StringHelper.trim(StringHelper.TRIM_SPACE_BOTH, null));
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_BOTH, ""), "");
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_BOTH, "   "), "");
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_BOTH, "toto  titi"), "toto  titi");
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_BOTH, "toto  titi   "), "toto  titi");
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_BOTH, "   toto  titi"), "toto  titi");
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_BOTH, "   toto  titi   "), "toto  titi");
+		assertNull(StringHelper.trim(TrimPolicy.SPACE_BOTH, null));
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_BOTH, ""), "");
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_BOTH, "   "), "");
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_BOTH, "toto  titi"), "toto  titi");
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_BOTH, "toto  titi   "), "toto  titi");
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_BOTH, "   toto  titi"), "toto  titi");
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_BOTH, "   toto  titi   "), "toto  titi");
 		
-		assertNull(StringHelper.trim(StringHelper.TRIM_SPACE_ALL, null));
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_ALL, ""), "");
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_ALL, "   "), "");
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_ALL, "toto  titi"), "toto titi");
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_ALL, "toto  titi   "), "toto titi");
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_ALL, "   toto  titi"), "toto titi");
-		assertEquals(StringHelper.trim(StringHelper.TRIM_SPACE_ALL, "   toto  titi   "), "toto titi");
+		assertNull(StringHelper.trim(TrimPolicy.SPACE_ALL, null));
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_ALL, ""), "");
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_ALL, "   "), "");
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_ALL, "toto  titi"), "toto titi");
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_ALL, "toto  titi   "), "toto titi");
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_ALL, "   toto  titi"), "toto titi");
+		assertEquals(StringHelper.trim(TrimPolicy.SPACE_ALL, "   toto  titi   "), "toto titi");
 	}
 }
 

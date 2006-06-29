@@ -4,6 +4,7 @@ import java.lang.annotation.Annotation;
 
 import org.highway.debug.DebugHome;
 import org.highway.exception.DoNotInstantiateException;
+import org.highway.helper.StringHelper.TrimPolicy;
 import org.highway.lifecycle.InitException;
 import org.highway.vo.JavadocMetadataManager;
 import org.highway.vo.MetadataManager;
@@ -104,7 +105,8 @@ public class BeanMetadataHome
 	public static Integer getPropertySizeMin(Class beanClass,
 			String propertyName)
 	{
-		PropertySize meta = getPropertyMetaValue(beanClass, propertyName, PropertySize.class);
+		PropertySize meta = getPropertyMetaValue(beanClass, propertyName,
+				PropertySize.class);
 		if (meta == null) return null;
 		return meta.min();
 	}
@@ -119,7 +121,8 @@ public class BeanMetadataHome
 	public static Integer getPropertySizeMax(Class beanClass,
 			String propertyName)
 	{
-		PropertySize meta = getPropertyMetaValue(beanClass, propertyName, PropertySize.class);
+		PropertySize meta = getPropertyMetaValue(beanClass, propertyName,
+				PropertySize.class);
 		if (meta == null) return null;
 		return meta.max();
 	}
@@ -149,7 +152,8 @@ public class BeanMetadataHome
 	public static boolean isPropertyMandatory(Class beanClass,
 			String propertyName)
 	{
-		return getPropertyMetaValue(beanClass, propertyName, MandatoryProperty.class) != null;
+		return getPropertyMetaValue(beanClass, propertyName,
+				MandatoryProperty.class) != null;
 	}
 
 	/**
@@ -162,7 +166,8 @@ public class BeanMetadataHome
 	public static boolean isPropertyUppercase(Class beanClass,
 			String propertyName)
 	{
-		return getPropertyMetaValue(beanClass, propertyName, UpperCaseProperty.class) != null;
+		return getPropertyMetaValue(beanClass, propertyName,
+				UpperCaseProperty.class) != null;
 	}
 
 	/**
@@ -175,7 +180,8 @@ public class BeanMetadataHome
 	public static boolean isPropertyReadOnly(Class beanClass,
 			String propertyName)
 	{
-		return getPropertyMetaValue(beanClass, propertyName, ReadOnlyProperty.class) != null;
+		return getPropertyMetaValue(beanClass, propertyName,
+				ReadOnlyProperty.class) != null;
 	}
 
 	/**
@@ -188,8 +194,8 @@ public class BeanMetadataHome
 	public static String getPropertyShortDescription(Class beanClass,
 			String propertyName)
 	{
-		PropertyShortDescription meta = getPropertyMetaValue(beanClass, propertyName,
-				PropertyShortDescription.class);
+		PropertyShortDescription meta = getPropertyMetaValue(beanClass,
+				propertyName, PropertyShortDescription.class);
 		if (meta == null) return null;
 		return meta.value();
 	}
@@ -204,8 +210,8 @@ public class BeanMetadataHome
 	public static String getPropertyLongDescription(Class beanClass,
 			String propertyName)
 	{
-		PropertyLongDescription meta = getPropertyMetaValue(beanClass, propertyName,
-				PropertyLongDescription.class);
+		PropertyLongDescription meta = getPropertyMetaValue(beanClass,
+				propertyName, PropertyLongDescription.class);
 		if (meta == null) return null;
 		return meta.value();
 	}
@@ -220,7 +226,8 @@ public class BeanMetadataHome
 	public static Integer getPropertyDecimalScale(Class beanClass,
 			String propertyName)
 	{
-		PropertyScale meta = getPropertyMetaValue(beanClass, propertyName, PropertyScale.class);
+		PropertyScale meta = getPropertyMetaValue(beanClass, propertyName,
+				PropertyScale.class);
 		if (meta == null) return null;
 		return meta.value();
 	}
@@ -235,5 +242,12 @@ public class BeanMetadataHome
 	private BeanMetadataHome()
 	{
 		throw new DoNotInstantiateException();
+	}
+
+	public static TrimPolicy getPropertyTrimPolicy(Class beanClass, String propertyName)
+	{
+		PropertyTrimPolicy propertyTrimPolicy = getPropertyMetaValue(beanClass, propertyName,
+				PropertyTrimPolicy.class);
+		return (propertyTrimPolicy == null) ? null : propertyTrimPolicy.value();
 	}
 }

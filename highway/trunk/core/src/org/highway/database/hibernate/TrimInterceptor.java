@@ -7,8 +7,9 @@ import net.sf.hibernate.Hibernate;
 import net.sf.hibernate.Interceptor;
 import net.sf.hibernate.type.Type;
 
+import org.highway.bean.BeanMetadataHome;
 import org.highway.helper.StringHelper;
-import org.highway.vo.MetadataHome;
+import org.highway.helper.StringHelper.TrimPolicy;
 
 /**
  * This Hibernate interceptor trims string properties when loading or saving a
@@ -154,14 +155,14 @@ public class TrimInterceptor implements Interceptor, Serializable
 		Type[] types)
 	{
 		boolean result = false;
-		String policy = null;
+		TrimPolicy policy = null;
 		String trimmed = null;
 		
 		for (int i = 0; i < propertyNames.length; i++)
 		{
 			if (Hibernate.STRING.equals(types[i])
 				&& state[i] instanceof String
-				&& (policy = MetadataHome.getPropertyTrimPolicy(entity.getClass(), propertyNames[i])) != null
+				&& (policy = BeanMetadataHome.getPropertyTrimPolicy(entity.getClass(), propertyNames[i])) != null
 				&& !state[i].equals(trimmed = StringHelper.trim(policy, (String) state[i])))
 			{
 				state[i] = trimmed;

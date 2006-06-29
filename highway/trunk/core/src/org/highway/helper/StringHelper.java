@@ -8,42 +8,32 @@ import java.util.StringTokenizer;
 
 /**
  * @author David Attias
- * @author Christian de Bevotte
  */
 public abstract class StringHelper
 {
-	/**
-	 * Constant for the remove left space characters trim policy (value is
-	 * {@value #TRIM_SPACE_LEFT}).
-	 * 
-	 * @since 1.4.6
-	 */
-	public static final String TRIM_SPACE_LEFT = "spaceleft";
-	
-	/**
-	 * Constant for the remove right space characters trim policy (value is
-	 * {@value #TRIM_SPACE_RIGHT}).
-	 * 
-	 * @since 1.4.6
-	 */
-	public static final String TRIM_SPACE_RIGHT = "spaceright";
-	
-	/**
-	 * Constant for the remove left and right space characters trim policy
-	 * (value is {@value #TRIM_SPACE_BOTH}).
-	 * 
-	 * @since 1.4.6
-	 */
-	public static final String TRIM_SPACE_BOTH = "spaceboth";
-	
-	/**
-	 * Constant for the remove all unnecessary space characters trim policy
-	 * (value is {@value #TRIM_SPACE_ALL}).
-	 * 
-	 * @since 1.4.6
-	 */
-	public static final String TRIM_SPACE_ALL = "spaceall";
-	
+	public static enum TrimPolicy
+	{
+		/**
+		 * Remove left space characters trim policy.
+		 */
+		SPACE_LEFT,
+
+		/**
+		 * Constant for the remove right space characters trim policy.
+		 */
+		SPACE_RIGHT,
+
+		/**
+		 * Remove left and right space characters trim policy.
+		 */
+		SPACE_BOTH,
+
+		/**
+		 * Remove all unnecessary space characters trim policy.
+		 */
+		SPACE_ALL,
+	};
+
 	private static String[] COMMON_STRINGS = new String[] {"  ", "saint ",
 			"sous "};
 
@@ -198,34 +188,31 @@ public abstract class StringHelper
 
 		return buffer.toString();
 	}
-	
+
 	/**
 	 * Trims the string passed as parameter according to the specified trim
-	 * policy.
-	 * This method as no effect if policy is null or unknown.
-	 * Returns <code>null</code> if the value parameter is null.
-	 * 
-	 * @since 1.4.6
+	 * policy. This method as no effect if policy is null or unknown. Returns
+	 * <code>null</code> if the value parameter is null.
 	 */
-	public static String trim(String policy, String value)
+	public static String trim(TrimPolicy policy, String value)
 	{
 		if (policy == null || isNullOrEmpty(value))
 		{
 			return value;
 		}
-		if (TRIM_SPACE_LEFT.equals(policy))
+		if (policy == TrimPolicy.SPACE_LEFT)
 		{
 			return trimLeftSpaces(value);
 		}
-		if (TRIM_SPACE_RIGHT.equals(policy))
+		if (policy == TrimPolicy.SPACE_RIGHT)
 		{
 			return trimRightSpaces(value);
 		}
-		if (TRIM_SPACE_BOTH.equals(policy))
+		if (policy == TrimPolicy.SPACE_BOTH)
 		{
 			return value.trim();
 		}
-		if (TRIM_SPACE_ALL.equals(policy))
+		if (policy == TrimPolicy.SPACE_ALL)
 		{
 			return trimSpaces(value);
 		}
@@ -421,8 +408,8 @@ public abstract class StringHelper
 			return value;
 		}
 
-		return value.endsWith(suffix) ? 
-			value.substring(0, value.length() - suffix.length()) : value;
+		return value.endsWith(suffix) ? value.substring(0, value.length()
+				- suffix.length()) : value;
 	}
 
 	/**
@@ -671,8 +658,7 @@ public abstract class StringHelper
 	}
 
 	/**
-	 * Remove the left space characters from the string passed as a
-	 * parameter.
+	 * Remove the left space characters from the string passed as a parameter.
 	 * 
 	 * @param value string to trim
 	 * @return the left-trimmed value
@@ -684,7 +670,7 @@ public abstract class StringHelper
 		{
 			return value;
 		}
-		
+
 		for (int i = 0; i < value.length(); i++)
 		{
 			if (value.charAt(i) != ' ')
@@ -692,13 +678,12 @@ public abstract class StringHelper
 				return value.substring(i, value.length());
 			}
 		}
-		
+
 		return "";
 	}
 
 	/**
-	 * Remove the right space characters from the string passed as a
-	 * parameter.
+	 * Remove the right space characters from the string passed as a parameter.
 	 * 
 	 * @param value string to trim
 	 * @return the right-trimmed value
@@ -710,7 +695,7 @@ public abstract class StringHelper
 		{
 			return value;
 		}
-		
+
 		for (int i = value.length(); i > 0; i--)
 		{
 			if (value.charAt(i - 1) != ' ')
@@ -718,7 +703,7 @@ public abstract class StringHelper
 				return value.substring(0, i);
 			}
 		}
-		
+
 		return "";
 	}
 }

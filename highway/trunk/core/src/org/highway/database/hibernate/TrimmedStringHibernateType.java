@@ -8,6 +8,7 @@ import java.sql.Types;
 import net.sf.hibernate.UserType;
 
 import org.highway.helper.StringHelper;
+import org.highway.helper.StringHelper.TrimPolicy;
 
 /**
  * Class used in generated Hibernate mapping files (*.hbm.xml) to represent
@@ -16,26 +17,23 @@ import org.highway.helper.StringHelper;
  * 
  * Cf "<a href="http://www.hibernate.org/90.html">Automatically trimming String
  * properties</a>" from the Hibernate wiki.
- * 
- * @author Christian de Bevotte
- * @since 1.4.6
  */
 public class TrimmedStringHibernateType implements UserType
 {
 	/**
 	 * Default trim policy.
 	 */
-	private static String DEFAULT_POLICY = StringHelper.TRIM_SPACE_RIGHT;
+	private static TrimPolicy DEFAULT_POLICY = TrimPolicy.SPACE_RIGHT;
 	
 	/**
 	 * Trim policy.
 	 */
-	private String policy;
+	private TrimPolicy policy;
 
 	/**
 	 * Sets the default trim policy.
 	 */
-	public static void setDefaultPolicy(String policy)
+	public static void setDefaultPolicy(TrimPolicy policy)
 	{
 		DEFAULT_POLICY = policy;
 	}
@@ -54,7 +52,7 @@ public class TrimmedStringHibernateType implements UserType
 	/**
 	 * Sets the trim policy.
 	 */
-	public void setPolicy(String policy)
+	public void setPolicy(TrimPolicy policy)
 	{
 		this.policy = policy;
 	}
