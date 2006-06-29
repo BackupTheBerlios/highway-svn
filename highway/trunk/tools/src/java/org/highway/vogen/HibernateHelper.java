@@ -1,10 +1,12 @@
 package org.highway.vogen;
 
 import java.util.Iterator;
+import java.util.Properties;
 
 import org.highway.annotation.VoMapping;
 import org.highway.annotation.VoMappingDiscriminator;
 import org.highway.annotation.VoMappingId;
+import org.highway.annotation.VoMappingPropertyType;
 
 import com.sun.mirror.declaration.InterfaceDeclaration;
 import com.sun.mirror.declaration.MethodDeclaration;
@@ -62,10 +64,8 @@ public class HibernateHelper {
 		return superEntity(aDeclaration) == null;
 	}
 	private static InterfaceType superEntity(InterfaceDeclaration aDeclaration) {
-		Iterator<InterfaceType> interfaces = aDeclaration.getSuperinterfaces().iterator();
-
-		while (interfaces.hasNext()){
-			InterfaceType superEntityDefInterface = interfaces.next();
+		for (InterfaceType superEntityDefInterface : aDeclaration.getSuperinterfaces())
+		{
 			if (superEntityDefInterface.getDeclaration().getAnnotation(VoMapping.class)!=null){
 				return superEntityDefInterface;
 			}
@@ -81,4 +81,25 @@ public class HibernateHelper {
 		return superEntity(aDeclaration) != null
 				&& aDeclaration.getAnnotation(VoMappingDiscriminator.class)==null;
 	}
+
+	public static String keyColumn(InterfaceDeclaration aDeclaration) throws VoGenException 
+	{
+		MethodDeclaration methodId = null;
+		for (MethodDeclaration method : aDeclaration.getMethods())
+		{
+			if (method.getAnnotation(VoMappingId.class)!=null)
+				methodId = method;
+				break;
+		} 
+
+		if (methodId == null)
+		{
+			throw new VoGenException(
+				"no id mapping found in hierarchy of class "
+				+ aDeclaration.getQualifiedName());
+		}
+
+		return VoGenHelper.getPropertyName(methodId);
+	}
+
 }

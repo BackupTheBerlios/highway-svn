@@ -23,10 +23,10 @@ public class HighwayDecoratedInterfaceDeclaration extends
 	public String getSuperClassName(){
 		return VoGenHelper.getSuperClassName((InterfaceDeclaration) this.delegate);
 	}
-	public boolean hasCompositeId(){
+	public boolean getHasCompositeId(){
 		return HibernateHelper.hasCompositeId((InterfaceDeclaration) this.delegate);
 	}
-	public boolean hasPrimitiveId(){
+	public boolean getHasPrimitiveId(){
 		return HibernateHelper.hasPrimitiveId((InterfaceDeclaration) this.delegate);
 	}
 	public String getEntityClassName(){
@@ -50,10 +50,20 @@ public class HighwayDecoratedInterfaceDeclaration extends
 	public boolean getIfIsClass(){
 		return HibernateHelper.isClass((InterfaceDeclaration) this.delegate);
 	}
-	public boolean ifIsSubclass(){
+	public boolean getIfIsSubClass(){
 		return HibernateHelper.isSubclass((InterfaceDeclaration) this.delegate);
 	}
-	public boolean ifIsJoinedSubclass(){
+	public boolean getIfIsJoinedSubClass(){
 		return HibernateHelper.isJoinedSubclass((InterfaceDeclaration) this.delegate);
+	}
+	public String getKeyColumn(){
+		try
+		{
+			return HibernateHelper.keyColumn((InterfaceDeclaration)this.delegate);
+		}
+		catch (VoGenException e)
+		{
+			return "";
+		}
 	}
 }

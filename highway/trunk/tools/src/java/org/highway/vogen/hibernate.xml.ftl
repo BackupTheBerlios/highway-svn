@@ -10,45 +10,44 @@
 <hibernate-mapping>
 	<#if type.ifIsClass>
     <class
-     	name=${type.generatedClassName}
+     	name="${type.generatedClassName}"
     	<@ifHasAnnotation var="ann" annotation="org.highway.annotation.VoMapping">
-        table="${ann.value}"
+        table="${ann.table}"
         </@ifHasAnnotation>
         <@ifHasAnnotation var="ann" annotation="org.highway.annotation.VoMappingDiscriminatorValue">
         discriminator-value="${ann.value}"
         </@ifHasAnnotation>
      >
      	
-     	<!--#if type.hasPrimitiveId-->
+     	<#if type.hasPrimitiveId>
      	<@forAllMethods annotation="org.highway.annotation.VoMappingId" var="method" annotationVar="ann">
         <id
             name="${method.propertyName}"
             column="${ann.column}"
-            type="${ann.type}">
-        
+            type="<@annotationValue declaration=method annotation="org.highway.annotation.VoMappingPropertyType" default=${method.returnType}/>"
             <generator class="${ann.generatorClass}">
-
+			<@forAllMethods declaration=type annotation="org.highway.annotation.VoMappingGeneratorParam" var="generatorMethod" annotationVar="annGenerator">
+			<param name="${annGenerator.name}">${annGenerator.value}</param>
+			</@forAllMethods>
             </generator>
         </id>
 	    </@forAllMethods>
-        
-
-        
+        <#elseif type.hasCompositeId>
         <composite-id>
         	<@forAllMethods annotation="org.highway.annotation.VoMappingId" var="method" annotationVar="ann">
             <key-property
                 name="${method.propertyName}"
                 column="${ann.column}"
-                type="${ann.type}"
+                type="<@annotationValue declaration=method annotation="org.highway.annotation.VoMappingPropertyType" default="${method.returnType}"/>"
             />
             </@forAllMethods>
         </composite-id>
-
+		</#if>
         
         <@ifHasAnnotation var="ann" annotation="org.highway.annotation.VoMappingDiscriminator">
         <discriminator
                 column="${ann.column}"
-                type="${ann.type}"
+                type="<@annotationValue declaration=method annotation="org.highway.annotation.VoMappingPropertyType" default="${method.returnType}"/>"
                 force="${ann.force}"
                 insert="${ann.insert}"
         />
@@ -56,7 +55,7 @@
         <@forAllMethods annotation="org.highway.annotation.VoMappingProperty" var="method" annotationVar="ann">
         <property 
             name="${method.propertyName}"
-            type="${ann.type}"
+            type="<@annotationValue declaration=method annotation="org.highway.annotation.VoMappingPropertyType" default="${method.returnType}"/>"
             column="${ann.column}"
             insert="${ann.insert}"
             update="${ann.update}"
@@ -64,39 +63,39 @@
         </@forAllMethods>
 	</class>
 	<#elseif type.ifIsSubClass>
-	<@ifHasAnnotation var="ann" annotation="org.highway.annotation.VoMappingDiscriminatorValue">
     <subclass
-        name="${method.entityClassName}"
-        extends="${method.superClassName}"
+        name="${type.entityClassName}"
+        extends="${type.superClassName}"
+        <@ifHasAnnotation var="ann" annotation="org.highway.annotation.VoMappingDiscriminatorValue">
         discriminator-value="${ann.value}"
+        </@ifHasAnnotation>
     >
    
        <@forAllMethods annotation="org.highway.annotation.VoMappingProperty" var="method" annotationVar="ann">
         <property
             name="${method.propertyName}"
-            type="${ann.type}"
+            type="<@annotationValue declaration=method annotation="org.highway.annotation.VoMappingPropertyType" default="${method.returnType}"/>"
             column="${ann.column}"
             insert="${ann.insert}"
             update="${ann.update}"
         />
        </@forAllMethods>
       </subclass>
-    </@ifHasAnnotation>
+
    	<#elseif type.ifIsJoinedSubClass>
-	<@ifHasAnnotation var="ann" annotation="org.highway.annotation.VoMappingDiscriminator">
     <joined-subclass
-        name="${method.entityClassName}"
-        extends="${method.superClassName}"
+        name="${type.entityClassName}"
+        extends="${type.superClassName}"
     	<@ifHasAnnotation var="annMapping" annotation="org.highway.annotation.VoMapping">
-        table="${annMapping.value}"
+        table="${annMapping.table}"
         </@ifHasAnnotation>
     >
-
+		<key column="<@annotationValue declaration=method annotation="org.highway.annotation.VoMappingKeyColumn" default="${type.keyColumn}"/>"/>
 
        <@forAllMethods annotation="org.highway.annotation.VoMappingProperty" var="method" annotationVar="ann">
         <property
             name="${method.propertyName}"
-            type="${ann.type}"
+            type="<@annotationValue declaration=method annotation="org.highway.annotation.VoMappingPropertyType" default="${method.returnType}"/>"
             column="${ann.column}"
             insert="${ann.insert}"
             update="${ann.update}"
@@ -104,7 +103,6 @@
        </@forAllMethods>
       
     </joined-subclass>
-   </@ifHasAnnotation>
 	</#if>
 </hibernate-mapping>
 </@file>
