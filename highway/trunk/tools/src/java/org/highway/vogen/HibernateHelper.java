@@ -1,12 +1,8 @@
 package org.highway.vogen;
 
-import java.util.Iterator;
-import java.util.Properties;
-
-import org.highway.annotation.VoMapping;
-import org.highway.annotation.VoMappingDiscriminator;
-import org.highway.annotation.VoMappingId;
-import org.highway.annotation.VoMappingPropertyType;
+import org.highway.database.DiscriminatorColumn;
+import org.highway.database.Identity;
+import org.highway.database.Mapped;
 
 import com.sun.mirror.declaration.InterfaceDeclaration;
 import com.sun.mirror.declaration.MethodDeclaration;
@@ -26,7 +22,7 @@ public class HibernateHelper {
 		int count = 0;
 
 		for (MethodDeclaration method : aDeclaration.getMethods()) {
-			if (method.getAnnotation(VoMappingId.class) != null) {
+			if (method.getAnnotation(Identity.class) != null) {
 				count++;
 			}
 		}
@@ -66,7 +62,7 @@ public class HibernateHelper {
 	private static InterfaceType superEntity(InterfaceDeclaration aDeclaration) {
 		for (InterfaceType superEntityDefInterface : aDeclaration.getSuperinterfaces())
 		{
-			if (superEntityDefInterface.getDeclaration().getAnnotation(VoMapping.class)!=null){
+			if (superEntityDefInterface.getDeclaration().getAnnotation(Mapped.class)!=null){
 				return superEntityDefInterface;
 			}
 		}
@@ -75,11 +71,11 @@ public class HibernateHelper {
 	public static boolean isSubclass(InterfaceDeclaration aDeclaration)
 	{
 		return superEntity(aDeclaration) != null
-				&& aDeclaration.getAnnotation(VoMappingDiscriminator.class)!=null;
+				&& aDeclaration.getAnnotation(DiscriminatorColumn.class)!=null;
 	}
 	public static boolean isJoinedSubclass(InterfaceDeclaration aDeclaration){
 		return superEntity(aDeclaration) != null
-				&& aDeclaration.getAnnotation(VoMappingDiscriminator.class)==null;
+				&& aDeclaration.getAnnotation(DiscriminatorColumn.class)==null;
 	}
 
 	public static String keyColumn(InterfaceDeclaration aDeclaration) throws VoGenException 
@@ -87,7 +83,7 @@ public class HibernateHelper {
 		MethodDeclaration methodId = null;
 		for (MethodDeclaration method : aDeclaration.getMethods())
 		{
-			if (method.getAnnotation(VoMappingId.class)!=null)
+			if (method.getAnnotation(Identity.class)!=null)
 				methodId = method;
 				break;
 		} 
