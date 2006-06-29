@@ -23,6 +23,7 @@ public class VogenTask extends AptTask {
 		fileSet.setDir(new File(getSourcepath().toString()));
 		fileSet.setIncludes("**/*Def.java");
 		addConfiguredSource(fileSet);
+		this.setNowarn(true);
 		super.execute();
 	}
     /******************** -inputdir option **********************/

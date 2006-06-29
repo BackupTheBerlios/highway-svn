@@ -47,4 +47,13 @@ public class HighwayDecoratedInterfaceDeclaration extends
 	public String remoteFullClassName(){
 		return EjbGenSessionHelper.remoteFullClassName((InterfaceDeclaration) this.delegate);
 	}
+	public boolean getIfIsClass(){
+		return HibernateHelper.isClass((InterfaceDeclaration) this.delegate);
+	}
+	public boolean ifIsSubclass(){
+		return HibernateHelper.isSubclass((InterfaceDeclaration) this.delegate);
+	}
+	public boolean ifIsJoinedSubclass(){
+		return HibernateHelper.isJoinedSubclass((InterfaceDeclaration) this.delegate);
+	}
 }

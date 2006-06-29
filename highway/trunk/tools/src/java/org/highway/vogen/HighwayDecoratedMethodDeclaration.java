@@ -31,4 +31,7 @@ public class HighwayDecoratedMethodDeclaration extends
 	public String getExceptionsDeclaration(String append){
 		return EjbGenHelper.getExceptionsDeclaration((MethodDeclaration) this.delegate, append);
 	}
+	public String getPropertyHibernateType(){
+		return HibernateHelper.getPropertyHibernateType((MethodDeclaration) this.delegate);
+	}
 }

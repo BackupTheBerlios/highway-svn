@@ -11,7 +11,6 @@ import java.lang.annotation.Target;
 @Inherited
 public @interface VoMappingProperty {
 	String column();
-	String type();
 	boolean update() default true;
 	boolean insert() default true;
 }

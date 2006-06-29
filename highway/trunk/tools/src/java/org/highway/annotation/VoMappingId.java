@@ -11,6 +11,5 @@ import java.lang.annotation.Target;
 @Inherited
 public @interface VoMappingId {
 	String column();
-	String type();
 	String generatorClass() default "assigned";
 }
