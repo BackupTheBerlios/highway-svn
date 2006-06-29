@@ -6,7 +6,7 @@
 		<classpath path="../highway_tools/bin/pack/highway-tools.jar"/>
 	</taskdef>
 	<path id="core.test.classpath">
-		<pathelement location="src" />
+		<pathelement location="src/java/main" />
 		<pathelement location="bin/eclipse" />
 		<pathelement location="bin/classes" />
 		<pathelement location="../highway_tools/bin/pack/highway-tools.jar" />
