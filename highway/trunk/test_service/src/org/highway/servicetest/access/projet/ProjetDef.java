@@ -2,23 +2,23 @@ package org.highway.servicetest.access.projet;
 
 import java.util.Date;
 
-import org.highway.annotation.VoMapping;
-import org.highway.annotation.VoMappingId;
-import org.highway.annotation.VoMappingProperty;
-import org.highway.vo.Decimal;
-import org.highway.vo.ValueObject;
+import org.highway.bean.Decimal;
+import org.highway.bean.ValueObject;
+import org.highway.database.Mapped;
+import org.highway.database.Identity;
+import org.highway.database.VoMappingProperty;
 
 /**
  * @socle.mapping table="PROJET"
  */
-@VoMapping(table="PROJET")
+@Mapped(table="PROJET")
 @org.highway.annotation.ValueObject
 public interface ProjetDef extends ValueObject {
 	
 	/**
 	 * @socle.mapping.id column="ID"
 	 */
-	@VoMappingId(column="ID", type="long")
+	@Identity(column="ID", type="long")
 	Long getId();
 	
 	/**

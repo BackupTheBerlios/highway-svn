@@ -1,11 +1,11 @@
 package org.highway.servicetest.access.employe;
 
-import org.highway.annotation.VoMapping;
-import org.highway.annotation.VoMappingDiscriminator;
-import org.highway.annotation.VoMappingDiscriminatorValue;
-import org.highway.annotation.VoMappingProperty;
-import org.highway.vo.Decimal;
-import org.highway.vo.ValueObject;
+import org.highway.bean.Decimal;
+import org.highway.bean.ValueObject;
+import org.highway.database.Mapped;
+import org.highway.database.DiscriminatorColumn;
+import org.highway.database.DiscriminatorValue;
+import org.highway.database.VoMappingProperty;
 
 ///**
 //* table-per-subclass
@@ -20,9 +20,9 @@ import org.highway.vo.ValueObject;
  * @socle.mapping.discriminator type="char"
  *                              column="TYPE"
  */
-@VoMapping(table="EMPLOYE")
-@VoMappingDiscriminatorValue("0")
-@VoMappingDiscriminator(type="char", column="TYPE")
+@Mapped(table="EMPLOYE")
+@DiscriminatorValue("0")
+@DiscriminatorColumn(type="char", column="TYPE")
 
 public interface EmployeDef extends ValueObject{
 

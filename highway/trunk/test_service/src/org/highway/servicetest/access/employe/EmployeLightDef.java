@@ -1,7 +1,7 @@
 package org.highway.servicetest.access.employe;
 
 import org.highway.annotation.VoBaseOnly;
-import org.highway.vo.ValueObject;
+import org.highway.bean.ValueObject;
 
 /**
  * @socle.vo.base.only

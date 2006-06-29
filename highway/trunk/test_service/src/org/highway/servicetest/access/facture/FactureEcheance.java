@@ -6,7 +6,7 @@ package org.highway.servicetest.access.facture;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.highway.vo.Enum;
+import org.highway.bean.Enum;
 
 /**
  * @author PLOURIN-Y

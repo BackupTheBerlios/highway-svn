@@ -6,8 +6,8 @@ package org.highway.servicetest.access.firme;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.highway.bean.Enum;
 import org.highway.servicetest.access.facture.FactureEcheance;
-import org.highway.vo.Enum;
 
 /**
  * @author PLOURIN-Y

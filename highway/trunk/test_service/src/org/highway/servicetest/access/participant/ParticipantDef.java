@@ -1,21 +1,21 @@
 package org.highway.servicetest.access.participant;
 
-import org.highway.annotation.VoMapping;
-import org.highway.annotation.VoMappingId;
-import org.highway.annotation.VoMappingProperty;
-import org.highway.vo.ValueObject;
+import org.highway.bean.ValueObject;
+import org.highway.database.Mapped;
+import org.highway.database.Identity;
+import org.highway.database.VoMappingProperty;
 
 /**
  * @socle.mapping table="PARTICIPANT"
  */
-@VoMapping(table="PARTICIPANT")
+@Mapped(table="PARTICIPANT")
 @org.highway.annotation.ValueObject
 public interface ParticipantDef extends ValueObject {
 
 	/**
 	 * @socle.mapping.id column="EMPLOYE_ID"
 	 */
-	@VoMappingId(column="EMPLOYE_ID", type="long")
+	@Identity(column="EMPLOYE_ID", type="long")
 	Long getEmployeId();
 	
 	/**
