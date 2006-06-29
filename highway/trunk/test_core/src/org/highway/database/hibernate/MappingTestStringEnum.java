@@ -3,7 +3,7 @@ package org.highway.database.hibernate;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.highway.vo.Enum;
+import org.highway.bean.Enum;
 
 public class MappingTestStringEnum extends Enum
 {

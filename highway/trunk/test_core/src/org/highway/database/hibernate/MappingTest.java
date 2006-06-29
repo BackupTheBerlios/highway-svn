@@ -8,6 +8,7 @@ import java.sql.Timestamp;
 import junit.framework.TestCase;
 import net.sf.hibernate.cfg.Configuration;
 
+import org.highway.bean.Decimal;
 import org.highway.database.Database;
 import org.highway.database.DatabaseSession;
 import org.highway.database.SelectQuery;
@@ -17,7 +18,6 @@ import org.highway.debug.DebugHome;
 import org.highway.debug.DebugLog;
 import org.highway.debug.Log4jDebugLog;
 import org.highway.helper.Wrapper;
-import org.highway.vo.Decimal;
 
 
 

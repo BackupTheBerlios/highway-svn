@@ -2,6 +2,7 @@ package org.highway.vo;
 
 import java.util.List;
 
+import org.highway.bean.Enum;
 import org.highway.helper.Serializer;
 
 

@@ -2,6 +2,7 @@ package org.highway.vo;
 
 import java.math.BigDecimal;
 
+import org.highway.bean.Decimal;
 import org.highway.helper.Serializer;
 
 

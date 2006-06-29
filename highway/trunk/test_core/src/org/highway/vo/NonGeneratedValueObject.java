@@ -1,5 +1,5 @@
 package org.highway.vo;
-import org.highway.vo.ValueObjectAbstract;
+import org.highway.bean.ValueObjectAbstract;
 
 
 /**

@@ -1,7 +1,7 @@
 package org.highway.vo;
 
-import org.highway.annotation.BeanPropertySize;
 import org.highway.annotation.VoBaseOnly;
+import org.highway.bean.PropertySize;
 
 /**
  * @socle.vo.base.only
@@ -15,6 +15,6 @@ public interface CastleDef extends BuildingDef
 	 * @socle.vo.property.min 1
 	 * @socle.vo.property.max 3
 	 */
-	@BeanPropertySize(min=1, max=3)
+	@PropertySize(min=1, max=3)
 	int getKeepHeight();
 }

@@ -2,7 +2,7 @@ package org.highway.vo;
 
 import java.util.List;
 
-import org.highway.vo.Enum;
+import org.highway.bean.Enum;
 
 /**
  * 

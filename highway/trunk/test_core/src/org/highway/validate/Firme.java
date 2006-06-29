@@ -1,7 +1,7 @@
 package org.highway.validate;
 
+import org.highway.bean.ValueObjectAbstract;
 import org.highway.helper.ValueHelper;
-import org.highway.vo.ValueObjectAbstract;
 
 /**
  * @author attias

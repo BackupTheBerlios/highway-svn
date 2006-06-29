@@ -4,9 +4,9 @@ import java.util.Date;
 
 import junit.framework.TestCase;
 
+import org.highway.bean.Decimal;
 import org.highway.validate.RangeValidator;
 import org.highway.validate.ValidateContext;
-import org.highway.vo.Decimal;
 
 /**
  * @author attias

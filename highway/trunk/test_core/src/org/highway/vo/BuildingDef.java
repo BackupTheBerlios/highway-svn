@@ -2,9 +2,9 @@ package org.highway.vo;
 
 import java.util.Date;
 
-import org.highway.annotation.BeanPropertyMandatory;
-import org.highway.annotation.BeanPropertySize;
-import org.highway.vo.ValueObject;
+import org.highway.bean.MandatoryProperty;
+import org.highway.bean.PropertySize;
+import org.highway.bean.ValueObject;
 
 /**
  * @author David Attias
@@ -16,17 +16,17 @@ public interface BuildingDef extends ValueObject
 	 */
 	long getId();
 	
-	@BeanPropertySize(min=3,max=30)
-	@BeanPropertyMandatory
+	@PropertySize(min=3,max=30)
+	@MandatoryProperty
 	String getName();
 	
-	@BeanPropertyMandatory
+	@MandatoryProperty
 	double getSurface();
 	
-	@BeanPropertyMandatory
+	@MandatoryProperty
 	Date getConstructionDate();
 	
-	 @BeanPropertyMandatory
+	 @MandatoryProperty
 	int getFloorNumber();
 	
 	/**
