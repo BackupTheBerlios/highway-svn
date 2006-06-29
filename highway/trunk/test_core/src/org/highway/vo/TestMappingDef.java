@@ -19,7 +19,6 @@ public interface TestMappingDef extends org.highway.vo.ValueObject {
 	
 	@VoMappingGeneratorParam(name="paramName1", value="paramValue1")
 	@VoMappingId(column="myColumn", type="string", generatorClass="native")
-	@VoMappingProperty(type="type_hibernate_chose2", column="myColumn2")
 	public String getNom();
 	
 	@VoMappingProperty(type="type_hibernate_chose2", column="myColumn2")
