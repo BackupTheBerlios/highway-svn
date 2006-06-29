@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project default="make.jar" basedir="..">
+<project name="frisco_poc" default="metier.generate" basedir="..">
 
 	<taskdef resource="org/highway/anttasks.properties">
-		<classpath path="lib/highway/highway-j2ee-tools-0.8.jar" />
+		<classpath path="../highway_tools/bin/pack/highway-tools.jar"/>
 	</taskdef>
-
-	<target name="metier.generate">
-		<vogen inputDir="src/java/main" outputDir="gen/src" />
-		<ejbgen javaInputDir="src/java/main" javaOutputDir="gen/src" cfgOutputDir="gen/cfg/META-INF" />
-		<metagen inputDir="src/java/main" outputDir="gen/src" />
+	<path id="core.test.classpath">
+		<pathelement location="src" />
+		<pathelement location="bin/eclipse" />
+		<pathelement location="bin/classes" />
+		<pathelement location="../highway_tools/bin/pack/highway-tools.jar" />
+		<fileset dir="lib" includes="**/*.jar" />
+		<fileset dir="../highway_core/lib" includes="**/*.jar" />
+		<fileset dir="../highway_core/bin/pack" includes="**/*.jar" />
+	</path>
+	<target name="metier.generate" depends="metier.clean">
+		<delete dir="bin/gensrc"/>
+		<mkdir dir="bin/gensrc"/>
+		<delete dir="bin/cfg"/>
+		<mkdir dir="bin/cfg"/>
+			
+		<vogen inputDir="src/java/main" outputDir="bin/gensrc" >
+			<classpath refid="core.test.classpath"/>
+		</vogen>
+		<!--ejbgen javaInputDir="src/java/main" javaOutputDir="gen/src" cfgOutputDir="gen/cfg/META-INF" />
+		<metagen inputDir="src/java/main" outputDir="gen/src" /-->
 	</target>
 
 	<target name="metier.clean">
-		<delete dir="gen/src" />
-		<delete dir="gen/cfg" />
+		<delete dir="bin/gensrc" />
+		<delete dir="bin/cfg" />
+		<delete dir="bin/classes" />
 	</target>
 
 	<target name="metier.build" depends="metier.clean, metier.generate">
