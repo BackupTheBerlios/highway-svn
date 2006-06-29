@@ -4,10 +4,10 @@
 
 package org.highway.helper;
 
+import org.highway.bean.ValueObject;
 import org.highway.debug.DebugHome;
 import org.highway.exception.Assert;
 import org.highway.exception.TechnicalException;
-import org.highway.vo.ValueObject;
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
 import java.beans.Introspector;

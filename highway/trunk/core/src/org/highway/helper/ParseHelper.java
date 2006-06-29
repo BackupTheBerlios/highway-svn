@@ -4,7 +4,7 @@
 
 package org.highway.helper;
 
-import org.highway.vo.Decimal;
+import org.highway.bean.Decimal;
 
 /**
  * ...

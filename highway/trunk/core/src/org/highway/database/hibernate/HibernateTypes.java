@@ -12,10 +12,10 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.TimeZone;
 
+import org.highway.bean.Decimal;
+import org.highway.bean.Enum;
 import org.highway.exception.TechnicalException;
 import org.highway.helper.ClassHelper;
-import org.highway.vo.Decimal;
-import org.highway.vo.Enum;
 
 /**
  * Hibernate type matching map. Used by HibernateDatabaseSession to convert

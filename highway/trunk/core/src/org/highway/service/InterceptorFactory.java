@@ -5,40 +5,41 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.highway.annotation.Interceptors;
 import org.highway.debug.DebugHome;
 import org.highway.exception.DoNotInstantiateException;
+import org.highway.exception.TechnicalException;
 import org.highway.helper.ClassHelper;
 
 /**
  * Manages the interceptor instances.<br>
  * Contains the logic that look for tag in the component service interface,
  * create the interceptor instances and cache them.
- *
+ * 
  */
-public class InterceptorFactory
-{
+public class InterceptorFactory {
 	/**
 	 * Field NOT_FOUND
 	 */
-	private static final List NOT_FOUND = new ArrayList(0);
+	private static final List<ServiceInterceptor> NOT_FOUND = new ArrayList<ServiceInterceptor>(
+			0);
 
 	/**
 	 * Field FOUND_BUT_EMPTY
 	 */
-	private static final List FOUND_BUT_EMPTY = new ArrayList(0);
-	private static final Map<String, Object> interceptorMap = new HashMap<String, Object>();
+	private static final List<ServiceInterceptor> FOUND_BUT_EMPTY = new ArrayList<ServiceInterceptor>(
+			0);
+
+	private static final Map<Class, ServiceInterceptor> interceptorMap = new HashMap<Class, ServiceInterceptor>();
 
 	/**
 	 * Field serviceMap
 	 */
-	private static final Map<Class, List> serviceMap = new HashMap<Class, List>();
+	private static final Map<Class, List<ServiceInterceptor>> serviceMap = new HashMap<Class, List<ServiceInterceptor>>();
 
 	/**
 	 * Do not instantiate this class.
 	 */
-	private InterceptorFactory()
-	{
+	private InterceptorFactory() {
 		throw new DoNotInstantiateException();
 	}
 
@@ -48,87 +49,73 @@ public class InterceptorFactory
 	 * <br>
 	 * This method is synchronized because used in thread intensive environment
 	 * and the interceptors are created only once and cached.
-	 *
-	 * @param serviceClass the component service interface
+	 * 
+	 * @param serviceClass
+	 *            the component service interface
 	 * @return a list of interceptors
 	 */
-	public static synchronized List getInterceptors(Class serviceClass)
-	{
-		List interceptors =  serviceMap.get(serviceClass);
+	public static synchronized List getInterceptors(Class serviceClass) {
+		List interceptors = serviceMap.get(serviceClass);
 
-		if (interceptors == null)
-		{
+		if (interceptors == null) {
+			DebugHome.debug("Loading interceptors for service ", serviceClass
+					.getName());
 			interceptors = loadInterceptors(serviceClass);
-			DebugHome.getDebugLog().debug(
-				"Loading interceptors for service ", serviceClass.getName());
-			DebugHome.getDebugLog().debugValue("interceptors", interceptors);
+			DebugHome.debugValue("Interceptors", interceptors);
 			serviceMap.put(serviceClass, interceptors);
 		}
 
 		return interceptors;
 	}
 
-	/**
-	 * Method loadInterceptors
-	 * @param serviceClass Class
-	 * @return List
-	 */
-	private static List loadInterceptors(Class serviceClass)
-	{
-			String[] interceptorsClassName = ((Interceptors)serviceClass.getAnnotation(Interceptors.class)).value();
-			if (interceptorsClassName == null)
-			{
+	private static List<ServiceInterceptor> loadInterceptors(Class serviceClass) {
+		try {
+			Class[] interceptorClasses = ((ServiceInterceptors) serviceClass
+					.getAnnotation(ServiceInterceptors.class)).value();
+
+			if (interceptorClasses == null) {
 				return getUpperInterceptors(serviceClass);
 			}
 
-			if (interceptorsClassName.length == 0)
-			{
+			if (interceptorClasses.length == 0) {
 				return FOUND_BUT_EMPTY;
 			}
-			
-			List<String> interceptors = new ArrayList<String>(interceptorsClassName.length);
-			for (int i = 0; i < interceptorsClassName.length; i++) {
-				interceptors.add(interceptorsClassName[i]);
+
+			List<ServiceInterceptor> interceptors = new ArrayList<ServiceInterceptor>(
+					interceptorClasses.length);
+
+			for (int i = 0; i < interceptorClasses.length; i++) {
+				interceptors.add(getInterceptor(interceptorClasses[i]));
 			}
 			return interceptors;
+		} catch (ClassNotFoundException exc) {
+			throw new TechnicalException(
+					"Failed to create interceptors for service "
+							+ serviceClass, exc);
+		}
 
 	}
 
-	/**
-	 * Method getInterceptor
-	 * @param interceptorClassName String
-	 * @return ServiceInterceptor
-	 * @throws ClassNotFoundException
-	 */
-	private static ServiceInterceptor getInterceptor(
-		String interceptorClassName) throws ClassNotFoundException
-	{
-		Object interceptor = interceptorMap.get(interceptorClassName);
+	private static ServiceInterceptor getInterceptor(Class interceptorClass)
+			throws ClassNotFoundException {
+		ServiceInterceptor interceptor = interceptorMap.get(interceptorClass);
 
-		if (interceptor == null)
-		{
-			interceptor = ClassHelper.newInstance(interceptorClassName);
-			interceptorMap.put(interceptorClassName, interceptor);
+		if (interceptor == null) {
+			interceptor = (ServiceInterceptor) ClassHelper
+					.newInstance(interceptorClass);
+			interceptorMap.put(interceptorClass, interceptor);
 		}
 
 		return (ServiceInterceptor) interceptor;
 	}
 
-	/**
-	 * Method getUpperInterceptors
-	 * @param serviceClass Class
-	 * @return List
-	 */
-	private static List getUpperInterceptors(Class serviceClass)
-	{
+	private static List getUpperInterceptors(Class serviceClass) {
 		Class[] interfaces = serviceClass.getInterfaces();
 
-		for (int i = 0; i < interfaces.length; i++)
-		{
+		for (int i = 0; i < interfaces.length; i++) {
 			List interceptors = getInterceptors(interfaces[i]);
 
-			if (interceptors != NOT_FOUND)
-			{
+			if (interceptors != NOT_FOUND) {
 				return interceptors;
 			}
 		}

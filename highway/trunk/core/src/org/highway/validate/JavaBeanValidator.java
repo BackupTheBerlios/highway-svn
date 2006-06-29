@@ -5,10 +5,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import org.highway.bean.BeanMetadataHome;
 import org.highway.collection.MapOfList;
 import org.highway.collection.MapOfListImpl;
 import org.highway.helper.ReflectHelper;
-import org.highway.vo.AnnotationMetadataHome;
 
 
 /**
@@ -118,11 +118,11 @@ public class JavaBeanValidator implements ClassValidator
 			// mandatory
 			setMandatory(
 				propertyName,
-				AnnotationMetadataHome.isPropertyMandatory(classToValidate, propertyName));
+				BeanMetadataHome.isPropertyMandatory(classToValidate, propertyName));
 
 			// pattern
 			String pattern =
-				AnnotationMetadataHome.getPropertyPattern(classToValidate, propertyName);
+				BeanMetadataHome.getPropertyPattern(classToValidate, propertyName);
 
 			if (pattern != null)
 			{
@@ -131,9 +131,9 @@ public class JavaBeanValidator implements ClassValidator
 
 			// size min and size max
 			Integer sizeMin =
-				AnnotationMetadataHome.getPropertySizeMin(classToValidate, propertyName);
+				BeanMetadataHome.getPropertySizeMin(classToValidate, propertyName);
 			Integer sizeMax =
-				AnnotationMetadataHome.getPropertySizeMax(classToValidate, propertyName);
+				BeanMetadataHome.getPropertySizeMax(classToValidate, propertyName);
 
 			if ((sizeMin != null) || (sizeMax != null))
 			{
@@ -182,7 +182,7 @@ public class JavaBeanValidator implements ClassValidator
 	 * Si des problèmes sont détectés, ils sont  agrégés à la {@link
 	 * org.highway.validate.ValidationResponse}
 	 *
-	 * @param valueObject {@link org.highway.vo.ValueObject}
+	 * @param valueObject {@link org.highway.bean.ValueObject}
 	 * @param context {@link ValueObjectValidationResponse}
 	 */
 	private void validateProperties(

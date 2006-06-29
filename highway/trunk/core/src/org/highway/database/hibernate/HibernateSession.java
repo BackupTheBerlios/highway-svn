@@ -4,13 +4,13 @@
 
 package org.highway.database.hibernate;
 
+import org.highway.bean.ValueObject;
+import org.highway.bean.ValueObjectHelper;
 import org.highway.database.Database;
 import org.highway.database.DatabaseSession;
 import org.highway.database.SelectQuery;
 import org.highway.exception.TechnicalException;
 import org.highway.helper.CollectionHelper;
-import org.highway.vo.ValueObject;
-import org.highway.vo.ValueObjectHelper;
 import net.sf.hibernate.HibernateException;
 import net.sf.hibernate.Session;
 import java.io.Serializable;

@@ -187,7 +187,7 @@ public class JavaBeanValidatorJavadoc implements ClassValidator
 	 * Si des problèmes sont détectés, ils sont  agrégés à la {@link
 	 * org.highway.validate.ValidationResponse}
 	 *
-	 * @param valueObject {@link org.highway.vo.ValueObject}
+	 * @param valueObject {@link org.highway.bean.ValueObject}
 	 * @param context {@link ValueObjectValidationResponse}
 	 */
 	private void validateProperties(

@@ -4,11 +4,11 @@
 
 package org.highway.database.hibernate;
 
+import org.highway.bean.Enum;
 import org.highway.exception.BugException;
 import org.highway.exception.TechnicalException;
 import org.highway.helper.ClassHelper;
 import org.highway.helper.StringHelper;
-import org.highway.vo.Enum;
 import net.sf.hibernate.HibernateException;
 import net.sf.hibernate.type.ImmutableType;
 import net.sf.hibernate.type.Type;
@@ -33,7 +33,7 @@ import java.sql.SQLException;
  * 
  * @since 1.1
  * @author David Attias
- * @see org.highway.vo.Enum
+ * @see org.highway.bean.Enum
  */
 public abstract class EnumHibernateType extends ImmutableType
 {

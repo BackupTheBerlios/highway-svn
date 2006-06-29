@@ -11,25 +11,15 @@ import javax.transaction.SystemException;
 import javax.transaction.Transaction;
 import javax.transaction.TransactionRequiredException;
 
-import org.highway.annotation.TransactionOption;
-import org.highway.annotation.TransactionTimeout;
-import org.highway.annotation.TransactionOption.TransactionOptions;
 import org.highway.debug.DebugHome;
 import org.highway.exception.TechnicalException;
 import org.highway.helper.MethodHelper;
 import org.highway.service.ServiceInterceptor;
 import org.highway.service.ServiceRequest;
-
+import org.highway.transaction.TransactionOption.TransactionOptions;
 
 public class TransactionInterceptor implements ServiceInterceptor
 {
-	/**
-	 * Method invoke
-	 * @param request ServiceRequest
-	 * @return Object
-	 * @throws Throwable
-	 * @see org.highway.service.ServiceInterceptor#invoke(ServiceRequest)
-	 */
 	public Object invoke(ServiceRequest request) throws Throwable
 	{
 		TransactionOptions option = getTransactionOption(request.getMethod());
@@ -37,8 +27,9 @@ public class TransactionInterceptor implements ServiceInterceptor
 		if (option == null)
 		{
 			throw new TechnicalException(
-				"No transaction option found for service "
-				+ MethodHelper.getClassAndMethodName(request.getMethod(), true));
+					"No transaction option found for service "
+							+ MethodHelper.getClassAndMethodName(request
+									.getMethod(), true));
 		}
 
 		if (option.equals(TransactionOptions.REQUIRED))
@@ -72,33 +63,21 @@ public class TransactionInterceptor implements ServiceInterceptor
 		}
 
 		throw new TechnicalException(
-			"Invalid service transaction option, option = " + option
-			+ " service = "
-			+ MethodHelper.getClassAndMethodName(request.getMethod(), true));
+				"Invalid service transaction option, option = "
+						+ option
+						+ " service = "
+						+ MethodHelper.getClassAndMethodName(request
+								.getMethod(), true));
 	}
 
-	/**
-	 * Method invokeSupports
-	 * @param request ServiceRequest
-	 * @return Object
-	 * @throws Throwable
-	 */
-	private Object invokeSupports(ServiceRequest request)
-		throws Throwable
+	private Object invokeSupports(ServiceRequest request) throws Throwable
 	{
 		DebugHome.getDebugLog().debugEnter();
 
 		return request.invoke();
 	}
 
-	/**
-	 * Method invokeRequired
-	 * @param request ServiceRequest
-	 * @return Object
-	 * @throws Throwable
-	 */
-	private Object invokeRequired(ServiceRequest request)
-		throws Throwable
+	private Object invokeRequired(ServiceRequest request) throws Throwable
 	{
 		DebugHome.getDebugLog().debugEnter();
 
@@ -112,56 +91,37 @@ public class TransactionInterceptor implements ServiceInterceptor
 		}
 	}
 
-	/**
-	 * Method invokeMandatory
-	 * @param request ServiceRequest
-	 * @return Object
-	 * @throws Throwable
-	 */
-	private Object invokeMandatory(ServiceRequest request)
-		throws Throwable
+	private Object invokeMandatory(ServiceRequest request) throws Throwable
 	{
 		DebugHome.getDebugLog().debugEnter();
 
 		if (getStatus() == Status.STATUS_NO_TRANSACTION)
 		{
 			throw new TransactionRequiredException(
-				"Transaction context mandatory for service "
-				+ MethodHelper.getClassAndMethodName(request.getMethod(), true));
+					"Transaction context mandatory for service "
+							+ MethodHelper.getClassAndMethodName(request
+									.getMethod(), true));
 		}
 
 		return invokeSupports(request);
 	}
 
-	/**
-	 * Method invokeNever
-	 * @param request ServiceRequest
-	 * @return Object
-	 * @throws Throwable
-	 */
-	private Object invokeNever(ServiceRequest request)
-		throws Throwable
+	private Object invokeNever(ServiceRequest request) throws Throwable
 	{
 		DebugHome.getDebugLog().debugEnter();
 
 		if (getStatus() != Status.STATUS_NO_TRANSACTION)
 		{
 			throw new TechnicalException(
-				"Transaction context is forbidden for service "
-				+ MethodHelper.getClassAndMethodName(request.getMethod(), true));
+					"Transaction context is forbidden for service "
+							+ MethodHelper.getClassAndMethodName(request
+									.getMethod(), true));
 		}
 
 		return invokeNotSupported(request);
 	}
 
-	/**
-	 * Method invokeNotSupported
-	 * @param request ServiceRequest
-	 * @return Object
-	 * @throws Throwable
-	 */
-	private Object invokeNotSupported(ServiceRequest request)
-		throws Throwable
+	private Object invokeNotSupported(ServiceRequest request) throws Throwable
 	{
 		DebugHome.getDebugLog().debugEnter();
 
@@ -182,14 +142,7 @@ public class TransactionInterceptor implements ServiceInterceptor
 		}
 	}
 
-	/**
-	 * Method invokeRequiresNew
-	 * @param request ServiceRequest
-	 * @return Object
-	 * @throws Throwable
-	 */
-	private Object invokeRequiresNew(ServiceRequest request)
-		throws Throwable
+	private Object invokeRequiresNew(ServiceRequest request) throws Throwable
 	{
 		DebugHome.getDebugLog().debugEnter();
 
@@ -210,14 +163,8 @@ public class TransactionInterceptor implements ServiceInterceptor
 		}
 	}
 
-	/**
-	 * Method invokeInNewTransaction
-	 * @param request ServiceRequest
-	 * @return Object
-	 * @throws Throwable
-	 */
 	private Object invokeInNewTransaction(ServiceRequest request)
-		throws Throwable
+			throws Throwable
 	{
 		DebugHome.getDebugLog().debugEnter();
 		setTransactionTimeout(request);
@@ -230,8 +177,8 @@ public class TransactionInterceptor implements ServiceInterceptor
 		catch (Throwable throwable)
 		{
 			boolean declared = false;
-			Class[] declaredExceptionTypes =
-				request.getMethod().getExceptionTypes();
+			Class[] declaredExceptionTypes = request.getMethod()
+					.getExceptionTypes();
 
 			for (int i = 0; i < declaredExceptionTypes.length; i++)
 			{
@@ -243,7 +190,7 @@ public class TransactionInterceptor implements ServiceInterceptor
 				}
 			}
 
-			if (! declared)
+			if (!declared)
 			{
 				setRollbackOnly();
 			}
@@ -256,10 +203,6 @@ public class TransactionInterceptor implements ServiceInterceptor
 		}
 	}
 
-	/**
-	 * Method getStatus
-	 * @return int
-	 */
 	private int getStatus()
 	{
 		try
@@ -273,13 +216,10 @@ public class TransactionInterceptor implements ServiceInterceptor
 		}
 	}
 
-	/**
-	 * Method setTransactionTimeout
-	 * @param request ServiceRequest
-	 */
 	private void setTransactionTimeout(ServiceRequest request)
 	{
-		int timeout= request.getMethod().getAnnotation(TransactionTimeout.class).value();
+		int timeout = request.getMethod().getAnnotation(
+				TransactionTimeout.class).value();
 
 		try
 		{
@@ -292,9 +232,6 @@ public class TransactionInterceptor implements ServiceInterceptor
 		}
 	}
 
-	/**
-	 * Method begin
-	 */
 	private void begin()
 	{
 		DebugHome.getDebugLog().debugEnter();
@@ -315,10 +252,6 @@ public class TransactionInterceptor implements ServiceInterceptor
 		}
 	}
 
-	/**
-	 * Method suspend
-	 * @return Transaction
-	 */
 	private Transaction suspend()
 	{
 		DebugHome.getDebugLog().debugEnter();
@@ -366,9 +299,6 @@ public class TransactionInterceptor implements ServiceInterceptor
 		}
 	}
 
-	/**
-	 * Method commit
-	 */
 	private void commit()
 	{
 		DebugHome.getDebugLog().debugEnter();
@@ -393,7 +323,7 @@ public class TransactionInterceptor implements ServiceInterceptor
 		{
 			// throw this exception only if the transaction
 			// has not been marked for rollback
-			if (! marked)
+			if (!marked)
 			{
 				throw new TechnicalException(exc);
 			}
@@ -415,9 +345,6 @@ public class TransactionInterceptor implements ServiceInterceptor
 		}
 	}
 
-	/**
-	 * Method setRollbackOnly
-	 */
 	private void setRollbackOnly()
 	{
 		try
@@ -431,11 +358,6 @@ public class TransactionInterceptor implements ServiceInterceptor
 		}
 	}
 
-	/**
-	 * Method getTransactionOption
-	 * @param method Method
-	 * @return String
-	 */
 	private TransactionOptions getTransactionOption(Method method)
 	{
 		return method.getAnnotation(TransactionOption.class).value();

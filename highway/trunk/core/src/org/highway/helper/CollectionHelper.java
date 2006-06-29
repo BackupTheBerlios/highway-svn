@@ -4,7 +4,6 @@
 
 package org.highway.helper;
 
-import org.highway.vo.Identifiable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -15,6 +14,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import org.highway.bean.Identifiable;
 
 /**
  */
@@ -124,7 +125,7 @@ public abstract class CollectionHelper
 		for (Iterator iter = identifiables.iterator(); iter.hasNext();)
 		{
 			Identifiable identifiable = (Identifiable) iter.next();
-			map.put(identifiable.getObjectId(), identifiable);
+			map.put(identifiable.getIdentity(), identifiable);
 		}
 
 		return map;
@@ -213,7 +214,7 @@ public abstract class CollectionHelper
 
 		for (Iterator iter = identifiableList.iterator(); iter.hasNext();)
 		{
-			oidList.add(((Identifiable) iter.next()).getObjectId());
+			oidList.add(((Identifiable) iter.next()).getIdentity());
 		}
 
 		return oidList;
