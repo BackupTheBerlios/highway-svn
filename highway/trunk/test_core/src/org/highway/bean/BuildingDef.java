@@ -3,7 +3,6 @@ package org.highway.bean;
 import org.highway.vogen.GenerateAbstract;
 import org.highway.vogen.GenerateBaseOnly;
 import org.highway.vogen.SerialVersionUID;
-import org.highway.vogen.Superclass;
 
 /**
  * @author David Attias
