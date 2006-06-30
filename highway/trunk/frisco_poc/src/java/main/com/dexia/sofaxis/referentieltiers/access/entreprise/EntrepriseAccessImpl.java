@@ -12,7 +12,7 @@ import com.dexia.sofaxis.tools.common.SearchResult;
 import com.dexia.sofaxis.tools.common.UUIDHelper;
 
 /**
- * @author attias
+ * 
  */
 public class EntrepriseAccessImpl extends AccessServiceSessionImpl implements EntrepriseAccess {
 	private static final int MAX_DOUBLON = 10;

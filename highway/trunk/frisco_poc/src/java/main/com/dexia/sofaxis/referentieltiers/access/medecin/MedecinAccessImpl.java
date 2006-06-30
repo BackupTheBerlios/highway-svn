@@ -15,7 +15,7 @@ import com.dexia.sofaxis.tools.common.UUIDHelper;
 
 
 /**
- * @author attias
+ * 
  */
 public class MedecinAccessImpl extends AccessServiceSessionImpl implements
 		MedecinAccess

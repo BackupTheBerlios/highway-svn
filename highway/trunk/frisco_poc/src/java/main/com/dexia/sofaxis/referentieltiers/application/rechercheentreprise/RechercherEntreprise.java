@@ -3,20 +3,21 @@
  */
 package com.dexia.sofaxis.referentieltiers.application.rechercheentreprise;
 
+import javax.naming.directory.SearchResult;
+
+import org.highway.service.Service;
 import org.highway.service.dynamic.DynamicService;
 import org.highway.service.ejb.EjbService;
 
 import com.dexia.sofaxis.referentieltiers.access.entreprise.Entreprise;
 import com.dexia.sofaxis.referentieltiers.access.entreprise.RechercheEntrepriseCritere;
-import com.dexia.sofaxis.tools.common.SearchResult;
-import com.dexia.sofaxis.tools.services.ApplicationService;
 
 /**
  * @highway.service.generate.ejb
  * @socle.service.interceptors org.highway.debug.DebugInterceptor
  * org.highway.transaction.TransactionInterceptor
  */
-public interface RechercherEntreprise extends ApplicationService, DynamicService, EjbService
+public interface RechercherEntreprise extends Service, DynamicService, EjbService
 {
 	/**
 	 * @socle.service.transaction Supports

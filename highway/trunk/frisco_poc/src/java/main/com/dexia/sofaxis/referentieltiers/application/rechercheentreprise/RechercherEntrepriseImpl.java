@@ -3,6 +3,8 @@
  */
 package com.dexia.sofaxis.referentieltiers.application.rechercheentreprise;
 
+import org.highway.service.ejb.GenerateEjb;
+
 import com.dexia.sofaxis.referentieltiers.access.entreprise.Entreprise;
 import com.dexia.sofaxis.referentieltiers.access.entreprise.RechercheEntrepriseCritere;
 import com.dexia.sofaxis.referentieltiers.business.entreprise.EntrepriseTiers;

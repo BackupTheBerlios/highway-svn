@@ -1,12 +1,14 @@
 package com.dexia.sofaxis.referentieltiers.application.recherchermedecin;
 
+import javax.naming.directory.SearchResult;
+
+import org.highway.service.Service;
 import org.highway.service.dynamic.DynamicService;
 import org.highway.service.ejb.EjbService;
+import org.highway.service.ejb.GenerateEjb;
 
 import com.dexia.sofaxis.referentieltiers.access.medecin.Medecin;
 import com.dexia.sofaxis.referentieltiers.access.medecin.RechercheMedecinCritere;
-import com.dexia.sofaxis.tools.common.SearchResult;
-import com.dexia.sofaxis.tools.services.ApplicationService;
 
 
 /**
@@ -14,7 +16,8 @@ import com.dexia.sofaxis.tools.services.ApplicationService;
  * @socle.service.interceptors org.highway.debug.DebugInterceptor
  * org.highway.transaction.TransactionInterceptor
  */
-public interface RechercherMedecin extends ApplicationService, DynamicService, EjbService
+@GenerateEjb
+public interface RechercherMedecin extends Service, DynamicService, EjbService
 {
 	/**
 	 * @socle.service.transaction Supports

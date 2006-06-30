@@ -23,8 +23,12 @@
 		<vogen inputDir="src/java/main" outputDir="bin/gensrc" >
 			<classpath refid="core.test.classpath"/>
 		</vogen>
-		<!--ejbgen javaInputDir="src/java/main" javaOutputDir="gen/src" cfgOutputDir="gen/cfg/META-INF" />
-		<metagen inputDir="src/java/main" outputDir="gen/src" /-->
+
+		<ejbgen inputDir="src/java/main/" outputDir="bin/gensrc">
+			<classpath refid="core.test.classpath"/>
+		</ejbgen>
+
+			<!--metagen inputDir="src/java/main" outputDir="gen/src" /-->
 	</target>
 
 	<target name="metier.clean">

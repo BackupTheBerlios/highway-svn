@@ -1,10 +1,11 @@
 package com.dexia.sofaxis.referentieltiers.application.modifierentreprise;
 
+import org.highway.service.Service;
 import org.highway.service.dynamic.DynamicService;
 import org.highway.service.ejb.EjbService;
+import org.highway.service.ejb.GenerateEjb;
 
 import com.dexia.sofaxis.referentieltiers.access.entreprise.Entreprise;
-import com.dexia.sofaxis.tools.services.ApplicationService;
 /**
  * 
  * @author frilaine
@@ -12,7 +13,8 @@ import com.dexia.sofaxis.tools.services.ApplicationService;
  * @socle.service.interceptors org.highway.transaction.TransactionInterceptor
  * 
  */
-public interface ModifierEntreprise extends ApplicationService, DynamicService, EjbService {
+@GenerateEjb
+public interface ModifierEntreprise extends Service, DynamicService, EjbService {
 
 	/**
 	 * @socle.service.transaction Required
