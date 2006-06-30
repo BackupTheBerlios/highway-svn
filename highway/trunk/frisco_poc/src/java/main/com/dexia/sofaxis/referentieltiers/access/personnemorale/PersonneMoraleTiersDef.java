@@ -1,25 +1,24 @@
 package com.dexia.sofaxis.referentieltiers.access.personnemorale;
 
-import org.highway.annotation.BeanPropertyMandatory;
-import org.highway.annotation.VoMapping;
-import org.highway.annotation.VoMappingProperty;
+import org.highway.bean.MandatoryProperty;
+import org.highway.database.MappedOn;
 
 
-@VoMapping(table="PERSONNEMORALETIERS")
+@MappedOn("PERSONNEMORALETIERS")
 public interface PersonneMoraleTiersDef  extends ReferentielTiersDef {
 
 
 	
-	@VoMappingProperty(column="NOMPOSTALLIGNE1")
-	@BeanPropertyMandatory
+	@MappedOn("NOMPOSTALLIGNE1")
+	@MandatoryProperty
 	public String getNomPostalLigne1();
 	
-	@VoMappingProperty(column="NOMPOSTALLIGNE2")
+	@MappedOn("NOMPOSTALLIGNE2")
     public String getNomPostalLigne2();
 
 
-    @VoMappingProperty(column="NOM")
-    @BeanPropertyMandatory
+	@MappedOn("NOM")
+    @MandatoryProperty
     public String getNom();
 
 

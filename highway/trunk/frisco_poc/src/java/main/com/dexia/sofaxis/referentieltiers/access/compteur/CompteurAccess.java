@@ -1,8 +1,7 @@
 package com.dexia.sofaxis.referentieltiers.access.compteur;
 
+import org.highway.service.Service;
 import org.highway.service.dynamic.DynamicService;
-
-import com.dexia.sofaxis.tools.services.AccessService;
 
 /**
  * ATTENTION : cette classe n'est pas conçue pour être utilisée
@@ -11,7 +10,7 @@ import com.dexia.sofaxis.tools.services.AccessService;
  *
  */
 
-public interface CompteurAccess extends AccessService, DynamicService
+public interface CompteurAccess extends Service, DynamicService
 {
 	public static final String TIERS_ENTREPRISE = "ENTREPRISE";
     public static final String TIERS_COLLECTIVITE = "COLLECTIVITE";

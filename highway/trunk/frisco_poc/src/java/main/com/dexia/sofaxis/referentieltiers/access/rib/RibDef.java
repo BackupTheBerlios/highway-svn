@@ -1,6 +1,6 @@
 package com.dexia.sofaxis.referentieltiers.access.rib;
 
-import org.highway.vo.ValueObject;
+import org.highway.bean.ValueObject;
 
 
 public interface RibDef extends ValueObject{

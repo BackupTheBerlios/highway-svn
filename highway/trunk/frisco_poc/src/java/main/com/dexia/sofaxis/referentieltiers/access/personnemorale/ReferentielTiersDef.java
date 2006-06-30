@@ -1,26 +1,26 @@
 package com.dexia.sofaxis.referentieltiers.access.personnemorale;
 
 
-import org.highway.annotation.VoMapping;
-import org.highway.annotation.VoMappingDiscriminator;
-import org.highway.annotation.VoMappingId;
-import org.highway.annotation.VoMappingProperty;
-import org.highway.vo.ValueObject;
+import org.highway.bean.ValueObject;
+import org.highway.database.DiscriminatorColumn;
+import org.highway.database.Identity;
+import org.highway.database.MappedOn;
 
 
-@VoMapping(table="REFERENTIELTIERS")
-@VoMappingDiscriminator(column="TYPETIERS", type="string")
+@MappedOn("REFERENTIELTIERS")
+@DiscriminatorColumn(column="TYPETIERS", type="String")
 public interface ReferentielTiersDef extends ValueObject {
 
-	@VoMappingId(column="TIERSID")
+	@Identity
+	@MappedOn("TIERSID")
     public String getTiersId();
-    @VoMappingProperty(column="IDENTIFIANTFONCTIONNEL")
+    @MappedOn("IDENTIFIANTFONCTIONNEL")
     public String getIdentifiantFonctionnel();
-    @VoMappingProperty(column="NOMCOURT")
+    @MappedOn("NOMCOURT")
     public String getNomCourt();   
-    @VoMappingProperty(column="ADRESSEID")
+    @MappedOn("ADRESSEID")
     public String getAdresseId();
-    @VoMappingProperty(column="RIBID")
+    @MappedOn("RIBID")
     public String getRibId();
     
 }

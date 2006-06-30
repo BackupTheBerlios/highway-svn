@@ -2,11 +2,9 @@ package com.dexia.sofaxis.referentieltiers.application.creerentreprise;
 
 import java.util.Collection;
 
-import org.highway.vo.ValueObject;
-
 import com.dexia.sofaxis.referentieltiers.access.entreprise.Entreprise;
 
-public interface CreationEntrepriseInfoDef extends ValueObject {
+public interface CreationEntrepriseInfoDef extends org.highway.bean.ValueObject {
 	
 	/** Cas d'un tiers créé correctement */
 	public static final int STATUS_CREE = 1;

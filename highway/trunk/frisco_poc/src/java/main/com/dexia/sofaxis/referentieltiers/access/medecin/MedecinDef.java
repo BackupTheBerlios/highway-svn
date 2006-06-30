@@ -2,67 +2,65 @@ package com.dexia.sofaxis.referentieltiers.access.medecin;
 
 import java.util.Date;
 
-import org.highway.annotation.BeanPropertyMandatory;
-import org.highway.annotation.GenerateEjb;
-import org.highway.annotation.VoMapping;
-import org.highway.annotation.VoMappingDiscriminatorValue;
-import org.highway.annotation.VoMappingProperty;
+import org.highway.bean.MandatoryProperty;
+import org.highway.database.DiscriminatorValue;
+import org.highway.database.MappedOn;
 
 import com.dexia.sofaxis.referentieltiers.access.personnemorale.PersonneMoraleTiersDef;
 
-@VoMapping(table="MEDECINTIERS")
-@VoMappingDiscriminatorValue(value="MEDECIN")
+@MappedOn("MEDECINTIERS")
+@DiscriminatorValue("MEDECIN")
 public interface MedecinDef extends PersonneMoraleTiersDef
  {
-	@VoMappingProperty(column="NUMEROADELI")
+	@MappedOn("NUMEROADELI")
     public String getNumeroAdeli();
 
-	@VoMappingProperty(column="TYPETITRE")
+	@MappedOn("TYPETITRE")
     public String getTypeTitre();
 
-	@VoMappingProperty(column="TYPECATEGORIE")
+	@MappedOn("TYPECATEGORIE")
     public String getTypeCategorie();
     
-	@VoMappingProperty(column="TYPESPECIALITE")
+	@MappedOn("TYPESPECIALITE")
     public SpecialiteMedecin getTypeSpecialite();
 
-	@VoMappingProperty(column="DATEDEBUTAGREMENT")
+	@MappedOn("DATEDEBUTAGREMENT")
     public Date getDateDebutAgrement();
 
-	@VoMappingProperty(column="DATEFINAGREMENT")
+	@MappedOn("DATEFINAGREMENT")
     public Date getDateFinAgrement();
 
-	@BeanPropertyMandatory
-	@VoMappingProperty(column="PRENOM")
+	@MandatoryProperty
+	@MappedOn("PRENOM")
     public String getPrenom();
     
-	@VoMappingProperty(column="TYPECIVILITE")
+	@MappedOn("TYPECIVILITE")
     public String getTypeCivilite();
 
-	@VoMappingProperty(column="ACCEPTEEXPERTISES")
+	@MappedOn("ACCEPTEEXPERTISES")
     public boolean getAccepteExpertises();
 
-	@VoMappingProperty(column="ACCEPTECONTREVISITES")
+	@MappedOn("ACCEPTECONTREVISITES")
     public boolean getAccepteContreVisites();
 
-	@VoMappingProperty(column="NOMBREKMMAXIMUM")
+	@MappedOn("NOMBREKMMAXIMUM")
     public Short getNombreKmMaximum();
 
-	@VoMappingProperty(column="TYPEETAT")
+	@MappedOn("TYPEETAT")
     public String getTypeEtat();
     
-	@VoMappingProperty(column="DATEINSCRIPTION")
+	@MappedOn("DATEINSCRIPTION")
     public Date getDateInscription();
 
-	@VoMappingProperty(column="DATEMANDATEMENT")
+	@MappedOn("DATEMANDATEMENT")
     public Date getDateMandatement();
 
-	@VoMappingProperty(column="DATENONUTILISABLE")
+	@MappedOn("DATENONUTILISABLE")
     public Date getDateNonUtilisable();
 
-	@VoMappingProperty(column="DATEDERNIEREMAJLISTEDDASS")
+	@MappedOn("DATEDERNIEREMAJLISTEDDASS")
     public Date getDateDerniereMajlisteDdass();
 
-
+	public com.dexia.sofaxis.referentieltiers.access.adresse.Adresse getAdresse();
 
 }

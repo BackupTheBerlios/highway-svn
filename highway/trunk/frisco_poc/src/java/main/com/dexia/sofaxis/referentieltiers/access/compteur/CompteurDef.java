@@ -2,22 +2,21 @@ package com.dexia.sofaxis.referentieltiers.access.compteur;
 
 import java.util.Date;
 
-import org.highway.annotation.VoMapping;
-import org.highway.annotation.VoMappingId;
-import org.highway.annotation.VoMappingProperty;
-import org.highway.vo.ValueObject;
+import org.highway.database.Identity;
+import org.highway.database.MappedOn;
 
 
-@VoMapping(table="COMPTEURFACTURE")
-public interface CompteurDef  extends ValueObject {
+@MappedOn("COMPTEURFACTURE")
+public interface CompteurDef  extends org.highway.bean.ValueObject {
 	
-	@VoMappingId(column="DOMAINE")
+	@Identity
+	@MappedOn("DOMAINE")
     public String getDomaine();
     
-	@VoMappingProperty(column="COMPTEUR")
+	@MappedOn("COMPTEUR")
     public int getCompteur();
     
-	@VoMappingProperty(column="DATEDERNIEREFACTURE")
+	@MappedOn("DATEDERNIEREFACTURE")
     public Date getDateDerniereFacture();
     
 }

@@ -1,6 +1,5 @@
 package com.dexia.sofaxis.referentieltiers.access.medecin;
 
-import com.dexia.sofaxis.tools.referencedata.AbstractReferenceData;
 
 public class SpecialiteMedecin extends AbstractReferenceData {
   

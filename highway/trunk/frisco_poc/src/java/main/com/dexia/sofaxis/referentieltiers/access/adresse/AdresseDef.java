@@ -1,53 +1,54 @@
 package com.dexia.sofaxis.referentieltiers.access.adresse;
 
 
-import java.util.Collection;
+import org.highway.database.Identity;
+import org.highway.database.MappedOn;
+import org.highway.vogen.GenerateAbstract;
+import org.highway.vogen.SerialVersionUID;
 
-import org.highway.annotation.VoMapping;
-import org.highway.annotation.VoMappingId;
-import org.highway.annotation.VoMappingProperty;
-import org.highway.vo.ValueObject;
+@GenerateAbstract
+@MappedOn("ADRESSE")
+@SerialVersionUID(123L)
+public interface AdresseDef  extends org.highway.bean.ValueObject {
 
-@VoMapping(table="ADRESSE")
-public interface AdresseDef  extends ValueObject {
-
-	@VoMappingId(column="ADRESSEID")
+	@Identity
+	@MappedOn("ADRESSEID")
     public String getAdresseId();
     
-	@VoMappingProperty(column="COMPLEMENTREMISE")
+	@MappedOn("COMPLEMENTREMISE")
     public String getComplementRemise();
     
-	@VoMappingProperty(column="TYPEVOIE")
-    public Collection<String> getTypeVoie();
+	@MappedOn("TYPEVOIE")
+    public String getTypeVoie();
     
-	@VoMappingProperty(column="NUMERO")
+	@MappedOn("NUMERO")
     public String getNumero();
     
-	@VoMappingProperty(column="NOMVOIE")
+	@MappedOn("NOMVOIE")
     public String getNomVoie();
     
-	@VoMappingProperty(column="COMPLEMENT")
+	@MappedOn("COMPLEMENT")
     public String getComplement();
     
-	@VoMappingProperty(column="BOITEPOSTALE")
+	@MappedOn("BOITEPOSTALE")
     public String getBoitePostale();
     
-	@VoMappingProperty(column="LIBELLELOCALITE")
+	@MappedOn("LIBELLELOCALITE")
     public String getLibelleLocalite();
     
-	@VoMappingProperty(column="CODEPOSTAL")
+	@MappedOn("CODEPOSTAL")
     public String getCodePostal();
     
-	@VoMappingProperty(column="LIBELLEACHEMINEMENT")
+	@MappedOn("LIBELLEACHEMINEMENT")
     public String getLibelleAcheminement();
     
-	@VoMappingProperty(column="TYPEPAYS")
+	@MappedOn("TYPEPAYS")
     public String getTypePays();
     
-	@VoMappingProperty(column="AFFICHERLOCALITE")
+	@MappedOn("AFFICHERLOCALITE")
     public Boolean getAfficherLocalite();
     
-	@VoMappingProperty(column="OBSERVATIONSADRESSE")
+	@MappedOn("OBSERVATIONSADRESSE")
     public String getObservationsAdresse();
     
     

@@ -13,7 +13,7 @@ import com.dexia.sofaxis.tools.services.AccessService;
 
 
 
-public interface MedecinAccess extends AccessService, DynamicService
+public interface MedecinAccess extends Service, DynamicService
 {
 	SearchResult<Medecin> chargerMedecin(RechercheMedecinCritere critere, int maxResultat) throws SQLException;
 	

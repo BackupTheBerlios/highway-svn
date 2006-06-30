@@ -8,7 +8,7 @@ import com.dexia.sofaxis.tools.services.AccessService;
 
 
 
-public interface EntrepriseAccess extends AccessService, DynamicService
+public interface EntrepriseAccess extends Service, DynamicService
 {
 	SearchResult<Entreprise> chargerEntreprise(RechercheEntrepriseCritere critere, int maxResultat);
 	

@@ -2,11 +2,9 @@ package com.dexia.sofaxis.referentieltiers.application.creermedecin;
 
 import java.util.Collection;
 
-import org.highway.vo.ValueObject;
-
 import com.dexia.sofaxis.referentieltiers.access.medecin.Medecin;
 
-public interface CreationMedecinInfoDef extends ValueObject {
+public interface CreationMedecinInfoDef extends org.highway.bean.ValueObject {
 
 	/** Cas d'un tiers créé correctement */
 	public static final int STATUS_CREE = 1;

@@ -3,11 +3,9 @@ package com.dexia.sofaxis.referentieltiers.access.adresse;
 
 import org.highway.service.dynamic.DynamicService;
 
-import com.dexia.sofaxis.tools.services.AccessService;
 
 
-
-public interface AdresseAccess extends AccessService, DynamicService
+public interface AdresseAccess extends DynamicService
 {
 	void creerOuMettreAJour(Adresse anAdresse);
 	

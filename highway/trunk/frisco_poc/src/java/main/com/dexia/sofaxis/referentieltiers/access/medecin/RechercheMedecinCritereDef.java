@@ -1,7 +1,7 @@
 package com.dexia.sofaxis.referentieltiers.access.medecin;
 
-import org.highway.vo.ValueObject;
-@org.highway.annotation.ValueObject
+import org.highway.bean.ValueObject;
+
 public interface RechercheMedecinCritereDef extends ValueObject {
 
 	String getNom();

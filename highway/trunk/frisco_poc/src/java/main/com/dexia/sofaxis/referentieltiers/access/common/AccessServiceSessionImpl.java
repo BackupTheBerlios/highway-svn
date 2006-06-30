@@ -2,13 +2,12 @@ package com.dexia.sofaxis.referentieltiers.access.common;
 
 import java.util.List;
 
+import javax.naming.directory.SearchResult;
+
 import org.highway.database.SelectQuery;
-import org.highway.domain.AccessImplAbstract;
+import org.highway.service.Service;
 
-import com.dexia.sofaxis.tools.common.SearchResult;
-import com.dexia.sofaxis.tools.services.AccessService;
-
-public class AccessServiceSessionImpl extends AccessImplAbstract implements AccessService {
+public class AccessServiceSessionImpl extends AccessImplAbstract implements Service {
 	
 	
 	/**

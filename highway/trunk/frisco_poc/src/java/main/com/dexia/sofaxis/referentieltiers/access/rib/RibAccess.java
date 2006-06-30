@@ -4,13 +4,12 @@
 package com.dexia.sofaxis.referentieltiers.access.rib;
 
 
+import org.highway.service.Service;
 import org.highway.service.dynamic.DynamicService;
 
-import com.dexia.sofaxis.tools.services.AccessService;
 
 
-
-public interface RibAccess extends AccessService, DynamicService
+public interface RibAccess extends Service, DynamicService
 {
 	void creerOuMettreAJour(Rib aRib);
 	

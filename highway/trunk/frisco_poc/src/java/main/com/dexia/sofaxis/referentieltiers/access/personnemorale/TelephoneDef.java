@@ -1,21 +1,19 @@
 package com.dexia.sofaxis.referentieltiers.access.personnemorale;
 
-import org.highway.annotation.VoMapping;
-import org.highway.annotation.VoMappingId;
-import org.highway.annotation.VoMappingProperty;
-import org.highway.vo.ValueObject;
-@VoMapping(table="TELEPHONE")
+import org.highway.bean.ValueObject;
+import org.highway.database.MappedOn;
+@MappedOn("TELEPHONE")
 public interface TelephoneDef  extends ValueObject {
 
-	@VoMappingId(column="TELEPHONEID")
+	@MappedOn("TELEPHONEID")
     public String getTelephoneId();
 	
-    @VoMappingProperty(column="VALEUR")
+	@MappedOn("VALEUR")
     public String getValeur();
     
-    @VoMappingProperty(column="DESCRIPTION")
+	@MappedOn("DESCRIPTION")
     public String getDescription();
     
-    @VoMappingProperty(column="TYPETELEPHONE")
+	@MappedOn("TYPETELEPHONE")
     public String getTypeTelephone();
 }

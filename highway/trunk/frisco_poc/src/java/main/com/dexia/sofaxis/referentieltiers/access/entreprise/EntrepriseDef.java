@@ -3,46 +3,45 @@ package com.dexia.sofaxis.referentieltiers.access.entreprise;
 
 import java.util.Date;
 
-import org.highway.annotation.VoMapping;
-import org.highway.annotation.VoMappingDiscriminatorValue;
-import org.highway.annotation.VoMappingProperty;
+import org.highway.database.DiscriminatorValue;
+import org.highway.database.MappedOn;
 
 import com.dexia.sofaxis.referentieltiers.access.personnemorale.PersonneMoraleTiersDef;
 
 
-@VoMapping(table="ENTREPRISE")
-@VoMappingDiscriminatorValue(value="ENTREP")
+@MappedOn("ENTREPRISE")
+@DiscriminatorValue("ENTREP")
 public interface EntrepriseDef extends PersonneMoraleTiersDef
 {
        
-	@VoMappingProperty(column="NUMEROSIRET")
+	@MappedOn("NUMEROSIRET")
     public String getNumeroSiret();
 	
-	@VoMappingProperty(column="CODENAF")
+	@MappedOn("CODENAF")
     public String getCodeNaf();
 	
-	@VoMappingProperty(column="ISDANSGROUPEDEXIASOFAXIS")
+	@MappedOn("ISDANSGROUPEDEXIASOFAXIS")
     public Boolean getIsDansGroupeDexiaSofaxis();
 	
-	@VoMappingProperty(column="CONVENTIONCOLLECTIVE")
+	@MappedOn("CONVENTIONCOLLECTIVE")
     public String getConventionCollective();
     
-	@VoMappingProperty(column="NOMBRESALARIES")
+	@MappedOn("NOMBRESALARIES")
     public Integer getNombreSalaries();
     
-	@VoMappingProperty(column="NUMEROURSSAF")
+	@MappedOn("NUMEROURSSAF")
     public String getNumeroUrssaf();
     
-	@VoMappingProperty(column="TYPESOCIETE")
+	@MappedOn("TYPESOCIETE")
     public String getTypeSociete();
     
-	@VoMappingProperty(column="ETABID")
+	@MappedOn("ETABID")
     public Integer getEtabid();
     
-	@VoMappingProperty(column="NUMEROASSOCIATION")
+	@MappedOn("NUMEROASSOCIATION")
     public String getNumeroAssociation();
     
-	@VoMappingProperty(column="DATEPUBLICATIONASSOCIATION")
+	@MappedOn("DATEPUBLICATIONASSOCIATION")
     public Date getDatePublicationAssociation();
     
     
