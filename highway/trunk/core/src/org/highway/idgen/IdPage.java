@@ -9,7 +9,7 @@ import java.io.Serializable;
 /**
  * Page of available unique ids
  *
- * @author DESLANDES
+ * 
  *
  */
 public class IdPage implements Serializable

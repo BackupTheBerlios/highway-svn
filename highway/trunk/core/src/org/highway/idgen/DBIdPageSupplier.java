@@ -86,7 +86,7 @@ import javax.transaction.Transaction;
  * </pre>
  *
  * @since 1.1
- * @author DESLANDES
+ * 
  *
  */
 public class DBIdPageSupplier implements IdPageSupplier
