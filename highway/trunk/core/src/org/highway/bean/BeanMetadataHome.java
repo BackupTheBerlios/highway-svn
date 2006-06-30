@@ -6,7 +6,6 @@ import org.highway.debug.DebugHome;
 import org.highway.exception.DoNotInstantiateException;
 import org.highway.helper.StringHelper.TrimPolicy;
 import org.highway.lifecycle.InitException;
-import org.highway.vo.JavadocMetadataManager;
 import org.highway.vo.MetadataManager;
 
 /**
