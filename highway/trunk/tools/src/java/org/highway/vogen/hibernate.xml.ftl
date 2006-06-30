@@ -23,7 +23,7 @@
      	<@forAllMethods annotation="org.highway.database.Identity" var="method" annotationVar="ann">
         <id
             name="${method.propertyName}"
-            column="${ann.column}"
+            column="<@annotationValue declaration=method annotation="org.highway.database.MappedOn" default="${method.propertyName}"/>"
             type="<@annotationValue declaration=method annotation="org.highway.database.MappingSpecialType" default="${method.returnType}"/>"
             <generator class="${ann.generatorClass}">
 			<@forAllMethods declaration=type annotation="org.highway.database.IdentityGeneratorParam" var="generatorMethod" annotationVar="annGenerator">
@@ -37,7 +37,7 @@
         	<@forAllMethods annotation="org.highway.database.Identity" var="method" annotationVar="ann">
             <key-property
                 name="${method.propertyName}"
-                column="${ann.value}"
+                column="<@annotationValue declaration=method annotation="org.highway.database.MappedOn" default="${method.propertyName}"/>"
                 type="<@annotationValue declaration=method annotation="org.highway.database.MappingSpecialType" default="${method.propertyHibernateType}"/>"
             />
             </@forAllMethods>
@@ -47,7 +47,7 @@
         <@ifHasAnnotation var="ann" annotation="org.highway.database.DiscriminatorColumn">
         <discriminator
                 column="${ann.column}"
-                type="<@annotationValue declaration=method annotation="org.highway.database.MappingSpecialType" default="${method.propertyHibernateType}"/>"
+                type="${ann.type}"
                 force="${ann.force}"
                 insert="${ann.insert}"
         />
@@ -58,7 +58,7 @@
             type="<@annotationValue declaration=method annotation="org.highway.database.MappingSpecialType" default="${method.propertyHibernateType}"/>"
             column="${ann.value}"
             insert=<@annotationValue declaration=method annotation="org.highway.database.DoNotInsert" default="true"/>"
-            update=<@annotationValue declaration=method annotation="org.highway.database.DoNotUpdate" default="true}"/>"
+            update=<@annotationValue declaration=method annotation="org.highway.database.DoNotUpdate" default="true"/>"
         />
         </@forAllMethods>
 	</class>
@@ -77,7 +77,7 @@
             type="<@annotationValue declaration=method annotation="org.highway.database.MappingSpecialType" default="${method.propertyHibernateType}"/>"
             column="${ann.value}"
             insert=<@annotationValue declaration=method annotation="org.highway.database.DoNotInsert" default="true"/>"
-            update=<@annotationValue declaration=method annotation="org.highway.database.DoNotUpdate" default="true}"/>"
+            update=<@annotationValue declaration=method annotation="org.highway.database.DoNotUpdate" default="true"/>"
         />
        </@forAllMethods>
       </subclass>
@@ -98,7 +98,7 @@
             type="<@annotationValue declaration=method annotation="org.highway.database.MappingSpecialType" default="${method.propertyHibernateType}"/>"
             column="${ann.value}"
             insert=<@annotationValue declaration=method annotation="org.highway.database.DoNotInsert" default="true"/>"
-            update=<@annotationValue declaration=method annotation="org.highway.database.DoNotUpdate" default="true}"/>"
+            update=<@annotationValue declaration=method annotation="org.highway.database.DoNotUpdate" default="true"/>"
 
          />
        </@forAllMethods>

@@ -14,7 +14,7 @@ import com.sun.mirror.type.InterfaceType;
 
 public class VoGenHelper {
 
-	private static String VALUE_OBJECT_ABSTRACT_CLASS_NAME = "org.highway.vo.ValueObjectAbstract";
+	private static String VALUE_OBJECT_ABSTRACT_CLASS_NAME = "org.highway.bean.ValueObjectAbstract";
 
 	private static String HIBERNATE_MAPPING_OUTPUT_FILE_NAME = "{0}.hbm.xml";
 

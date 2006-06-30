@@ -34,7 +34,7 @@ public class HibernateHelper {
 		if (propertyType.getClass().isAssignableFrom(org.highway.bean.Decimal.class))
 			return DECIMAL_HIBERNATE_TYPE_CLASS_NAME;
 
-		return propertyType.getClass().getName();
+		return propertyType.toString();
 	}
 
 	public static boolean hasCompositeId(InterfaceDeclaration aDeclaration) {

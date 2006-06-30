@@ -7,7 +7,7 @@
 package ${type.package.qualifiedName};
 
 import org.highway.helper.ValueHelper;
-import org.highway.vo.ValueObjectAbstract;
+import org.highway.bean.ValueObjectAbstract;
 
 public class ${type.generatedShortClassName}
 	extends ${type.superClassName}
