@@ -2,10 +2,9 @@ package org.highway.validate;
 
 import java.util.Collections;
 
-import org.highway.helper.Serializer;
-
-
 import junit.framework.TestCase;
+
+import org.highway.io.SerializeHelper;
 
 public class ValidateContextTest extends TestCase
 {
@@ -17,7 +16,7 @@ public class ValidateContextTest extends TestCase
 		context.addProblem(SizeValidator.class, "telephone", false);
 		ValidateProblem problem = (ValidateProblem)
 			context.getPropertyProblems("telephone").get(0);
-		ValidateContext clone = (ValidateContext) Serializer.clone(context);
+		ValidateContext clone = (ValidateContext) SerializeHelper.clone(context);
 		assertNotSame(context, clone);
 		assertTrue(clone.isMissing("age"));
 		assertNotSame(problem, clone.getPropertyProblems("telephone").get(0));
