@@ -8,7 +8,7 @@ package org.highway.idgen;
 /**
  * Provides {@link IdPageBasedGenerator} a way to create unique {@link IdPage}s
  *
- * @author dattias
+ * 
  */
 public interface IdPageSupplier
 {

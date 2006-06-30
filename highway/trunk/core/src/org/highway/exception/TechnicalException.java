@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 /**
  * Racine des exceptions techniques.
  *
- * @author dattias
+ * 
  */
 public class TechnicalException extends RuntimeException
 	implements SocleThrowable

@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * ...
  *
- * @author dattias
+ * 
  * @since 1.4.2
  */
 public abstract class TempFileHelper

@@ -11,7 +11,7 @@ import org.highway.helper.ValueHelper;
  * Manages the new and dirty properties.<br>
  * Manages the property change events.
  *
- * @author dattias
+ * 
  * @todo review the code when moving towards jdk 1.4,
  * use new PropertyChangeSupport methods, remove the
  * WeakPropertyChangeSupport attribute.

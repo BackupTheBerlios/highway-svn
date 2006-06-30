@@ -17,7 +17,7 @@ import javax.naming.InitialContext;
 /**
  * ...
  *
- * @author dattias
+ * 
  */
 public class MailHelper
 {

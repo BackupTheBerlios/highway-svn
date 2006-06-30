@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 /**
  * Root of functional exception hierarchie.
  *
- * @author dattias
+ * 
  */
 public abstract class FunctionalException extends Exception
 	implements SocleThrowable

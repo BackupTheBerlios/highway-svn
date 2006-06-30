@@ -9,7 +9,7 @@ import org.highway.bean.Decimal;
 /**
  * ...
  *
- * @author dattias
+ * 
  */
 public class ParseHelper
 {

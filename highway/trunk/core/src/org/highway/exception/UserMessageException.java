@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  *
- * @author dattias
+ * 
  */
 public class UserMessageException extends TechnicalException
 {

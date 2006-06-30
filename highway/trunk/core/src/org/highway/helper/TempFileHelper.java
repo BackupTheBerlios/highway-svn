@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * ...
  *
- * @author dattias
+ * 
  * @deprecated use org.highway.io.TempFileHelper
  */
 public abstract class TempFileHelper

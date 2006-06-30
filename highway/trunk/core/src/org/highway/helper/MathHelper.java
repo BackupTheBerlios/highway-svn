@@ -6,7 +6,7 @@ package org.highway.helper;
 
 
 /**
- * @author dattias
+ * 
  */
 public class MathHelper
 {

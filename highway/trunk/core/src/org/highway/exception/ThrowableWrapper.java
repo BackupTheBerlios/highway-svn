@@ -15,7 +15,7 @@ import java.io.PrintWriter;
  * It is deprecated because it is complex and there is a problem in the
  * stack trace management.
  *
- * @author dattias
+ * 
  * @deprecated
  */
 class ThrowableWrapper extends Throwable implements SocleThrowable

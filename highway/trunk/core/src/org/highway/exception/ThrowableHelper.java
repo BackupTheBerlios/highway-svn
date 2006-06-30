@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 /**
- * @author dattias
+ * 
  */
 public class ThrowableHelper
 {
