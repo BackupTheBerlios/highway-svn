@@ -1,4 +1,5 @@
-<@forAllTypes var="type" includeInterfaces="true">
+<@forAllTypes var="type" annotation="org.highway.service.ejb.GenerateEjb" annotationVar="generateEjb" includeInterfaces="true">
+<#if generateEjb.useCompression>
 <@javaSource name="${type.package.qualifiedName}.ejb.${type.generatedShortClassName}EjbRemote">
 
 package ${type.package.qualifiedName}.ejb;
@@ -9,8 +10,9 @@ public interface ${type.generatedShortClassName}EjbRemote extends EJBObject
 {
 <@forAllMethods var="method" indexVar="inc">
 	public <#if method.returnType.isVoid()> void <#else> byte[] </#if> ${method.simpleName}${inc}( <#if method.parameter.empty=false>byte[] entry</#if>)
-		${method.exceptionsDeclaration("java.rmi.RemoteException")};
+		${method.exceptionsDeclarationWithRemoteException};
 </@forAllMethods>
 }
 </@javaSource>
+</#if>
 </@forAllTypes>

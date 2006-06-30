@@ -1,4 +1,4 @@
-<@forAllTypes var="type" includeInterfaces="true">
+<@forAllTypes var="type" annotation="org.highway.service.ejb.GenerateEjb" includeInterfaces="true">
 <@javaSource name="${type.package.qualifiedName}.ejb.${type.generatedShortClassName}EjbRemote">
 
 /*
@@ -16,7 +16,7 @@ public interface ${type.generatedShortClassName}EjbRemote extends EJBObject
 {
 <@forAllMethods var="method">
 	public ${method.returnType} ${method.simpleName}(${method.parametersDeclaration})
-		${method.exceptionsDeclaration("java.rmi.RemoteException")};
+		${method.exceptionsDeclarationWithRemoteException};
 </@forAllMethods>
 }
 </@javaSource>

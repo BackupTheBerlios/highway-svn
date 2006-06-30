@@ -22,7 +22,7 @@ public class EjbgenTask extends AptTask {
 		// set input java files
 		FileSet fileSet = new FileSet();
 		fileSet.setDir(new File(getSourcepath().toString()));
-		fileSet.setIncludes("**/*Def.java");
+		fileSet.setIncludes("**/*.java");
 		addConfiguredSource(fileSet);
 		this.setNowarn(true);
 		super.execute();

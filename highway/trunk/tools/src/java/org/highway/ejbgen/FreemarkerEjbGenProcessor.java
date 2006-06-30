@@ -51,7 +51,7 @@ public class FreemarkerEjbGenProcessor implements AnnotationProcessor
 		URL urlTemplateBean = this.getClass().getClassLoader().getResource(
 				"org/highway/ejbgen/bean.java.ftl");
 		URL urlTemplateBeanZip = this.getClass().getClassLoader().getResource(
-				"org/highway/ejbgen/beanzip.java.ftl");
+				"org/highway/ejbgen/beanZip.java.ftl");
 		URL urlTemplateEjbJar = this.getClass().getClassLoader().getResource(
 				"org/highway/ejbgen/ejb-jar.xml.ftl");
 		URL urlTemplateHome = this.getClass().getClassLoader().getResource(
@@ -61,9 +61,9 @@ public class FreemarkerEjbGenProcessor implements AnnotationProcessor
 		URL urlTemplateProxyZip = this.getClass().getClassLoader().getResource(
 				"org/highway/ejbgen/proxyZip.java.ftl");
 		URL urlTemplateRemote = this.getClass().getClassLoader().getResource(
-				"org/highway/ejbgen/Remote.java.ftl");
+				"org/highway/ejbgen/remote.java.ftl");
 		URL urlTemplateRemoteZip = this.getClass().getClassLoader()
-				.getResource("org/highway/ejbgen/RemoteZip.java.ftl");
+				.getResource("org/highway/ejbgen/remoteZip.java.ftl");
 		try
 		{
 			Template templateBean = configuration.getTemplate(urlTemplateBean
@@ -84,20 +84,20 @@ public class FreemarkerEjbGenProcessor implements AnnotationProcessor
 					.getTemplate(urlTemplateRemoteZip.toString());
 			templateBean.process(getRootModel(), new OutputStreamWriter(
 					System.out));
-			templateBeanZip.process(getRootModel(), new OutputStreamWriter(
-					System.out));
+//			templateBeanZip.process(getRootModel(), new OutputStreamWriter(
+//					System.out));
 			templateEjbJar.process(getRootModel(), new OutputStreamWriter(
 					System.out));
 			templateHome.process(getRootModel(), new OutputStreamWriter(
 					System.out));
 			templateProxy.process(getRootModel(), new OutputStreamWriter(
 					System.out));
-			templateProxyZip.process(getRootModel(), new OutputStreamWriter(
-					System.out));
+//			templateProxyZip.process(getRootModel(), new OutputStreamWriter(
+//					System.out));
 			templateRemote.process(getRootModel(), new OutputStreamWriter(
 					System.out));
-			templateRemoteZip.process(getRootModel(), new OutputStreamWriter(
-					System.out));
+//			templateRemoteZip.process(getRootModel(), new OutputStreamWriter(
+//					System.out));
 
 		}
 		catch (IOException e)

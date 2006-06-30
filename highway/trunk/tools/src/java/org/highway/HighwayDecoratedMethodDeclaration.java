@@ -47,10 +47,10 @@ public class HighwayDecoratedMethodDeclaration extends
 				.getExceptionsDeclaration((MethodDeclaration) this.delegate);
 	}
 
-	public String getExceptionsDeclaration(String append)
+	public String getExceptionsDeclarationWithRemoteAception()
 	{
 		return EjbGenHelper.getExceptionsDeclaration(
-				(MethodDeclaration) this.delegate, append);
+				(MethodDeclaration) this.delegate, "java.rmi.RemoteException");
 	}
 
 	public String getPropertyHibernateType()

@@ -41,13 +41,13 @@ public class HighwayDecoratedInterfaceDeclaration extends
 	public String getHomeJndiName(){
 		return EjbGenSessionHelper.homeJNDIName((InterfaceDeclaration) this.delegate);
 	}
-	public String beanFullClassName(){
+	public String getBeanFullClassName(){
 		return EjbGenSessionHelper.beanFullClassName((InterfaceDeclaration) this.delegate);
 	}
-	public String homeFullClassName(){
+	public String getHomeFullClassName(){
 		return EjbGenSessionHelper.homeFullClassName((InterfaceDeclaration) this.delegate);
 	}
-	public String remoteFullClassName(){
+	public String getRemoteFullClassName(){
 		return EjbGenSessionHelper.remoteFullClassName((InterfaceDeclaration) this.delegate);
 	}
 	public boolean getIfIsClass(){

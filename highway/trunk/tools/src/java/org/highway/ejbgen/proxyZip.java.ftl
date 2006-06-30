@@ -1,4 +1,5 @@
-<@forAllTypes var="type" includeInterfaces="true">
+<@forAllTypes var="type" annotation="org.highway.service.ejb.GenerateEjb" annotationVar="generateEjb" includeInterfaces="true">
+
 <@javaSource name="${type.package.qualifiedName}.ejb.${type.generatedShortClassName}EjbProxy">
 package ${type.package.qualifiedName}.ejb;
 
@@ -10,11 +11,11 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class  ${type.generatedShortClassName}EjbProxy extends ZipEjbProxy
-	implements ${declaration.generatedClassName}
+	implements ${type.generatedClassName}
 {
 	protected Class getServiceClass()
 	{
-		return ${declaration.generatedClassName}.class;
+		return ${type.generatedClassName}.class;
 	}
 
 <@forAllMethods var="method" indexVar="inc">
@@ -76,4 +77,5 @@ public class  ${type.generatedShortClassName}EjbProxy extends ZipEjbProxy
 </@forAllMethods>
 }
 </@javaSource>
+
 </@forAllTypes>

@@ -1,5 +1,5 @@
 <@file name="ejb-jar.xml">
-<?xml version="1.0" encoding="<XDtConfig:configParameterValue paramName='Xmlencoding'/>"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE ejb-jar PUBLIC
 	"-//Sun Microsystems, Inc.//DTD Enterprise JavaBeans 2.0//EN"
@@ -12,12 +12,12 @@
    <enterprise-beans>
 
       <!-- session beans -->
-<@forAllTypes var="bean" annotation="org.highway.annotation.GenerateEjb" includeInterfaces="true">
+<@forAllTypes var="bean" annotation="org.highway.service.ejb.GenerateEjb" includeInterfaces="true">
       <session id="${bean.simpleName}">
-         <ejb-name>${declaration.beanFullClassName}</ejb-name>
-         <home>${declaration.homeFullClassName}</home>
-         <remote>${declaration.remoteFullClassName}</remote>
-         <ejb-class>${declaration.beanFullClassName}</ejb-class>
+         <ejb-name>${bean.beanFullClassName}</ejb-name>
+         <home>${bean.homeFullClassName}</home>
+         <remote>${bean.remoteFullClassName}</remote>
+         <ejb-class>${bean.beanFullClassName}</ejb-class>
          <session-type>Stateless</session-type>
          <transaction-type>Bean</transaction-type>
       </session>
