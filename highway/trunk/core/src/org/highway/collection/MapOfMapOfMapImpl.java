@@ -15,7 +15,7 @@ import java.util.Set;
 /**
  * Do not use, still under construction.
  *
- * @author David Attias
+ * 
  */
 public class MapOfMapOfMapImpl implements MapOfMapOfMap
 {

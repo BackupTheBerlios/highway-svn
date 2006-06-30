@@ -14,7 +14,7 @@ import java.lang.reflect.Method;
  * Objects of this class have a lifespan of a request.
  * Use <pre>getMethod().getDeclaringClass()</pre> to get the service class.
  *
- * @author David Attias
+ * 
  */
 public interface ServiceRequest
 {

@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * @author attias
+ * 
  */
 public abstract class MapOfCollectionImpl implements MapOfCollection,
 	Serializable, Cloneable

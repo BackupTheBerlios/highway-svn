@@ -17,7 +17,7 @@ import java.util.Set;
 /**
  * Implementation of the MapOfMap interface using the HashMap class.
  *
- * @author David Attias
+ * 
  * @see java.util.Map
  * @see java.util.HashMap
  * @since 1.1

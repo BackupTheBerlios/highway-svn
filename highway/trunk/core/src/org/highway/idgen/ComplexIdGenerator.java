@@ -12,7 +12,7 @@ package org.highway.idgen;
  * The default complex generator must be set and used through the <code>IdgenHome</code>
  * class.
  *
- * @author attias
+ * 
  */
 public interface ComplexIdGenerator
 {

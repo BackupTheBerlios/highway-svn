@@ -10,7 +10,7 @@ import org.highway.exception.TechnicalException;
  * This exception is thrown when a select query returns more results than
  * expected.
  *
- * @author attias
+ * 
  * @since 1.1
  * @see
  */

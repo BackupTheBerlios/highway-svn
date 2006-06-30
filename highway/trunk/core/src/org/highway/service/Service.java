@@ -15,7 +15,7 @@ package org.highway.service;
  * to prove it is used for component définition.<br>
  * This interface defines no method. It is only used as a tag interface.
  *
- * @author attias
+ * 
  */
 public interface Service
 {

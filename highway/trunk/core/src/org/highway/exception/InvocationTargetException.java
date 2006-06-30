@@ -5,7 +5,7 @@ package org.highway.exception;
  * <tt>java.lang.reflect.InvocationTargetException</tt> but not checked. Usefull for
  * exemple to wrap a checked exception thrown in the run of a Runnable.
  * 
- * @author David Attias
+ * 
  * @since 1.4.6
  */
 public class InvocationTargetException extends TechnicalException

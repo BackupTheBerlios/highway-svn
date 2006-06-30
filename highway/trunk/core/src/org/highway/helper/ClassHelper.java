@@ -11,7 +11,7 @@ import java.util.StringTokenizer;
 /**
  * Provides static help methods on classes.
  *
- * @author attias
+ * 
  */
 public class ClassHelper
 {

@@ -27,7 +27,7 @@ import java.util.List;
  * Resource URL example:
  *     <tt>file:/D:/Dev/jdk14/jre/lib/rt.jar!/java/lang/Object.class</tt><br>
  *
- * @author David Attias
+ * 
  */
 public final class ResourceHelper
 {

@@ -18,7 +18,7 @@ import java.util.Locale;
  * at init time. Use the <code>setGlobalTranslator</code> method to set it.
  * By default, a SilentTranslator is set as standard global Translator.
  *
- * @author David Attias
+ * 
  * @since 1.2
  * @see org.highway.translate.SilentTranslator
  */

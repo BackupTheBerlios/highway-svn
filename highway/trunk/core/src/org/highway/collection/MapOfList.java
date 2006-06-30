@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 /**
- * @author attias
+ * 
  */
 public interface MapOfList extends MapOfCollection
 {

@@ -7,7 +7,7 @@ package org.highway.helper;
 import java.util.StringTokenizer;
 
 /**
- * @author David Attias
+ * 
  */
 public abstract class StringHelper
 {

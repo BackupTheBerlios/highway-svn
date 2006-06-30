@@ -20,7 +20,7 @@ package org.highway.exception;
  *     }
  * </pre>
  *
- * @author attias
+ * 
  */
 public final class DoNotInstantiateException extends TechnicalException
 {

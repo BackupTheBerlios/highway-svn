@@ -10,7 +10,7 @@ import java.io.StringWriter;
 import java.util.StringTokenizer;
 
 /**
- * @author attias
+ * 
  */
 public class StackTraceHelper
 {

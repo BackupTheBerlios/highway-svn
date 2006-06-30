@@ -11,7 +11,7 @@ import java.util.zip.DeflaterOutputStream;
 import java.util.zip.InflaterInputStream;
 
 /**
- * @author attias
+ * 
  * @deprecated use org.highway.io.ZipHelper
  */
 public abstract class Zipper

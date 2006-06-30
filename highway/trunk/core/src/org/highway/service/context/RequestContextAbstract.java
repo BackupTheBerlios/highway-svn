@@ -15,7 +15,7 @@ import javax.transaction.UserTransaction;
  * Abstract implementation of the RequestContext interface.<br>
  * Manages mainly the caller context and the resources.
  *
- * @author attias
+ * 
  */
 public abstract class RequestContextAbstract implements RequestContext
 {

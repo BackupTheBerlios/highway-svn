@@ -9,7 +9,7 @@ import java.beans.PropertyChangeListener;
 import java.lang.ref.WeakReference;
 
 /**
- * @author David Attias
+ * 
  */
 class WeakPropertyChangeListener extends WeakReference
 	implements PropertyChangeListener

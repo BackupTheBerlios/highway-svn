@@ -15,7 +15,7 @@ import java.util.Map;
  * Direct implementation of the ServiceLocator interface.<br>
  * This locator directly returns a reference to the component implementation.
  *
- * @author David Attias
+ * 
  */
 public class DirectLocator implements ServiceLocator
 {

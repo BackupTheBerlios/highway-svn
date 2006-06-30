@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
  * Use this implementation when you do not need any debug log.<br>
  * You can for example use this implementation in the production system.
  *
- * @author attias
+ * 
  */
 public class SilentDebugLog implements DebugLog, ServiceDebugLog
 {

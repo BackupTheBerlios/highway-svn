@@ -25,7 +25,7 @@ import javax.naming.NamingException;
 /**
  * EJB implementation of ServiceLocator interface.
  *
- * @author attias
+ * 
  */
 public class EjbLocator implements ServiceLocator
 {

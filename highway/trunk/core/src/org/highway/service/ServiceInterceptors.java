@@ -17,7 +17,7 @@ import java.lang.annotation.Target;
  * <br>
  * <tt>@Interceptors({org.highway.transaction.TransactionInterceptor.class})
  * </tt>
- * @author N. Lainé
+ * 
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)

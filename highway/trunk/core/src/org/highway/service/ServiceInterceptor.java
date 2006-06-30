@@ -20,7 +20,7 @@ package org.highway.service;
  * Interceptors must be stateless since a single instance is used for any
  * intercepted services.
  *
- * @author attias
+ * 
  */
 public interface ServiceInterceptor
 {

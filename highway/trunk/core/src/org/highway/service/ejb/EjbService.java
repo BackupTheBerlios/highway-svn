@@ -10,7 +10,7 @@ package org.highway.service.ejb;
 import org.highway.service.Service;
 
 /**
- * @author attias
+ * 
  */
 public interface EjbService extends Service
 {

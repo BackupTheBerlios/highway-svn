@@ -16,7 +16,7 @@ import java.sql.Types;
 /**
  * Class used in generated Hibernate mapping files (*.hbm.xml) to represent attributes declared as Decimal in ValueObject interfaces
  * @since 1.1
- * @author attias
+ * 
  * @see org.highway.bean.Decimal
  */
 public class DecimalHibernateType extends ImmutableType

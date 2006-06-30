@@ -8,7 +8,7 @@ package org.highway.lifecycle;
 /**
  * Type that have a size.
  *
- * @author attias
+ * 
  */
 public interface Sizeable
 {

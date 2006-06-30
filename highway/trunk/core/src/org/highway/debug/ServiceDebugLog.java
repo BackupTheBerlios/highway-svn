@@ -14,7 +14,7 @@ import java.lang.reflect.Method;
  * The methods are specific debug log methods that take a method parameter
  * that specifies the service called.
  *
- * @author attias
+ * 
  * @see org.highway.DebugInterceptor
  */
 public interface ServiceDebugLog

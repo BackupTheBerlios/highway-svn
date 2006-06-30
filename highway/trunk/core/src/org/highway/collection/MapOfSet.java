@@ -6,7 +6,7 @@ package org.highway.collection;
 
 
 /**
- * @author attias
+ * 
  */
 public interface MapOfSet extends MapOfCollection
 {

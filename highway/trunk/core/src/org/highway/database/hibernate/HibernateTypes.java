@@ -22,7 +22,7 @@ import org.highway.helper.ClassHelper;
  * query argument Java types to the matching Hibernate type.
  *
  * @since 1.0
- * @author David Attias
+ * 
  */
 class HibernateTypes
 {

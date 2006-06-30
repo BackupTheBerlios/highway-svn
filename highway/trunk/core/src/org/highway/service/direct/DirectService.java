@@ -10,7 +10,7 @@ package org.highway.service.direct;
 import org.highway.service.Service;
 
 /**
- * @author attias
+ * 
  */
 public interface DirectService extends Service
 {

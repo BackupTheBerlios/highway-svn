@@ -61,7 +61,7 @@ import java.util.List;
  * <tt>org.highway.database.hibernate.EnumHibernateType</tt>.</p>
  *
  * @since 1.1
- * @author David Attias
+ * 
  * @see org.highway.database.hibernate.EnumHibernateType
  */
 public abstract class Enum implements Serializable, Comparable

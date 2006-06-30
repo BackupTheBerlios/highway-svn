@@ -30,7 +30,7 @@ import java.util.Map;
  * a JavaBeanValidator class mypackage.MyBeanValidator.
  *
  * @since 1.2
- * @author David Attias
+ * 
  */
 public class JavaBeanGlobalValidator implements GlobalValidator
 {

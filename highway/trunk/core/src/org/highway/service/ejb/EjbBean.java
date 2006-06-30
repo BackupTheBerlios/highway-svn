@@ -16,7 +16,7 @@ import javax.ejb.SessionContext;
  * Abstract bean implementation class used for EJB based service access.<br>
  * Developers should not use this class.
  *
- * @author David Attias
+ * 
  */
 public abstract class EjbBean implements SessionBean
 {

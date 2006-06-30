@@ -21,7 +21,7 @@ import org.highway.helper.ValueHelper;
  * any listeners that are themselves serializable. Any non-serializable
  * listeners will be skipped during serialization.
  * 
- * @author David Attias
+ * 
  */
 class WeakPropertyChangeSupport
 {

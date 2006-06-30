@@ -19,7 +19,7 @@ import java.util.List;
  * Implementation of <tt>SelectQuery</tt> interface to use the Hibernate
  * persistance framework.
  *
- * @author attias
+ * 
  * @since 1.1
  */
 class HibernateSelectQuery implements SelectQuery

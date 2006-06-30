@@ -13,7 +13,7 @@ import javax.transaction.TransactionManager;
 import javax.transaction.UserTransaction;
 
 /**
- * @author attias
+ * 
  */
 class SimpleUserTransaction implements UserTransaction
 {

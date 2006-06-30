@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * Provides static helper methods on primitive types.
  *
- * @author attias
+ * 
  */
 public class PrimitiveHelper
 {

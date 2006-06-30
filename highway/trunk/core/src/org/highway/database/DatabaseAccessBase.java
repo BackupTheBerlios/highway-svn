@@ -11,7 +11,7 @@ import org.highway.service.context.RequestContextHome;
 /**
  * Superclass of access services component implementation. Usage is optional. It
  * provides easy management of database sessions.
- * @author attias
+ * 
  */
 public class DatabaseAccessBase
 {

@@ -20,7 +20,7 @@ import java.util.List;
  * Developers can not create problems outside a validation process.
  *
  * @since 1.2
- * @author David Attias
+ * 
  */
 public final class ValidateProblem implements Serializable
 {

@@ -11,7 +11,7 @@ import java.util.zip.DeflaterOutputStream;
 import java.util.zip.InflaterInputStream;
 
 /**
- * @author attias
+ * 
  * @since 1.4.2
  */
 public abstract class ZipHelper

@@ -12,7 +12,7 @@ import java.util.Properties;
 /**
  * This class contains static methods to help manage properties.
  *
- * @author David Attias
+ * 
  * @since 1.1
  */
 public class PropertiesHelper

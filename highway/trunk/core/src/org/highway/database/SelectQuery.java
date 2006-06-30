@@ -29,7 +29,7 @@ import java.util.List;
  * re-executed by subsequent invocations. Its lifespan is, however, bounded by
  * the lifespan of the <tt>DatabaseSession</tt> that created it.</p>
  *
- * @author attias
+ * 
  * @since 1.1
  */
 public interface SelectQuery extends Closeable

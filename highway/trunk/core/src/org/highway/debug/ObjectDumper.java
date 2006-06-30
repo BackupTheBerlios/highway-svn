@@ -57,7 +57,7 @@ import java.util.Map;
  * Employe@2 = [firstName=Jean, lastName=Dupont, company=Company@3]<br>
  * Company@3 = [name=MyCompany, revenu=1534654, ...]</code><br>
  * <br>
- * @author attias
+ * 
  * @see org.highway.debug.Dumpable
  */
 public class ObjectDumper

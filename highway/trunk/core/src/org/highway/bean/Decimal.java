@@ -18,7 +18,7 @@ import java.util.StringTokenizer;
  * values.<br>
  * 
  * @since 1.1
- * @author attias
+ * 
  */
 public final class Decimal extends Number implements Comparable, Cloneable
 {

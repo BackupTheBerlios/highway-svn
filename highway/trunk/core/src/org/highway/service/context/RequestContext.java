@@ -14,7 +14,7 @@ import javax.transaction.UserTransaction;
  * used by the service.<br>
  * Use class RequestContextHome to get the current service context.
  *
- * @author attias
+ * 
  */
 public interface RequestContext extends Closeable
 {

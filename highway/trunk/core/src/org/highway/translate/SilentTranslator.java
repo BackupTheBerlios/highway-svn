@@ -11,7 +11,7 @@ import java.util.Locale;
  * it returns the message as received.
  * This class is used as the standard global Translator.
  *
- * @author David Attias
+ * 
  * @since 1.2
  */
 public class SilentTranslator implements Translator

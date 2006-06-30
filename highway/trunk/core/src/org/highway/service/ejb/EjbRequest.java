@@ -18,7 +18,7 @@ import java.util.List;
  * EJB implementation of ServiceRequest.
  * Developers should not use this class.
  *
- * @author David Attias
+ * 
  */
 public class EjbRequest extends ServiceRequestAbstract
 {

@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * Implementation of the DatabaseSession interface for Hibernate.
  *
- * @author attias
+ * 
  */
 class HibernateSession implements DatabaseSession
 {

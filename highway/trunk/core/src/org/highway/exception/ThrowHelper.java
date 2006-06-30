@@ -9,7 +9,7 @@ package org.highway.exception;
 
 
 /**
- * @author attias
+ * 
  */
 public class ThrowHelper
 {

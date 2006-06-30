@@ -17,7 +17,7 @@ import java.util.List;
  * All methods throw an IllegalStateException if called when
  * the session is closed.
  * 
- * @author attias
+ * 
  */
 public interface DatabaseSession extends Closeable
 {

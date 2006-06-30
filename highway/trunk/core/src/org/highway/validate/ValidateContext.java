@@ -44,8 +44,8 @@ import org.highway.helper.StringHelper;
  * </pre>
  *
  * @since 1.2
- * @author David Attias
- * @author Christian de Bevotte
+ * 
+ * 
  * @see org.highway.validate.Validator
  * @see org.highway.validate.ValidateProblem
  */

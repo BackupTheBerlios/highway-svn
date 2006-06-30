@@ -19,7 +19,7 @@ import org.highway.debug.DebugHome;
  * </pre>
  *
  * @since 1.2
- * @author David Attias
+ * 
  */
 public class SizeValidator implements Validator
 {

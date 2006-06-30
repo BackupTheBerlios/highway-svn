@@ -8,7 +8,7 @@ package org.highway.exception;
 /**
  * Formalise un probleme d'execution occasionnee par une erreur de codage
  * ou par une incoherence des donnees (de la base notamment).
- * @author attias
+ * 
  */
 public class BugException extends TechnicalException
 {

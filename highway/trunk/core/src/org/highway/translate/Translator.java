@@ -16,7 +16,7 @@ import java.util.Locale;
  * if the context is directly a Class. This class name is then used to find
  * the translation depending on the implementation.<br><br>
  *
- * @author attias
+ * 
  * @since 1.2
  */
 public interface Translator

@@ -15,7 +15,7 @@ import java.util.Set;
  * It means that a pair of keys are necessary to <tt>get</tt> and <tt>put</tt>
  * a value.
  *
- * @author David Attias
+ * 
  * @see java.util.Map
  * @since 1.1
  *

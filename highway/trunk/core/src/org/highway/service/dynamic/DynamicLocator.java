@@ -25,7 +25,7 @@ import java.util.Map;
  * The proxy objects are cached and can be used by multiple threads
  * at the same time.
  *
- * @author attias
+ * 
  */
 public class DynamicLocator implements ServiceLocator
 {

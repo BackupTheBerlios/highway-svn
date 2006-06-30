@@ -15,7 +15,7 @@ import java.io.Writer;
 import java.lang.reflect.Method;
 
 /**
- * @author attias
+ * 
  */
 public class ProfilingInterceptor implements ServiceInterceptor
 {

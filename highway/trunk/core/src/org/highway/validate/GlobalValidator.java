@@ -11,7 +11,7 @@ package org.highway.validate;
  * the object to validate.
  *
  * @since 1.2
- * @author David Attias
+ * 
  */
 public interface GlobalValidator extends Validator
 {

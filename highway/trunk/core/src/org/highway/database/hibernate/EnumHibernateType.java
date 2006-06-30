@@ -32,7 +32,7 @@ import java.sql.SQLException;
  * </p>
  * 
  * @since 1.1
- * @author David Attias
+ * 
  * @see org.highway.bean.Enum
  */
 public abstract class EnumHibernateType extends ImmutableType

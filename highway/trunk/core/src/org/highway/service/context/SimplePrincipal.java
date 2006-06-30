@@ -10,7 +10,7 @@ import java.security.Principal;
  * Simple principal implementation.<br>
  * Developers should not use this class.
  *
- * @author attias
+ * 
  */
 public class SimplePrincipal implements Principal
 {

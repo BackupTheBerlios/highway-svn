@@ -10,7 +10,7 @@ import java.util.Comparator;
 /**
  * Provides comparators and static compare methods.
  *
- * @author attias
+ * 
  */
 public final class CompareHelper
 {

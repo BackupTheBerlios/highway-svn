@@ -8,7 +8,7 @@ import java.io.Serializable;
  * package to decide if the object to validate is a JavaBean.
  * 
  * @see org.highway.validate.JavaBeanGlobalValidator
- * @author David Attias
+ * 
  * @since 1.4
  */
 public interface JavaBean extends Serializable

@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author attias
+ * 
  */
 public abstract class ReflectHelper
 {

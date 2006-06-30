@@ -16,7 +16,7 @@ package org.highway.idgen;
  * identifier consumer (max instant identifier consumption should be less than
  * 100 per second).
  *
- * @author David Attias
+ * 
  */
 public class TimeBasedSimpleIdGenerator implements SimpleIdGenerator
 {

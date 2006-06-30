@@ -5,7 +5,7 @@ package org.highway.io;
  * decides of the type of support to store the data.</p>
  * 
  * 
- * @author David Attias
+ * 
  * @since 1.4.2
  */
 public interface Deserializer

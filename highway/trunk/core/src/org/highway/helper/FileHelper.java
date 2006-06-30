@@ -17,7 +17,7 @@ import java.util.zip.DeflaterOutputStream;
 import java.util.zip.InflaterInputStream;
 
 /**
- * @author David Attias
+ * 
  * @deprecated use org.highway.io.FileHelper
  */
 public class FileHelper

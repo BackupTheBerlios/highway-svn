@@ -10,7 +10,7 @@ package org.highway.idgen;
  * Simple generators returns long identifiers.<br>
  * The default simple generator must be set and used through the <code>IdgenHome</code> class.
  *
- * @author attias
+ * 
  */
 public interface SimpleIdGenerator
 {

@@ -16,7 +16,7 @@ import org.highway.helper.StringHelper.TrimPolicy;
  * value object, according to the trim policy specified through the
  * {@link org.highway.vo.MetadataHome#TRIMPOLICY} annotation.
  * 
- * @author Christian de Bevotte
+ * 
  * @since 1.4.6
  * @see net.sf.hibernate.cfg.Configuration#setInterceptor(net.sf.hibernate.Interceptor)
  */

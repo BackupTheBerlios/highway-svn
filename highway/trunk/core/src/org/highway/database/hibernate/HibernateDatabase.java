@@ -15,7 +15,7 @@ import net.sf.hibernate.cfg.Configuration;
  * Implementation of Database interface to use the Hibernate persistance
  * framework.
  *
- * @author attias
+ * 
  */
 public class HibernateDatabase implements Database
 {

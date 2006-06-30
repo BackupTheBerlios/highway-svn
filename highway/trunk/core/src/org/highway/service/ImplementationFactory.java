@@ -10,7 +10,7 @@ package org.highway.service;
  * ImplementationFactory default implementation is StandardImplementationFactory.
  *
  * @since 1.2
- * @author David Attias
+ * 
  * @see org.highway.service.StandardImplementationFactory
  */
 public interface ImplementationFactory

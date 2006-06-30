@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * An implementation of {@link SimpleIdGenerator} based on pages of available unique ids.
  *
- * @author attias
+ * 
  */
 public class IdPageBasedGenerator implements SimpleIdGenerator
 {

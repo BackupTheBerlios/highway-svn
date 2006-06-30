@@ -15,7 +15,7 @@ package org.highway.service;
  * For EJB based access, use the <code>EjbLocator</code> class.<br>
  * For dynamic proxy access, use the <code>DynamicLocator</code> class.
  *
- * @author attias
+ * 
  */
 public interface ServiceLocator
 {

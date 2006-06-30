@@ -15,7 +15,7 @@ import org.highway.debug.Dumpable;
  * associated with persistent value objects. These properties have real meanings
  * even for regular non persistent value objects.
  *
- * @author David Attias
+ * 
  */
 public interface ValueObject extends JavaBean, Cloneable, Dumpable
 {

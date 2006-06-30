@@ -11,7 +11,7 @@ import java.util.Iterator;
 /**
  * Provides static help methods on value objects.
  *
- * @author attias
+ * 
  */
 public class ValueObjectHelper
 {

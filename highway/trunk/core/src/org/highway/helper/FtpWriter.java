@@ -17,7 +17,7 @@ import java.io.Writer;
  * revoir la liste des librairies client ftp :
  * http://www.javaworld.com/javaworld/jw-04-2003/jw-0404-ftp.html
  *
- * @author David Attias
+ * 
  * @deprecated use org.highway.io.FtpWriter
  */
 public class FtpWriter extends Writer

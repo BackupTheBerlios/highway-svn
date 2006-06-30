@@ -10,7 +10,7 @@ package org.highway.validate;
  * any context.
  *
  * @since 1.2
- * @author David Attias
+ * 
  */
 public interface ClassValidator extends Validator
 {

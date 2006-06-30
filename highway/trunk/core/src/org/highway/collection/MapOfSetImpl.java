@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.HashSet;
 
 /**
- * @author attias
+ * 
  */
 public class MapOfSetImpl extends MapOfCollectionImpl implements MapOfSet
 {

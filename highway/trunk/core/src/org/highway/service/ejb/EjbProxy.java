@@ -13,7 +13,7 @@ import java.util.List;
  * Abstract proxy class used for EJB based service access.<br>
  * Developers should not use this class.
  *
- * @author David Attias
+ * 
  */
 public abstract class EjbProxy
 {

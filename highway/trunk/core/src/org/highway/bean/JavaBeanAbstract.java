@@ -13,7 +13,7 @@ import org.highway.helper.ReflectHelper;
  * JavaBean abstract class.
  * Provides help methods for JavaBeans compliant classes.
  *
- * @author David Attias
+ * 
  */
 public abstract class JavaBeanAbstract implements JavaBean
 {

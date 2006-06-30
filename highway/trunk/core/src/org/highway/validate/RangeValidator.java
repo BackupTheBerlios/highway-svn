@@ -9,7 +9,7 @@ package org.highway.validate;
  * Validates Comparable objects to a minimum and a maximum.
  *
  * @since 1.2
- * @author David Attias
+ * 
  * @see java.lang.Comparable
  */
 public class RangeValidator implements Validator

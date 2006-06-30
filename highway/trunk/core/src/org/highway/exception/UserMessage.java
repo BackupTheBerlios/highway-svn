@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @author attias
+ * 
  */
 public class UserMessage implements Serializable
 {

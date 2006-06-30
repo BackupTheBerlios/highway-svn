@@ -12,7 +12,7 @@ import java.util.GregorianCalendar;
 /**
  * Static help methods on dates.
  * 
- * @author David Attias
+ * 
  */
 public abstract class DateHelper
 {

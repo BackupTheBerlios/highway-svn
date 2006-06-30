@@ -7,7 +7,7 @@ package org.highway.bean;
 /**
  * Do not use, still under construction.
  * 
- * @author David Attias
+ * 
  */
 public interface Identifiable
 {

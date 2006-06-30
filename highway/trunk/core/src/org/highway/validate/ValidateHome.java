@@ -13,7 +13,7 @@ import org.highway.lifecycle.InitException;
  * The standard default GlobalValidator is a JavaBeanGlobalValidator.
  *
  * @since 1.2
- * @author David Attias
+ * 
  * @see org.highway.validate.GlobalValidator
  * @see org.highway.validate.JavaBeanGlobalValidator
  */

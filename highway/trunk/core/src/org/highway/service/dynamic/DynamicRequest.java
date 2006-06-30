@@ -16,7 +16,7 @@ import org.highway.service.ServiceRequestAbstract;
  * Implementation of the ServiceRequest class based on the dynamic proxy
  * technology.
  *
- * @author David Attias
+ * 
  */
 class DynamicRequest extends ServiceRequestAbstract
 {

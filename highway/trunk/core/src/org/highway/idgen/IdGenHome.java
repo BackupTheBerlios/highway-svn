@@ -17,7 +17,7 @@ import org.highway.lifecycle.InitException;
  * before used. Example:<br><br>
  * <code>IdgenHome.setSimpleIdGenerator(new TimeBasedSimpleIdGenerator());</code>
  *
- * @author attias
+ * 
  */
 public class IdGenHome
 {

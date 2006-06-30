@@ -19,7 +19,7 @@ import java.util.List;
  * Abstract implementation of <code>ServiceRequest</code> class.<br>
  * Manages the proxy reference, the implementation reference and interceptor list.
  *
- * @author David Attias
+ * 
  */
 public abstract class ServiceRequestAbstract implements ServiceRequest
 {

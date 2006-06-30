@@ -11,7 +11,7 @@ import org.highway.helper.ClassHelper;
  * Standard implementation of ImplementationFactory.
  *
  * @since 1.2
- * @author David Attias
+ * 
  */
 public class StandardImplementationFactory implements ImplementationFactory
 {

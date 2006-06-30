@@ -9,7 +9,7 @@ package org.highway.service.context;
  * Home class of this package.<br>
  * Access point of the service request context.
  *
- * @author attias
+ * 
  */
 public abstract class RequestContextHome
 {

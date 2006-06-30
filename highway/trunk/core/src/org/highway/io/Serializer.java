@@ -5,7 +5,7 @@ import java.io.OutputStream;
 /**
  * <p> this interface is defined to use specific serialization. The implementation 
  * of the interface decides of the type of support to store the data  </p>
- * @author David Attias
+ * 
  * @since 1.4.2
  */
 public interface Serializer

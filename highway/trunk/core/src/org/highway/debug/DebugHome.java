@@ -16,8 +16,8 @@ import org.highway.lifecycle.InitException;
  * init time. Use the <code>setDebugLog</code> to set the default DebugLog.
  * The default default DebugLog is a SilentDebugLog instance.
  *
- * @author attias
- * @author Christian de Bevotte
+ * 
+ * 
  */
 public class DebugHome
 {

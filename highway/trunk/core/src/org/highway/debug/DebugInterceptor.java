@@ -26,7 +26,7 @@ import java.lang.reflect.Method;
  *         <li>the exception thrown</li>
  * </ul>
  *
- * @author attias
+ * 
  * @see org.highway.debug.DebugLog
  * @see org.highway.debug.ServiceDebugLog
  */

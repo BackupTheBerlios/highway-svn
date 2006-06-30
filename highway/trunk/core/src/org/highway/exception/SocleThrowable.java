@@ -6,7 +6,7 @@ package org.highway.exception;
 
 
 /**
- * @author attias
+ * 
  */
 public interface SocleThrowable
 {

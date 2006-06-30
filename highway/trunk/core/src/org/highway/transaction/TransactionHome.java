@@ -27,7 +27,7 @@ import javax.transaction.UserTransaction;
  * Use the <tt>setTransactionManager</tt> to set the default TransactionManager.
  * </p>
  * 
- * @author David Attias
+ * 
  */
 public class TransactionHome
 {

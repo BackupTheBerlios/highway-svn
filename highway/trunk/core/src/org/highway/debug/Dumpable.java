@@ -10,7 +10,7 @@ package org.highway.debug;
  * automatic dump of instances of this class through the
  * <code>ObjectDumper</code> class.
  *
- * @author attias
+ * 
  * @see org.highway.debug.ObjectDumper
  */
 public interface Dumpable

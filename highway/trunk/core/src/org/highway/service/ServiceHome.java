@@ -13,7 +13,7 @@ import org.highway.lifecycle.InitException;
  * Provides access to the default ImplementationFactory.
  *
  * @since 1.2
- * @author David Attias
+ * 
  * @see org.highway.service.ImplementationFactory
  */
 public class ServiceHome

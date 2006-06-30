@@ -13,7 +13,7 @@ import java.io.Writer;
 
 /**
  * Stream static help methods.
- * @author David Attias
+ * 
  * @deprecated use org.highway.io.StreamHelper
  */
 public class StreamHelper

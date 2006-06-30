@@ -10,7 +10,7 @@ import java.util.NoSuchElementException;
 /**
  * Do not use, still under construction.
  *
- * @author attias
+ * 
  */
 public class EmptyIterator implements Iterator
 {

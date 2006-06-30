@@ -8,7 +8,7 @@ package org.highway.helper;
 /**
  * Provides static helper methods on object and primitive values.
  *
- * @author attias
+ * 
  */
 public final class ValueHelper
 {

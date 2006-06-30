@@ -3,7 +3,7 @@ package org.highway.helper;
 import java.lang.reflect.Array;
 
 /**
- * @author David Attias
+ * 
  * @since 1.4.3
  */
 public class ArrayHelper

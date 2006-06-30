@@ -8,7 +8,7 @@ package org.highway.lifecycle;
 /**
  * Defines an object that can be initialized.
  *
- * @author attias
+ * 
  */
 public interface Initable
 {

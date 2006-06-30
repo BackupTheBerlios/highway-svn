@@ -15,7 +15,7 @@ import java.util.NoSuchElementException;
  * Do not use, still under construction.<br>
  * Map de listes.
  *
- * @author attias
+ * 
  */
 public class MapOfListImpl extends MapOfCollectionImpl implements MapOfList
 {

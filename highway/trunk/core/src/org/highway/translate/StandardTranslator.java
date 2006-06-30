@@ -14,8 +14,8 @@ import org.highway.debug.DebugHome;
  * Implementation of <tt>Translator</tt> that relies on <tt>ResourceBundle</tt>
  * to find translations.
  *
- * @author David Attias
- * @author Christian de Bevotte
+ * 
+ * 
  * @since 1.3
  */
 public class StandardTranslator implements Translator

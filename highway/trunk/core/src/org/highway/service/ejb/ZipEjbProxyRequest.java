@@ -22,7 +22,7 @@ import org.highway.io.StandardZipSerializer;
  * Used by ZipEjbProxy to serialize and zip the parameters and to call the
  * service zip modified internal method. Developers should not use this class.
  * 
- * @author David Attias
+ * 
  * @since 1.4.2
  */
 public class ZipEjbProxyRequest extends EjbRequest

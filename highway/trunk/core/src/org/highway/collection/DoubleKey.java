@@ -12,7 +12,7 @@ import org.highway.helper.ValueHelper;
  * of the MapOfMapImpl class if you want a light way to index your values with two
  * indexes.
  *
- * @author attias
+ * 
  */
 public class DoubleKey
 {

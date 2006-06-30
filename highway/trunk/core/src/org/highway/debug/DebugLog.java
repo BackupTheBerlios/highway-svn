@@ -30,7 +30,7 @@ package org.highway.debug;
  * must be set to true:</p>
  * <code>highway.debug.enable = true</code>
  *
- * @author David Attias
+ * 
  */
 public interface DebugLog
 {

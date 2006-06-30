@@ -63,7 +63,7 @@ import java.util.Properties;
  * EXITING FournisseurAccess.mettreAJour(Fournisseur)
  * </pre>
  *
- * @author David Attias
+ * 
  * @see org.highway.debug.Log4jDebugLog.DEFAULT_PATTERN
  */
 public class Log4jDebugLog implements DebugLog, ServiceDebugLog
