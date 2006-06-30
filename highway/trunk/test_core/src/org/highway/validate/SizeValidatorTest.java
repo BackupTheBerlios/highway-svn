@@ -6,7 +6,7 @@ import org.highway.validate.SizeValidator;
 import org.highway.validate.ValidateContext;
 
 /**
- * @author attias
+ * 
  */
 public class SizeValidatorTest extends TestCase
 {

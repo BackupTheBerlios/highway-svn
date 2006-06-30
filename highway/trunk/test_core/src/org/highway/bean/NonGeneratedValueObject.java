@@ -3,7 +3,7 @@ import org.highway.bean.ValueObjectAbstract;
 
 
 /**
- * @author attias
+ * 
  */
 public class NonGeneratedValueObject extends ValueObjectAbstract
 {

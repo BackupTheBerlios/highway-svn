@@ -4,7 +4,7 @@ import org.highway.bean.ValueObjectAbstract;
 import org.highway.helper.ValueHelper;
 
 /**
- * @author attias
+ * 
  */
 public class Firme extends ValueObjectAbstract
 {

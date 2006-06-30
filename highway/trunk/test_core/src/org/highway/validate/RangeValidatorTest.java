@@ -9,7 +9,7 @@ import org.highway.validate.RangeValidator;
 import org.highway.validate.ValidateContext;
 
 /**
- * @author attias
+ * 
  */
 public class RangeValidatorTest extends TestCase
 {

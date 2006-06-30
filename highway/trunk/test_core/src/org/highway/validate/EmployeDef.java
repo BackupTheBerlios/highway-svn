@@ -4,7 +4,7 @@ import org.highway.bean.PropertySize;
 import org.highway.bean.ValueObject;
 
 /**
- * @author attias
+ * 
  */
 public interface EmployeDef extends ValueObject
 {

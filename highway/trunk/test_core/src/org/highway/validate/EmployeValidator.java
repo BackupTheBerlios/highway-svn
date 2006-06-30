@@ -5,7 +5,7 @@ import org.highway.validate.JavaBeanValidator;
 import org.highway.validate.ValidateContext;
 
 /**
- * @author attias
+ * 
  */
 public class EmployeValidator extends JavaBeanValidator
 {
