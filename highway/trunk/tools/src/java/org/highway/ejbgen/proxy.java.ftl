@@ -28,7 +28,7 @@ public class ${type.generatedShortClassName}EjbProxy extends EjbProxy
 	{
 		try
 		{
-			EjbRequest request = init("${method.simpleName}");
+			EjbRequest request = createEjbRequest("${method.simpleName}");
 <@forAllParameters var="parameter">
 			request.addParameter("${parameter.simpleName}", ${parameter.type}.class, ValueHelper.wrap(${parameter.simpleName}));
 </@forAllParameters>
@@ -71,10 +71,6 @@ public class ${type.generatedShortClassName}EjbProxy extends EjbProxy
 		catch (Throwable e)
 		{
 			throw new TechnicalException("Service ${method.simpleName} unexpectedly failed", e);
-		}
-		finally
-		{
-			reset();
 		}
 	}
 </@forAllMethods>
