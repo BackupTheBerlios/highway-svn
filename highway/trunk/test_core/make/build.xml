@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="highway_core_test" default="core.test.generate.vogen" basedir="..">
+<project name="highway_core_test" default="core.test.generate" basedir="..">
 
 	<taskdef resource="org/highway/anttasks.properties">
-		<classpath path="../highway_tools/bin/pack/highway-tools.jar"/>
+		<classpath path="../highway_tools/bin/pack/highway-tools.jar" />
 	</taskdef>
-	
+
 	<path id="core.test.classpath">
 		<pathelement location="src" />
 		<!--pathelement location="bin/eclipse" /-->
@@ -15,93 +15,70 @@
 		<fileset dir="../highway_core/lib" includes="**/*.jar" />
 		<fileset dir="../highway_core/bin/pack" includes="**/*.jar" />
 	</path>
-	
+
 	<target name="clean">
 		<delete dir="bin/gensrc" />
 		<delete dir="bin/cfg" />
 		<delete dir="bin/classes" />
 	</target>
-	
-	<target name="core.test.generate.apt">
-		<delete dir="bin/gensrc"/>
-		<mkdir dir="bin/gensrc"/>
-		<delete dir="bin/cfg"/>
-		<mkdir dir="bin/cfg"/>
-		
-		<apt    
-			nocompile="true"
-		    sourcedestdir="bin/gensrc"
-		    sourcepath="src"
-			factory="org.highway.vogen.HighwayProcessorFactory">
-			<classpath refid="core.test.classpath"/>
-		    <source dir="src" includes="**/*Def.java"/>
-		</apt>
-			
-<!--		<vogen inputDir="src" outputDir="bin/gensrc"/>
-		<metagen inputDir="src" outputDir="bin/gensrc" />
-		<ejbgen javaInputDir="src" javaOutputDir="bin/gensrc" cfgOutputDir="bin/cfg" />-->
-	</target>
-	
-	<target name="core.test.generate.vogen" depends="clean">
-		<delete dir="bin/gensrc"/>
-		<mkdir dir="bin/gensrc"/>
-		<delete dir="bin/cfg"/>
-		<mkdir dir="bin/cfg"/>
-		
-		<vogen    
-		    outputdir="bin/gensrc"
-		    inputdir="src">
-			<classpath refid="core.test.classpath"/>
+
+	<target name="core.test.generate" depends="clean">
+		<delete dir="bin/gensrc" />
+		<mkdir dir="bin/gensrc" />
+		<delete dir="bin/cfg" />
+		<mkdir dir="bin/cfg" />
+
+		<vogen outputdir="bin/gensrc" inputdir="src">
+			<classpath refid="core.test.classpath" />
 		</vogen>
-			
-<!--		<vogen inputDir="src" outputDir="bin/gensrc"/>
-		<metagen inputDir="src" outputDir="bin/gensrc" />
-		<ejbgen javaInputDir="src" javaOutputDir="bin/gensrc" cfgOutputDir="bin/cfg" />-->
+
+		<ejbgen inputDir="src" outputDir="bin/gensrc">
+			<classpath refid="core.test.classpath" />
+		</ejbgen>
 	</target>
-	
+
 	<target name="core.test.compile">
-		<delete dir="bin/classes"/>
-		<mkdir dir="bin/classes"/>
+		<delete dir="bin/classes" />
+		<mkdir dir="bin/classes" />
 		<javac target="1.5" destdir="bin/classes" debug="true">
-			<src path="src"/>
-			<src path="bin/gensrc"/>
-			<classpath refid="core.test.classpath"/>
+			<src path="src" />
+			<src path="bin/gensrc" />
+			<classpath refid="core.test.classpath" />
 		</javac>
 		<copy todir="bin/classes">
 			<fileset dir="src">
-				<include name="**/*"/>
-				<exclude name="**/*.java"/>
+				<include name="**/*" />
+				<exclude name="**/*.java" />
 			</fileset>
 			<fileset dir="bin/gensrc">
-				<include name="**/*"/>
-				<exclude name="**/*.java"/>
+				<include name="**/*" />
+				<exclude name="**/*.java" />
 			</fileset>
 		</copy>
 	</target>
-	
-	<target name="core.test.build" depends="core.test.generate.apt, core.test.compile"/>
-	
+
+	<target name="core.test.build" depends="core.test.generate, core.test.compile" />
+
 	<target name="core.test.run" depends="core.test.build">
-		
-		<delete dir="bin/test"/>
-		<mkdir dir="bin/test"/>
-		
+
+		<delete dir="bin/test" />
+		<mkdir dir="bin/test" />
+
 		<!-- i need to fork to be able to use jvmarg elements -->
 		<!-- i need jvmarg element to define system properties -->
 		<!-- that i failed to define in Ant or in Eclipse -->
-		<junit printsummary="yes" haltonfailure="no" fork="yes"
-			 showoutput="no">
-			
-			<jvmarg value="-Djava.library.path=c:\dev\db2\bin"/>
-			<jvmarg value="-Dhighway.debug.enable=true"/>
-			
+		<junit printsummary="yes" haltonfailure="no" fork="yes" showoutput="no">
+
+			<jvmarg value="-Djava.library.path=c:\dev\db2\bin" />
+			<jvmarg value="-Dhighway.debug.enable=true" />
+
 			<classpath refid="core.test.classpath" />
-			
-			<formatter type="plain"/>
+
+			<formatter type="plain" />
 			<batchtest todir="bin/test">
-                <fileset dir='bin/eclipse' includes='**/*Test.class'/>
-            </batchtest>
-			
+				<fileset dir='bin/eclipse' includes='**/*Test.class' />
+			</batchtest>
+
 		</junit>
 	</target>
 
