@@ -8,31 +8,34 @@ package ${type.package.qualifiedName};
 
 import org.highway.helper.ValueHelper;
 import org.highway.bean.ValueObjectAbstract;
-
-public class ${type.generatedShortClassName}
+public <@ifHasAnnotation annotation="org.highway.vogen.GenerateAbstract">abstract</@ifHasAnnotation> class ${type.generatedShortClassName}
 	extends ${type.superClassName}
 	implements ${type.qualifiedName}{
-	
+
+	<@ifHasAnnotation var="ann" annotation="org.highway.vogen.SerialVersionUID">
+	private static final long serialVersionUID = ${ann.value};
+	</@ifHasAnnotation>
+
 	<@forAllMethods var="method">
 	<#assign propertyName = "${method.propertyName}">
 	 /**
 	 * Property ${propertyName}
 	 */ 
-	 private ${method.returnType} ${propertyName};
+	 private ${method.returnTypeQualifiedName} ${propertyName};
 	 
 	 public static final String ${method.constantName} = "${propertyName}";
 	 	
-	 public ${method.returnType} ${method.simpleName}()
+	 public ${method.returnTypeQualifiedName} ${method.simpleName}()
 	 {
 		return ${propertyName};
 	 }
-	 public void ${method.setMethodName}(${method.returnType} newValue) 
+	 public void ${method.setMethodName}(${method.returnTypeQualifiedName} newValue) 
 	 {
 		${method.setMethodName}_0(newValue);
 	 }
-	 protected final void ${method.setMethodName}_0(${method.returnType} newValue)
+	 protected final void ${method.setMethodName}_0(${method.returnTypeQualifiedName} newValue)
 	 {
-		${method.returnType} oldValue = ${propertyName};
+		${method.returnTypeQualifiedName} oldValue = ${propertyName};
 		if (!ValueHelper.equals(oldValue, newValue))
 		{
 			${propertyName} = newValue;
