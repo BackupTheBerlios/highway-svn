@@ -15,10 +15,4 @@ public interface SocleThrowable
 	 * @return UserMessage
 	 */
 	UserMessage getUserMessage();
-
-	/**
-	 * Method getCause
-	 * @return Throwable
-	 */
-	Throwable getCause();
 }

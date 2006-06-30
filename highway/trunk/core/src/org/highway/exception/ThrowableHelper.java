@@ -90,29 +90,9 @@ public class ThrowableHelper
 	 * Returns the cause throwable nested into a throwable.<br>
 	 * Necessary to ease the migration from JDK 1.3 to JDK 1.4
 	 * because <code>Throwable.getCause()</code> only exists in JDK 1.4.
-	 *
-	 * @param throwable Throwable
-	 * @return Throwable
 	 */
 	public static Throwable getCause(Throwable throwable)
 	{
-		/*
-		 * JDK 1.4 implementation :
-		 * return throwable.getCause();
-		 */
-
-		//return throwable.getCause();
-
-		/*
-		 * JDK 1.3 implementation :
-		 * use reflexion to look for getCause type method
-		 * in the throwable parameter.
-		 */
-		if (throwable instanceof SocleThrowable)
-		{
-			return ((SocleThrowable) throwable).getCause();
-		}
-
-		return null;
+		return throwable.getCause();
 	}
 }
