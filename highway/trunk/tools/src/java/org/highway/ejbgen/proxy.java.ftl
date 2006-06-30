@@ -50,7 +50,7 @@ public class ${type.generatedShortClassName}EjbProxy extends EjbProxy
 			return ((Double) request.invoke()).doubleValue();
 <#elseif method.returnType.primitive &&  method.returnType.keyword="float">
 			return ((Float) request.invoke()).floatValue();
-<#elseif method.returnType.class>
+<#else>
 			return (${method.returnType}) request.invoke();
 </#if>
 		}

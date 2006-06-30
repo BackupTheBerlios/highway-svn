@@ -69,7 +69,7 @@ public class EjbGenHelper implements EjbGenConstants
 		String decl = getExceptionsDeclaration(method);
 		if (decl!=null && decl.length()>0)
 			return decl+", "+append;
-		return append;
+		return "throws " + append;
 	}
 //	public boolean ifReturnsVoid(MethodDeclaration method){
 //		if (method != null)
