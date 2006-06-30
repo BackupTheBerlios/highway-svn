@@ -1,5 +1,6 @@
 package org.highway.service;
 
+import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,9 +15,9 @@ import org.highway.helper.ClassHelper;
  * Manages the interceptor instances.<br>
  * Contains the logic that look for tag in the component service interface,
  * create the interceptor instances and cache them.
- * 
  */
-public class InterceptorFactory {
+public class InterceptorFactory
+{
 	/**
 	 * Field NOT_FOUND
 	 */
@@ -39,7 +40,8 @@ public class InterceptorFactory {
 	/**
 	 * Do not instantiate this class.
 	 */
-	private InterceptorFactory() {
+	private InterceptorFactory()
+	{
 		throw new DoNotInstantiateException();
 	}
 
@@ -50,14 +52,15 @@ public class InterceptorFactory {
 	 * This method is synchronized because used in thread intensive environment
 	 * and the interceptors are created only once and cached.
 	 * 
-	 * @param serviceClass
-	 *            the component service interface
+	 * @param serviceClass the component service interface
 	 * @return a list of interceptors
 	 */
-	public static synchronized List getInterceptors(Class serviceClass) {
+	public static synchronized List getInterceptors(Class serviceClass)
+	{
 		List interceptors = serviceMap.get(serviceClass);
 
-		if (interceptors == null) {
+		if (interceptors == null)
+		{
 			DebugHome.debug("Loading interceptors for service ", serviceClass
 					.getName());
 			interceptors = loadInterceptors(serviceClass);
@@ -68,39 +71,50 @@ public class InterceptorFactory {
 		return interceptors;
 	}
 
-	private static List<ServiceInterceptor> loadInterceptors(Class serviceClass) {
-		try {
-			Class[] interceptorClasses = ((ServiceInterceptors) serviceClass
-					.getAnnotation(ServiceInterceptors.class)).value();
+	private static List<ServiceInterceptor> loadInterceptors(Class serviceClass)
+	{
+		try
+		{
+			Annotation annotation = serviceClass
+					.getAnnotation(ServiceInterceptors.class);
 
-			if (interceptorClasses == null) {
+			if (annotation == null)
+			{
 				return getUpperInterceptors(serviceClass);
 			}
 
-			if (interceptorClasses.length == 0) {
+			Class[] interceptorClasses = ((ServiceInterceptors)annotation).value();
+			
+			if (interceptorClasses.length == 0)
+			{
 				return FOUND_BUT_EMPTY;
 			}
 
 			List<ServiceInterceptor> interceptors = new ArrayList<ServiceInterceptor>(
 					interceptorClasses.length);
 
-			for (int i = 0; i < interceptorClasses.length; i++) {
+			for (int i = 0; i < interceptorClasses.length; i++)
+			{
 				interceptors.add(getInterceptor(interceptorClasses[i]));
 			}
 			return interceptors;
-		} catch (ClassNotFoundException exc) {
+		}
+		catch (ClassNotFoundException exc)
+		{
 			throw new TechnicalException(
-					"Failed to create interceptors for service "
-							+ serviceClass, exc);
+					"Failed to create interceptors for service " + serviceClass,
+					exc);
 		}
 
 	}
 
 	private static ServiceInterceptor getInterceptor(Class interceptorClass)
-			throws ClassNotFoundException {
+			throws ClassNotFoundException
+	{
 		ServiceInterceptor interceptor = interceptorMap.get(interceptorClass);
 
-		if (interceptor == null) {
+		if (interceptor == null)
+		{
 			interceptor = (ServiceInterceptor) ClassHelper
 					.newInstance(interceptorClass);
 			interceptorMap.put(interceptorClass, interceptor);
@@ -109,13 +123,16 @@ public class InterceptorFactory {
 		return (ServiceInterceptor) interceptor;
 	}
 
-	private static List getUpperInterceptors(Class serviceClass) {
+	private static List getUpperInterceptors(Class serviceClass)
+	{
 		Class[] interfaces = serviceClass.getInterfaces();
 
-		for (int i = 0; i < interfaces.length; i++) {
+		for (int i = 0; i < interfaces.length; i++)
+		{
 			List interceptors = getInterceptors(interfaces[i]);
 
-			if (interceptors != NOT_FOUND) {
+			if (interceptors != NOT_FOUND)
+			{
 				return interceptors;
 			}
 		}
