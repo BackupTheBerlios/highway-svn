@@ -2,11 +2,9 @@ package org.highway.bean;
 
 import java.math.BigDecimal;
 
-import org.highway.bean.Decimal;
-import org.highway.helper.Serializer;
-
-
 import junit.framework.TestCase;
+
+import org.highway.io.SerializeHelper;
 
 /**
  * 
@@ -50,7 +48,7 @@ public class DecimalTest extends TestCase
         for (int i = 0; i < array.length; i++)
         	array[i] = new BigDecimal(value);
         
-        int bigWeight = Serializer.toByte(array).length;
+        int bigWeight = SerializeHelper.toByte(array).length;
         
         System.out.println("10 BigDecimal objects equal to "
         	+ value + " weight " + bigWeight + " bytes");
@@ -58,7 +56,7 @@ public class DecimalTest extends TestCase
         for (int i = 0; i < array.length; i++)
         	array[i] = new Decimal(value);
         
-        int smallWeight = Serializer.toByte(array).length;
+        int smallWeight = SerializeHelper.toByte(array).length;
         
         System.out.println("10 Decimal objects equal to "
         	+ value + " weight " + smallWeight + " bytes");

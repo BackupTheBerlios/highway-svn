@@ -4,8 +4,8 @@ import junit.framework.TestCase;
 
 public class VoGenTest extends TestCase
 {
-	private static String NAME = "touzet";
-	private static String[] FIRME_NAMES = new String[] {"loreal", "manpower", "cetelem"};
+	private static String NAME = "Lavoisier";
+	private static String[] FIRME_NAMES = new String[] {"Valtech", "EDF", "T-System"};
 
 	public void testImplements()
 	{

@@ -36,7 +36,7 @@ public class SelectQueryTest extends TestCase
 		conf.setProperty("hibernate.connection.username","db2admin");
 		conf.setProperty("hibernate.connection.password","db2admin");
 		conf.setProperty("hibernate.connection.isolation","2");
-		conf.configure("/com/manpower/demo/domain/hibernate.cfg.xml");
+		conf.configure("hibernate.cfg.xml");
 		
 		database = new HibernateDatabase(conf);
 	}

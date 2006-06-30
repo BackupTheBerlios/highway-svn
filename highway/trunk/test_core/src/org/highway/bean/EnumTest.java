@@ -2,11 +2,9 @@ package org.highway.bean;
 
 import java.util.List;
 
-import org.highway.bean.Enum;
-import org.highway.helper.Serializer;
-
-
 import junit.framework.TestCase;
+
+import org.highway.io.SerializeHelper;
 
 /**
  * @author David Attias
@@ -67,7 +65,7 @@ public class EnumTest extends TestCase
 	
 	public void testSerialization()
 	{
-		assertTrue(Serializer.clone(EnumMock.bleu) == EnumMock.bleu);
+		assertTrue(SerializeHelper.clone(EnumMock.bleu) == EnumMock.bleu);
 	}
 	
 	public void testGetAllNotModifiable(){
