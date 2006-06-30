@@ -6,7 +6,7 @@ package org.highway.vogen;
 
 
 /**
- * @author attias
+ * 
  */
 public interface VoGenTags
 {

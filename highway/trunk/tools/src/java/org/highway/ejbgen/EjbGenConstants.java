@@ -6,7 +6,7 @@ package org.highway.ejbgen;
 
 
 /**
- * @author attias
+ * 
  */
 public interface EjbGenConstants
 {
