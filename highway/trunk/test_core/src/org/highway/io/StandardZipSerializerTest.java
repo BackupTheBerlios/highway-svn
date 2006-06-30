@@ -264,7 +264,7 @@ public class StandardZipSerializerTest extends TestCase {
 			Building building = new Building();
 			building.setFloorNumber(3);
 			building.setName("le touzet");
-			building.setConstructionDate(new Date());
+//			building.setConstructionDate(new Date());
 			
 			Human human = new Human();
 			human.setEmailAddress("titi@toto.com");

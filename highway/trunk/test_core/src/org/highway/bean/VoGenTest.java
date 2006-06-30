@@ -7,6 +7,25 @@ public class VoGenTest extends TestCase
 	private static String NAME = "touzet";
 	private static String[] FIRME_NAMES = new String[] {"loreal", "manpower", "cetelem"};
 
+	public void testImplements()
+	{
+		assertTrue(Building.class.isAssignableFrom(ValueObject.class));
+		assertTrue(Building.class.isAssignableFrom(BuildingDef.class));
+	}
+	
+	public void testSuperclass()
+	{
+		assertEquals(Castle.class.getSuperclass(), Building.class);
+		assertEquals(Building.class.getSuperclass(), BuildingBase.class);
+		assertEquals(BuildingBase.class.getSuperclass(), ValueObjectAbstract2.class);
+	}
+	
+	public void testSerialVersionUID()
+	{
+		assertEquals(BuildingBase.serialVersionUID, 123L);
+	}
+
+	
 	public void testSetPropertyValue1()
 	{
 		Building building = new Building();

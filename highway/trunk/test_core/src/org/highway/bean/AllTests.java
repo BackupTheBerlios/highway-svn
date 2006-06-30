@@ -10,7 +10,7 @@ public class AllTests {
 		//$JUnit-BEGIN$
 		suite.addTestSuite(EnumTest.class);
 		suite.addTestSuite(VoGenTest.class);
-		suite.addTestSuite(MetadataHomeTest.class);
+		suite.addTestSuite(BeanMetadataHomeTest.class);
 		suite.addTestSuite(DecimalTest.class);
 		//$JUnit-END$
 		return suite;

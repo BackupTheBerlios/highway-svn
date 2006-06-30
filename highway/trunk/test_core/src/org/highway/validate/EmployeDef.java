@@ -12,10 +12,6 @@ public interface EmployeDef extends ValueObject
 	
 	Firme getFirme();
 	
-	/**
-	 * @socle.vo.property.min 2
-	 * @socle.vo.property.max 5
-	 */
 	@PropertySize(min=2, max=5)
 	String getNom();
 	

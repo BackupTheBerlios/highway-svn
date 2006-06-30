@@ -6,93 +6,83 @@ import org.highway.debug.DebugHome;
 import org.highway.exception.DoNotInstantiateException;
 import org.highway.helper.StringHelper.TrimPolicy;
 import org.highway.lifecycle.InitException;
-import org.highway.vo.MetadataManager;
 
 /**
- * Use the static methods of this class to access the default MetadataManager
+ * Use the static methods of this class to access the default BeanMetadataManager
  * and get metadata on JavaBean classes. JavadocMetadataManager is the default
- * implementation od MetadataManager. As a result, an instance of
- * JavadocMetadataManager is used if no default MetadataManager is explicitly
+ * implementation od BeanMetadataManager. As a result, an instance of
+ * JavadocMetadataManager is used if no default BeanMetadataManager is explicitly
  * set.
  * 
- * @see org.highway.vo.JavadocMetadataManager
+ * @see org.highway.bean.BeanMetadataManager
  */
 public class BeanMetadataHome
 {
-	/*
-	 * @todo faire en sorte que les annotations suivantes soient équivalentes :
-	 * @highway.vo.property.min 2 @highway.vo.property.max 10 =
-	 * @highway.vo.property min=2 max=10 = @highway.vo.property min="2" max="10"
-	 */
-
-	// ////////////////////////////////////
-	// // Default MetadataManager init ////
-	// ////////////////////////////////////
 	/**
-	 * Default MetadataManager.
+	 * Default BeanMetadataManager.
 	 */
-	private static StandardBeanMetadataManager metadataManager = new StandardBeanMetadataManager();
+	private static BeanMetadataManager beanMetadataManager = new StandardBeanMetadataManager();
 
 	/**
-	 * Returns the default MetadataManager.
+	 * Returns the default BeanMetadataManager.
 	 */
-	public static StandardBeanMetadataManager getMetadataManager()
+	public static BeanMetadataManager getMetadataManager()
 	{
-		return metadataManager;
+		return beanMetadataManager;
 	}
 
 	/**
-	 * Sets the default MetadataManager.
+	 * Sets the default BeanMetadataManager.
 	 */
 	public static synchronized void setMetadataManager(
-			StandardBeanMetadataManager manager)
+			BeanMetadataManager manager)
 	{
-		metadataManager = manager;
-		DebugHome.getDebugLog().info(
-				"Default MetadataManager is set to " + manager);
+		beanMetadataManager = manager;
+		DebugHome.getDebugLog().info("Default BeanMetadataManager is set to " + manager);
 	}
 
-	// /////////////////////////////////
-	// // MetadataManager shortcuts ////
-	// /////////////////////////////////
+	 ///////////////////////////////////////
+	 //// BeanMetadataManager shortcuts ////
+	 ///////////////////////////////////////
 
 	/**
-	 * Delegates to the default MetadataManager.
+	 * Delegates to the default BeanMetadataManager.
 	 * 
-	 * @throws InitException if no MetadataManager is set.
-	 * @see MetadataManager#getClassMetaValue(Class, String)
+	 * @throws InitException if no BeanMetadataManager is set.
+	 * @see BeanMetadataManager#getBeanAnnotation(Class, Class)
 	 */
-	public static <T extends Annotation> T getClassMetaValue(Class beanClass,
+	public static <T extends Annotation> T getBeanAnnotation(Class beanClass,
 			Class<T> annotationType)
 	{
-		if (metadataManager == null)
+		if (beanMetadataManager == null)
 		{
-			throw new InitException("no default MetadataManager set");
+			throw new InitException("no default BeanMetadataManager set");
 		}
 
-		return metadataManager.getClassMetaValue(beanClass, annotationType);
+		return beanMetadataManager.getBeanAnnotation(beanClass, annotationType);
 	}
 
 	/**
-	 * Delegates to the default MetadataManager.
+	 * Delegates to the default BeanMetadataManager.
 	 * 
-	 * @throws InitException if no MetadataManager is set.
-	 * @see MetadataManager#getPropertyMetaValue(Class, String, String)
+	 * @throws InitException if no BeanMetadataManager is set.
+	 * @see BeanMetadataManager#getPropertyAnnotation(Class, String, Class)
 	 */
 	public static <T extends Annotation> T getPropertyMetaValue(
 			Class beanClass, String propertyName, Class<T> annotationType)
 	{
-		if (metadataManager == null)
+		if (beanMetadataManager == null)
 		{
-			throw new InitException("no default MetadataManager set");
+			throw new InitException("no default BeanMetadataManager set");
 		}
-		return metadataManager.getPropertyMetaValue(beanClass, propertyName,
+		
+		return beanMetadataManager.getPropertyAnnotation(beanClass, propertyName,
 				annotationType);
 	}
 
-	// ////////////////////////////////
-	// // Common property metadata ////
-	// ////////////////////////////////
+	//////////////////////////////////
+	//// Common property metadata ////
+	//////////////////////////////////
 
 	/**
 	 * Returns the minimum size of the specified JavaBean property. Returns null
@@ -104,10 +94,10 @@ public class BeanMetadataHome
 	public static Integer getPropertySizeMin(Class beanClass,
 			String propertyName)
 	{
-		PropertySize meta = getPropertyMetaValue(beanClass, propertyName,
+		PropertySize propertySize = getPropertyMetaValue(beanClass, propertyName,
 				PropertySize.class);
-		if (meta == null) return null;
-		return meta.min();
+		
+		return propertySize == null ? null : propertySize.min();
 	}
 
 	/**
@@ -120,10 +110,10 @@ public class BeanMetadataHome
 	public static Integer getPropertySizeMax(Class beanClass,
 			String propertyName)
 	{
-		PropertySize meta = getPropertyMetaValue(beanClass, propertyName,
+		PropertySize propertySize = getPropertyMetaValue(beanClass, propertyName,
 				PropertySize.class);
-		if (meta == null) return null;
-		return meta.max();
+		
+		return propertySize == null ? null : propertySize.max();
 	}
 
 	/**
@@ -135,10 +125,10 @@ public class BeanMetadataHome
 	 */
 	public static String getPropertyPattern(Class beanClass, String propertyName)
 	{
-		PropertyPattern meta = getPropertyMetaValue(beanClass, propertyName,
+		PropertyPattern propertyPattern = getPropertyMetaValue(beanClass, propertyName,
 				PropertyPattern.class);
-		if (meta == null) return null;
-		return meta.value();
+		
+		return propertyPattern == null ? null : propertyPattern.value();
 	}
 
 	/**
@@ -193,10 +183,10 @@ public class BeanMetadataHome
 	public static String getPropertyShortDescription(Class beanClass,
 			String propertyName)
 	{
-		PropertyShortDescription meta = getPropertyMetaValue(beanClass,
+		PropertyShortDescription propertyShortDescription = getPropertyMetaValue(beanClass,
 				propertyName, PropertyShortDescription.class);
-		if (meta == null) return null;
-		return meta.value();
+		
+		return propertyShortDescription == null ? null : propertyShortDescription.value();
 	}
 
 	/**
@@ -209,10 +199,10 @@ public class BeanMetadataHome
 	public static String getPropertyLongDescription(Class beanClass,
 			String propertyName)
 	{
-		PropertyLongDescription meta = getPropertyMetaValue(beanClass,
+		PropertyLongDescription propertyLongDescription = getPropertyMetaValue(beanClass,
 				propertyName, PropertyLongDescription.class);
-		if (meta == null) return null;
-		return meta.value();
+		
+		return propertyLongDescription == null ? null : propertyLongDescription.value();
 	}
 
 	/**
@@ -225,15 +215,31 @@ public class BeanMetadataHome
 	public static Integer getPropertyDecimalScale(Class beanClass,
 			String propertyName)
 	{
-		PropertyScale meta = getPropertyMetaValue(beanClass, propertyName,
+		PropertyScale propertyScale = getPropertyMetaValue(beanClass, propertyName,
 				PropertyScale.class);
-		if (meta == null) return null;
-		return meta.value();
+		
+		return propertyScale == null ? null : propertyScale.value();
 	}
 
-	// //////////////////////
-	// // Implementation ////
-	// //////////////////////
+	/**
+	 * Returns the trim policy of the specified JavaBean string property. Returns
+	 * null if not found in the JavaBean metadata.
+	 * 
+	 * @param beanClass the JavaBean class
+	 * @param propertyName the JavaBean property name.
+	 * @see org.highway.helper.StringHelper.TrimPolicy
+	 */
+	public static TrimPolicy getPropertyTrimPolicy(Class beanClass, String propertyName)
+	{
+		PropertyTrimPolicy propertyTrimPolicy = getPropertyMetaValue(beanClass, propertyName,
+				PropertyTrimPolicy.class);
+		
+		return propertyTrimPolicy == null ? null : propertyTrimPolicy.value();
+	}
+	
+	////////////////////////
+	//// Implementation ////
+	////////////////////////
 
 	/**
 	 * Do not instantiate this class.
@@ -241,12 +247,5 @@ public class BeanMetadataHome
 	private BeanMetadataHome()
 	{
 		throw new DoNotInstantiateException();
-	}
-
-	public static TrimPolicy getPropertyTrimPolicy(Class beanClass, String propertyName)
-	{
-		PropertyTrimPolicy propertyTrimPolicy = getPropertyMetaValue(beanClass, propertyName,
-				PropertyTrimPolicy.class);
-		return (propertyTrimPolicy == null) ? null : propertyTrimPolicy.value();
 	}
 }

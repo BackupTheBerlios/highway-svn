@@ -8,8 +8,8 @@
 	
 	<path id="core.test.classpath">
 		<pathelement location="src" />
-		<pathelement location="bin/eclipse" />
-		<pathelement location="bin/classes" />
+		<!--pathelement location="bin/eclipse" /-->
+		<!--pathelement location="bin/classes" /-->
 		<pathelement location="../highway_tools/bin/pack/highway-tools.jar" />
 		<fileset dir="lib" includes="**/*.jar" />
 		<fileset dir="../highway_core/lib" includes="**/*.jar" />

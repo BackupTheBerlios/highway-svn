@@ -1,35 +1,28 @@
 package org.highway.bean;
 
-import java.util.Date;
-
-import org.highway.bean.MandatoryProperty;
-import org.highway.bean.PropertySize;
-import org.highway.bean.ValueObject;
+import org.highway.vogen.GenerateAbstract;
+import org.highway.vogen.GenerateBaseOnly;
+import org.highway.vogen.SerialVersionUID;
+import org.highway.vogen.Superclass;
 
 /**
  * @author David Attias
  */
+@GenerateAbstract
+@GenerateBaseOnly
+//@Superclass(ValueObjectAbstract2.class)
+@SerialVersionUID(123L)
 public interface BuildingDef extends ValueObject
 {
-	long getId();
-	
-	@PropertySize(min=3,max=30)
 	@MandatoryProperty
+	@PropertySize(min=3,max=30)
 	String getName();
 	
 	@MandatoryProperty
 	double getSurface();
 	
 	@MandatoryProperty
-	Date getConstructionDate();
-	
-	 @MandatoryProperty
 	int getFloorNumber();
 	
 	String[] getFirmeNames();
-	
-	/**
-	 * @myapp.image.type gif
-	 */
-	byte[][] getFirmeLogos();	
 }

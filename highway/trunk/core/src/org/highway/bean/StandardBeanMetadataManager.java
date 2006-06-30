@@ -49,93 +49,74 @@ import org.highway.helper.ReflectHelper;
  * returns: <code>5</code>
  * </p>
  */
-class StandardBeanMetadataManager
+public class StandardBeanMetadataManager implements BeanMetadataManager
 {
-	public <A extends Annotation> A getClassMetaValue(Class beanClass,
+	public <A extends Annotation> A getBeanAnnotation(Class beanClass,
 			Class<A> annotationType)
 	{
 		// first search the class
-		A metaValue = (A) beanClass.getAnnotation(annotationType);
+		A annotation = (A) beanClass.getAnnotation(annotationType);
 
 		// if not found, search the definition class
-		if (metaValue == null)
+		if (annotation == null)
 		{
 			Class defClass = getDefinitionClass(beanClass);
 
 			if (defClass != null)
 			{
-				metaValue = (A) defClass.getAnnotation(annotationType);
+				annotation = (A) defClass.getAnnotation(annotationType);
 			}
 		}
 
 		// if not found, search the superclass
-		if ((metaValue == null) && (beanClass != Object.class))
+		if ((annotation == null) && (beanClass != Object.class))
 		{
-			metaValue = getClassMetaValue(beanClass.getSuperclass(),
+			annotation = getBeanAnnotation(beanClass.getSuperclass(),
 					annotationType);
 		}
 
-		return metaValue;
+		return annotation;
 	}
 
-	public <T extends Annotation> T getPropertyMetaValue(Class beanClass,
+	public <T extends Annotation> T getPropertyAnnotation(Class beanClass,
 			String propertyName, Class<T> annotationType)
 	{
-		T metaValue = null;
+		T annotation = null;
 
 		// first search in the class for the property getter
-		Method readMethod = ReflectHelper.getDeclaredGetter(beanClass,
+		Method getter = ReflectHelper.getDeclaredGetter(beanClass,
 				propertyName);
-
-		if (readMethod != null)
+		
+		if (getter != null)
 		{
-			metaValue = readMethod.getAnnotation(annotationType);
+			annotation = getter.getAnnotation(annotationType);
 		}
 
 		// if not found, search in the definition class tree
-		if (metaValue == null)
+		if (annotation == null)
 		{
 			Class defClass = getDefinitionClass(beanClass);
 
 			if (defClass != null)
 			{
-				readMethod = ReflectHelper.getDeclaredGetter(defClass,
+				getter = ReflectHelper.getDeclaredGetter(defClass,
 						propertyName);
 
-				if (readMethod != null)
+				if (getter != null)
 				{
-					metaValue = readMethod.getAnnotation(annotationType);
-				}
-				else
-				{
-					try
-					{
-						metaValue = defClass.getDeclaredField(
-								getConstantNameFromPropertyName(propertyName))
-								.getAnnotation(annotationType);
-					}
-					catch (Exception e)
-					{
-						// search in the superclass
-						metaValue = null;
-					}
-					// metaValue =
-					// JavadocHome.getFieldTag(
-					// defClass,
-					// getConstantNameFromPropertyName(propertyName),
-					// metaName);
+					annotation = getter.getAnnotation(annotationType);
 				}
 			}
 		}
 
 		// if not found, search the superclass
-		if ((metaValue == null) && (beanClass != Object.class))
+		if ((annotation == null) && (beanClass != Object.class))
 		{
-			metaValue = getPropertyMetaValue(beanClass.getSuperclass(),
+			annotation = getPropertyAnnotation(beanClass.getSuperclass(),
 					propertyName, annotationType);
 		}
 
-		return metaValue;
+		return annotation;
 	}
 
 	private Class getDefinitionClass(Class beanClass)
@@ -149,33 +130,4 @@ class StandardBeanMetadataManager
 			return null;
 		}
 	}
-
-	private static String getConstantNameFromPropertyName(String propertyName)
-	{
-		if (null == propertyName)
-		{
-			return null;
-		}
-
-		StringBuffer buffer = new StringBuffer(propertyName.length() + 5); // for
-		// 5
-		// unerscore
-		// characters
-
-		for (int i = 0; i < propertyName.length(); i++)
-		{
-			char c = propertyName.charAt(i);
-
-			if ((i > 0) && Character.isUpperCase(c)
-					&& (Character.isLowerCase(propertyName.charAt(i - 1))))
-			{
-				buffer.append('_');
-			}
-
-			buffer.append(Character.toUpperCase(c));
-		}
-
-		return buffer.toString();
-	}
-
 }

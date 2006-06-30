@@ -43,7 +43,7 @@ public class CompressionWeightTest extends TestCase {
 			arrayByte[0] = byt;
 			Building building = new Building();
 			building.setFloorNumber(3);
-			building.setFirmeLogos(arrayByte);
+//			building.setFirmeLogos(arrayByte);
 			
 			Human human = new Human();
 			human.setEmailAddress("titi@toto.com");
