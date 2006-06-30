@@ -47,7 +47,7 @@ public class HighwayDecoratedMethodDeclaration extends
 				.getExceptionsDeclaration((MethodDeclaration) this.delegate);
 	}
 
-	public String getExceptionsDeclarationWithRemoteAception()
+	public String getExceptionsDeclarationWithRemoteException()
 	{
 		return EjbGenHelper.getExceptionsDeclaration(
 				(MethodDeclaration) this.delegate, "java.rmi.RemoteException");

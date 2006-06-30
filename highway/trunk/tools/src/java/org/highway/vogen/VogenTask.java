@@ -18,7 +18,7 @@ public class VogenTask extends AptTask {
 		// set factory
 		setFactory("org.highway.vogen.HighwayProcessorFactory");
 		// no compile
-		setNocompile(true);
+		setNocompile(false);
 		// set input java files
 		FileSet fileSet = new FileSet();
 		fileSet.setDir(new File(getSourcepath().toString()));

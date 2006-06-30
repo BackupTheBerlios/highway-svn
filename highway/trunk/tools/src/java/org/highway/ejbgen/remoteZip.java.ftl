@@ -10,7 +10,7 @@ public interface ${type.generatedShortClassName}EjbRemote extends EJBObject
 {
 <@forAllMethods var="method" indexVar="inc">
 	public <#if method.returnType.isVoid()> void <#else> byte[] </#if> ${method.simpleName}${inc}( <#if method.parameter.empty=false>byte[] entry</#if>)
-		${method.exceptionsDeclarationWithRemoteException};
+		throws ${method.exceptionsDeclarationWithRemoteException};
 </@forAllMethods>
 }
 </@javaSource>

@@ -67,7 +67,7 @@ public class EjbGenHelper implements EjbGenConstants
 	}
 	public static String getExceptionsDeclaration(MethodDeclaration method, String append){
 		String decl = getExceptionsDeclaration(method);
-		if (decl.length()>0)
+		if (decl!=null && decl.length()>0)
 			return decl+", "+append;
 		return append;
 	}

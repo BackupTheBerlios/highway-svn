@@ -16,7 +16,7 @@ public interface ${type.generatedShortClassName}EjbRemote extends EJBObject
 {
 <@forAllMethods var="method">
 	public ${method.returnType} ${method.simpleName}(${method.parametersDeclaration})
-		${method.exceptionsDeclarationWithRemoteException};
+		throws ${method.exceptionsDeclarationWithRemoteException};
 </@forAllMethods>
 }
 </@javaSource>
