@@ -1,21 +1,22 @@
-package org.highway;
+package org.highway.vogen;
 
 import java.io.File;
 
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.types.FileSet;
 import org.apache.tools.ant.types.Path;
+import org.highway.AptTask;
 
-public class EjbgenTask extends AptTask {
+public class VogenTask extends AptTask {
 
-	public EjbgenTask() {
+	public VogenTask() {
 		super();
 	}
 
 	@Override
 	public void execute() throws BuildException {
 		// set factory
-		setFactory("org.highway.ejbgen.HighwayProcessorFactory");
+		setFactory("org.highway.vogen.HighwayProcessorFactory");
 		// no compile
 		setNocompile(true);
 		// set input java files

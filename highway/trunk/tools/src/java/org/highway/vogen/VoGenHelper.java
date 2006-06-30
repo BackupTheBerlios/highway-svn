@@ -61,7 +61,7 @@ public class VoGenHelper {
 			Collection<InterfaceType> interfaces = decl.getSuperinterfaces();
 
 			for (InterfaceType type : interfaces) {
-				if (isDefInterface(decl)) {
+				if (isDefInterface(type.getDeclaration())) {
 					return removeDefSuffix(type.getDeclaration().getQualifiedName());
 				}
 			}
