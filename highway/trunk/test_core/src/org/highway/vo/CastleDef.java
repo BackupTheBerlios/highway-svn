@@ -1,12 +1,12 @@
 package org.highway.vo;
 
-import org.highway.annotation.VoBaseOnly;
 import org.highway.bean.PropertySize;
+import org.highway.vogen.GenerateBaseOnly;
 
 /**
  * @socle.vo.base.only
  */
-@VoBaseOnly
+@GenerateBaseOnly
 public interface CastleDef extends BuildingDef
 {	
 	public static final String TOWER_NUMBER = "towerNumber";

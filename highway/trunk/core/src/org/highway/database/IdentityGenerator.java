@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.SOURCE)
 @Target( {ElementType.METHOD, ElementType.FIELD})
 @Inherited
-public @interface IdentityGeneratorClass
+public @interface IdentityGenerator
 {
-	Class value();
+	String value();
 }

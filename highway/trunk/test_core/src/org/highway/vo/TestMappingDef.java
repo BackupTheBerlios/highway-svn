@@ -1,28 +1,27 @@
 package org.highway.vo;
 
-import org.highway.annotation.VoSerialVersionUID;
-import org.highway.database.Mapped;
+import org.highway.bean.ValueObject;
 import org.highway.database.DiscriminatorColumn;
 import org.highway.database.DiscriminatorValue;
-import org.highway.database.IdentityGeneratorParam;
 import org.highway.database.Identity;
-import org.highway.database.VoMappingProperty;
-import org.highway.service.ejb.GenerateEjb;
+import org.highway.database.IdentityGenerator;
+import org.highway.database.IdentityGeneratorParam;
+import org.highway.database.MappedOn;
+import org.highway.vogen.SerialVersionUID;
 
-@GenerateEjb
-@VoSerialVersionUID(value=123L)
-@Mapped(table="nomTable")
+@SerialVersionUID(value = 123L)
+@MappedOn("nomTable")
 @DiscriminatorValue("VO_HIGHWAY")
-@DiscriminatorColumn(column="type_vo")
+@DiscriminatorColumn(column = "type_vo")
+public interface TestMappingDef extends ValueObject {
 
-public interface TestMappingDef extends org.highway.bean.ValueObject {
-	
-	@IdentityGeneratorParam(name="paramName1", value="paramValue1")
-	@Identity(column="myColumn", type="string", generatorClass="native")
-	@VoMappingProperty(type="type_hibernate_chose2", column="myColumn2")
+	@Identity
+	@MappedOn("myColumn")
+	@IdentityGenerator("native")
+	@IdentityGeneratorParam(name = "paramName1", value = "paramValue1")
 	public String getNom();
-	
-	@VoMappingProperty(type="type_hibernate_chose2", column="myColumn2")
+
+	@MappedOn("myColumn2")
 	public String getPrenom();
-	
+
 }
