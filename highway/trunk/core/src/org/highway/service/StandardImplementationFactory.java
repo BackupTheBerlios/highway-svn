@@ -10,7 +10,7 @@ import org.highway.helper.ClassHelper;
 /**
  * Standard implementation of ImplementationFactory.
  *
- * @since 1.2
+ * 
  * 
  */
 public class StandardImplementationFactory implements ImplementationFactory

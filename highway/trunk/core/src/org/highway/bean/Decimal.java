@@ -17,7 +17,7 @@ import java.util.StringTokenizer;
  * calculations must be done. Decimal is for example used to represent money
  * values.<br>
  * 
- * @since 1.1
+ * 
  * 
  */
 public final class Decimal extends Number implements Comparable, Cloneable
@@ -639,7 +639,7 @@ public final class Decimal extends Number implements Comparable, Cloneable
      * Decimal. (Computes <tt>(this * 10<sup>this.m_scale()</sup>)</tt>.)
      * 
      * @return the unscaled value of this Decimal.
-     * @since 1.2
+     * 
      */
     public long unscaledValue()
     {
@@ -663,7 +663,7 @@ public final class Decimal extends Number implements Comparable, Cloneable
      *             <tt>o</tt> is not a Decimal.
      * @see #compareTo(java.math.Decimal)
      * @see Comparable
-     * @since 1.2
+     * 
      */
     public int compareTo(Object o)
     {

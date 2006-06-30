@@ -75,7 +75,7 @@ public class StreamHelper
 	 * as a byte array.
 	 * @param in InputStream to read from.
 	 * @throws IOException if an I/O error occurs.
-	 * @since 1.3
+	 * 
 	 */
 	public static byte[] read(InputStream in) throws IOException
 	{

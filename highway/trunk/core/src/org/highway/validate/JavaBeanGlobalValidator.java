@@ -29,7 +29,7 @@ import java.util.Map;
  * mypackage.MyClassValidator. A JavaBean mypackage.MyBean should have
  * a JavaBeanValidator class mypackage.MyBeanValidator.
  *
- * @since 1.2
+ * 
  * 
  */
 public class JavaBeanGlobalValidator implements GlobalValidator

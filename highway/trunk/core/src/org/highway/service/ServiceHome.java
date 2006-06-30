@@ -12,7 +12,7 @@ import org.highway.lifecycle.InitException;
  * Service package home class.
  * Provides access to the default ImplementationFactory.
  *
- * @since 1.2
+ * 
  * 
  * @see org.highway.service.ImplementationFactory
  */

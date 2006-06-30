@@ -13,7 +13,7 @@ import org.highway.lifecycle.Closeable;
 /**
  * <p>Standard implementation of Deserializer. it deserializes and undercompress in an inputStream.</p> 
  * 
- * @since 1.4.2
+ * 
  */
 public class StandardZipDeserializer implements Deserializer, Closeable
 {

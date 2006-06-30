@@ -9,7 +9,7 @@ package org.highway.validate;
  * A class validator validates objects of one or more classes outside of
  * any context.
  *
- * @since 1.2
+ * 
  * 
  */
 public interface ClassValidator extends Validator

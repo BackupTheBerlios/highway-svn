@@ -13,7 +13,7 @@ import java.util.Properties;
  * This class contains static methods to help manage properties.
  *
  * 
- * @since 1.1
+ * 
  */
 public class PropertiesHelper
 {
@@ -36,7 +36,7 @@ public class PropertiesHelper
 	 * Returns null if the resource is not found.
 	 * @param path the class path of the resource to load
 	 * @return a Properties object or null
-	 * @since 1.3
+	 * 
 	 */
 	public static Properties loadAsResource(String resourcePath)
 	{
@@ -69,7 +69,7 @@ public class PropertiesHelper
 	 * @param context object whom class is in the same package than the resource
 	 * @param name the name of the resource
 	 * @return a Properties object or null
-	 * @since 1.3
+	 * 
 	 */
 	public static Properties loadAsResource(
 		Object context, String resourceName)

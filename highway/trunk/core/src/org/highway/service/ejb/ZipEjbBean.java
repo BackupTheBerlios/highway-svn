@@ -10,7 +10,7 @@ import org.highway.io.StandardZipSerializer;
  * Developers should not use this class.
  *
  * 
- * @since 1.4.2
+ * 
  */
 public abstract class ZipEjbBean extends EjbBean
 {

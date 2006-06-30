@@ -18,7 +18,7 @@ import java.util.zip.InflaterInputStream;
 
 /**
  * 
- * @since 1.4.2
+ * 
  */
 public class FileHelper
 {
@@ -63,7 +63,7 @@ public class FileHelper
 	/**
 	 * @param file
 	 * @return
-	 * @since 1.4.5
+	 * 
 	 */
 	public static byte[] read(File file)
 	{

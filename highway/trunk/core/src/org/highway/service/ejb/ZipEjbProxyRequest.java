@@ -23,7 +23,7 @@ import org.highway.io.StandardZipSerializer;
  * service zip modified internal method. Developers should not use this class.
  * 
  * 
- * @since 1.4.2
+ * 
  */
 public class ZipEjbProxyRequest extends EjbRequest
 {

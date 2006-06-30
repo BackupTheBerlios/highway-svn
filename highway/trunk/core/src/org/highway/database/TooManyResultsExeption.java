@@ -11,7 +11,7 @@ import org.highway.exception.TechnicalException;
  * expected.
  *
  * 
- * @since 1.1
+ * 
  * @see
  */
 public class TooManyResultsExeption extends TechnicalException

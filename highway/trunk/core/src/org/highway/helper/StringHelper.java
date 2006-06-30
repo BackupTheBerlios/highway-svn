@@ -550,7 +550,7 @@ public abstract class StringHelper
 	 * specified value otherwise.
 	 * 
 	 * @deprecated use safeToString
-	 * @since 1.4.2
+	 * 
 	 */
 	public static String getEmptyIfNull(String value)
 	{
@@ -561,7 +561,7 @@ public abstract class StringHelper
 	 * Returns what the specified value <code>toString</code> method returns.
 	 * Returns null if the specified value is null.
 	 * 
-	 * @since 1.4.6
+	 * 
 	 */
 	public static String safeToString(Object value)
 	{
@@ -574,7 +574,7 @@ public abstract class StringHelper
 	 * but null. Returns the empty string if the specified value is null or if
 	 * its <code>toString</code> method returns null.
 	 * 
-	 * @since 1.4.6
+	 * 
 	 */
 	public static String safeToStringOrEmpty(Object value)
 	{
@@ -588,7 +588,7 @@ public abstract class StringHelper
 	 * but the empty string. Returns null if the specified value is null or if
 	 * its <code>toString</code> method returns the empty string.
 	 * 
-	 * @since 1.4.6
+	 * 
 	 */
 	public static String safeToStringOrNull(Object value)
 	{
@@ -601,7 +601,7 @@ public abstract class StringHelper
 	 * Determines if the two specified strings are equals. Null and the empty
 	 * string ARE NOT considered equals.
 	 * 
-	 * @since 1.4.6
+	 * 
 	 */
 	public static boolean safeEquals(String value1, String value2)
 	{
@@ -612,7 +612,7 @@ public abstract class StringHelper
 	 * Determines if the two specified strings are equals ignoring the case.
 	 * Null and the empty string ARE NOT considered equals.
 	 * 
-	 * @since 1.4.6
+	 * 
 	 */
 	public static boolean safeEqualsIgnoreCase(String value1, String value2)
 	{
@@ -628,7 +628,7 @@ public abstract class StringHelper
 	 * Determines if the two specified strings are equals ignoring the empty
 	 * string. Null and the empty string ARE considered equals.
 	 * 
-	 * @since 1.4.6
+	 * 
 	 */
 	public static boolean safeEqualsIgnoreEmpty(String value1, String value2)
 	{
@@ -644,7 +644,7 @@ public abstract class StringHelper
 	 * Determines if the two specified strings are equals ignoring the case and
 	 * the empty string. Null and the empty string ARE considered equals.
 	 * 
-	 * @since 1.4.6
+	 * 
 	 */
 	public static boolean safeEqualsIgnoreCaseAndEmpty(String value1,
 			String value2)
@@ -662,7 +662,7 @@ public abstract class StringHelper
 	 * 
 	 * @param value string to trim
 	 * @return the left-trimmed value
-	 * @since 1.4.6
+	 * 
 	 */
 	private static String trimLeftSpaces(String value)
 	{
@@ -687,7 +687,7 @@ public abstract class StringHelper
 	 * 
 	 * @param value string to trim
 	 * @return the right-trimmed value
-	 * @since 1.4.6
+	 * 
 	 */
 	private static String trimRightSpaces(String value)
 	{

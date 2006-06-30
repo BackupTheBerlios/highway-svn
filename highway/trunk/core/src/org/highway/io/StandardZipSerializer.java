@@ -12,7 +12,7 @@ import org.highway.lifecycle.Closeable;
 /**
  * <p>Standard implementation of Serializer.  it compres and serializes int an outputStream</p>
  * 
- * @since 1.4.2
+ * 
  */
 public class StandardZipSerializer implements Serializer, Closeable
 {

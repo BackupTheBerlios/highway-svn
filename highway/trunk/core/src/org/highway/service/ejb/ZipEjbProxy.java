@@ -7,7 +7,7 @@ package org.highway.service.ejb;
  * Developers should not use this class.
  *
  * 
- * @since 1.4.2
+ * 
  */
 public abstract class ZipEjbProxy extends EjbProxy
 {

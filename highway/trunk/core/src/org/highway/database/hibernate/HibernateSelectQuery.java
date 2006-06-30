@@ -20,7 +20,7 @@ import java.util.List;
  * persistance framework.
  *
  * 
- * @since 1.1
+ * 
  */
 class HibernateSelectQuery implements SelectQuery
 {

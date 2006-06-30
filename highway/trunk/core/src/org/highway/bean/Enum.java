@@ -60,7 +60,7 @@ import java.util.List;
  * the name of the enumerate type. This class must extend
  * <tt>org.highway.database.hibernate.EnumHibernateType</tt>.</p>
  *
- * @since 1.1
+ * 
  * 
  * @see org.highway.database.hibernate.EnumHibernateType
  */
@@ -244,7 +244,7 @@ public abstract class Enum implements Serializable, Comparable
 	 * the second 1 and so on. This order is used to compare and sort Enum
 	 * objects of the same type.
 	 *
-	 * @since 1.2
+	 * 
 	 */
 	public final int hashCode()
 	{
@@ -259,7 +259,7 @@ public abstract class Enum implements Serializable, Comparable
 	 * Enum is declared before, is equal to, is declared after the
 	 * specified Enum.
 	 * @throws ClassCastException if the argument is not an Enum.
-	 * @since  1.2
+	 * 2
 	 */
 	public int compareTo(Object o)
 	{

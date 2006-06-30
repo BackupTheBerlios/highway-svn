@@ -30,7 +30,7 @@ import java.util.List;
  * the lifespan of the <tt>DatabaseSession</tt> that created it.</p>
  *
  * 
- * @since 1.1
+ * 
  */
 public interface SelectQuery extends Closeable
 {

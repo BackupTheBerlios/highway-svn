@@ -21,7 +21,7 @@ import org.highway.helper.ClassHelper;
  * Hibernate type matching map. Used by HibernateDatabaseSession to convert
  * query argument Java types to the matching Hibernate type.
  *
- * @since 1.0
+ * 
  * 
  */
 class HibernateTypes

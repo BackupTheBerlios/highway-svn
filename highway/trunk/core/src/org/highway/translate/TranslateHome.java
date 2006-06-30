@@ -19,7 +19,7 @@ import java.util.Locale;
  * By default, a SilentTranslator is set as standard global Translator.
  *
  * 
- * @since 1.2
+ * 
  * @see org.highway.translate.SilentTranslator
  */
 public class TranslateHome
@@ -73,7 +73,7 @@ public class TranslateHome
 	 * Delegates to the global Translator.
 	 * @throws InitException if no global Translator is set
 	 * @see Translator#translate(String, Locale)
-	 * @since 1.3
+	 * 
 	 */
 	public static String translate(String message, Locale locale)
 	{
@@ -84,7 +84,7 @@ public class TranslateHome
 	 * Delegates to the global Translator.
 	 * @throws InitException if no global Translator is set
 	 * @see Translator#translate(String, Object)
-	 * @since 1.3
+	 * 
 	 */
 	public static String translate(String message, Object context)
 	{
@@ -95,7 +95,7 @@ public class TranslateHome
 	 * Delegates to the global Translator.
 	 * @throws InitException if no global Translator is set
 	 * @see Translator#translate(String, Object, Locale)
-	 * @since 1.3
+	 * 
 	 */
 	public static String translate(
 		String message, Object context, Locale locale)

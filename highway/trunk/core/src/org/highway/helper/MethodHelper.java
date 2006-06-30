@@ -121,7 +121,7 @@ public class MethodHelper
 	 * @param klass the class which method is searched in
 	 * @param methodName the method name
 	 * @param parameterTypes the method parameter types
-	 * @since 1.4.1
+	 * 
 	 */
 	public static Method getMethod(Class klass, String methodName,
 			Class[] parameterTypes)
@@ -147,7 +147,7 @@ public class MethodHelper
 	 * @param target the object on which the method is executed
 	 * @param parameters the method parameters
 	 * @return the result of the method execution
-	 * @since 1.4.3
+	 * 
 	 */
 	public static Object safeInvoke(Method method, Object target,
 			Object[] parameters)

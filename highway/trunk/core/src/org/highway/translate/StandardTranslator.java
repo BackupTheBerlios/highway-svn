@@ -16,7 +16,7 @@ import org.highway.debug.DebugHome;
  *
  * 
  * 
- * @since 1.3
+ * 
  */
 public class StandardTranslator implements Translator
 {

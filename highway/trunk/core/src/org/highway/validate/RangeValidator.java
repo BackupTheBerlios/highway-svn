@@ -8,7 +8,7 @@ package org.highway.validate;
 /**
  * Validates Comparable objects to a minimum and a maximum.
  *
- * @since 1.2
+ * 
  * 
  * @see java.lang.Comparable
  */

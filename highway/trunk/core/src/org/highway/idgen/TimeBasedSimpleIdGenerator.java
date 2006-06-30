@@ -37,7 +37,7 @@ public class TimeBasedSimpleIdGenerator implements SimpleIdGenerator
 	 * Constructor for TimeBasedSimpleIdGenerator.
 	 * @param referenceDate the date from witch the generator
 	 * must calculate the id counter first value.
-	 * @since 1.4.3
+	 * 
 	 */
 	public TimeBasedSimpleIdGenerator(long referenceDate)
 	{

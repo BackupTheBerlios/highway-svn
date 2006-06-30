@@ -12,7 +12,7 @@ import java.util.zip.InflaterInputStream;
 
 /**
  * 
- * @since 1.4.2
+ * 
  */
 public abstract class ZipHelper
 {

@@ -14,7 +14,7 @@ import java.io.ObjectOutputStream;
 /**
  * Provides static help methods to serialize objects.
  * 
- * @since 1.4.2
+ * 
  */
 public final class SerializeHelper
 {

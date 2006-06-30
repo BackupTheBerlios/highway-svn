@@ -12,7 +12,7 @@ import java.util.Locale;
  * This class is used as the standard global Translator.
  *
  * 
- * @since 1.2
+ * 
  */
 public class SilentTranslator implements Translator
 {

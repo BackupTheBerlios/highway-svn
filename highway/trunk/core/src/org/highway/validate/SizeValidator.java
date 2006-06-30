@@ -18,7 +18,7 @@ import org.highway.debug.DebugHome;
  *         Map.size()
  * </pre>
  *
- * @since 1.2
+ * 
  * 
  */
 public class SizeValidator implements Validator

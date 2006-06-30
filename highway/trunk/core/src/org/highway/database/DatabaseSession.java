@@ -31,7 +31,7 @@ public interface DatabaseSession extends Closeable
 	 * WARNING: do not directly close the connection you get from
 	 * this method. It will be closed when this DatabaseSession is closed. 
 	 * 
-	 * @since 1.1
+	 * 
 	 */
 	public Connection getConnection();
 	
@@ -123,7 +123,7 @@ public interface DatabaseSession extends Closeable
 	 * Creates a new <tt>SelectQuery</tt> instance.
 	 * 
 	 * @return a <tt>SelectQuery</tt> instance.
-	 * @since 1.1
+	 * 
 	 */
 	public SelectQuery createSelectQuery();
 

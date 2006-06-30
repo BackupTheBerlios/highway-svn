@@ -9,7 +9,7 @@ import java.io.Serializable;
  * 
  * @see org.highway.validate.JavaBeanGlobalValidator
  * 
- * @since 1.4
+ * 
  */
 public interface JavaBean extends Serializable
 {

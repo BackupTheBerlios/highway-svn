@@ -43,7 +43,7 @@ import org.highway.helper.StringHelper;
  * address.city.name
  * </pre>
  *
- * @since 1.2
+ * 
  * 
  * 
  * @see org.highway.validate.Validator
@@ -169,7 +169,7 @@ public class ValidateContext implements Serializable
 	 * Sets validator that the home validator should use on the
 	 * root object in this specific validation context.
 	 * Use this method if you need a validation specific to this context.
-	 * @since 1.4.3
+	 * 
 	 */
 	public void setContextValidator(ClassValidator validator)
 	{
@@ -182,7 +182,7 @@ public class ValidateContext implements Serializable
 	 * Use this method if you need a validation specific to this context.
 	 * @param propertyPath the path to the property object
 	 * @param validator the validator to use in this specific context
-	 * @since 1.4.3
+	 * 
 	 */
 	public void setContextValidator(String propertyPath, ClassValidator validator)
 	{
@@ -199,7 +199,7 @@ public class ValidateContext implements Serializable
 	 * i.e. the value of the current property path.
 	 * This validator is specific to this validation context and must be set
 	 * by the <tt>setContextValidator</tt> methods.
-	 * @since 1.4.3
+	 * 
 	 * @see #setContextValidator(Validator)
 	 * @see #setContextValidator(String, Validator)
 	 * @see #enterProperty(String)

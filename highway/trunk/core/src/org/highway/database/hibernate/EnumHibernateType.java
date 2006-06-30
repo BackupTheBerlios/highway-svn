@@ -31,7 +31,7 @@ import java.sql.SQLException;
  * ValueObject interfaces.
  * </p>
  * 
- * @since 1.1
+ * 
  * 
  * @see org.highway.bean.Enum
  */
@@ -40,7 +40,7 @@ public abstract class EnumHibernateType extends ImmutableType
 	/**
 	 * The suffix used by enum hibernate types.
 	 * 
-	 * @since 1.4.2
+	 * 
 	 */
 	public static final String ENUM_HIBERNATE_TYPE_CLASS_SUFFIX = "HibernateType";
 

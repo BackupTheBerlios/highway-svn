@@ -324,7 +324,7 @@ class WeakPropertyChangeSupport
 	 * @return all of the <code>PropertyChangeListeners</code> added or an
 	 *         empty array if no listeners have been added
 	 * @see PropertyChangeListenerProxy
-	 * @since 1.4
+	 * 
 	 */
 	synchronized PropertyChangeListener[] getPropertyChangeListeners()
 	{

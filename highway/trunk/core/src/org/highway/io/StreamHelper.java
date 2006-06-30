@@ -14,7 +14,7 @@ import java.io.Writer;
 /**
  * Stream static help methods.
  * 
- * @since 1.4.2
+ * 
  */
 public class StreamHelper
 {
@@ -75,7 +75,7 @@ public class StreamHelper
 	 * as a byte array.
 	 * @param in InputStream to read from.
 	 * @throws IOException if an I/O error occurs.
-	 * @since 1.3
+	 * 
 	 */
 	public static byte[] read(InputStream in) throws IOException
 	{

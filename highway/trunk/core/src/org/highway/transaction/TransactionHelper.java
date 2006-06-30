@@ -8,7 +8,7 @@ import org.highway.exception.TechnicalException;
 import javax.transaction.TransactionManager;
 
 /**
- * @since 1.1
+ * 
  */
 public class TransactionHelper
 {
@@ -16,7 +16,7 @@ public class TransactionHelper
 	/**
 	 * Method lookupWebSphereTransactionManagerV6
 	 * @return TransactionManager
-	 * @since 1.4.3
+	 * 
 	 */
 	public static TransactionManager lookupWebSphereTransactionManagerV6()
 	{

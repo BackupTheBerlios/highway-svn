@@ -17,7 +17,7 @@ import java.util.Locale;
  * the translation depending on the implementation.<br><br>
  *
  * 
- * @since 1.2
+ * 
  */
 public interface Translator
 {
@@ -31,13 +31,13 @@ public interface Translator
 	 * locale.
 	 * The context is the object asking for the translation of the specified
 	 * message.
-	 * @since 1.3
+	 * 
 	 */
 	String translate(String message, Object context);
 
 	/**
 	 * Translates the specified message in the specified locale.
-	 * @since 1.3
+	 * 
 	 */
 	String translate(String message, Locale locale);
 
@@ -45,7 +45,7 @@ public interface Translator
 	 * Translates the specified message in the specified context and locale.
 	 * The context is the object asking for the translation of the specified
 	 * message.
-	 * @since 1.3
+	 * 
 	 */
 	String translate(String message, Object context, Locale locale);
 
@@ -54,7 +54,7 @@ public interface Translator
 	 * The default Locale is usually the JVM default Locale.
 	 * In this case, use <code>Locale.setDefault(Locale)</code> to set this
 	 * Translator default Locale.
-	 * @since 1.3
+	 * 
 	 */
 	Locale getDefaultLocale();
 }

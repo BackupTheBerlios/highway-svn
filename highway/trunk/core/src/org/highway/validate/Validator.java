@@ -8,7 +8,7 @@ package org.highway.validate;
 /**
  * Validates objects.
  *
- * @since 1.2
+ * 
  * 
  */
 public interface Validator

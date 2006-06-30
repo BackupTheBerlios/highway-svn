@@ -18,7 +18,7 @@ import java.io.Writer;
  * http://www.javaworld.com/javaworld/jw-04-2003/jw-0404-ftp.html
  *
  * 
- * @since 1.4.2
+ * 
  */
 public class FtpWriter extends Writer
 {

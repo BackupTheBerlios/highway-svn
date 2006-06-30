@@ -49,7 +49,7 @@ public class HibernateDatabase implements Database
 	 * Constructs a HibernateDatabase object.
 	 *
 	 * @param configuration an Hibernate Configuration instance
-	 * @since 1.1
+	 * 
 	 */
 	public HibernateDatabase(Configuration configuration)
 	{

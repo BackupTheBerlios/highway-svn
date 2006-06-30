@@ -9,7 +9,7 @@ package org.highway.service;
  * Factory of Service component implementations.
  * ImplementationFactory default implementation is StandardImplementationFactory.
  *
- * @since 1.2
+ * 
  * 
  * @see org.highway.service.StandardImplementationFactory
  */

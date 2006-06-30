@@ -20,7 +20,7 @@ import java.util.Set;
  * 
  * @see java.util.Map
  * @see java.util.HashMap
- * @since 1.1
+ * 
  */
 public class MapOfMapImpl implements MapOfMap, Serializable, Cloneable
 {

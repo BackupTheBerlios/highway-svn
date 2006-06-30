@@ -62,7 +62,7 @@ public final class ResourceHelper
 	 * eg. image/hello.gif
 	 * @return the resource path
 	 * eg. com/mycompanie/myapp/image/hello.gif
-	 * @since 1.3
+	 * 
 	 */
 	public static String getResourcePath(Object context, String resourcePath)
 	{
@@ -162,7 +162,7 @@ public final class ResourceHelper
 	 * Checks if the specified resource exists.
 	 * @param resourcePath the resource class path
 	 * @return true if the resource exists
-	 * @since 1.3
+	 * 
 	 */
 	public static boolean checkResource(String resourcePath)
 	{
@@ -175,7 +175,7 @@ public final class ResourceHelper
 	 * @param resourceName the resource name
 	 * @return true if the resource exists
 	 * @see ResourceHelper#getResourcePath(Object, String)
-	 * @since 1.3
+	 * 
 	 */
 	public static boolean checkResource(Object context, String resourceName)
 	{

@@ -19,7 +19,7 @@ import java.util.List;
  * Validation problems are added to the validation contaxt by validators.
  * Developers can not create problems outside a validation process.
  *
- * @since 1.2
+ * 
  * 
  */
 public final class ValidateProblem implements Serializable

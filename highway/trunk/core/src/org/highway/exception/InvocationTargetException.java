@@ -6,7 +6,7 @@ package org.highway.exception;
  * exemple to wrap a checked exception thrown in the run of a Runnable.
  * 
  * 
- * @since 1.4.6
+ * 
  */
 public class InvocationTargetException extends TechnicalException
 {

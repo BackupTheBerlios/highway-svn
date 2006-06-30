@@ -10,7 +10,7 @@ package org.highway.validate;
  * It is usually used to determine which Validator should be used for
  * the object to validate.
  *
- * @since 1.2
+ * 
  * 
  */
 public interface GlobalValidator extends Validator

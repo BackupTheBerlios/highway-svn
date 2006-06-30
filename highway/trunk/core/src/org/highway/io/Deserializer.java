@@ -6,7 +6,7 @@ package org.highway.io;
  * 
  * 
  * 
- * @since 1.4.2
+ * 
  */
 public interface Deserializer
 {

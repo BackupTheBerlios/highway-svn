@@ -61,7 +61,7 @@ public class JavaBeanValidator implements ClassValidator
 	 * Constructs a JavaBeanValidator.
 	 * @param useMetadata indicates if this object
 	 * need to create property validators from metadata
-	 * @since 1.5
+	 * 
 	 */
 	public JavaBeanValidator(boolean useMetadata)
 	{
@@ -71,7 +71,7 @@ public class JavaBeanValidator implements ClassValidator
 	/**
 	 * Returns true if this validator must use metadata
 	 * to automatically create property validators.
-	 * @since 1.5
+	 * 
 	 */
 	public boolean isUseMetadata()
 	{
@@ -81,7 +81,7 @@ public class JavaBeanValidator implements ClassValidator
 	/**
 	 * Sets a flag that indicates if this validator must use metadata
 	 * to automatically create property validators.
-	 * @since 1.5
+	 * 
 	 */
 	public void setUseMetadata(boolean useMetadata)
 	{

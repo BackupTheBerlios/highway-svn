@@ -71,7 +71,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#isEnabled()
-	 * @since 1.4.1
+	 * 
 	 */
 	public static boolean isEnabled()
 	{
@@ -83,7 +83,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debug(Object)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debug(Object message)
 	{
@@ -95,7 +95,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debug(Object, Object)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debug(Object msgPartA, Object msgPartB)
 	{
@@ -107,7 +107,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debug(Object, Object, Object)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debug(Object msgPartA, Object msgPartB, Object msgPartC)
 	{
@@ -119,7 +119,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debug(Object, Object, Object, Object)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debug(
 		Object msgPartA, Object msgPartB, Object msgPartC, Object msgPartD)
@@ -132,7 +132,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debug(Object, Object, Object, Object, Object)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debug(
 		Object msgPartA, Object msgPartB, Object msgPartC, Object msgPartD,
@@ -146,7 +146,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debugEnter()
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debugEnter()
 	{
@@ -158,7 +158,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debugExit()
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debugExit()
 	{
@@ -170,7 +170,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debugExit(Object)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debugExit(Object returnedValue)
 	{
@@ -182,7 +182,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debugExit(boolean)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debugExit(int returnedValue)
 	{
@@ -194,7 +194,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debugExit(long)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debugExit(long returnedValue)
 	{
@@ -206,7 +206,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debugExit(short)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debugExit(short returnedValue)
 	{
@@ -218,7 +218,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debugExit(byte)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debugExit(byte returnedValue)
 	{
@@ -230,7 +230,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debugExit(float)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debugExit(float returnedValue)
 	{
@@ -242,7 +242,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debugExit(double)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debugExit(double returnedValue)
 	{
@@ -254,7 +254,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debugExit(char)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debugExit(char returnedValue)
 	{
@@ -266,7 +266,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debugExit(boolean)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debugExit(boolean returnedValue)
 	{
@@ -278,7 +278,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debugValue(String, Object)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debugValue(String valueName, Object value)
 	{
@@ -290,7 +290,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debugValue(String, short)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debugValue(String valueName, short value)
 	{
@@ -302,7 +302,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debugValue(String, int)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debugValue(String valueName, int value)
 	{
@@ -314,7 +314,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debugValue(String, long)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debugValue(String valueName, long value)
 	{
@@ -326,7 +326,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debugValue(String, byte)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debugValue(String valueName, byte value)
 	{
@@ -338,7 +338,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debugValue(String, boolean)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debugValue(String valueName, boolean value)
 	{
@@ -350,7 +350,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debugValue(String, char)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debugValue(String valueName, char value)
 	{
@@ -362,7 +362,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debugValue(String, double)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debugValue(String valueName, double value)
 	{
@@ -374,7 +374,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#debugValue(String, float)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void debugValue(String valueName, float value)
 	{
@@ -386,7 +386,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#info(Object)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void info(Object message)
 	{
@@ -398,7 +398,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#warn(Object)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void warn(Object message)
 	{
@@ -410,7 +410,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#warn(Throwable)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void warn(Throwable throwable)
 	{
@@ -422,7 +422,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#warn(Object, Throwable)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void warn(Object message, Throwable throwable)
 	{
@@ -434,7 +434,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#error(Object)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void error(Object message)
 	{
@@ -446,7 +446,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#error(Throwable)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void error(Throwable throwable)
 	{
@@ -458,7 +458,7 @@ public class DebugHome
 	 *
 	 * @throws InitException if no default DebugLog is set.
 	 * @see DebugLog#error(Object, Throwable)
-	 * @since 1.4.1
+	 * 
 	 */
 	public static void error(Object message, Throwable throwable)
 	{

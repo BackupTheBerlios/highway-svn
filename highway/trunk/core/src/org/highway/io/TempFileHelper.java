@@ -14,7 +14,7 @@ import java.io.IOException;
  * ...
  *
  * 
- * @since 1.4.2
+ * 
  */
 public abstract class TempFileHelper
 {

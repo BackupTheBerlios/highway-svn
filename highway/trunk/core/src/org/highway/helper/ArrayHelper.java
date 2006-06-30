@@ -4,7 +4,7 @@ import java.lang.reflect.Array;
 
 /**
  * 
- * @since 1.4.3
+ * 
  */
 public class ArrayHelper
 {

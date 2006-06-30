@@ -85,7 +85,7 @@ import javax.transaction.Transaction;
  * Long idTest = IdGenHome.getNextSimpleId("test");
  * </pre>
  *
- * @since 1.1
+ * 
  * 
  *
  */
@@ -96,7 +96,7 @@ public class DBIdPageSupplier implements IdPageSupplier
 	 * (value is "<tt>highway.dbidsupplier.table.name</tt>")
 	 *
 	 * @value "<tt>highway.dbidsupplier.table.name</tt>"
-	 * @since 1.1
+	 * 
 	 */
 	public static final String TABLE_NAME_PROPERTY =
 		"highway.dbidsupplier.table.name";
@@ -106,7 +106,7 @@ public class DBIdPageSupplier implements IdPageSupplier
 	 * (value is "<tt>highway.dbidsupplier.table.owner</tt>")
 	 *
 	 * @value "<tt>highway.dbidsupplier.table.owner</tt>"
-	 * @since 1.1
+	 * 
 	 */
 	public static final String TABLE_OWNER_PROPERTY =
 		"highway.dbidsupplier.table.owner";
@@ -116,7 +116,7 @@ public class DBIdPageSupplier implements IdPageSupplier
 	 * (value is "<tt>highway.dbidsupplier.counter.name.column</tt>")
 	 *
 	 * @value "<tt>highway.dbidsupplier.counter.name.column</tt>"
-	 * @since 1.1
+	 * 
 	 */
 	public static final String COUNTER_NAME_COLUMN_PROPERTY =
 		"highway.dbidsupplier.counter.name.column";
@@ -126,7 +126,7 @@ public class DBIdPageSupplier implements IdPageSupplier
 	 * (value is "<tt>highway.dbidsupplier.counter.value.column</tt>")
 	 *
 	 * @value "<tt>highway.dbidsupplier.counter.value.column</tt>"
-	 * @since 1.1
+	 * 
 	 */
 	public static final String COUNTER_VALUE_COLUMN_PROPERTY =
 		"highway.dbidsupplier.counter.value.column";
@@ -136,7 +136,7 @@ public class DBIdPageSupplier implements IdPageSupplier
 	 * (value is "<tt>highway.dbidsupplier.default.counter.name</tt>")
 	 *
 	 * @value "<tt>highway.dbidsupplier.default.counter.name</tt>"
-	 * @since 1.1
+	 * 
 	 */
 	public static final String DEFAULT_COUNTER_NAME_PROPERTY =
 		"highway.dbidsupplier.default.counter.name";
@@ -146,7 +146,7 @@ public class DBIdPageSupplier implements IdPageSupplier
 	 * (value is "<tt>highway.dbidsupplier.datasource.name</tt>")
 	 *
 	 * @value "<tt>highway.dbidsupplier.datasource.name</tt>"
-	 * @since 1.1
+	 * 
 	 */
 	public static final String DATASOURCE_NAME_PROPERTY =
 		"highway.dbidsupplier.datasource.name";
@@ -156,7 +156,7 @@ public class DBIdPageSupplier implements IdPageSupplier
 	 * (value is "<tt>highway.dbidsupplier.datasource.user.name</tt>")
 	 *
 	 * @value "<tt>highway.dbidsupplier.datasource.user.name</tt>"
-	 * @since 1.1
+	 * 
 	 */
 	public static final String DATASOURCE_USER_NAME_PROPERTY =
 		"highway.dbidsupplier.datasource.user.name";
@@ -166,7 +166,7 @@ public class DBIdPageSupplier implements IdPageSupplier
 	 * (value is "<tt>highway.dbidsupplier.datasource.password</tt>")
 	 *
 	 * @value "<tt>highway.dbidsupplier.datasource.password</tt>"
-	 * @since 1.1
+	 * 
 	 */
 	public static final String DATASOURCE_PASSWORD_PROPERTY =
 		"highway.dbidsupplier.datasource.password";
@@ -176,7 +176,7 @@ public class DBIdPageSupplier implements IdPageSupplier
 	 * (value is "<tt>highway.dbidsupplier.jdbc.driver.class</tt>")
 	 *
 	 * @value "<tt>highway.dbidsupplier.jdbc.driver.class</tt>"
-	 * @since 1.1
+	 * 
 	 */
 	public static final String JDBC_DRIVER_CLASS_PROPERTY =
 		"highway.dbidsupplier.jdbc.driver.class";
@@ -186,7 +186,7 @@ public class DBIdPageSupplier implements IdPageSupplier
 	 * (value is "<tt>highway.dbidsupplier.jdbc.url</tt>")
 	 *
 	 * @value "<tt>highway.dbidsupplier.jdbc.url</tt>"
-	 * @since 1.1
+	 * 
 	 */
 	public static final String JDBC_URL_PROPERTY =
 		"highway.dbidsupplier.jdbc.url";
@@ -196,7 +196,7 @@ public class DBIdPageSupplier implements IdPageSupplier
 	 * (value is "<tt>highway.dbidsupplier.jdbc.user.name</tt>")
 	 *
 	 * @value "<tt>highway.dbidsupplier.jdbc.user.name</tt>"
-	 * @since 1.1
+	 * 
 	 */
 	public static final String JDBC_USER_NAME_PROPERTY =
 		"highway.dbidsupplier.jdbc.user.name";
@@ -206,7 +206,7 @@ public class DBIdPageSupplier implements IdPageSupplier
 	 * (value is "<tt>highway.dbidsupplier.jdbc.password</tt>")
 	 *
 	 * @value "<tt>highway.dbidsupplier.jdbc.password</tt>"
-	 * @since 1.1
+	 * 
 	 */
 	public static final String JDBC_PASSWORD_PROPERTY =
 		"highway.dbidsupplier.jdbc.password";
@@ -229,7 +229,7 @@ public class DBIdPageSupplier implements IdPageSupplier
 	 *
 	 * @param properties the {@link Properties} to configure this
 	 *        <tt>DBIdPageSupplier</tt>.
-	 * @since 1.1
+	 * 
 	 */
 	public DBIdPageSupplier(Properties properties)
 	{

@@ -17,7 +17,7 @@ import java.util.Set;
  *
  * 
  * @see java.util.Map
- * @since 1.1
+ * 
  *
  * @todo (attias) add the Set entrySet() method to this interface and add an
  * Entry inner interface like the one in Map.
