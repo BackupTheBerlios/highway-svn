@@ -4,9 +4,6 @@ import java.text.MessageFormat;
 import java.util.Collection;
 
 import org.highway.JavaHelper;
-import org.highway.annotation.VoAbstract;
-import org.highway.annotation.VoBaseOnly;
-import org.highway.annotation.VoSuperClass;
 
 import com.sun.mirror.declaration.InterfaceDeclaration;
 import com.sun.mirror.declaration.MethodDeclaration;
@@ -58,7 +55,7 @@ public class VoGenHelper {
 
 	public static String getSuperClassName(InterfaceDeclaration decl)
 	{
-		boolean hasSuperClass = decl.getAnnotation(VoSuperClass.class) != null;
+		boolean hasSuperClass = decl.getAnnotation(Superclass.class) != null;
 
 		if (!hasSuperClass) {
 			Collection<InterfaceType> interfaces = decl.getSuperinterfaces();
@@ -72,7 +69,7 @@ public class VoGenHelper {
 
 			return VALUE_OBJECT_ABSTRACT_CLASS_NAME;
 		} else {
-			return decl.getAnnotation(VoSuperClass.class).value();
+			return decl.getAnnotation(Superclass.class).value();
 		}
 	}
 	public static String getSetMethodName(MethodDeclaration aDeclaration) {
@@ -80,11 +77,11 @@ public class VoGenHelper {
 	}
 
 	public static boolean isAbstract(InterfaceDeclaration decl) {
-		return decl.getAnnotation(VoAbstract.class) != null || isBaseOnly(decl);
+		return decl.getAnnotation(GenerateAbstract.class) != null || isBaseOnly(decl);
 	}
 
 	public static boolean isBaseOnly(InterfaceDeclaration decl) {
-		return decl.getAnnotation(VoBaseOnly.class) != null;
+		return decl.getAnnotation(GenerateBaseOnly.class) != null;
 	}
 
 	public static boolean isDefInterface(InterfaceDeclaration decl) {

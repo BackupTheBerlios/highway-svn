@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 import org.highway.JavaHelper;
-import org.highway.annotation.VoBaseOnly;
+import org.highway.vogen.GenerateBaseOnly;
 
 import com.sun.mirror.declaration.InterfaceDeclaration;
 import com.sun.mirror.declaration.MethodDeclaration;
@@ -185,7 +185,7 @@ public class EjbGenHelper implements EjbGenConstants
 	}
 	public static boolean isBaseOnly(InterfaceDeclaration decl)
 	{
-		return decl.getAnnotation(VoBaseOnly.class)!=null;
+		return decl.getAnnotation(GenerateBaseOnly.class)!=null;
 	}
 	public static boolean isDefInterface(InterfaceDeclaration decl)
 	{
