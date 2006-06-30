@@ -27,12 +27,14 @@
 		<mkdir dir="bin/gensrc" />
 		<delete dir="bin/cfg" />
 		<mkdir dir="bin/cfg" />
+		<mkdir dir="bin/aptclasses" />
 
-		<!--vogen outputdir="bin/gensrc" inputdir="src">
+
+		<vogen outputdir="bin/gensrc" inputdir="src" destdir="bin/aptclasses">
 			<classpath refid="core.test.classpath" />
-		</vogen-->
+		</vogen>
 
-		<ejbgen outputDir="bin/gensrc" inputDir="src">
+		<ejbgen inputDir="src" outputDir="bin/gensrc" destdir="bin/aptclasses">
 			<classpath refid="core.test.classpath" />
 		</ejbgen>
 	</target>
