@@ -3,15 +3,12 @@ package org.highway.vogen;
 import java.text.MessageFormat;
 import java.util.Collection;
 
-import net.sf.jelly.apt.decorations.type.DecoratedAnnotationType;
-
 import org.highway.JavaHelper;
 
 import com.sun.mirror.declaration.InterfaceDeclaration;
 import com.sun.mirror.declaration.MethodDeclaration;
 import com.sun.mirror.declaration.TypeDeclaration;
 import com.sun.mirror.type.InterfaceType;
-import com.sun.mirror.type.TypeMirror;
 
 public class VoGenHelper
 {
