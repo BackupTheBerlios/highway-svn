@@ -69,7 +69,7 @@ public class VoGenHelper {
 
 			return VALUE_OBJECT_ABSTRACT_CLASS_NAME;
 		} else {
-			return decl.getAnnotation(Superclass.class).value();
+			return decl.getAnnotation(Superclass.class).value().getName();
 		}
 	}
 	public static String getSetMethodName(MethodDeclaration aDeclaration) {
