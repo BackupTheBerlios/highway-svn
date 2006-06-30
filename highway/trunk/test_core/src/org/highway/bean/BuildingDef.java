@@ -1,4 +1,4 @@
-package org.highway.vo;
+package org.highway.bean;
 
 import java.util.Date;
 
@@ -11,9 +11,6 @@ import org.highway.bean.ValueObject;
  */
 public interface BuildingDef extends ValueObject
 {
-	/**
-	 * 
-	 */
 	long getId();
 	
 	@PropertySize(min=3,max=30)
@@ -29,9 +26,6 @@ public interface BuildingDef extends ValueObject
 	 @MandatoryProperty
 	int getFloorNumber();
 	
-	/**
-	 * 
-	 */
 	String[] getFirmeNames();
 	
 	/**

@@ -1,4 +1,6 @@
-package org.highway.vo;
+package org.highway.bean;
+
+import org.highway.vo.MetadataHome;
 
 import junit.framework.TestCase;
 

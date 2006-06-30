@@ -4,10 +4,10 @@ import java.util.Date;
 
 import junit.framework.TestCase;
 
+import org.highway.bean.Building;
 import org.highway.validate.Employe;
 import org.highway.validate.Firme;
 import org.highway.validate.Human;
-import org.highway.vo.Building;
 
 public class StandardZipSerializerTest extends TestCase {
 

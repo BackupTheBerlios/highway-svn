@@ -8,9 +8,6 @@ import org.highway.database.MappedOn;
 import org.highway.database.MappingSpecialType;
 import org.highway.helper.StringHelper.TrimPolicy;
 
-/**
- * @socle.mapping table="TRIM_TEST"
- */
 @Mapped
 @MappedOn("TRIM_TEST")
 public interface TrimTestVoDef extends ValueObject

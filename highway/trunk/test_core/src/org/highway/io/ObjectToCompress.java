@@ -1,10 +1,10 @@
 package org.highway.io;
 
+import org.highway.bean.Building;
 import org.highway.bean.ValueObjectAbstract;
 import org.highway.helper.ValueHelper;
 import org.highway.validate.Employe;
 import org.highway.validate.Human;
-import org.highway.vo.Building;
 
 import org.highway.validate.Firme;
 

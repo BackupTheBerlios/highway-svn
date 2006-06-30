@@ -1,4 +1,4 @@
-package org.highway.vo;
+package org.highway.bean;
 
 import org.highway.bean.ValueObject;
 import org.highway.database.DiscriminatorColumn;

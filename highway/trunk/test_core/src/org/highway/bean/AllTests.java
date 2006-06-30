@@ -1,4 +1,4 @@
-package org.highway.vo;
+package org.highway.bean;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;

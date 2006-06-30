@@ -1,6 +1,5 @@
 package org.highway.database.hibernate;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.highway.bean.Enum;
@@ -19,6 +18,6 @@ public class MappingTestCharEnum extends Enum
 
 	public static List getAll()
 	{
-		return new ArrayList(getAll(MappingTestCharEnum.class));
+		return getAll(MappingTestCharEnum.class);
 	}
 }

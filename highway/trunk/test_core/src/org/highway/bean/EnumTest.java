@@ -1,4 +1,4 @@
-package org.highway.vo;
+package org.highway.bean;
 
 import java.util.List;
 
