@@ -26,7 +26,7 @@ public class VoGenHelper {
 	public static String getEntityClassName(InterfaceDeclaration decl) {
 		String className = decl.getQualifiedName();
 
-		if (isDefInterface(className)) {
+		if (isDefInterface(decl)) {
 			className = removeDefSuffix(className);
 		}
 
@@ -61,9 +61,8 @@ public class VoGenHelper {
 			Collection<InterfaceType> interfaces = decl.getSuperinterfaces();
 
 			for (InterfaceType type : interfaces) {
-				String interfaceFullName = type.getDeclaration().getQualifiedName();
-				if (isDefInterface(interfaceFullName)) {
-					return removeDefSuffix(interfaceFullName);
+				if (isDefInterface(decl)) {
+					return removeDefSuffix(type.getDeclaration().getQualifiedName());
 				}
 			}
 
@@ -85,14 +84,10 @@ public class VoGenHelper {
 	}
 
 	public static boolean isDefInterface(InterfaceDeclaration decl) {
-		return isDefInterface(decl.getSimpleName());
+		return decl.getSimpleName().endsWith("Def");
 	}
 
-	public static boolean isDefInterface(String className) {
-		return className.endsWith("Def");
-	}
-
-	public static String removeDefSuffix(String className) {
+	private static String removeDefSuffix(String className) {
 		return className.substring(0, className.length() - 3);
 	}
 

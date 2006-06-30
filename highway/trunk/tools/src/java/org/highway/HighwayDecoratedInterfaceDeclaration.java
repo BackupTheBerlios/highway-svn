@@ -1,10 +1,13 @@
-package org.highway.vogen;
+package org.highway;
 
 
 
 import net.sf.jelly.apt.decorations.declaration.DecoratedInterfaceDeclaration;
 
 import org.highway.ejbgen.EjbGenSessionHelper;
+import org.highway.vogen.HibernateHelper;
+import org.highway.vogen.VoGenException;
+import org.highway.vogen.VoGenHelper;
 
 import com.sun.mirror.declaration.InterfaceDeclaration;
 

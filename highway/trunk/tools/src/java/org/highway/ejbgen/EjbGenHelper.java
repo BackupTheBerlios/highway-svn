@@ -166,29 +166,29 @@ public class EjbGenHelper implements EjbGenConstants
 //
 //		return className;
 //	}
-	public static String getEntityClassName(InterfaceDeclaration decl)
-	{
-		String className = decl.getQualifiedName();
-
-		if (isDefInterface(decl))
-		{
-			className = removeDefSuffix(className);
-		}
-
-		return className;
-	}
+//	public static String getEntityClassName(InterfaceDeclaration decl)
+//	{
+//		String className = decl.getQualifiedName();
+//
+//		if (isDefInterface(decl))
+//		{
+//			className = removeDefSuffix(className);
+//		}
+//
+//		return className;
+//	}
 //	public static boolean isBaseOnly(InterfaceDeclaration decl)
 //	{
 //		return decl.getAnnotation(GenerateBaseOnly.class)!=null;
 //	}
-	public static boolean isDefInterface(InterfaceDeclaration decl)
-	{
-		return decl.getSimpleName().endsWith("Def");
-	}
-
-
-	private static String removeDefSuffix(String className)
-	{
-		return className.substring(0, className.length() - 3);
-	}
+//	public static boolean isDefInterface(InterfaceDeclaration decl)
+//	{
+//		return decl.getSimpleName().endsWith("Def");
+//	}
+//
+//
+//	private static String removeDefSuffix(String className)
+//	{
+//		return className.substring(0, className.length() - 3);
+//	}
 }

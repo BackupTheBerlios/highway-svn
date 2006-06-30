@@ -1,8 +1,10 @@
-package org.highway.vogen;
+package org.highway;
 
 import net.sf.jelly.apt.decorations.declaration.DecoratedMethodDeclaration;
 
 import org.highway.ejbgen.EjbGenHelper;
+import org.highway.vogen.HibernateHelper;
+import org.highway.vogen.VoGenHelper;
 
 import com.sun.mirror.declaration.MethodDeclaration;
 

@@ -1,4 +1,4 @@
-package org.highway.vogen;
+package org.highway;
 
 import net.sf.jelly.apt.decorations.DeclarationDecorator;
 

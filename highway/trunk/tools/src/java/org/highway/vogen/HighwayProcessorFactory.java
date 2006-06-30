@@ -34,7 +34,7 @@ public class HighwayProcessorFactory extends ProcessorFactory {
  	  @Override
 	  protected AnnotationProcessor getProcessorFor(Set<AnnotationTypeDeclaration> annotations) {
 		URL url = null;
-	    System.setProperty(DeclarationDecorator.class.getName(), "org.highway.vogen.HighwayDeclarationDecorator");
+	    System.setProperty(DeclarationDecorator.class.getName(), "org.highway.HighwayDeclarationDecorator");
 	    return newProcessor(url);
 	  }
 

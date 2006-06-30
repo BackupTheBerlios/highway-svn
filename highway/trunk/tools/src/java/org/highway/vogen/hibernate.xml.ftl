@@ -20,12 +20,13 @@
      >
      	
      	<#if type.hasPrimitiveId>
-     	<@forAllMethods annotation="org.highway.database.Identity" var="method" annotationVar="ann">
+     	<@forAllMethods annotation="org.highway.database.Identity" var="method">
         <id
             name="${method.propertyName}"
             column="<@annotationValue declaration=method annotation="org.highway.database.MappedOn" default="${method.propertyName}"/>"
             type="<@annotationValue declaration=method annotation="org.highway.database.MappingSpecialType" default="${method.returnType}"/>"
-            <generator class="${ann.generatorClass}">
+            
+            <generator class=<@annotationValue declaration=method annotation="org.highway.database.IdentityGenerator " default="assigned"/>"
 			<@forAllMethods declaration=type annotation="org.highway.database.IdentityGeneratorParam" var="generatorMethod" annotationVar="annGenerator">
 			<param name="${annGenerator.name}">${annGenerator.value}</param>
 			</@forAllMethods>
@@ -34,7 +35,7 @@
 	    </@forAllMethods>
         <#elseif type.hasCompositeId>
         <composite-id>
-        	<@forAllMethods annotation="org.highway.database.Identity" var="method" annotationVar="ann">
+        	<@forAllMethods annotation="org.highway.database.Identity" var="method">
             <key-property
                 name="${method.propertyName}"
                 column="<@annotationValue declaration=method annotation="org.highway.database.MappedOn" default="${method.propertyName}"/>"
@@ -90,7 +91,7 @@
         table="${annMapping.value}"
         </@ifHasAnnotation>
     >
-		<key column="<@annotationValue declaration=method annotation="org.highway.annotation.VoMappingKeyColumn" default="${type.keyColumn}"/>"/>
+		<key column="<@annotationValue declaration=method annotation="org.highway.database.DiscriminatorColumn" default="${type.keyColumn}"/>"/>
 
        <@forAllMethods annotation="org.highway.database.MappedOn" var="method" annotationVar="ann">
         <property
