@@ -11,7 +11,6 @@ import org.highway.validate.ValidateHome;
 
 /**
  * @author David Attias
- * @author Christian de Bevotte
  */
 public class ValidateHomeTest extends TestCase
 {

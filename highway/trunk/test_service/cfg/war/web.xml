@@ -6,7 +6,7 @@
 	<display-name>Socle J2EE test service</display-name>
 
 	<listener>
-        <listener-class>com.manpower.servicetest.ServiceTestListener</listener-class>
+        <listener-class>org.highway.servicetest.ServiceTestListener</listener-class>
     </listener>
 		
 	<resource-ref>

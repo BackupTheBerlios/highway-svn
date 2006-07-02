@@ -22,6 +22,7 @@
 			<fileset dir="src/java">
 				<include name="**/*" />
 				<exclude name="**/*.java" />
+				<exclude name="**/*.xdt" />
 			</fileset>
 		</copy>
 

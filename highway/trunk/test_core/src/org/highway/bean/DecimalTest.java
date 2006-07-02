@@ -8,9 +8,6 @@ import org.highway.io.SerializeHelper;
 
 /**
  * 
- * @author Olivier Mallassi
- * @since 1.3
- * 
  */
 public class DecimalTest extends TestCase
 {

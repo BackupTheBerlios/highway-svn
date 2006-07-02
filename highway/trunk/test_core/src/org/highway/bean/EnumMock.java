@@ -6,9 +6,6 @@ import org.highway.bean.Enum;
 
 /**
  * 
- * @author Olivier Mallassi
- * @since 1.3
- * 
  */
 public class EnumMock extends Enum
 {

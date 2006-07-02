@@ -17,9 +17,6 @@ import net.sf.hibernate.cfg.Configuration;
  * Unit tests for
  * {@link org.highway.database.hibernate.TrimmedStringHibernateType} and
  * {@link org.highway.database.hibernate.TrimInterceptor}.
- * 
- * @author Christian de Bevotte
- * @since 1.4.6
  */
 public class TrimTest extends TestCase
 {
