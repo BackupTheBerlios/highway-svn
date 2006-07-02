@@ -17,7 +17,7 @@ public class BeanMetadataHomeTest extends TestCase {
 				Building.NAME));
 
 		assertTrue(BeanMetadataHome.isPropertyMandatory(Building.class,
-				Building.FLOOR_NUMBER));
+				Building.NUMBER_OF_FLOORS));
 
 		assertTrue(BeanMetadataHome.isPropertyMandatory(Castle.class,
 				Castle.KEEP_HEIGHT));

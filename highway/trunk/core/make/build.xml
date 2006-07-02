@@ -70,7 +70,7 @@
 	<!-- this target generates the javadoc if the property -->
 	<!-- javadoc.is.uptodate is not set -->
 	<target name="core.generate.javadoc" unless="javadoc.is.uptodate">
-		<javadoc destdir="bin/javadoc" access="protected" use="true" notree="false" nonavbar="false" noindex="false" splitindex="true" author="true" version="true" nodeprecatedlist="false" nodeprecated="false" overview="src/org/highway/overview.html" doctitle="Socle JEE CORE Framework Version ${core.version}">
+		<javadoc destdir="bin/javadoc" access="protected" use="true" notree="false" nonavbar="false" noindex="false" splitindex="true" author="true" version="true" nodeprecatedlist="false" nodeprecated="false" overview="src/org/highway/overview.html" doctitle="Highway Core Framework Version ${core.version}">
 			<!-- no package pattern means take all packages -->
 			<packageset dir="src" />
 			<!-- the classpath is usefull to avoid unknown references warnings -->
