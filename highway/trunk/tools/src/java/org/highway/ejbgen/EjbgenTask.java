@@ -18,7 +18,7 @@ public class EjbgenTask extends AptTask {
 		// set factory
 		setFactory("org.highway.ejbgen.HighwayProcessorFactory");
 		// no compile
-		setNocompile(false);
+		setNocompile(true);
 		// set input java files
 		FileSet fileSet = new FileSet();
 		fileSet.setDir(new File(getSourcepath().toString()));
