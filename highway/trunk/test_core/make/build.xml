@@ -1,47 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="highway_core_test" default="core.test.generate" basedir="..">
+<project name="highway_core_test" default="core.test.run" basedir="..">
 
 	<taskdef resource="org/highway/anttasks.properties">
 		<classpath path="../highway_tools/bin/pack/highway-tools.jar" />
 	</taskdef>
 
 	<path id="core.test.classpath">
+		<pathelement location="bin/eclipse" />
+		<pathelement location="../highway_core/bin/eclipse" />
+		<pathelement location="../highway_tools/bin/eclipse" />
+		<fileset dir="lib" includes="**/*.jar" />
+		<fileset dir="../highway_core/lib" includes="**/*.jar" />
+	</path>
+
+	<path id="core.test.apt.classpath">
 		<pathelement location="src" />
-		<!--pathelement location="bin/eclipse" /-->
-		<!--pathelement location="bin/classes" /-->
+		<pathelement location="../highway_core/bin/eclipse" />
 		<pathelement location="../highway_tools/bin/pack/highway-tools.jar" />
 		<fileset dir="lib" includes="**/*.jar" />
 		<fileset dir="../highway_core/lib" includes="**/*.jar" />
-		<fileset dir="../highway_core/bin/pack" includes="**/*.jar" />
 	</path>
 
 	<target name="clean">
-		<delete dir="bin/gensrc" />
-		<delete dir="bin/cfg" />
-		<delete dir="bin/classes" />
-	</target>
-
-	<target name="core.test.generate" depends="clean">
-		<delete dir="bin/gensrc" />
-		<mkdir dir="bin/gensrc" />
 		<delete dir="bin/cfg" />
 		<mkdir dir="bin/cfg" />
+	</target>
+
+	<target name="core.test.generate">
+
+		<delete dir="bin/gensrc" />
+		<mkdir dir="bin/gensrc" />
+		<delete dir="bin/aptclasses" />
 		<mkdir dir="bin/aptclasses" />
-
-
+			
 		<vogen outputdir="bin/gensrc" inputdir="src" destdir="bin/aptclasses">
-			<classpath refid="core.test.classpath" />
+			<classpath refid="core.test.apt.classpath" />
 		</vogen>
 
 		<ejbgen inputDir="src" outputDir="bin/gensrc" destdir="bin/aptclasses">
-			<classpath refid="core.test.classpath" />
+			<classpath refid="core.test.apt.classpath" />
 		</ejbgen>
+
 	</target>
 
 	<target name="core.test.compile">
+
 		<delete dir="bin/classes" />
 		<mkdir dir="bin/classes" />
+
 		<javac target="1.5" destdir="bin/classes" debug="true">
 			<src path="src" />
 			<src path="bin/gensrc" />
