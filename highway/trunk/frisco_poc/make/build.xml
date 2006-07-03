@@ -24,7 +24,7 @@
 			<classpath refid="core.test.classpath"/>
 		</vogen>
 
-		<ejbgen inputDir="src/java/main/" outputDir="bin/gensrc">
+		<ejbgen inputDir="src/java/main/" outputDir="bin/gensrc" outputCfgDir="bin\cfg">
 			<classpath refid="core.test.classpath"/>
 		</ejbgen>
 
