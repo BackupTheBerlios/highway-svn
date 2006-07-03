@@ -1,4 +1,4 @@
-<@file name="ejb-jar.xml">
+<@file name="ejb-jar.xml" package="${cfgDir}">
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE ejb-jar PUBLIC

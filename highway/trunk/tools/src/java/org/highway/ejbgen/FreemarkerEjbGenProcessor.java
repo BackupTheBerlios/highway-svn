@@ -39,9 +39,11 @@ import freemarker.template.TemplateException;
 
 public class FreemarkerEjbGenProcessor implements AnnotationProcessor
 {
-
-	public FreemarkerEjbGenProcessor()
+	private String outputCfgDir;
+	
+	public FreemarkerEjbGenProcessor(String outputCfgDir)
 	{
+		this.outputCfgDir = outputCfgDir;
 	}
 
 	public void process()
@@ -86,24 +88,29 @@ public class FreemarkerEjbGenProcessor implements AnnotationProcessor
 					.getTemplate(urlTemplateRemoteZip.toString());
 			Template templateJbossXml = configuration
 					.getTemplate(urlJbossXml.toString());
-			templateBean.process(getRootModel(), new OutputStreamWriter(
+			
+			FreemarkerModel model = getRootModel();
+			model.setVariable("cfgDir", this.outputCfgDir);
+			templateBean.process(model, new OutputStreamWriter(
 					System.out));
-//			templateBeanZip.process(getRootModel(), new OutputStreamWriter(
+//			templateBeanZip.process(model, new OutputStreamWriter(
 //					System.out));
-			templateEjbJar.process(getRootModel(), new OutputStreamWriter(
+			templateEjbJar.process(model, new OutputStreamWriter(
 					System.out));
-			templateHome.process(getRootModel(), new OutputStreamWriter(
+			templateHome.process(model, new OutputStreamWriter(
 					System.out));
-			templateProxy.process(getRootModel(), new OutputStreamWriter(
+			templateProxy.process(model, new OutputStreamWriter(
 					System.out));
-//			templateProxyZip.process(getRootModel(), new OutputStreamWriter(
+//			templateProxyZip.process(model, new OutputStreamWriter(
 //					System.out));
-			templateRemote.process(getRootModel(), new OutputStreamWriter(
+			templateRemote.process(model, new OutputStreamWriter(
 					System.out));
-//			templateRemoteZip.process(getRootModel(), new OutputStreamWriter(
+//			templateRemoteZip.process(model, new OutputStreamWriter(
 //					System.out));
-			templateJbossXml.process(getRootModel(), new OutputStreamWriter(
+			
+			templateJbossXml.process(model, new OutputStreamWriter(
 					System.out));
+			
 
 		}
 		catch (IOException e)
