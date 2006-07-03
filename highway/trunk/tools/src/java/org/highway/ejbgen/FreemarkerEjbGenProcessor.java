@@ -64,6 +64,8 @@ public class FreemarkerEjbGenProcessor implements AnnotationProcessor
 				"org/highway/ejbgen/remote.java.ftl");
 		URL urlTemplateRemoteZip = this.getClass().getClassLoader()
 				.getResource("org/highway/ejbgen/remoteZip.java.ftl");
+		URL urlJbossXml = this.getClass().getClassLoader()
+				.getResource("org/highway/ejbgen/jboss.xml.ftl");
 		try
 		{
 			Template templateBean = configuration.getTemplate(urlTemplateBean
@@ -82,6 +84,8 @@ public class FreemarkerEjbGenProcessor implements AnnotationProcessor
 					.getTemplate(urlTemplateRemote.toString());
 			Template templateRemoteZip = configuration
 					.getTemplate(urlTemplateRemoteZip.toString());
+			Template templateJbossXml = configuration
+					.getTemplate(urlJbossXml.toString());
 			templateBean.process(getRootModel(), new OutputStreamWriter(
 					System.out));
 //			templateBeanZip.process(getRootModel(), new OutputStreamWriter(
@@ -98,6 +102,8 @@ public class FreemarkerEjbGenProcessor implements AnnotationProcessor
 					System.out));
 //			templateRemoteZip.process(getRootModel(), new OutputStreamWriter(
 //					System.out));
+			templateJbossXml.process(getRootModel(), new OutputStreamWriter(
+					System.out));
 
 		}
 		catch (IOException e)

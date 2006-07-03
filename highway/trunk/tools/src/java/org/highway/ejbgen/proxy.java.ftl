@@ -23,7 +23,7 @@ public class ${type.generatedShortClassName}EjbProxy extends EjbProxy
 	}
 
 <@forAllMethods var="method">
-	public ${method.returnType} ${method.simpleName}(${method.parametersDeclaration})
+	public ${method.returnTypeQualifiedName} ${method.simpleName}(${method.parametersDeclaration})
 		${method.exceptionsDeclaration}
 	{
 		try
@@ -51,7 +51,7 @@ public class ${type.generatedShortClassName}EjbProxy extends EjbProxy
 <#elseif method.returnType.primitive &&  method.returnType.keyword="float">
 			return ((Float) request.invoke()).floatValue();
 <#else>
-			return (${method.returnType}) request.invoke();
+			return (${method.returnTypeQualifiedName}) request.invoke();
 </#if>
 		}
 <@forAllThrownTypes var="exception">
