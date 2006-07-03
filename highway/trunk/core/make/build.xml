@@ -9,6 +9,11 @@
 	</path>
 
 	<target name="core.build" depends="core.compile, core.generate.javadoc.if.necessary, core.pack">
+
+		<delete>
+			<fileset dir="bin" includes="highway-core-*.zip"/>
+		</delete>
+
 		<zip destfile="bin/highway-core-${core.version}.zip" whenempty="fail">
 			<!-- zip the core jar -->
 			<zipfileset dir="bin/pack" includes="highway-core.jar" fullpath="core/highway-core-${core.version}.jar" />
@@ -76,6 +81,18 @@
 			<!-- the classpath is usefull to avoid unknown references warnings -->
 			<classpath refid="core.classpath" />
 		</javadoc>
+	</target>
+
+	<target name="highway.build">
+		<delete dir="bin/highway" />
+		<mkdir dir="bin/highway" />
+		
+		<unzip dest="bin/highway">
+			<fileset dir="bin" includes="highway-core-*.zip"/>
+			<fileset dir="../highway_tools/bin" includes="highway-tools-*.zip"/>
+		</unzip>
+
+		<zip basedir="bin/highway" destfile="bin/highway-${core.version}.zip" whenempty="fail" />
 	</target>
 
 </project>

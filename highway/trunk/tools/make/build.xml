@@ -51,6 +51,10 @@
 			<fileset dir="bin/external-classes" includes="**/*" />
 		</jar>
 
+		<delete>
+			<fileset dir="bin" includes="highway-tools-*.zip"/>
+		</delete>
+
 		<!-- zip the tools project -->
 		<zip destfile="bin/highway-tools-${tools.version}.zip" whenempty="fail">
 			<!-- zip the toold jar -->
