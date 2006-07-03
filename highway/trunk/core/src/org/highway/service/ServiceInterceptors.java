@@ -15,7 +15,7 @@ import java.lang.annotation.Target;
  * <br>
  * Example:<br>
  * <br>
- * <tt>@Interceptors([org.highway.debug.DebugInterceptor.class, org.highway.transaction.TransactionInterceptor.class])
+ * <tt>@Interceptors({org.highway.debug.DebugInterceptor.class, org.highway.transaction.TransactionInterceptor.class})
  * </tt>
  */
 @Retention(RetentionPolicy.RUNTIME)

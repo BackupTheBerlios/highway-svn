@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 /**
  * Indicates that an EJB must be generated with the annotated type.
- * 
+ * You can also indicate to generate Zip Ejb with the boolean value 'useCompression'.
  * 
  */
 @Retention(RetentionPolicy.RUNTIME)

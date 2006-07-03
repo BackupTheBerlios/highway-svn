@@ -6,6 +6,10 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * indicates that the property mapped can not be insert.
+ *
+ */
 @Retention(RetentionPolicy.SOURCE)
 @Target( {ElementType.METHOD, ElementType.FIELD})
 @Inherited
