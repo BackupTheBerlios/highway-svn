@@ -62,13 +62,13 @@ public class HighwayDecoratedMethodDeclaration extends
 	public String getReturnTypeQualifiedName()
 	{
 //		System.out.println("return type = " + getReturnType().toString() + ", primitive = " + ((DecoratedTypeMirror) getReturnType()).isPrimitive() + ", declared = " + ((DecoratedTypeMirror) getReturnType()).isDeclared());
-
-		if (!((DecoratedTypeMirror) getReturnType()).isPrimitive()
-				&& ((DecoratedTypeMirror) getReturnType()).isDeclared()
-				&& ((DecoratedDeclaredType) getReturnType()).getDeclaration()!=null)
-		{
-			return ((DecoratedDeclaredType) getReturnType()).getDeclaration().getQualifiedName();
-		}
+//
+//		if (!((DecoratedTypeMirror) getReturnType()).isPrimitive()
+//				&& ((DecoratedTypeMirror) getReturnType()).isDeclared()
+//				&& ((DecoratedDeclaredType) getReturnType()).getDeclaration()!=null)
+//		{
+//			return ((DecoratedDeclaredType) getReturnType()).getDeclaration().getQualifiedName();
+//		}
 		return getReturnType().toString();
 	}
 }
