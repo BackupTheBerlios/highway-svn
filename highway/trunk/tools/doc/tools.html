@@ -65,8 +65,8 @@
 	</STYLE>
 </HEAD>
 <BODY LANG="en-US" TEXT="#000000" LINK="#0000ff" VLINK="#0000ff" DIR="LTR">
-<H1><STRONG><SPAN LANG="en-GB">Socle Build Tools</SPAN></STRONG></H1>
-<P><STRONG><SPAN LANG="en-GB">socle-j2ee-tools-x.y.z.jar</SPAN>
+<H1><STRONG><SPAN LANG="en-GB">Highway Build Tools</SPAN></STRONG></H1>
+<P><STRONG><SPAN LANG="en-GB">highway-tools-x.y.z.jar</SPAN>
 <SPAN LANG="en-GB">contains three distinct tools. These tools are ANT
 code generation tasks.</SPAN></STRONG></P>
 <P><SPAN LANG="en-GB">1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><STRONG><SPAN LANG="en-GB">ejbgen
@@ -74,16 +74,13 @@ code generation tasks.</SPAN></STRONG></P>
 the EJB descriptors required for accessing the services</SPAN></P>
 <P><SPAN LANG="en-GB">2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><STRONG><SPAN LANG="en-GB">vogen</SPAN></STRONG>
 <SPAN LANG="en-GB">generates the value objects</SPAN></P>
-<P><SPAN LANG="en-GB">3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><STRONG><SPAN LANG="en-GB">metagen</SPAN></STRONG>
-<SPAN LANG="en-GB">generates the classes that contain all the javadoc
-tags for the java sources</SPAN></P>
 <H2 LANG="en-GB">Installation</H2>
-<P><STRONG><SPAN LANG="en-GB">socle-j2ee-tools-x.y.z.jar</SPAN></STRONG>
+<P><STRONG><SPAN LANG="en-GB">highwway-tools-x.y.z.jar</SPAN></STRONG>
 <SPAN LANG="en-GB">had no dependencies; it contains all the
 frameworks it needs. This JAR operates with <B>ANT version 1.6.2</B>
-and <B>jdk 1.4.</B> It must be located in the ANT classpath. If you
+and <B>jdk 1.5.</B> It must be located in the ANT classpath. If you
 use ANT for the commands, you only have to put it in the <B>ant/lib</B>
-directory. If you use ANT in Eclipse or WSAD, you must modify the
+directory. If you use ANT in Eclipse, you must modify the
 preferences and add this JAR to the ANT Home Entries. The JAR
 contains an <B>anttasks.properties</B> file defining the tasks in the
 <B>org.highway</B> package. To define the tasks simply, all
@@ -93,7 +90,7 @@ ejbgen</H2>
 <P><SPAN LANG="en-GB">The ANT <STRONG>ejbgen</STRONG> file generates
 the classes and the EJB descriptors.</SPAN></P>
 <P LANG="en-GB">An EJB is generated for each Java interface
-containing the <B>highway.service.generate.ejb</B> tag and directly or
+containing the <B>org.highway.service.ejb.GenerateEjb</B> annotation and directly or
 indirectly extending the org.highway.service.Service Java
 interface.</P>
 <P LANG="en-GB">The generation of an EJB for the <B>mypackage.MyServices
@@ -103,15 +100,14 @@ interface.</P>
 <SPAN LANG="en-GB"><FONT FACE="Symbol">&middot; </FONT>mypackage/ejb/MyServicesEjbBean.java</SPAN>
 <SPAN LANG="en-GB"><FONT FACE="Symbol">&middot; </FONT>mypackage/ejb/MyServicesEjbProxy.java</SPAN></PRE><P LANG="en-GB">
 
-<P LANG="en-GB">To generate Zip EJB used the <B>highway.service.generate.ejbzip</B> tag. The generation files are the same</p>
+<P LANG="en-GB">To generate Zip EJB set the "useCompression" value of the <B>org.highway.service.ejb.GenerateEjb</B> annotation to true. The generation files are the same</p>
 <p	LANG="en-GB">
 	The following description files are generated for all the services
 interfaces:</P>
 <PRE STYLE="margin-bottom: 0.5cm"><SPAN LANG="en-GB"><FONT FACE="Symbol">&middot; </FONT>ejb-jar.xml</SPAN>
-<SPAN LANG="en-GB"><FONT FACE="Symbol">&middot; </FONT>ibm-ejb-jar-bnd.xmi</SPAN>
-<SPAN LANG="en-GB"><FONT FACE="Symbol">&middot; </FONT>ibm-ejb-jar-ext.xmi</SPAN></PRE><P>
+<SPAN LANG="en-GB"><FONT FACE="Symbol">&middot; </FONT>jboss.xml</SPAN>
 <A NAME="AutoNumber1"></A><SPAN LANG="en-GB">The <STRONG>ejbgen</STRONG>
-tasks take three parameters:</SPAN></P>
+tasks take two parameters:</SPAN></P>
 <TABLE WIDTH=878 BORDER=1 CELLPADDING=0 CELLSPACING=0>
 	<COL WIDTH=144>
 	<COL WIDTH=118>
@@ -132,7 +128,7 @@ tasks take three parameters:</SPAN></P>
 	</TR>
 	<TR>
 		<TD WIDTH=144>
-			<PRE LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">javaInputDir</PRE>
+			<PRE LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">inputDir</PRE>
 		</TD>
 		<TD WIDTH=118>
 			<P LANG="en-GB" ALIGN=CENTER STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
@@ -146,7 +142,7 @@ tasks take three parameters:</SPAN></P>
 	</TR>
 	<TR>
 		<TD WIDTH=144>
-			<PRE LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">javaOutputDir</PRE>
+			<PRE LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">outputDir</PRE>
 		</TD>
 		<TD WIDTH=118>
 			<P LANG="en-GB" ALIGN=CENTER STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
@@ -157,36 +153,43 @@ tasks take three parameters:</SPAN></P>
 			Destination directory for the Java files generated</P>
 		</TD>
 	</TR>
-	<TR>
-		<TD WIDTH=144>
-			<PRE LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">cfgOutputDir</PRE>
-		</TD>
-		<TD WIDTH=118>
-			<P LANG="en-GB" ALIGN=CENTER STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
-			Yes</P>
-		</TD>
-		<TD WIDTH=602>
-			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
-			Destination directory for the xml and xmi description files</P>
-		</TD>
-	</TR>
 </TABLE>
 <P LANG="en-GB">E.g.:</P>
 <PRE STYLE="margin-bottom: 0.5cm">&nbsp; <SPAN LANG="en-GB">&lt;ejbgen</SPAN>
-&nbsp;&nbsp;&nbsp; <SPAN LANG="en-GB">javaInputDir=&quot;src&quot;</SPAN>
-&nbsp;&nbsp;&nbsp; <SPAN LANG="en-GB">javaOutputDir=&quot;bin/gensrc&quot;</SPAN>
-&nbsp;&nbsp;&nbsp; <SPAN LANG="en-GB">cfgOutputDir=&quot;bin/gencfg/META-INF&quot;/&gt;</SPAN></PRE><H2 LANG="en-GB">
+&nbsp;&nbsp;&nbsp; <SPAN LANG="en-GB">inputDir=&quot;src&quot;</SPAN>
+&nbsp;&nbsp;&nbsp; <SPAN LANG="en-GB">outputDir=&quot;bin/gensrc&quot;/&gt;</SPAN></PRE><H2 LANG="en-GB">
 vogen</H2>
-<P LANG="en-GB">The ANT <B>vogen</B> task generates your
-application&rsquo;s value objects.</P>
-<P LANG="en-GB">A value object is generated for each definition
-interface found in the Java sources. A definition interface is an
-interface whose name ends in &ldquo;Def&rdquo; and which directly or
-indirectly extends the <B>org.highway.vo.ValueObject</B>
-interface.</P>
-<P><B><SPAN LANG="en-GB">vogen</SPAN></B> <SPAN LANG="en-GB">generates
-the following files for the <B>mypackage.MyValueObjectDef</B>
-interface:</SPAN></P>
+<P LANG="en-GB">The ANT <B>vogen</B> task generates your application&rsquo;s value objects.</P>
+<P LANG="en-GB"><SPAN LANG="en-GB">
+The definition and therefore the generation of a ValueObject type of class is done via a Java definition interface. 
+This interface has a name ending in Def and extends directly or indirectly the org.highway.bean.ValueObject interface. 
+For example, the mypackage.MyValueObjectDef package defines the mypackage.MyValueObject class.
+
+The ValueObject type of class generated by vogen will implement the Def interface it defines. 
+For example, the mypackage.MyValueObject class will implement the mypackage.MyValueObjectDef interface
+NB: the class generated implements all the interfaces the Def interface inherits at the same time.
+
+To define the value object properties: you must define its getters. 
+
+The interface JavaBean getter type of method will define the value object properties. For example:
+
+  String getFirstName(); // defines the JavaBean property firstName
+  
+There are two ways of having a value object generated by vogen inherited. 
+You can use the highway.vogen.superclass annotation and therefore give the name of the class to be extended. 
+You can also use inheritance in the definition interfaces. 
+If ADef extends BDef, the A class will extend the B class. If both methods are used the tag has priority. 
+If the developer does not specify the super class, the class generated extends org.highway.bean.ValueObjectAbstract.
+
+You can specify the value object characteristics and its properties with the annotations defined 
+in the package org.highway.bean . 
+
+You can also specify mapping information for a value object and its properties. For futher information, read the javadoc 
+in the annotation of the package org.highway.database.
+
+</SPAN>
+</P>
+<P><B><SPAN LANG="en-GB">vogen</SPAN></B> <SPAN LANG="en-GB">generates the following files for the <B>mypackage.MyValueObjectDef</B> interface:</SPAN></P>
 <TABLE WIDTH=878 BORDER=1 CELLPADDING=0 CELLSPACING=0>
 	<COL WIDTH=294>
 	<COL WIDTH=280>
@@ -215,7 +218,7 @@ interface:</SPAN></P>
 		</TD>
 		<TD WIDTH=290>
 			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
-			If no <I>highway.vo.abstract or = false</I> tag</P>
+			If not annotated with <I>org.highway.vogen.GenerateAbstract </I> annotation</P>
 		</TD>
 	</TR>
 	<TR>
@@ -228,7 +231,7 @@ interface:</SPAN></P>
 		</TD>
 		<TD WIDTH=290>
 			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
-			If <I>highway.vo.abstract = true </I>tag</P>
+			If annotated with <I>org.highway.vogen.GenerateAbstract </I> annotation</P>
 		</TD>
 	</TR>
 	<TR>
@@ -241,23 +244,21 @@ interface:</SPAN></P>
 		</TD>
 		<TD WIDTH=290>
 			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
-			If the definition interface contains an object mapping/relational
-			tag</P>
+			If the definition interface is annotated with <I>org.highway.database.Mapped</I> annotation</P>
 		</TD>
 	</TR>
 </TABLE>
 <P><SPAN LANG="en-GB">The definition interface contains all the
 information required for generating these files as Java constants and
-javadoc tags. For more information on the coding for a definition
-interface, <A HREF="vo-def.html">see here</A></SPAN></P>
+annotations. For more information on the coding for a definition
+interface, see the javadoc and the specification of each annotation.</SPAN></P>
 <P><SPAN LANG="en-GB">An XML Hibernate configuration file is
-generated for all the definition interfaces. If the <FONT SIZE=2><FONT FACE="Courier New">hibernateCfgFile</FONT></FONT></SPAN>
-<SPAN LANG="en-GB">tag is not filled in, this file is generated by
+generated for all the definition interfaces. This file is generated by
 default in the root of the output directory (<FONT SIZE=2><FONT FACE="Courier New">outputDir</FONT></FONT>)
 with the name of &quot;hibernate.cfg.xml&quot;. It contains the list
 of Hibernate mapping files generated for each definition interface.</SPAN></P>
 <P><A NAME="AutoNumber11"></A><SPAN LANG="en-GB">The <B>vo<STRONG>gen</STRONG></B>
-task takes three parameters:</SPAN></P>
+task takes two parameters:</SPAN></P>
 <TABLE WIDTH=878 BORDER=1 CELLPADDING=0 CELLSPACING=0>
 	<COL WIDTH=147>
 	<COL WIDTH=156>
@@ -303,87 +304,11 @@ task takes three parameters:</SPAN></P>
 			Destination directory for the Java files generated</P>
 		</TD>
 	</TR>
-	<TR>
-		<TD WIDTH=147>
-			<PRE LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">hibernateCfgFile</PRE>
-		</TD>
-		<TD WIDTH=156>
-			<P LANG="en-GB" ALIGN=CENTER STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
-			No</P>
-		</TD>
-		<TD WIDTH=561>
-			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
-			XML Hibernate configuration files (by default &quot;hibernate.cfg.xml&quot;)</P>
-		</TD>
-	</TR>
 </TABLE>
 <P LANG="en-GB">E.g.:</P>
 <PRE STYLE="margin-bottom: 0.5cm">&nbsp; <SPAN LANG="en-GB">&lt;vogen</SPAN>
 &nbsp;&nbsp;&nbsp; <SPAN LANG="en-GB">inputDir=&quot;src&quot;</SPAN>
 &nbsp;&nbsp;&nbsp; <SPAN LANG="en-GB">outputDir=&quot;bin/gensrc&quot;</SPAN>
-&nbsp;&nbsp;&nbsp; <SPAN LANG="en-GB">hibernateCfgFile=&quot;corg/highway/demo/domain/hibernate.cfg.xml&quot;</SPAN>
-&nbsp; <SPAN LANG="en-GB">/&gt;</SPAN></PRE><H2 LANG="en-GB">
-metagen</H2>
-<P LANG="en-GB">The ANT <B>metagen</B> task generates the metadata
-for your application. <B>metagen</B> generates a metadata file for
-each Java source file. The metadata file generated is itself a Java
-class containing all the javadoc tags that metagen finds in the Java
-source file. <B>metagen</B> therefore generates for the
-mypackage.MyClass lJava class the mypackage.MyClassJavadoc Java
-class.</P>
-<P LANG="en-GB">All the tags for the classes for which a metadata
-file is generated are therefore accessible at application runtime
-because of the org.highway.javadoc package. The metadat files
-that metagen generates are accessible if you use the
-MetagenJavadocCache implementation of the JavadocCache interface.</P>
-<P><A NAME="AutoNumber111"></A><SPAN LANG="en-GB">The <B>meta<STRONG>gen</STRONG></B>
-task therefore takes two parameters:</SPAN></P>
-<TABLE WIDTH=878 BORDER=1 CELLPADDING=0 CELLSPACING=0>
-	<COL WIDTH=147>
-	<COL WIDTH=156>
-	<COL WIDTH=561>
-	<TR>
-		<TD WIDTH=147>
-			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
-			<B>Parameters</B></P>
-		</TD>
-		<TD WIDTH=156>
-			<P LANG="en-GB" ALIGN=CENTER STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
-			<B>Compulsory</B></P>
-		</TD>
-		<TD WIDTH=561>
-			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
-			<B>Description</B></P>
-		</TD>
-	</TR>
-	<TR>
-		<TD WIDTH=147>
-			<PRE LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">inputDir</PRE>
-		</TD>
-		<TD WIDTH=156>
-			<P LANG="en-GB" ALIGN=CENTER STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
-			yes</P>
-		</TD>
-		<TD WIDTH=561>
-			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
-			Directory of the Java sources to be parsed</P>
-		</TD>
-	</TR>
-	<TR>
-		<TD WIDTH=147>
-			<PRE LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">outputDir</PRE>
-		</TD>
-		<TD WIDTH=156>
-			<P LANG="en-GB" ALIGN=CENTER STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
-			Yes</P>
-		</TD>
-		<TD WIDTH=561>
-			<P LANG="en-GB" STYLE="border: 1.00pt solid #111111; padding: 0.05cm">
-			Destination directory for the Java files generated</P>
-		</TD>
-	</TR>
-</TABLE>
-<P LANG="en-GB">E.g.:</P>
-<PRE STYLE="margin-top: 0.2cm; margin-bottom: 0.5cm">&nbsp; <SPAN LANG="en-GB">&lt;metagen inputDir=&quot;src&quot; outputDir=&quot;bin/gensrc&quot;/&gt;</SPAN></PRE>
+&nbsp; <SPAN LANG="en-GB">/&gt;</SPAN></PRE>
 </BODY>
 </HTML>
