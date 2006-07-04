@@ -90,6 +90,8 @@ public class FreemarkerEjbGenProcessor implements AnnotationProcessor
 					.getTemplate(urlJbossXml.toString());
 			
 			FreemarkerModel model = getRootModel();
+			if (this.outputCfgDir==null || this.outputCfgDir.equalsIgnoreCase("null"))
+				this.outputCfgDir = "";
 			model.setVariable("cfgDir", this.outputCfgDir);
 			templateBean.process(model, new OutputStreamWriter(
 					System.out));

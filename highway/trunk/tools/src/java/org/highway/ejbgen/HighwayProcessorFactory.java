@@ -62,7 +62,6 @@ public class HighwayProcessorFactory extends ProcessorFactory {
 	    AnnotationProcessorEnvironment env = Context.getCurrentEnvironment();
 	    Map<String, String> options = env.getOptions();
 	    String outputCfgDirvalue = options.get(OUTPUT_CFG_DIR);
-	    System.out.println("output dir = " + outputCfgDirvalue);
 	    return new FreemarkerEjbGenProcessor(outputCfgDirvalue);
 	  }
 }

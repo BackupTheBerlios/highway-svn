@@ -1,14 +1,11 @@
 package org.highway.ejbgen;
 
 import java.io.File;
-import java.net.MalformedURLException;
 
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.types.FileSet;
 import org.apache.tools.ant.types.Path;
 import org.highway.AptTask;
-
-import com.sun.org.apache.xerces.internal.util.URI.MalformedURIException;
 
 public class EjbgenTask extends AptTask {
 	String outputCfgDir;
@@ -32,10 +29,6 @@ public class EjbgenTask extends AptTask {
 		Option option = this.createOption();
 		option.setKey("OutputCfgDir");
 		option.setValue(getOutputCfgDir());
-			System.out.println("outputCfgDir = " + getOutputCfgDir());
-	
-		
-
 		super.execute();
 	}
     /******************** -inputdir option **********************/
