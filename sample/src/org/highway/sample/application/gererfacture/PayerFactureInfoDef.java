@@ -1,16 +1,13 @@
 package org.highway.sample.application.gererfacture;
 
 import org.highway.bean.ValueObject;
-import org.highway.sample.domain.facture.Facture;
-import org.highway.sample.domain.fournisseur.Fournisseur;
-import org.highway.sample.domain.virement.Virement;
 
 
 public interface PayerFactureInfoDef extends ValueObject
 {
-	Virement getVirement();
+	org.highway.sample.access.virement.Virement getVirement();
 	
-	Fournisseur getFournisseur();
+	org.highway.sample.access.fournisseur.Fournisseur getFournisseur();
 	
-	Facture getFacture();
+	org.highway.sample.access.facture.Facture getFacture();
 }

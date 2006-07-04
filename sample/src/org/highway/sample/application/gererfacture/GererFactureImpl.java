@@ -3,15 +3,15 @@
  */
 package org.highway.sample.application.gererfacture;
 
-import org.highway.sample.SampleServices;
-import org.highway.sample.domain.facture.Facture;
-import org.highway.sample.domain.facture.FactureAccess;
-import org.highway.sample.domain.facture.FactureStatut;
-import org.highway.sample.domain.fournisseur.Fournisseur;
-import org.highway.sample.domain.fournisseur.FournisseurAccess;
-import org.highway.sample.domain.fournisseur.FournisseurStatut;
-import org.highway.sample.domain.virement.Virement;
-import org.highway.sample.domain.virement.VirementAccess;
+import org.highway.sample.access.facture.Facture;
+import org.highway.sample.access.facture.FactureAccess;
+import org.highway.sample.access.facture.FactureStatut;
+import org.highway.sample.access.fournisseur.Fournisseur;
+import org.highway.sample.access.fournisseur.FournisseurAccess;
+import org.highway.sample.access.fournisseur.FournisseurStatut;
+import org.highway.sample.access.virement.Virement;
+import org.highway.sample.access.virement.VirementAccess;
+import org.highway.sample.application.common.AccessLocator;
 
 
 public class GererFactureImpl implements GererFacture
@@ -20,13 +20,13 @@ public class GererFactureImpl implements GererFacture
 		throws MauvaisFournisseurException
 	{
 		FournisseurAccess fournisseurAccess = (FournisseurAccess)
-			SampleServices.getAccessService(FournisseurAccess.class);
+			AccessLocator.getAccessService(FournisseurAccess.class);
 		
 		FactureAccess factureAccess = (FactureAccess)
-			SampleServices.getAccessService(FactureAccess.class);
+			AccessLocator.getAccessService(FactureAccess.class);
 		
 		VirementAccess virementAccess = (VirementAccess)
-			SampleServices.getAccessService(VirementAccess.class);
+			AccessLocator.getAccessService(VirementAccess.class);
 
 		Fournisseur fournisseur = fournisseurAccess.charger(facture.getFournisseurId());
 		
@@ -42,7 +42,7 @@ public class GererFactureImpl implements GererFacture
 		Virement virement = new Virement();
 		virement.setFactureId(facture.getId());
 		virement.setFournisseurId(facture.getFournisseurId());
-//		virement.setMontant(facture.getMontant());
+		virement.setMontant(facture.getMontant());
 		virementAccess.creer(virement);	
 		
 		facture.setVirementId(virement.getId());
