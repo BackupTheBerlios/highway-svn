@@ -9,13 +9,11 @@ import java.sql.Connection;
 import java.util.List;
 
 /**
- * Defines a SQL database session.<br>
- * Provides database access through select, insert, update and delete methods.<br>
- * All selected objects have a object/relational mapping.<br>
- * Mapping format is specific to the implementation.<br>
- * Objects of this type can be closed since it extends Closeable.<br>
- * All methods throw an IllegalStateException if called when the session is
- * closed.
+ * Defines a SQL database session. Provides database access through select,
+ * insert, update and delete methods. All selected objects have a
+ * object/relational mapping. Mapping format is specific to the implementation.
+ * Objects of this type can be closed since it extends Closeable. All methods
+ * throw an IllegalStateException if called when the session is closed.
  */
 public interface DatabaseSession extends Closeable
 {
@@ -25,21 +23,18 @@ public interface DatabaseSession extends Closeable
 	public Database getDatabase();
 
 	/**
-	 * Returns the JDBC connection used by this database session.<br>
-	 * <br>
-	 * WARNING: do not directly close the connection you get from this method.
-	 * It will be closed when this DatabaseSession is closed.
+	 * Returns the JDBC connection used by this database session. WARNING: do
+	 * not directly close the connection you get from this method. It will be
+	 * closed when this DatabaseSession is closed.
 	 */
 	public Connection getConnection();
 
 	/**
-	 * Loads from the database the specified object.<br>
-	 * Developers only need to set the properties that are part of the object
-	 * identifier. The other properties are set by this method if the data is
-	 * found in the database.<br>
+	 * Loads from the database the specified object. Developers only need to set
+	 * the properties that are part of the object identifier. The other
+	 * properties are set by this method if the data is found in the database.
 	 * This method must be used when the specified object uses a composite id
-	 * (the id is formed by multiple properties).<br>
-	 * Returns null if not found.
+	 * (the id is formed by multiple properties). Returns null if not found.
 	 * 
 	 * @param object the object to load with the id properties set
 	 * @return the specified object with all properties loaded
@@ -67,10 +62,10 @@ public interface DatabaseSession extends Closeable
 	public Object select(Class type, long id);
 
 	/**
-	 * Loads from the database the specified objects.<br>
-	 * Developers only need to set the properties that are part of the object
-	 * identifier. The other properties are set by this method if the data is
-	 * found in the database.<br>
+	 * Loads from the database the specified objects. Developers only need to
+	 * set the properties that are part of the object identifier. The other
+	 * properties are set by this method if the data is found in the database.<br>
+	 * <br>
 	 * This method must be used when the specified objects use composite ids
 	 * (the id is formed by multiple properties).<br>
 	 * Sets an object in the list to null if the object is not found.
@@ -82,9 +77,9 @@ public interface DatabaseSession extends Closeable
 
 	/**
 	 * Loads from the database all objects of the specified type identified by
-	 * the specified identifiers.<br>
-	 * The returned list contains a null value for each not found value. The
-	 * list order is the same than the identifier array order.
+	 * the specified identifiers. The returned list contains a null value for
+	 * each not found value. The list order is the same than the identifier
+	 * array order.
 	 * 
 	 * @param type type of the objects to load
 	 * @param ids identifiers of the objects to load
@@ -94,8 +89,8 @@ public interface DatabaseSession extends Closeable
 
 	/**
 	 * Loads from database all the objects selected by the specified query. The
-	 * list is empty if no object is selected.<br>
-	 * The query string format is specific to implementation.
+	 * list is empty if no object is selected. The query string format is
+	 * specific to implementation.
 	 * 
 	 * @param query select query
 	 * @return list of loaded objects
@@ -104,8 +99,8 @@ public interface DatabaseSession extends Closeable
 
 	/**
 	 * Loads from database all the objects selected by the specified query. The
-	 * list is empty if no object is selected.<br>
-	 * The query string format is specific to implementation.
+	 * list is empty if no object is selected. The query string format is
+	 * specific to implementation.
 	 * 
 	 * @param query select query
 	 * @param parameter query parameter
@@ -115,8 +110,8 @@ public interface DatabaseSession extends Closeable
 
 	/**
 	 * Loads from database all the objects selected by the specified query. The
-	 * list is empty if no object is selected.<br>
-	 * The query string format is specific to implementation.
+	 * list is empty if no object is selected. The query string format is
+	 * specific to implementation.
 	 * 
 	 * @param query select query
 	 * @param parameters query parameters
