@@ -38,7 +38,7 @@
 			<classpath refid="core.test.apt.classpath" />
 		</vogen>
 
-		<ejbgen inputDir="src" outputDir="bin/gensrc" destdir="bin/aptclasses">
+		<ejbgen inputDir="src" outputDir="bin/gensrc" destdir="bin/aptclasses" outputCfgDir="cfg">
 			<classpath refid="core.test.apt.classpath" />
 		</ejbgen>
 

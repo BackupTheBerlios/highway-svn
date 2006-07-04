@@ -29,4 +29,5 @@ public interface BuildingDef extends ValueObject
 	Corporation[] getCorporations();
 
 	List<Employee> getEmployees();
+	
 }
