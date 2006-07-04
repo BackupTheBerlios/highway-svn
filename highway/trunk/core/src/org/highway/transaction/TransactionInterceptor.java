@@ -218,11 +218,11 @@ public class TransactionInterceptor implements ServiceInterceptor
 
 	private void setTransactionTimeout(ServiceRequest request)
 	{
-		if (request.getMethod().getAnnotation(
-				TransactionTimeout.class)==null)
+		TransactionTimeout timeoutAnnotation = request.getMethod().getAnnotation(
+				TransactionTimeout.class);
+		if (timeoutAnnotation==null)
 			return;
-		int timeout = request.getMethod().getAnnotation(
-				TransactionTimeout.class).value();
+		int timeout = timeoutAnnotation.value();
 
 		try
 		{
@@ -363,6 +363,9 @@ public class TransactionInterceptor implements ServiceInterceptor
 
 	private TransactionOptions getTransactionOption(Method method)
 	{
-		return method.getAnnotation(TransactionOption.class).value();
+		TransactionOption options = method.getAnnotation(TransactionOption.class);
+		if (options==null)
+			throw new TechnicalException("No TransactionOption set on method " + method.getName()); 
+		return options.value();
 	}
 }
