@@ -14,10 +14,8 @@ import java.util.List;
  * All selected objects have a object/relational mapping.<br>
  * Mapping format is specific to the implementation.<br>
  * Objects of this type can be closed since it extends Closeable.<br>
- * All methods throw an IllegalStateException if called when
- * the session is closed.
- * 
- * 
+ * All methods throw an IllegalStateException if called when the session is
+ * closed.
  */
 public interface DatabaseSession extends Closeable
 {
@@ -25,21 +23,20 @@ public interface DatabaseSession extends Closeable
 	 * Returns the database object this session is connected to.
 	 */
 	public Database getDatabase();
-	
+
 	/**
-	 * Returns the JDBC connection used by this database session.<br><br>
-	 * WARNING: do not directly close the connection you get from
-	 * this method. It will be closed when this DatabaseSession is closed. 
-	 * 
-	 * 
+	 * Returns the JDBC connection used by this database session.<br>
+	 * <br>
+	 * WARNING: do not directly close the connection you get from this method.
+	 * It will be closed when this DatabaseSession is closed.
 	 */
 	public Connection getConnection();
-	
+
 	/**
 	 * Loads from the database the specified object.<br>
 	 * Developers only need to set the properties that are part of the object
-	 * identifier. The other properties are set by this method if the data
-	 * is found in the database.<br>
+	 * identifier. The other properties are set by this method if the data is
+	 * found in the database.<br>
 	 * This method must be used when the specified object uses a composite id
 	 * (the id is formed by multiple properties).<br>
 	 * Returns null if not found.
@@ -48,23 +45,32 @@ public interface DatabaseSession extends Closeable
 	 * @return the specified object with all properties loaded
 	 */
 	public Object select(Object object);
-	
+
 	/**
-	 * Loads from the database the object of the specified type
-	 * identified by the specified identifier.<br>
-	 * Returns null if not found.
+	 * Loads from the database the object of the specified type identified by
+	 * the specified identifier. Returns null if not found.
 	 * 
 	 * @param type type of the object to load
 	 * @param id identifier of the object to load
 	 * @return loaded object
 	 */
 	public Object select(Class type, Object id);
-	
+
+	/**
+	 * Loads from the database the object of the specified type identified by
+	 * the specified identifier. Returns null if not found.
+	 * 
+	 * @param type type of the object to load
+	 * @param id identifier of the object to load
+	 * @return loaded object
+	 */
+	public Object select(Class type, long id);
+
 	/**
 	 * Loads from the database the specified objects.<br>
 	 * Developers only need to set the properties that are part of the object
-	 * identifier. The other properties are set by this method if the data
-	 * is found in the database.<br>
+	 * identifier. The other properties are set by this method if the data is
+	 * found in the database.<br>
 	 * This method must be used when the specified objects use composite ids
 	 * (the id is formed by multiple properties).<br>
 	 * Sets an object in the list to null if the object is not found.
@@ -73,14 +79,13 @@ public interface DatabaseSession extends Closeable
 	 * @return the specified list of objects with all properties set
 	 */
 	public List select(List objects);
-	
+
 	/**
-	 * Loads from the database all objects of the specified type
-	 * identified by the specified identifiers.<br>
-	 * The returned list contains a null value for each not found
-	 * value. The list order is the same than the identifier array
-	 * order.
-	 *  
+	 * Loads from the database all objects of the specified type identified by
+	 * the specified identifiers.<br>
+	 * The returned list contains a null value for each not found value. The
+	 * list order is the same than the identifier array order.
+	 * 
 	 * @param type type of the objects to load
 	 * @param ids identifiers of the objects to load
 	 * @return list of loaded objects
@@ -88,8 +93,8 @@ public interface DatabaseSession extends Closeable
 	public List select(Class type, Object[] ids);
 
 	/**
-	 * Loads from database all the objects selected by the specified query.
-	 * The list is empty if no object is selected.<br>
+	 * Loads from database all the objects selected by the specified query. The
+	 * list is empty if no object is selected.<br>
 	 * The query string format is specific to implementation.
 	 * 
 	 * @param query select query
@@ -98,8 +103,8 @@ public interface DatabaseSession extends Closeable
 	public List select(String query);
 
 	/**
-	 * Loads from database all the objects selected by the specified query.
-	 * The list is empty if no object is selected.<br>
+	 * Loads from database all the objects selected by the specified query. The
+	 * list is empty if no object is selected.<br>
 	 * The query string format is specific to implementation.
 	 * 
 	 * @param query select query
@@ -109,8 +114,8 @@ public interface DatabaseSession extends Closeable
 	public List select(String query, Object parameter);
 
 	/**
-	 * Loads from database all the objects selected by the specified query.
-	 * The list is empty if no object is selected.<br>
+	 * Loads from database all the objects selected by the specified query. The
+	 * list is empty if no object is selected.<br>
 	 * The query string format is specific to implementation.
 	 * 
 	 * @param query select query
@@ -123,7 +128,6 @@ public interface DatabaseSession extends Closeable
 	 * Creates a new <tt>SelectQuery</tt> instance.
 	 * 
 	 * @return a <tt>SelectQuery</tt> instance.
-	 * 
 	 */
 	public SelectQuery createSelectQuery();
 
@@ -136,7 +140,7 @@ public interface DatabaseSession extends Closeable
 	 * @param object object to insert
 	 */
 	public void insert(Object object);
-	
+
 	/**
 	 * Inserts objects in the database.<br>
 	 * <br>
@@ -150,10 +154,10 @@ public interface DatabaseSession extends Closeable
 	/**
 	 * Inserts or updates the specified object.<br>
 	 * <br>
-	 * If of type ValueObject, uses its <code>dirty</code>
-	 * and <code>new</code> properties to decide if it must be
-	 * inserted or updated. Otherwise the insert or update decision
-	 * is specific to the implementation.<br>
+	 * If of type ValueObject, uses its <code>dirty</code> and
+	 * <code>new</code> properties to decide if it must be inserted or
+	 * updated. Otherwise the insert or update decision is specific to the
+	 * implementation.<br>
 	 * <br>
 	 * If sucessfully saved and of type ValueObject, object <code>dirty</code>
 	 * and <code>new</code> properties are both set to false.
@@ -161,14 +165,14 @@ public interface DatabaseSession extends Closeable
 	 * @param object object to insert or update
 	 */
 	public void insertOrUpdate(Object object);
-	
+
 	/**
 	 * Inserts or updates the specified objects.<br>
 	 * <br>
-	 * If of type ValueObject, uses its <code>dirty</code>
-	 * and <code>new</code> properties to decide if it must be
-	 * inserted or updated. Otherwise the insert or update decision
-	 * is specific to the implementation.<br>
+	 * If of type ValueObject, uses its <code>dirty</code> and
+	 * <code>new</code> properties to decide if it must be inserted or
+	 * updated. Otherwise the insert or update decision is specific to the
+	 * implementation.<br>
 	 * <br>
 	 * If sucessfully saved and of type ValueObject, object <code>dirty</code>
 	 * and <code>new</code> properties are both set to false.
@@ -186,7 +190,7 @@ public interface DatabaseSession extends Closeable
 	 * @param object object to update
 	 */
 	public void update(Object object);
-	
+
 	/**
 	 * Updates the specified objects.<br>
 	 * <br>
@@ -204,7 +208,7 @@ public interface DatabaseSession extends Closeable
 	 * @param query update query.
 	 */
 	public void update(String query);
-	
+
 	/**
 	 * Updates the database.<br>
 	 * The query string format is specific to implementation.
@@ -213,7 +217,7 @@ public interface DatabaseSession extends Closeable
 	 * @param parameter query parameter
 	 */
 	public void update(String query, Object parameter);
-	
+
 	/**
 	 * Updates the database.<br>
 	 * The query string format is specific to implementation.
@@ -222,16 +226,16 @@ public interface DatabaseSession extends Closeable
 	 * @param parameters query parameters
 	 */
 	public void update(String query, Object[] parameters);
-	
+
 	/**
-	 * Deletes from the database the object of the specified type identified
-	 * by the specified identifier.
+	 * Deletes from the database the object of the specified type identified by
+	 * the specified identifier.
 	 * 
 	 * @param type type of object to delete
 	 * @param id identifier of the object to delete
 	 */
 	public void delete(Class type, Object id);
-	
+
 	/**
 	 * Deletes from the database thes objects of the specified type identified
 	 * by the specified identifiers.
@@ -240,7 +244,7 @@ public interface DatabaseSession extends Closeable
 	 * @param ids identifiers of the objects to delete
 	 */
 	public void delete(Class type, Object[] ids);
-	
+
 	/**
 	 * Deletes from the database the specified object.
 	 * 
@@ -256,8 +260,8 @@ public interface DatabaseSession extends Closeable
 	public void delete(Object[] objects);
 
 	/**
-	 * Deletes from the database all the objects selected by
-	 * the specified query.<br>
+	 * Deletes from the database all the objects selected by the specified
+	 * query.<br>
 	 * The query string format is specific to implementation.
 	 * 
 	 * @param query delete query
@@ -265,18 +269,18 @@ public interface DatabaseSession extends Closeable
 	public void delete(String query);
 
 	/**
-	 * Deletes from the database all the objects selected by
-	 * the specified query.<br>
+	 * Deletes from the database all the objects selected by the specified
+	 * query.<br>
 	 * The query string format is specific to implementation.
 	 * 
 	 * @param query delete query
 	 * @param parameter query parameter
 	 */
 	public void delete(String query, Object parameter);
-	
+
 	/**
-	 * Deletes from the database all the objects selected by
-	 * the specified query.<br>
+	 * Deletes from the database all the objects selected by the specified
+	 * query.<br>
 	 * The query string format is specific to implementation.
 	 * 
 	 * @param query delete query

@@ -83,6 +83,11 @@ class HibernateSession implements DatabaseSession
 		return select(object.getClass(), object);
 	}
 
+	public Object select(Class type, long id)
+	{
+		return select(type, new Long(id));
+	}
+	
 	public Object select(Class type, Object id)
 	{
 		checkIfClosed();
