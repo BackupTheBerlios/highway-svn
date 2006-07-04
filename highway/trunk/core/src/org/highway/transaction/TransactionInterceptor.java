@@ -218,6 +218,9 @@ public class TransactionInterceptor implements ServiceInterceptor
 
 	private void setTransactionTimeout(ServiceRequest request)
 	{
+		if (request.getMethod().getAnnotation(
+				TransactionTimeout.class)==null)
+			return;
 		int timeout = request.getMethod().getAnnotation(
 				TransactionTimeout.class).value();
 
