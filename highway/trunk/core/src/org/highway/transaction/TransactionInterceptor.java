@@ -365,7 +365,7 @@ public class TransactionInterceptor implements ServiceInterceptor
 	{
 		TransactionOption options = method.getAnnotation(TransactionOption.class);
 		if (options==null)
-			throw new TechnicalException("No TransactionOption set on method " + method.getName()); 
+			throw new TechnicalException("No Transaction Option set on method " + MethodHelper.getClassAndMethodName(method, true)); 
 		return options.value();
 	}
 }
