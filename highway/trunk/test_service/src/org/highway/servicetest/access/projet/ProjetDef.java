@@ -4,45 +4,32 @@ import java.util.Date;
 
 import org.highway.bean.Decimal;
 import org.highway.bean.ValueObject;
-import org.highway.database.Mapped;
 import org.highway.database.Identity;
-import org.highway.database.VoMappingProperty;
+import org.highway.database.MappedOn;
 
-/**
- * @socle.mapping table="PROJET"
- */
-@Mapped(table="PROJET")
-@org.highway.annotation.ValueObject
+
+@MappedOn("PROJET")
 public interface ProjetDef extends ValueObject {
 	
-	/**
-	 * @socle.mapping.id column="ID"
-	 */
-	@Identity(column="ID", type="long")
+
+	@Identity
+	@MappedOn("ID")
 	Long getId();
 	
-	/**
-	 * @socle.mapping.property column="NOM" 
-	 */
-	@VoMappingProperty(column="NOM", type="string")
+
+	@MappedOn("NOM")
 	String getNom();
 
-    /**
-     * @socle.mapping.property column="DEBUT"
-     */
-	@VoMappingProperty(column="DEBUT", type="date")
+
+	@MappedOn("DEBUT")
 	Date getDebut();
 	
-	/**
-	 * @socle.mapping.property column="FIRME_ID"
-	 */
-	@VoMappingProperty(column="FIRME_ID", type="long")
+
+	@MappedOn("FIRME_ID")
 	Long getFirmeId();
 	
-	/**
-	 * @socle.mapping.property column="TOTAL_FACTURE" 
-	 */
-	@VoMappingProperty(column="TOTAL_FACTURE", type="decimal")
+
+	@MappedOn("TOTAL_FACTURE")
 	Decimal getTotalFacture();
 
 }

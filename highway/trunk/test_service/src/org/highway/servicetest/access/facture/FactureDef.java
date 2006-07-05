@@ -4,58 +4,36 @@ import java.util.Date;
 
 import org.highway.bean.Decimal;
 import org.highway.bean.ValueObject;
-import org.highway.database.Mapped;
 import org.highway.database.Identity;
-import org.highway.database.VoMappingProperty;
+import org.highway.database.MappedOn;
 
-/**
- * @socle.mapping table="FACTURE"
- */
-@Mapped(table="FACTURE")
-@org.highway.annotation.ValueObject
+@MappedOn("FACTURE")
 public interface FactureDef extends ValueObject
 {
 
-	/**
-	 * @socle.mapping.id column="ID"
-	 */
-	@Identity(column="ID", type="long")
+	@Identity
+	@MappedOn("ID")
 	Long getId();
 	
-    /**
-     * @socle.mapping.property column="DATE_CREATION"
-     */
-	@VoMappingProperty(column="DATE_CREATION", type="date")
+	@MappedOn("DATE_CREATION")
 	Date getDateCreation();
 	
-    /**
-     * @socle.mapping.property column="DEBUT"
-     */
-	@VoMappingProperty(column="DEBUT", type="date")
+
+	@MappedOn("DEBUT")
 	Date getDebut();
 	
-    /**
-     * @socle.mapping.property column="FIN"
-     */
-	@VoMappingProperty(column="FIN", type="date")
+	@MappedOn("FIN")
 	Date getFin();
 	
-	/**
-	 * @socle.mapping.property column="ECHEANCE" 
-	 */
-	@VoMappingProperty(column="ECHEANCE", type="FactureEcheance")
+
+	@MappedOn("ECHEANCE")
 	FactureEcheance getEcheance();
 	
-	/**
-	 * @socle.mapping.property column="MONTANT" 
-	 */
-	@VoMappingProperty(column="MONTANT", type="Decimal")
+	@MappedOn("MONTANT")
 	Decimal getMontant();	
 
-	/**
-	 * @socle.mapping.property column="FIRME_ID"
-	 */
-	@VoMappingProperty(column="Decimal", type="long")
+
+	@MappedOn("Decimal")
 	Long getProjetId();
 
 }

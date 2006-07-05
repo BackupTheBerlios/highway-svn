@@ -1,7 +1,8 @@
 package org.highway.servicetest.access;
 
-import net.sf.hibernate.cfg.Configuration;
 
+
+import org.hibernate.cfg.Configuration;
 import org.highway.database.Database;
 import org.highway.database.DatabaseAccessBase;
 import org.highway.database.hibernate.HibernateDatabase;

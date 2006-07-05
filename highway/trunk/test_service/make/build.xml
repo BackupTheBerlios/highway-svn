@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="socle-j2ee-service-test" default="servicetest.build" basedir="..">
+<project name="highway-service-test" default="servicetest.build" basedir="..">
 
 	<!-- resources -->
 	<property name="core.filename" value="socle-j2ee-core.jar" />
@@ -23,9 +23,17 @@
 	<property name="bincore.dir" value="../socle_j2ee_core/bin/pack" />
 	<property name="libwas.dir" value="lib/was" />
 
+	<path id="service.test.apt.classpath">
+		<pathelement location="src" />
+		<pathelement location="../highway_core/bin/eclipse" />
+		<pathelement location="../highway_tools/bin/pack/highway-tools.jar" />
+		<fileset dir="lib" includes="**/*.jar" />
+		<fileset dir="../highway_core/lib" includes="**/*.jar" />
+	</path>
+
 	
-	<taskdef resource="com/manpower/socle/anttasks.properties">
-		<classpath path="../socle_j2ee_tools/bin/pack/socle-j2ee-tools.jar" />
+	<taskdef resource="org/highway/anttasks.properties">
+		<classpath path="../highway_tools/bin/pack/highway-tools.jar" />
 	</taskdef>
 
 	<taskdef resource="hivemind-tasks.properties">
@@ -50,17 +58,19 @@
 		<vogen 
 			inputDir="${src.dir}" 
 			outputDir="${gensrc.dir}" 
-			hibernateCfgFile="com/manpower/servicetest/access/hibernate.cfg.xml"
-		/>
-		<metagen 
+			destdir="bin/aptclasses"
+		>
+		<classpath refid="service.test.apt.classpath" />
+		</vogen>
+
+		<ejbgen 
 			inputDir="${src.dir}" 
 			outputDir="${gensrc.dir}" 
-		/>
-		<ejbgen 
-			javaInputDir="${src.dir}" 
-			javaOutputDir="${gensrc.dir}" 
-			cfgOutputDir="${pack.dir}/ejb/META-INF" 
-		/>
+			destdir="bin/aptclasses"
+			outputCfgDir="cfg"
+		>
+		<classpath refid="service.test.apt.classpath" />
+		</ejbgen>
 	</target>
 
 	<target name="servicetest.compile">

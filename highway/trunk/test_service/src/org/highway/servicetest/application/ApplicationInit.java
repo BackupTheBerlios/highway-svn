@@ -23,7 +23,7 @@ public class ApplicationInit
 		DebugHome.setDebugLog(new Log4jDebugLog(properties, false));
 
 		// TransactionManager
-		TransactionHome.setTransactionManager(TransactionHelper.lookupWebSphereTransactionManagerV6());
+		TransactionHome.setTransactionManager(TransactionHelper.lookupJOTMTransactionManager());
 		
 		// Access
 		AccessInit.init();

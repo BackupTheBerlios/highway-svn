@@ -1,38 +1,22 @@
 package org.highway.servicetest.access.employee;
 
 import org.highway.bean.ValueObject;
-import org.highway.database.Mapped;
 import org.highway.database.Identity;
-import org.highway.database.VoMappingProperty;
+import org.highway.database.MappedOn;
 
-/**
- * @socle.mapping table="EMPLOYEE"
- */
-@Mapped(table="EMPLOYEE")
-@org.highway.annotation.ValueObject
+@MappedOn("employee")
 public interface EmployeeDef extends ValueObject
 {
-	/**
-	 * @socle.mapping.id column="ID"
-	 */
-	@Identity(column="ID", type="long")
+	@Identity
+	@MappedOn("ID")
 	long getId();
 
-	/**
-	 * @socle.mapping.property column="FIRSTNAME"
-	 */
-	@VoMappingProperty(column="FIRSTNAME", type="String")
+	@MappedOn("FIRSTNAME")
 	String getFirstname();
 
-	/**
-	 * @socle.mapping.property column="LASTNAME"
-	 */
-	@VoMappingProperty(column="LASTNAME", type="String")
+	@MappedOn("LASTNAME")
 	String getLastname();
 
-	/**
-	 * @socle.mapping.property column="EMAIL"
-	 */
-	@VoMappingProperty(column="EMAIL", type="String")
+	@MappedOn("EMAIL")
 	String getEmail();
 }

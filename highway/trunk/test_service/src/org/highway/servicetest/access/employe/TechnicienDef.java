@@ -1,15 +1,8 @@
 package org.highway.servicetest.access.employe;
 
-///**
-//* table-per-subclass
-//* 
-//* @socle.mapping table="TECHNICIEN"
-//*/
-/**
-* table-per-class-hierarchy
-* 
-* @socle.mapping discriminator-value="2"
-*/
+import org.highway.database.DiscriminatorValue;
+
+@DiscriminatorValue("0")
 public interface TechnicienDef extends EmployeDef {
 
 }

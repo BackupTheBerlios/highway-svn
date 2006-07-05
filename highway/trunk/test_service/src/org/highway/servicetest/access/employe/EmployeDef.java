@@ -2,76 +2,38 @@ package org.highway.servicetest.access.employe;
 
 import org.highway.bean.Decimal;
 import org.highway.bean.ValueObject;
-import org.highway.database.Mapped;
 import org.highway.database.DiscriminatorColumn;
 import org.highway.database.DiscriminatorValue;
-import org.highway.database.VoMappingProperty;
+import org.highway.database.Identity;
+import org.highway.database.MappedOn;
 
-///**
-//* table-per-subclass
-//* 
-//* @socle.mapping table="EMPLOYE" 
-//*/
-/**
- * table-per-class-hierarchy
- *
- * @socle.mapping table="EMPLOYE" 
- *                discriminator-value="0"
- * @socle.mapping.discriminator type="char"
- *                              column="TYPE"
- */
-@Mapped(table="EMPLOYE")
+@MappedOn("EMPLOYE")
 @DiscriminatorValue("0")
 @DiscriminatorColumn(type="char", column="TYPE")
-
 public interface EmployeDef extends ValueObject{
 
-	/**
-	 * @socle.mapping.property column="COACH_ID"
-	 */
-	@VoMappingProperty(column="COACH_ID", type="long")
+	@MappedOn("COACH_ID")
 	Long getCoachId();
 	
-	/**
-	 * @socle.mapping.property column="FIRME_ID"
-	 */
-	@VoMappingProperty(column="FIRME_ID", type="long")
+	@MappedOn("FIRME_ID")
 	Long getFirmeId();
 	
-	/**
-	 * @socle.mapping.id column="ID"
-	 */
-	@VoMappingProperty(column="ID", type="long")
+	@Identity
+	@MappedOn("ID")
 	Long getId();
 	
-	/**
-	 * @socle.mapping.property column="NOM" 
-	 */
-	@VoMappingProperty(column="NOM", type="string")
+	@MappedOn("NOM")
 	String getNom();
 	
-	/**
-	 * @socle.mapping.property column="PRENOM" 
-	 */
-	@VoMappingProperty(column="PRENOM", type="string")
+	@MappedOn("PRENOM")
 	String getPrenom();
 	
-	/**
-	 * @socle.mapping.property column="NIVEAU" 
-	 */
-	@VoMappingProperty(column="NIVEAU", type="EmployeNiveau")
+	@MappedOn("NIVEAU")
 	EmployeNiveau getNiveau();
 	
-	/**
-	 * @socle.mapping.property column="SEXE" 
-	 */
-	@VoMappingProperty(column="SEXE", type="EmployeSexe")
+	@MappedOn("SEXE")
 	EmployeSexe getSexe();
 	
-	/**
-	 * @socle.mapping.property column="SALAIRE" 
-	 */
-	@VoMappingProperty(column="SALAIRE", type="decimal")
+	@MappedOn("SALAIRE")
 	Decimal getSalaire();	
-	
 }
