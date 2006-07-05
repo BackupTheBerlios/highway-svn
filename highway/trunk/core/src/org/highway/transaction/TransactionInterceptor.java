@@ -24,14 +24,6 @@ public class TransactionInterceptor implements ServiceInterceptor
 	{
 		TransactionOptions option = getTransactionOption(request.getMethod());
 
-		if (option == null)
-		{
-			throw new TechnicalException(
-					"No transaction option found for service "
-							+ MethodHelper.getClassAndMethodName(request
-									.getMethod(), true));
-		}
-
 		if (option.equals(TransactionOptions.REQUIRED))
 		{
 			return invokeRequired(request);
@@ -62,10 +54,10 @@ public class TransactionInterceptor implements ServiceInterceptor
 			return invokeMandatory(request);
 		}
 
-		throw new TechnicalException(
-				"Invalid service transaction option, option = "
+		throw new UnsupportedOperationException(
+				"Unsupported transaction option = "
 						+ option
-						+ " service = "
+						+ " for service = "
 						+ MethodHelper.getClassAndMethodName(request
 								.getMethod(), true));
 	}
@@ -218,10 +210,9 @@ public class TransactionInterceptor implements ServiceInterceptor
 
 	private void setTransactionTimeout(ServiceRequest request)
 	{
-		TransactionTimeout timeoutAnnotation = request.getMethod().getAnnotation(
-				TransactionTimeout.class);
-		if (timeoutAnnotation==null)
-			return;
+		TransactionTimeout timeoutAnnotation = request.getMethod()
+				.getAnnotation(TransactionTimeout.class);
+		if (timeoutAnnotation == null) return;
 		int timeout = timeoutAnnotation.value();
 
 		try
@@ -363,9 +354,23 @@ public class TransactionInterceptor implements ServiceInterceptor
 
 	private TransactionOptions getTransactionOption(Method method)
 	{
-		TransactionOption options = method.getAnnotation(TransactionOption.class);
-		if (options==null)
-			throw new TechnicalException("No Transaction Option set on method " + MethodHelper.getClassAndMethodName(method, true)); 
-		return options.value();
+		TransactionOption annotation = method
+				.getAnnotation(TransactionOption.class);
+
+		if (annotation == null)
+		{
+			annotation = method.getDeclaringClass().getAnnotation(
+					TransactionOption.class);
+
+			if (annotation == null)
+			{
+				throw new TechnicalException(
+						"No transaction option found for service "
+								+ MethodHelper.getClassAndMethodName(method,
+										true));
+			}
+		}
+
+		return annotation.value();
 	}
 }
