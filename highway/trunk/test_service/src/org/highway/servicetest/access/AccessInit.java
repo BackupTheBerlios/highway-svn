@@ -22,7 +22,8 @@ public class AccessInit
 		{
 			Configuration configuration = new Configuration();
 			configuration.setProperties(PropertiesHelper.loadAsResource(AccessInit.class, "hibernate.properties"));
-			configuration.configure("/" + ResourceHelper.getResourcePath(AccessInit.class, "hibernate.cfg.xml"));
+//			configuration.configure("/" + ResourceHelper.getResourcePath(AccessInit.class, "hibernate.cfg.xml"));
+			configuration.configure("/" + ResourceHelper.getResourcePath(null, "hibernate.cfg.xml"));
 			
 			Database database = new HibernateDatabase(configuration);
 			DatabaseAccessBase.setDatabase(database);

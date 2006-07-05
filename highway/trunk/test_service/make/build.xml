@@ -55,6 +55,8 @@
 	<target name="servicetest.generate">
 		<delete dir="bin/gensrc"/>
 		<mkdir dir="bin/gensrc" />
+		<delete dir="bin/aptclasses" />
+		<mkdir dir="bin/aptclasses" />
 		<vogen 
 			inputDir="${src.dir}" 
 			outputDir="${gensrc.dir}" 

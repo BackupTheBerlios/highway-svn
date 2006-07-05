@@ -45,18 +45,6 @@
 	<classpathentry kind="lib" path="/highway_core/lib/hibernate3.0/xerces-2.6.2.jar"/>
 	<classpathentry kind="lib" path="/highway_core/lib/hibernate3.0/xjavadoc-1.5-snapshot050611.jar"/>
 	<classpathentry kind="lib" path="/highway_core/lib/hibernate3.0/xml-apis.jar"/>
-	<classpathentry kind="lib" path="lib/JOTM/jotm.jar"/>
-	<classpathentry kind="lib" path="lib/JOTM/carol.jar"/>
-	<classpathentry kind="lib" path="lib/JOTM/commons-cli.jar"/>
-	<classpathentry kind="lib" path="lib/JOTM/commons-logging.jar"/>
-	<classpathentry kind="lib" path="lib/JOTM/jonas_timer.jar"/>
-	<classpathentry kind="lib" path="lib/JOTM/jotm_iiop_stubs.jar"/>
-	<classpathentry kind="lib" path="lib/JOTM/jotm_jrmp_stubs.jar"/>
-	<classpathentry kind="lib" path="lib/JOTM/jta-spec1_0_1.jar"/>
-	<classpathentry kind="lib" path="lib/JOTM/jts1_0.jar"/>
-	<classpathentry kind="lib" path="lib/JOTM/log4j.jar"/>
-	<classpathentry kind="lib" path="lib/JOTM/objectweb-datasource.jar"/>
-	<classpathentry kind="lib" path="lib/JOTM/xapool.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/highway_tools"/>
 	<classpathentry kind="output" path="bin/eclipse"/>
 </classpath>
