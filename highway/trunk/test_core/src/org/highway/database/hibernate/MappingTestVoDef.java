@@ -12,91 +12,92 @@ import org.highway.database.Mapped;
 import org.highway.database.MappedOn;
 import org.highway.database.MappingSpecialType;
 
-@Mapped
+
 @MappedOn("MAPPING_TEST")
+@Mapped
 public interface MappingTestVoDef extends ValueObject
 {
 	@Identity
-	@MappedOn("PRIMITIVE_LONG")
+	@MappedOn("TYPE_PRIMITIVE_LONG")
 	long getPrimitiveLongProperty();
 	
-	@MappedOn("PRIMITIVE_BOOLEAN")
+	@MappedOn("TYPE_PRIMITIVE_BOOLEAN")
 	boolean getPrimitiveBooleanProperty();
 	
-	@MappedOn("PRIMITIVE_CHAR")
+	@MappedOn("TYPE_PRIMITIVE_CHAR")
 	char getPrimitiveCharProperty();
 	 
-	@MappedOn("PRIMITIVE_DOUBLE")
+	@MappedOn("TYPE_PRIMITIVE_DOUBLE")
 	double getPrimitiveDoubleProperty();
 	
-	@MappedOn("PRIMITIVE_FLOAT")
+	@MappedOn("TYPE_PRIMITIVE_FLOAT")
 	float getPrimitiveFloatProperty();
 	
-	@MappedOn("PRIMITIVE_INT")
+	@MappedOn("TYPE_PRIMITIVE_INT")
 	int getPrimitiveIntProperty();
 	
-	@MappedOn("PRIMITIVE_SHORT")
+	@MappedOn("TYPE_PRIMITIVE_SHORT")
 	short getPrimitiveShortProperty();
 	
-	@MappedOn("LONG")
+	@MappedOn("TYPE_LONG")
 	Long getLongProperty();
 	
-	@MappedOn("BOOLEAN")
+	@MappedOn("TYPE_BOOLEAN")
 	Boolean getBooleanProperty();
 	
-	@MappedOn("CHARACTER")
+	@MappedOn("TYPE_CHARACTER")
 	Character getCharacterProperty();
 	
-	@MappedOn("DOUBLE")
+	@MappedOn("TYPE_DOUBLE")
 	Double getDoubleProperty();
 	
-	@MappedOn("FLOAT")
+	@MappedOn("TYPE_FLOAT")
 	Float getFloatProperty();
 	
-	@MappedOn("INTEGER")
+	@MappedOn("TYPE_INTEGER")
 	Integer getIntegerProperty();
 	
-	@MappedOn("SHORT")
+	@MappedOn("TYPE_SHORT")
 	Short getShortProperty();
 	
-	@MappedOn("STRING")
+	@MappedOn("TYPE_STRING")
 	String getStringProperty();
 	
-	@MappedOn("SQL_DATE")
+	@MappedOn("TYPE_SQL_DATE")
 	java.sql.Date getSqlDateProperty();
 	
-	@MappedOn("UTIL_DATE")
+	@MappedOn("TYPE_UTIL_DATE")
 	java.util.Date getUtilDateProperty();
 	 
-	@MappedOn("TIME")
+	@MappedOn("TYPE_TIME")
 	Time getTimeProperty();
 	
-	@MappedOn("TIMESTAMP")
+	@MappedOn("TYPE_TIMESTAMP")
 	Timestamp getTimestampProperty();
 	
-	@MappedOn("BIG_DECIMAL")
+	@MappedOn("TYPE_BIG_DECIMAL")
 	BigDecimal getBigDecimalProperty();
 	
-	@MappedOn("BIG_INTEGER")
+	@MappedOn("TYPE_BIG_INTEGER")
 	BigInteger getBigIntegerProperty();
 	
-	@MappedOn("DECIMAL")
+	@MappedOn("TYPE_DECIMAL")
 	Decimal getDecimalProperty();
 	
-	@MappedOn("CHAR_ENUM")
+	@MappedOn("TYPE_CHAR_ENUM")
 	MappingTestCharEnum getCharEnumProperty();
 	
-	@MappedOn("SHORT_ENUM")
+	@MappedOn("TYPE_SHORT_ENUM")
 	MappingTestShortEnum getShortEnumProperty();
 	
-	@MappedOn("STRING_ENUM")
+	@MappedOn("TYPE_STRING_ENUM")
 	MappingTestStringEnum getStringEnumProperty();
 	
-	@MappedOn("BLOB")
+	@MappedOn("TYPE_BLOB")
 	@MappingSpecialType(ByteArray2BlobHibernateType.class)
 	byte[] getByteArrayBlobProperty();
 	
-	@MappedOn("CLOB")
-	@MappingSpecialType(String2ClobHibernateType.class)
-	String getStringClobProperty();
+//	@MappedOn("TYPE_CLOB")
+//	@MappingSpecialType(String2ClobHibernateType.class)
+//	String getStringClobProperty();
 }

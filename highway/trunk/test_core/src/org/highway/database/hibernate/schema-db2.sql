@@ -1,7 +1,7 @@
-drop table db2admin.MAPPING_TEST;
-drop table db2admin.TRIM_TEST;
+drop table coretest.MAPPING_TEST;
+drop table coretest.TRIM_TEST;
 
-create table db2admin.MAPPING_TEST (
+create table coretest.MAPPING_TEST (
 	PRIMITIVE_LONG bigint not null,
 	PRIMITIVE_BOOLEAN char not null,
 	PRIMITIVE_CHAR char not null,
@@ -32,7 +32,7 @@ create table db2admin.MAPPING_TEST (
 	primary key (PRIMITIVE_LONG)
 );
 
-create table db2admin.TRIM_TEST (
+create table coretest.TRIM_TEST (
 	ID bigint not null,
 	PROPERTY_1 char(20),
 	PROPERTY_2 char(20),

@@ -2,6 +2,9 @@ package org.highway.database.hibernate;
 
 import java.sql.SQLException;
 
+import junit.framework.TestCase;
+
+import org.hibernate.cfg.Configuration;
 import org.highway.database.Database;
 import org.highway.database.DatabaseSession;
 import org.highway.debug.DebugHome;
@@ -9,8 +12,6 @@ import org.highway.debug.DebugLog;
 import org.highway.debug.Log4jDebugLog;
 import org.highway.exception.TechnicalException;
 
-import junit.framework.TestCase;
-import net.sf.hibernate.cfg.Configuration;
 
 
 /**

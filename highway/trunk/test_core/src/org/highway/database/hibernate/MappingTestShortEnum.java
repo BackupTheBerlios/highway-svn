@@ -1,23 +1,22 @@
 package org.highway.database.hibernate;
 
-import java.util.List;
 
-import org.highway.bean.Enum;
-
-public class MappingTestShortEnum extends Enum
-{
-	public static final MappingTestShortEnum VALUE_1 = new MappingTestShortEnum((short) 1);
-	public static final MappingTestShortEnum VALUE_2 = new MappingTestShortEnum((short) 2);
-	public static final MappingTestShortEnum VALUE_3 = new MappingTestShortEnum((short) 3);
-	public static final MappingTestShortEnum VALUE_4 = new MappingTestShortEnum((short) 4);
-
+public enum MappingTestShortEnum {
+	VALUE_1 ((short)1),
+	VALUE_2 ((short)2),
+	VALUE_3 ((short)3),
+	VALUE_4 ((short)4);
+	private short code;
 	private MappingTestShortEnum(short code)
 	{
-		super(code);
+		this.code = code;
+	}
+	public short getCode(){
+		return code;
+	}
+	public String toString(){
+		return ""+code;
 	}
 
-	public static List getAll()
-	{
-		return getAll(MappingTestShortEnum.class);
-	}
+
 }

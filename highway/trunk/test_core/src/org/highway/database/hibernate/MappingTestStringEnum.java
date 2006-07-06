@@ -1,23 +1,23 @@
 package org.highway.database.hibernate;
 
-import java.util.List;
 
-import org.highway.bean.Enum;
-
-public class MappingTestStringEnum extends Enum
+public enum MappingTestStringEnum
 {
-	public static final MappingTestStringEnum VALUE_1 = new MappingTestStringEnum("01");
-	public static final MappingTestStringEnum VALUE_2 = new MappingTestStringEnum("02");
-	public static final MappingTestStringEnum VALUE_3 = new MappingTestStringEnum("03");
-	public static final MappingTestStringEnum VALUE_4 = new MappingTestStringEnum("04");
-
+	VALUE_1 ("01"),
+	VALUE_2 ("02"),
+	VALUE_3 ("03"),
+	VALUE_4 ("04");
+	private String code;
 	private MappingTestStringEnum(String code)
 	{
-		super(code);
+		this.code = code;
 	}
 
-	public static List getAll()
+	public String getCode()
 	{
-		return getAll(MappingTestStringEnum.class);
+		return code;
+	}
+	public String toString(){
+		return code;
 	}
 }
