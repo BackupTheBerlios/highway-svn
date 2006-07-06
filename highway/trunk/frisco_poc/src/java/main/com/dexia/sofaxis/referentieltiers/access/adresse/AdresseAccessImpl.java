@@ -1,8 +1,8 @@
 package com.dexia.sofaxis.referentieltiers.access.adresse;
 
-import com.dexia.sofaxis.referentieltiers.access.common.AccessServiceSessionImpl;
+import org.highway.database.DatabaseAccessBase;
 
-public class AdresseAccessImpl extends AccessServiceSessionImpl implements AdresseAccess {
+public class AdresseAccessImpl extends DatabaseAccessBase implements AdresseAccess {
 
 	public void creerOuMettreAJour(Adresse anAdresse) {
 		getSession().insertOrUpdate(anAdresse);

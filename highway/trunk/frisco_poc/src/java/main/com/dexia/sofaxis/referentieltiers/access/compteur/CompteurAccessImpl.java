@@ -3,10 +3,9 @@ package com.dexia.sofaxis.referentieltiers.access.compteur;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
+import org.highway.database.DatabaseAccessBase;
 import org.highway.exception.TechnicalException;
 import org.highway.helper.DateHelper;
-
-import com.dexia.sofaxis.referentieltiers.access.common.AccessServiceSessionImpl;
 
 
 /**
@@ -16,7 +15,7 @@ import com.dexia.sofaxis.referentieltiers.access.common.AccessServiceSessionImpl
  *
  */
 
-public class CompteurAccessImpl extends AccessServiceSessionImpl implements
+public class CompteurAccessImpl extends DatabaseAccessBase implements
 		CompteurAccess
 {
 	

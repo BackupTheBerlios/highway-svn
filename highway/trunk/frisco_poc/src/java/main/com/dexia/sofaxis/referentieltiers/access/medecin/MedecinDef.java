@@ -22,7 +22,7 @@ public interface MedecinDef extends PersonneMoraleTiersDef
     public String getTypeCategorie();
     
 	@MappedOn("TYPESPECIALITE")
-    public SpecialiteMedecin getTypeSpecialite();
+    public String getTypeSpecialite();
 
 	@MappedOn("DATEDEBUTAGREMENT")
     public Date getDateDebutAgrement();

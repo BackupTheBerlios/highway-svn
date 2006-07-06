@@ -1,23 +1,23 @@
 package com.dexia.sofaxis.referentieltiers.application.creerentreprise;
 
-import org.highway.annotation.GenerateEjb;
-import org.highway.annotation.Interceptors;
-import org.highway.annotation.TransactionOption;
-import org.highway.annotation.TransactionOption.TransactionOptions;
+import org.highway.service.Service;
+import org.highway.service.ServiceInterceptors;
 import org.highway.service.dynamic.DynamicService;
 import org.highway.service.ejb.EjbService;
+import org.highway.transaction.TransactionInterceptor;
+import org.highway.transaction.TransactionOption;
+import org.highway.transaction.TransactionOption.TransactionOptions;
 
 import com.dexia.sofaxis.referentieltiers.access.entreprise.Entreprise;
-import com.dexia.sofaxis.tools.services.ApplicationService;
 /**
  * 
  * @author frilaine
  * @highway.service.generate.ejb
  * @socle.service.interceptors org.highway.transaction.TransactionInterceptor 
  */
-@GenerateEjb
-@Interceptors("org.highway.transaction.TransactionInterceptor")
-public interface CreerEntreprise extends ApplicationService, DynamicService, EjbService {
+@org.highway.service.ejb.GenerateEjb
+@ServiceInterceptors(TransactionInterceptor.class)
+public interface CreerEntreprise extends Service, DynamicService, EjbService {
 	
 	/**
 	 * @socle.service.transaction Required

@@ -3,7 +3,7 @@
  */
 package com.dexia.sofaxis.referentieltiers.application.rechercheentreprise;
 
-import javax.naming.directory.SearchResult;
+
 
 import org.highway.service.Service;
 import org.highway.service.dynamic.DynamicService;
@@ -11,6 +11,7 @@ import org.highway.service.ejb.EjbService;
 
 import com.dexia.sofaxis.referentieltiers.access.entreprise.Entreprise;
 import com.dexia.sofaxis.referentieltiers.access.entreprise.RechercheEntrepriseCritere;
+import com.dexia.sofaxis.tools.common.SearchResult;
 
 /**
  * @highway.service.generate.ejb

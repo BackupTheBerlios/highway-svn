@@ -1,10 +1,10 @@
 package com.dexia.sofaxis.referentieltiers.access.entreprise;
 
 
+import org.highway.service.Service;
 import org.highway.service.dynamic.DynamicService;
 
 import com.dexia.sofaxis.tools.common.SearchResult;
-import com.dexia.sofaxis.tools.services.AccessService;
 
 
 

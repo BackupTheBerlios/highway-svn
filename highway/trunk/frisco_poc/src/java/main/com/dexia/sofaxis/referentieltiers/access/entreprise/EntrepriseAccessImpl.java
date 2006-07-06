@@ -4,17 +4,19 @@
 package com.dexia.sofaxis.referentieltiers.access.entreprise;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import org.highway.database.DatabaseAccessBase;
+import org.highway.database.SelectQuery;
 import org.highway.helper.StringHelper;
 
-import com.dexia.sofaxis.referentieltiers.access.common.AccessServiceSessionImpl;
 import com.dexia.sofaxis.tools.common.SearchResult;
 import com.dexia.sofaxis.tools.common.UUIDHelper;
 
 /**
  * 
  */
-public class EntrepriseAccessImpl extends AccessServiceSessionImpl implements EntrepriseAccess {
+public class EntrepriseAccessImpl extends DatabaseAccessBase implements EntrepriseAccess {
 	private static final int MAX_DOUBLON = 10;
 
 	public SearchResult<Entreprise> chargerEntreprise(RechercheEntrepriseCritere critere, int maxResultat)
@@ -81,5 +83,31 @@ public class EntrepriseAccessImpl extends AccessServiceSessionImpl implements En
 		}
 		getSession().insertOrUpdate(entreprise);
 	}
+	/**
+	 * Requête de recherche
+	 * @param queryHql Requête HQL de recherche
+	 * @param parameters Liste des paramètres de la requêtes
+	 * @param maxResult Nombre maximum d'enregistrements retourné
+	 * @return
+	 */
+	protected SearchResult search(String queryHql, List parameters,int maxResult )
+	{
 
+		SelectQuery selectQuery = getSession().createSelectQuery();
+		
+		selectQuery.addQueryText(queryHql);
+		selectQuery.setParameters(parameters);
+		selectQuery.setFetchMax(maxResult+1);
+		selectQuery.setCheckTooManyResults(false);
+		
+		List resultList = selectQuery.list();
+		
+		boolean hasMoreResult = false;
+		if (resultList.size() > maxResult)
+		{
+			hasMoreResult = true;
+			resultList.remove(maxResult);
+		}	
+		return new SearchResult(resultList, hasMoreResult);
+	}
 }

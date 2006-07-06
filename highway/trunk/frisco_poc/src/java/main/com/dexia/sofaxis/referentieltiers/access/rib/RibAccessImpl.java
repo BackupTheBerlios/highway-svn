@@ -3,10 +3,11 @@
  */
 package com.dexia.sofaxis.referentieltiers.access.rib;
 
-import com.dexia.sofaxis.referentieltiers.access.common.AccessServiceSessionImpl;
+import org.highway.database.DatabaseAccessBase;
+
 import com.dexia.sofaxis.tools.common.UUIDHelper;
 
-public class RibAccessImpl extends AccessServiceSessionImpl implements
+public class RibAccessImpl extends DatabaseAccessBase implements
 		RibAccess {
 
 
