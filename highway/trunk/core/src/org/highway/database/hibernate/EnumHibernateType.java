@@ -4,17 +4,18 @@
 
 package org.highway.database.hibernate;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.hibernate.HibernateException;
+import org.hibernate.type.ImmutableType;
+import org.hibernate.type.Type;
 import org.highway.bean.Enum;
 import org.highway.exception.BugException;
 import org.highway.exception.TechnicalException;
 import org.highway.helper.ClassHelper;
 import org.highway.helper.StringHelper;
-import net.sf.hibernate.HibernateException;
-import net.sf.hibernate.type.ImmutableType;
-import net.sf.hibernate.type.Type;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 /**
  * <p>

@@ -4,9 +4,10 @@
 
 package org.highway.database;
 
-import org.highway.lifecycle.Closeable;
 import java.util.Iterator;
 import java.util.List;
+
+import org.highway.lifecycle.Closeable;
 
 /**
  * <p>An object-oriented representation of a select query. This interface

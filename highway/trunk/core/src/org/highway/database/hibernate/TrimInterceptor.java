@@ -3,10 +3,12 @@ package org.highway.database.hibernate;
 import java.io.Serializable;
 import java.util.Iterator;
 
-import net.sf.hibernate.Hibernate;
-import net.sf.hibernate.Interceptor;
-import net.sf.hibernate.type.Type;
-
+import org.hibernate.CallbackException;
+import org.hibernate.EntityMode;
+import org.hibernate.Hibernate;
+import org.hibernate.Interceptor;
+import org.hibernate.Transaction;
+import org.hibernate.type.Type;
 import org.highway.bean.BeanMetadataHome;
 import org.highway.helper.StringHelper;
 import org.highway.helper.StringHelper.TrimPolicy;
@@ -171,5 +173,47 @@ public class TrimInterceptor implements Interceptor, Serializable
 		}
 		
 		return result;
+	}
+
+	public Boolean isTransient(Object arg0)
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object instantiate(String arg0, EntityMode arg1, Serializable arg2) throws CallbackException
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getEntityName(Object arg0) throws CallbackException
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getEntity(String arg0, Serializable arg1) throws CallbackException
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void afterTransactionBegin(Transaction arg0)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void beforeTransactionCompletion(Transaction arg0)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void afterTransactionCompletion(Transaction arg0)
+	{
+		// TODO Auto-generated method stub
+		
 	}
 }

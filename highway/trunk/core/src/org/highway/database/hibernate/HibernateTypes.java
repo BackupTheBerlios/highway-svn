@@ -4,14 +4,14 @@
 
 package org.highway.database.hibernate;
 
-import net.sf.hibernate.Hibernate;
-import net.sf.hibernate.type.Type;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.TimeZone;
 
+import org.hibernate.Hibernate;
+import org.hibernate.type.Type;
 import org.highway.bean.Decimal;
 import org.highway.bean.Enum;
 import org.highway.exception.TechnicalException;
@@ -24,6 +24,7 @@ import org.highway.helper.ClassHelper;
  * 
  * 
  */
+
 class HibernateTypes
 {
 	/**
@@ -31,7 +32,7 @@ class HibernateTypes
 	 * Key = Java Class object, value = Hibernate Type object.
 	 */
 	private static Map types;
-
+ 
 	static
 	{
 		types = new HashMap();

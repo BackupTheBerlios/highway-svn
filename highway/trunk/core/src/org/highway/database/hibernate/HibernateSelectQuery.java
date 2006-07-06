@@ -4,16 +4,17 @@
 
 package org.highway.database.hibernate;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.highway.bean.ValueObjectHelper;
 import org.highway.database.SelectQuery;
 import org.highway.database.TooManyResultsExeption;
 import org.highway.exception.TechnicalException;
 import org.highway.helper.CollectionHelper;
-import net.sf.hibernate.HibernateException;
-import net.sf.hibernate.Query;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * Implementation of <tt>SelectQuery</tt> interface to use the Hibernate

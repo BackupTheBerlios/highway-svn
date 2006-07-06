@@ -4,6 +4,13 @@
 
 package org.highway.database.hibernate;
 
+import java.io.Serializable;
+import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.HibernateException;
+import org.hibernate.classic.Session;
 import org.highway.bean.ValueObject;
 import org.highway.bean.ValueObjectHelper;
 import org.highway.database.Database;
@@ -11,16 +18,9 @@ import org.highway.database.DatabaseSession;
 import org.highway.database.SelectQuery;
 import org.highway.exception.TechnicalException;
 import org.highway.helper.CollectionHelper;
-import net.sf.hibernate.HibernateException;
-import net.sf.hibernate.Session;
-import java.io.Serializable;
-import java.sql.Connection;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Implementation of the DatabaseSession interface for Hibernate.
- *
  * 
  */
 class HibernateSession implements DatabaseSession
@@ -153,7 +153,8 @@ class HibernateSession implements DatabaseSession
 
 		try
 		{
-			List result = session.find(query);
+			List result = session.createQuery(query).list();
+			
 			ValueObjectHelper.setSaved(result);
 			session.clear();
 
@@ -171,10 +172,9 @@ class HibernateSession implements DatabaseSession
 
 		try
 		{
-			List result =
-				session.find(
-					query, parameter,
-					HibernateTypes.getType(parameter.getClass()));
+			List result = 
+				session.createQuery(query).setParameter(parameter.toString(),
+					HibernateTypes.getParameterType(parameter)).list();
 			ValueObjectHelper.setSaved(result);
 			session.clear();
 
@@ -192,10 +192,9 @@ class HibernateSession implements DatabaseSession
 
 		try
 		{
-			List result =
-				session.find(
-					query, parameters,
-					HibernateTypes.getParameterTypes(parameters));
+			List result = 
+				session.createQuery(query).setParameters(parameters,
+					HibernateTypes.getParameterTypes(parameters)).list();
 			ValueObjectHelper.setSaved(result);
 			session.clear();
 

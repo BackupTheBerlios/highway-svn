@@ -4,12 +4,13 @@
 
 package org.highway.database.hibernate;
 
+import org.hibernate.HibernateException;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 import org.highway.database.Database;
 import org.highway.database.DatabaseSession;
 import org.highway.exception.TechnicalException;
-import net.sf.hibernate.HibernateException;
-import net.sf.hibernate.SessionFactory;
-import net.sf.hibernate.cfg.Configuration;
+
 
 /**
  * Implementation of Database interface to use the Hibernate persistance

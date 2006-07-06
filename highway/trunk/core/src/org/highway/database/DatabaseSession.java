@@ -4,9 +4,10 @@
 
 package org.highway.database;
 
-import org.highway.lifecycle.Closeable;
 import java.sql.Connection;
 import java.util.List;
+
+import org.highway.lifecycle.Closeable;
 
 /**
  * Defines a SQL database session. Provides database access through select,

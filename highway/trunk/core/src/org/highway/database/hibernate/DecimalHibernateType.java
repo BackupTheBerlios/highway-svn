@@ -4,14 +4,14 @@
 
 package org.highway.database.hibernate;
 
-import org.highway.bean.Decimal;
-
-import net.sf.hibernate.HibernateException;
-import net.sf.hibernate.type.ImmutableType;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
+
+import org.hibernate.HibernateException;
+import org.hibernate.type.ImmutableType;
+import org.highway.bean.Decimal;
 
 /**
  * Class used in generated Hibernate mapping files (*.hbm.xml) to represent attributes declared as Decimal in ValueObject interfaces
