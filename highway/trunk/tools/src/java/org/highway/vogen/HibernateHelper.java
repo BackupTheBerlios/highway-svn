@@ -3,6 +3,7 @@ package org.highway.vogen;
 import org.highway.database.DiscriminatorColumn;
 import org.highway.database.Identity;
 import org.highway.database.Mapped;
+import org.highway.database.MappedOn;
 
 import com.sun.mirror.declaration.InterfaceDeclaration;
 import com.sun.mirror.declaration.MethodDeclaration;
@@ -46,7 +47,8 @@ public class HibernateHelper {
 	private static InterfaceType superEntity(InterfaceDeclaration aDeclaration) {
 		for (InterfaceType superEntityDefInterface : aDeclaration.getSuperinterfaces())
 		{
-			if (superEntityDefInterface.getDeclaration().getAnnotation(Mapped.class)!=null){
+			if (superEntityDefInterface.getDeclaration().getAnnotation(Mapped.class)!=null
+					|| superEntityDefInterface.getDeclaration().getAnnotation(MappedOn.class)!=null){
 				return superEntityDefInterface;
 			}
 		}
@@ -62,7 +64,7 @@ public class HibernateHelper {
 				&& aDeclaration.getAnnotation(DiscriminatorColumn.class)==null;
 	}
 
-	public static String keyColumn(InterfaceDeclaration aDeclaration) throws VoGenException 
+	public static String keyColumn(InterfaceDeclaration aDeclaration)  
 	{
 		MethodDeclaration methodId = null;
 		for (MethodDeclaration method : aDeclaration.getMethods())
@@ -74,12 +76,17 @@ public class HibernateHelper {
 
 		if (methodId == null)
 		{
-			throw new VoGenException(
-				"no id mapping found in hierarchy of class "
-				+ aDeclaration.getQualifiedName());
-		}
+			String key = null;
+			for (InterfaceType interfaceType : aDeclaration.getSuperinterfaces())
+			{
+				key = keyColumn(interfaceType.getDeclaration());
+				if (key!=null)
+					return key;
+			} 
 
-		return VoGenHelper.getPropertyName(methodId);
+		}
+		return methodId.getAnnotation(MappedOn.class).value();
+		//return VoGenHelper.getPropertyName(methodId);
 	}
 
 }

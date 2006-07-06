@@ -60,13 +60,6 @@ public class HighwayDecoratedInterfaceDeclaration extends
 		return HibernateHelper.isJoinedSubclass((InterfaceDeclaration) this.delegate);
 	}
 	public String getKeyColumn(){
-		try
-		{
-			return HibernateHelper.keyColumn((InterfaceDeclaration)this.delegate);
-		}
-		catch (VoGenException e)
-		{
-			return "";
-		}
+		return HibernateHelper.keyColumn((InterfaceDeclaration)this.delegate);
 	}
 }
