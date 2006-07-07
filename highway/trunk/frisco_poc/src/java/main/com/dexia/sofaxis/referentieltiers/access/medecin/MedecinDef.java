@@ -5,11 +5,13 @@ import java.util.Date;
 import org.highway.bean.MandatoryProperty;
 import org.highway.database.DiscriminatorValue;
 import org.highway.database.MappedOn;
+import org.highway.database.MappingKey;
 
 import com.dexia.sofaxis.referentieltiers.access.personnemorale.PersonneMoraleTiersDef;
 
 @MappedOn("MEDECINTIERS")
 @DiscriminatorValue("MEDECIN")
+@MappingKey("TIERSID")
 public interface MedecinDef extends PersonneMoraleTiersDef
  {
 	@MappedOn("NUMEROADELI")

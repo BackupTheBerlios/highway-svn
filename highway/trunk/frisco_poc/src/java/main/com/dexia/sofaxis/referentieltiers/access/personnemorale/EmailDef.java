@@ -5,8 +5,8 @@ import org.highway.database.MappedOn;
 
 @MappedOn("EMAIL")
 public interface EmailDef extends org.highway.bean.ValueObject {
-	@MappedOn("emailId")
 	@Identity
+	@MappedOn("emailId")
     public String getEmailId();
     @MappedOn("valeur")
     public String getValeur();

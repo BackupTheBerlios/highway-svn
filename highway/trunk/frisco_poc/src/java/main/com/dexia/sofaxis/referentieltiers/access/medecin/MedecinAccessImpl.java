@@ -10,6 +10,7 @@ import java.util.List;
 
 import org.highway.database.DatabaseAccessBase;
 import org.highway.database.SelectQuery;
+import org.highway.debug.DebugHome;
 import org.highway.helper.StringHelper;
 
 import com.dexia.sofaxis.tools.common.SearchResult;
@@ -109,8 +110,9 @@ public class MedecinAccessImpl extends DatabaseAccessBase implements
 	public void creerOuMettreAJour(Medecin medecin) {
 		if (medecin.isNew())
 		{
-			medecin.setTiersId(UUIDHelper.newUUID());
+			medecin.setTiersId(UUIDHelper.newUUID().substring(0,10));
 		}
+		DebugHome.debugValue("new medecin", medecin);
 		getSession().insertOrUpdate(medecin);
 	}
 

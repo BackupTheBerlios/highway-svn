@@ -3,6 +3,7 @@ package com.dexia.sofaxis.referentieltiers.access.entreprise;
 
 import java.util.Date;
 
+import org.highway.database.DiscriminatorColumn;
 import org.highway.database.DiscriminatorValue;
 import org.highway.database.MappedOn;
 

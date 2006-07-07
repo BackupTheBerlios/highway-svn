@@ -7,8 +7,8 @@ import org.highway.database.Identity;
 import org.highway.database.MappedOn;
 
 
-@MappedOn("REFERENTIELTIERS")
-@DiscriminatorColumn(column="TYPETIERS", type="String")
+@MappedOn("REFERENTIEL_TIERS")
+@DiscriminatorColumn(column="TYPETIERS", type="java.lang.String")
 public interface ReferentielTiersDef extends ValueObject {
 
 	@Identity
