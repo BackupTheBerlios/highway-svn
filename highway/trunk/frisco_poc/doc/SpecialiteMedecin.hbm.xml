@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class 
+		name="com.dexia.sofaxis.referentieltiers.access.medecin.SpecialiteMedecin"
+		mutable="false"
+		table="SPECMED">
+		<cache usage="read-only"/>
+		<id name="code" access="field">
+			<column name="CODE" />
+			<generator class="assigned" />
+		</id>
+		<property name="dateEffet" access="field">
+			<column name="EFFET" />
+		</property>
+		<property name="dateFinEffet" access="field">
+			<column name="FINEFFET" />
+		</property>
+	</class>
+</hibernate-mapping>

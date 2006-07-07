@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.dexia.sofaxis.referentieltiers.access.personnemorale.Email" table="EMAIL" lazy="false" >
+        <id name="emailId" type="com.dexia.sofaxis.tools.hibernate.UUIDUserType" access="field">
+            <column name="EMAILID" />
+            <generator class="assigned" />
+        </id>
+        <property name="valeur" access="field">
+            <column name="VALEUR"/>
+        </property>
+    </class>
+</hibernate-mapping>

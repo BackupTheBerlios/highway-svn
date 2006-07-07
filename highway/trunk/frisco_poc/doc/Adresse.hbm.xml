@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.dexia.sofaxis.referentieltiers.access.adresse.Adresse" table="ADRESSE" lazy="false">
+        <id name="adresseId" type="com.dexia.sofaxis.tools.hibernate.UUIDUserType" access="field">
+            <column name="ADRESSEID" />
+            <generator class="assigned" />
+        </id>
+        <property name="complementRemise" access="field">
+            <column name="COMPLEMENTREMISE" />
+        </property>
+        <property name="typeVoie" access="field">
+            <column name="TYPEVOIE" />
+        </property>
+        <property name="numero" access="field">
+            <column name="NUMERO" />
+        </property>
+        <property name="nomVoie" access="field">
+            <column name="NOMVOIE" />
+        </property>
+        <property name="complement" access="field">
+            <column name="COMPLEMENT" />
+        </property>
+        <property name="boitePostale" access="field">
+            <column name="BOITEPOSTALE" />
+        </property>
+        <property name="libelleLocalite" access="field">
+            <column name="LIBELLELOCALITE"  />
+        </property>
+        <property name="codePostal" access="field">
+            <column name="CODEPOSTAL" />
+        </property>
+        <property name="libelleAcheminement" access="field">
+            <column name="LIBELLEACHEMINEMENT" />
+        </property>
+        <property name="typePays" access="field">
+            <column name="TYPEPAYS" />
+        </property>
+        <property name="afficherLocalite" access="field">
+            <column name="AFFICHERLOCALITE" />
+        </property>
+        <property name="observationsAdresse" access="field">
+            <column name="OBSERVATIONSADRESSE" />
+        </property>
+    </class>
+</hibernate-mapping>
