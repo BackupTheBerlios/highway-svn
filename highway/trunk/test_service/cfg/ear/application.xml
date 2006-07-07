@@ -5,21 +5,21 @@
 	
 <application id="Application_ID">
 	
-	<display-name>socle-j2ee-service-test</display-name>
+	<display-name>friscot</display-name>
 	
 	<module id="WebModule_ID">
 		<web>
-			<web-uri>socle-j2ee-service-test.war</web-uri>
-			<context-root>servicetest</context-root>
+			<web-uri>frisco.war</web-uri>
+			<context-root>frisco</context-root>
 		</web>
 	</module>
 	
 	<module id="EjbModule_ID">
-		<ejb>socle-j2ee-service-test_ejb.jar</ejb>
+		<ejb>frisco_ejb.jar</ejb>
 	</module>
 	
 	<module id="JcaModule_ID">
-		<connector>socle-j2ee-core.jar</connector> 
+		<connector>highway-core.jar</connector> 
 	</module>
 	
 </application>

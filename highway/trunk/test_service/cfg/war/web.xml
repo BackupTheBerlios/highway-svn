@@ -5,9 +5,9 @@
 
 	<display-name>Socle J2EE test service</display-name>
 
-	<listener>
-        <listener-class>org.highway.servicetest.ServiceTestListener</listener-class>
-    </listener>
+	<!--listener>
+        < listener-class>org.highway.servicetest.ServiceTestListener</listener-class>
+    </listener-->
 		
 	<resource-ref>
 		<res-ref-name>jdbc/demoDS</res-ref-name>
