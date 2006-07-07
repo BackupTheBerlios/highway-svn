@@ -8,44 +8,35 @@ import javax.transaction.Synchronization;
 import javax.transaction.SystemException;
 import javax.transaction.xa.XAResource;
 
-import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.highway.exception.BugException;
 
-class SimpleHibernateTransactionHolder implements javax.transaction.Transaction,
-		Status
+class SimpleHibernateTransactionHolder implements
+		javax.transaction.Transaction, Status
 {
-	private int status = STATUS_NO_TRANSACTION;
+	private int status = STATUS_ACTIVE;
 
 	private Transaction hibernateTransaction;
-
-	private Session hibernateSession;
 
 	public void commit() throws RollbackException, HeuristicMixedException,
 			HeuristicRollbackException, SecurityException,
 			IllegalStateException, SystemException
 	{
-		if (status == STATUS_NO_TRANSACTION)
-			throw new IllegalStateException("no transaction begun");
-		
-		if (status == STATUS_MARKED_ROLLBACK) rollback();
-		else
+		if (status == STATUS_MARKED_ROLLBACK)
+		{
+			rollback();
+		}
+		else if (status == STATUS_ACTIVE)
 		{
 			status = STATUS_COMMITTING;
-			hibernateTransaction.commit();
+			if (hibernateTransaction != null) hibernateTransaction.commit();
 			status = STATUS_COMMITTED;
 		}
-	}
-
-	public boolean delistResource(XAResource arg0, int arg1)
-			throws IllegalStateException, SystemException
-	{
-		return false;
-	}
-
-	public boolean enlistResource(XAResource arg0) throws RollbackException,
-			IllegalStateException, SystemException
-	{
-		return false;
+		else
+		{
+			throw new IllegalStateException(
+					"commit denied with transaction status = " + status);
+		}
 	}
 
 	public int getStatus() throws SystemException
@@ -53,46 +44,62 @@ class SimpleHibernateTransactionHolder implements javax.transaction.Transaction,
 		return status;
 	}
 
-	public void registerSynchronization(Synchronization arg0)
+	public void rollback() throws IllegalStateException, SystemException
+	{
+		if (status == STATUS_ACTIVE || status == STATUS_MARKED_ROLLBACK)
+		{
+			status = STATUS_ROLLING_BACK;
+			if (hibernateTransaction != null) hibernateTransaction.rollback();
+			status = STATUS_ROLLEDBACK;
+		}
+		else
+		{
+			throw new IllegalStateException(
+					"rollback denied with transaction status = " + status);
+		}
+	}
+
+	public void setRollbackOnly() throws IllegalStateException, SystemException
+	{
+		if (status == STATUS_ACTIVE || status == STATUS_MARKED_ROLLBACK)
+		{
+			status = STATUS_MARKED_ROLLBACK;
+		}
+		else
+		{
+			throw new IllegalStateException(
+					"setRollbackOnly denied with transaction status = "
+							+ status);
+		}
+	}
+
+	public boolean delistResource(XAResource arg0, int arg1)
+			throws IllegalStateException, SystemException
+	{
+		throw new UnsupportedOperationException();
+	}
+
+	public boolean enlistResource(XAResource arg0) throws RollbackException,
+			IllegalStateException, SystemException
+	{
+		throw new UnsupportedOperationException();
+	}
+
+	public void registerSynchronization(Synchronization synchronization)
 			throws RollbackException, IllegalStateException, SystemException
 	{
 		throw new UnsupportedOperationException();
 	}
 
-	public void rollback() throws IllegalStateException, SystemException
+	void setTimeout(int timeout)
 	{
-		if (status == STATUS_NO_TRANSACTION)
-			throw new IllegalStateException("no transaction begun");
+	}
+
+	void setHibernateTransaction(Transaction transaction)
+	{
+		if (hibernateTransaction != null)
+			throw new BugException("hibernate transaction already set");
 		
-		status = STATUS_ROLLING_BACK;
-		hibernateTransaction.rollback();
-		status = STATUS_ROLLEDBACK;
+		this.hibernateTransaction = transaction;
 	}
-
-	public void setRollbackOnly() throws IllegalStateException, SystemException
-	{
-		if (status != STATUS_NO_TRANSACTION) status = STATUS_MARKED_ROLLBACK;
-	}
-
-	public void setTimeout(int timeout)
-	{
-	}
-
-	void activate()
-	{
-		if (status == STATUS_ACTIVE)
-			throw new IllegalStateException("transaction already active");
-		
-		hibernateTransaction = hibernateSession.beginTransaction();
-		status = STATUS_ACTIVE;
-	}
-	
-	void enlistHibernateSession(Session hibernateSession)
-	{
-		this.hibernateSession = hibernateSession;
-		
-		if (status == STATUS_ACTIVE)
-			hibernateTransaction = hibernateSession.beginTransaction();
-	}
-
 }

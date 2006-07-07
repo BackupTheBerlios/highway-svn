@@ -12,7 +12,6 @@ import java.util.List;
 import javax.transaction.TransactionManager;
 
 import org.hibernate.HibernateException;
-import org.hibernate.Transaction;
 import org.hibernate.classic.Session;
 import org.highway.bean.ValueObject;
 import org.highway.bean.ValueObjectHelper;
@@ -528,8 +527,13 @@ class HibernateSession implements DatabaseSession
 	{
 		try
 		{
-			session.close();
-			session = null;
+			// necessary to avoid errors when closing
+			// session several times
+			if (session != null)
+			{
+				session.close();
+				session = null;
+			}
 		}
 		catch (HibernateException exc)
 		{
