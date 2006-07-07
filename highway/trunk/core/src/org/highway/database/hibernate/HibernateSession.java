@@ -9,7 +9,10 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.transaction.TransactionManager;
+
 import org.hibernate.HibernateException;
+import org.hibernate.Transaction;
 import org.hibernate.classic.Session;
 import org.highway.bean.ValueObject;
 import org.highway.bean.ValueObjectHelper;
@@ -18,10 +21,10 @@ import org.highway.database.DatabaseSession;
 import org.highway.database.SelectQuery;
 import org.highway.exception.TechnicalException;
 import org.highway.helper.CollectionHelper;
+import org.highway.transaction.TransactionHome;
 
 /**
  * Implementation of the DatabaseSession interface for Hibernate.
- * 
  */
 class HibernateSession implements DatabaseSession
 {
@@ -37,7 +40,7 @@ class HibernateSession implements DatabaseSession
 
 	/**
 	 * Constructs a HibernateSession object.
-	 *
+	 * 
 	 * @param session the real Hibernate session
 	 */
 	HibernateSession(HibernateDatabase database, Session session)
@@ -54,6 +57,15 @@ class HibernateSession implements DatabaseSession
 
 		this.database = database;
 		this.session = session;
+
+		TransactionManager transactionManager = TransactionHome
+				.getTransactionManager();
+		if (transactionManager instanceof SimpleHibernateTransactionManager)
+		{
+			Transaction transaction = session.beginTransaction();
+			((SimpleHibernateTransactionManager) transactionManager)
+					.registerHibernateTransaction(transaction);
+		}
 	}
 
 	public Database getDatabase()
@@ -87,15 +99,15 @@ class HibernateSession implements DatabaseSession
 	{
 		return select(type, new Long(id));
 	}
-	
+
 	public Object select(Class type, Object id)
 	{
 		checkIfClosed();
 
-		if (! (id instanceof Serializable))
+		if (!(id instanceof Serializable))
 		{
 			throw new IllegalArgumentException(
-				"Hibernate forces identifiers to be serializable");
+					"Hibernate forces identifiers to be serializable");
 		}
 
 		try
@@ -117,7 +129,7 @@ class HibernateSession implements DatabaseSession
 
 	public List select(List objects)
 	{
-		if (! CollectionHelper.isNullOrEmpty(objects))
+		if (!CollectionHelper.isNullOrEmpty(objects))
 		{
 			for (int i = 0; i < objects.size(); i++)
 			{
@@ -154,7 +166,7 @@ class HibernateSession implements DatabaseSession
 		try
 		{
 			List result = session.createQuery(query).list();
-			
+
 			ValueObjectHelper.setSaved(result);
 			session.clear();
 
@@ -172,8 +184,8 @@ class HibernateSession implements DatabaseSession
 
 		try
 		{
-			List result = 
-				session.createQuery(query).setParameter(parameter.toString(),
+			List result = session.createQuery(query).setParameter(
+					parameter.toString(),
 					HibernateTypes.getParameterType(parameter)).list();
 			ValueObjectHelper.setSaved(result);
 			session.clear();
@@ -192,8 +204,7 @@ class HibernateSession implements DatabaseSession
 
 		try
 		{
-			List result = 
-				session.createQuery(query).setParameters(parameters,
+			List result = session.createQuery(query).setParameters(parameters,
 					HibernateTypes.getParameterTypes(parameters)).list();
 			ValueObjectHelper.setSaved(result);
 			session.clear();
@@ -251,22 +262,22 @@ class HibernateSession implements DatabaseSession
 		}
 	}
 
-	//	public void insert(Object object, Serializable id)
-	//	{
-	//		if (session == null)
-	//			throw new IllegalStateException("Hibernate session closed");
+	// public void insert(Object object, Serializable id)
+	// {
+	// if (session == null)
+	// throw new IllegalStateException("Hibernate session closed");
 	//
-	//		try
-	//		{
-	//			session.save(object, id);
-	//			session.flush();
-	//			session.evict(object);
-	//		}
-	//		catch (HibernateException e)
-	//		{
-	//			throw new TechnicalException(e);
-	//		}
-	//	}
+	// try
+	// {
+	// session.save(object, id);
+	// session.flush();
+	// session.evict(object);
+	// }
+	// catch (HibernateException e)
+	// {
+	// throw new TechnicalException(e);
+	// }
+	// }
 	public void insertOrUpdate(Object object)
 	{
 		checkIfClosed();
@@ -390,10 +401,10 @@ class HibernateSession implements DatabaseSession
 
 		try
 		{
-			if (! (id instanceof Serializable))
+			if (!(id instanceof Serializable))
 			{
 				throw new IllegalArgumentException(
-					"Hibernate forces identifiers to be serializable");
+						"Hibernate forces identifiers to be serializable");
 			}
 
 			Object object = session.load(type, (Serializable) id);
@@ -415,10 +426,10 @@ class HibernateSession implements DatabaseSession
 		{
 			for (int i = 0; i < ids.length; i++)
 			{
-				if (! (ids[i] instanceof Serializable))
+				if (!(ids[i] instanceof Serializable))
 				{
 					throw new IllegalArgumentException(
-						"Hibernate forces identifiers to be serializable");
+							"Hibernate forces identifiers to be serializable");
 				}
 
 				session.delete(session.load(type, (Serializable) ids[i]));
@@ -488,8 +499,8 @@ class HibernateSession implements DatabaseSession
 
 		try
 		{
-			session.delete(
-				query, parameter, HibernateTypes.getParameterType(parameter));
+			session.delete(query, parameter, HibernateTypes
+					.getParameterType(parameter));
 			session.flush();
 		}
 		catch (HibernateException e)
@@ -504,8 +515,8 @@ class HibernateSession implements DatabaseSession
 
 		try
 		{
-			session.delete(
-				query, parameters, HibernateTypes.getParameterTypes(parameters));
+			session.delete(query, parameters, HibernateTypes
+					.getParameterTypes(parameters));
 			session.flush();
 		}
 		catch (HibernateException e)
@@ -523,8 +534,8 @@ class HibernateSession implements DatabaseSession
 		}
 		catch (HibernateException exc)
 		{
-			throw new TechnicalException(
-				"Failed to close hibernate session", exc);
+			throw new TechnicalException("Failed to close hibernate session",
+					exc);
 		}
 	}
 
@@ -536,7 +547,7 @@ class HibernateSession implements DatabaseSession
 	/**
 	 * Evicts the specified persistent object from the session cache.<br>
 	 * Does nothing if the specified object is null.
-	 *
+	 * 
 	 * @param object the object to evict
 	 */
 	void evict(Object object) throws HibernateException

@@ -28,27 +28,6 @@ public class HibernateDatabase implements Database
 	/**
 	 * Constructs a HibernateDatabase object.
 	 *
-	 * @param resource path of the Hibernate properties file in the classpath
-	 * @deprecated replaced by {@link #HibernateDatabase(net.sf.hibernate.cfg.Configuration)}
-	 */
-	public HibernateDatabase(String resource)
-	{
-		try
-		{
-			factory =
-				new Configuration().configure(resource).buildSessionFactory();
-		}
-		catch (Exception exc)
-		{
-			throw new TechnicalException(
-				"Failed to configure Hibernate with resource file " + resource,
-				exc);
-		}
-	}
-
-	/**
-	 * Constructs a HibernateDatabase object.
-	 *
 	 * @param configuration an Hibernate Configuration instance
 	 * 
 	 */
