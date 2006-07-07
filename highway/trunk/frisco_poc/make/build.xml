@@ -3,8 +3,9 @@
 <project name="frisco_poc" default="metier.generate" basedir="..">
 
 	<taskdef resource="org/highway/anttasks.properties">
-		<classpath path="../highway_tools/bin/pack/highway-tools.jar"/>
+		<classpath path="../highway_tools/bin/pack/highway-tools.jar" />
 	</taskdef>
+	
 	<path id="core.test.classpath">
 		<pathelement location="src/java/main" />
 		<pathelement location="bin/eclipse" />
@@ -20,11 +21,11 @@
 		<delete dir="bin/cfg"/>
 		<mkdir dir="bin/cfg"/>
 			
-		<vogen inputDir="src/java/main" outputDir="bin/gensrc" >
+		<vogen inputDir="src/java/main" outputDir="bin/gensrc" destdir="bin/aptclasses">
 			<classpath refid="core.test.classpath"/>
 		</vogen>
 
-		<ejbgen inputDir="src/java/main/" outputDir="bin/gensrc" outputCfgDir="bin\cfg">
+		<ejbgen inputDir="src/java/main/" outputDir="bin/gensrc" destdir="bin/aptclasses" outputCfgDir="cfg">
 			<classpath refid="core.test.classpath"/>
 		</ejbgen>
 
