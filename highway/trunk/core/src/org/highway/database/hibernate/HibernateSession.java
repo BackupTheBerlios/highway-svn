@@ -9,10 +9,9 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.transaction.TransactionManager;
-
 import org.hibernate.HibernateException;
-import org.hibernate.classic.Session;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.highway.bean.ValueObject;
 import org.highway.bean.ValueObjectHelper;
 import org.highway.database.Database;
@@ -20,7 +19,6 @@ import org.highway.database.DatabaseSession;
 import org.highway.database.SelectQuery;
 import org.highway.exception.TechnicalException;
 import org.highway.helper.CollectionHelper;
-import org.highway.transaction.TransactionHome;
 
 /**
  * Implementation of the DatabaseSession interface for Hibernate.
@@ -57,13 +55,14 @@ class HibernateSession implements DatabaseSession
 		this.database = database;
 		this.session = session;
 
-		TransactionManager transactionManager = TransactionHome
-				.getTransactionManager();
-		if (transactionManager instanceof SimpleHibernateTransactionManager)
-		{
-			((SimpleHibernateTransactionManager) transactionManager)
-					.enlistHibernateSession(session);
-		}
+		/*
+		 * The SimpleHibernateTransactionManager can be used when no transaction
+		 * manager is available in a development environment. It needs the
+		 * hibernate session to create and manage hibernate transactions. If the
+		 * SimpleHibernateTransactionManager is not transaction manager set in
+		 * the transaction home, this method does nothing.
+		 */
+		SimpleHibernateTransactionManager.setCurrentSession(session);
 	}
 
 	public Database getDatabase()
@@ -260,22 +259,6 @@ class HibernateSession implements DatabaseSession
 		}
 	}
 
-	// public void insert(Object object, Serializable id)
-	// {
-	// if (session == null)
-	// throw new IllegalStateException("Hibernate session closed");
-	//
-	// try
-	// {
-	// session.save(object, id);
-	// session.flush();
-	// session.evict(object);
-	// }
-	// catch (HibernateException e)
-	// {
-	// throw new TechnicalException(e);
-	// }
-	// }
 	public void insertOrUpdate(Object object)
 	{
 		checkIfClosed();
@@ -491,14 +474,16 @@ class HibernateSession implements DatabaseSession
 		}
 	}
 
-	public void delete(String query, Object parameter)
+	public void delete(String queryString, Object parameter)
 	{
 		checkIfClosed();
 
 		try
 		{
-			session.delete(query, parameter, HibernateTypes
+			Query query = session.createQuery(queryString);
+			query.setParameter(0, parameter, HibernateTypes
 					.getParameterType(parameter));
+			query.executeUpdate();
 			session.flush();
 		}
 		catch (HibernateException e)
@@ -507,14 +492,16 @@ class HibernateSession implements DatabaseSession
 		}
 	}
 
-	public void delete(String query, Object[] parameters)
+	public void delete(String queryString, Object[] parameters)
 	{
 		checkIfClosed();
 
 		try
 		{
-			session.delete(query, parameters, HibernateTypes
+			Query query = session.createQuery(queryString);
+			query.setParameters(parameters, HibernateTypes
 					.getParameterTypes(parameters));
+			query.executeUpdate();
 			session.flush();
 		}
 		catch (HibernateException e)
@@ -527,13 +514,8 @@ class HibernateSession implements DatabaseSession
 	{
 		try
 		{
-			// necessary to avoid errors when closing
-			// session several times
-			if (session != null)
-			{
-				session.close();
-				session = null;
-			}
+			session.close();
+			session = null;
 		}
 		catch (HibernateException exc)
 		{

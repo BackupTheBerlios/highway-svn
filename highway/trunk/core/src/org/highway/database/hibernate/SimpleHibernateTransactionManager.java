@@ -11,6 +11,7 @@ import javax.transaction.TransactionManager;
 
 import org.hibernate.Session;
 import org.highway.service.context.RequestContextHome;
+import org.highway.transaction.TransactionHome;
 
 public class SimpleHibernateTransactionManager implements TransactionManager
 {
@@ -101,24 +102,36 @@ public class SimpleHibernateTransactionManager implements TransactionManager
 		if (transaction != null) transaction.setTimeout(timeout);
 	}
 
-	void enlistHibernateSession(Session session)
-	{
-		if (getCurrentSession() != null)
-			throw new UnsupportedOperationException(
-					"opening 2 hibernate session in the same service request is not supported by this transaction manager");
-
-		RequestContextHome.getRequestContext().setResource(SESSION_CONTEXT_KEY,
-				session);
-
-		SimpleHibernateTransactionHolder transaction = localTransaction.get();
-
-		if (transaction != null)
-			transaction.setHibernateTransaction(session.beginTransaction());
-	}
-
-	private Session getCurrentSession()
+	private static Session getCurrentSession()
 	{
 		return (Session) RequestContextHome.getRequestContext().getResource(
 				SESSION_CONTEXT_KEY);
+	}
+
+	/**
+	 * This method must only be used by the HibernateSession to pass the session
+	 * to the SimpleHibernateTransactionManager when this transaction manager is
+	 * the main transaction manager set in the transaction home. This method is
+	 * testing if the main transaction manager is a
+	 * SimpleHibernateTransactionManager and does nothing if not.
+	 */
+	static void setCurrentSession(Session session)
+	{
+		if (TransactionHome.getTransactionManager() instanceof SimpleHibernateTransactionManager)
+		{
+			if (getCurrentSession() != null)
+				throw new UnsupportedOperationException(
+						"use 2 hibernate session in the same service request is not supported by this transaction manager");
+
+			RequestContextHome.getRequestContext().setResource(
+					SESSION_CONTEXT_KEY, session);
+
+			SimpleHibernateTransactionHolder transaction = localTransaction
+					.get();
+
+			if (transaction != null)
+				transaction.setHibernateTransaction(session.beginTransaction());
+		}
+
 	}
 }
