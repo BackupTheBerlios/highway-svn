@@ -62,9 +62,8 @@ class HibernateSession implements DatabaseSession
 				.getTransactionManager();
 		if (transactionManager instanceof SimpleHibernateTransactionManager)
 		{
-			Transaction transaction = session.beginTransaction();
 			((SimpleHibernateTransactionManager) transactionManager)
-					.registerHibernateTransaction(transaction);
+					.enlistHibernateSession(session);
 		}
 	}
 
