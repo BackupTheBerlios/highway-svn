@@ -3,10 +3,9 @@ package com.dexia.sofaxis.referentieltiers.access.adresse;
 
 import org.highway.database.Identity;
 import org.highway.database.MappedOn;
-import org.highway.vogen.GenerateAbstract;
 import org.highway.vogen.SerialVersionUID;
 
-@GenerateAbstract
+
 @MappedOn("ADRESSE")
 @SerialVersionUID(123L)
 public interface AdresseDef  extends org.highway.bean.ValueObject {

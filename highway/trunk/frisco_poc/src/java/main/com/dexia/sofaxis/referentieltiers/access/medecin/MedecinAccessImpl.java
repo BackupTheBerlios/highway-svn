@@ -110,7 +110,7 @@ public class MedecinAccessImpl extends DatabaseAccessBase implements
 	public void creerOuMettreAJour(Medecin medecin) {
 		if (medecin.isNew())
 		{
-			medecin.setTiersId(UUIDHelper.newUUID().substring(0,10));
+			medecin.setTiersId(UUIDHelper.newUUID());
 		}
 		DebugHome.debugValue("new medecin", medecin);
 		getSession().insertOrUpdate(medecin);

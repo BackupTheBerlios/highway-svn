@@ -9,19 +9,12 @@ import org.highway.transaction.TransactionOption;
 import org.highway.transaction.TransactionOption.TransactionOptions;
 
 import com.dexia.sofaxis.referentieltiers.access.entreprise.Entreprise;
-/**
- * 
- * @author frilaine
- * @highway.service.generate.ejb
- * @socle.service.interceptors org.highway.transaction.TransactionInterceptor 
- */
+
 @org.highway.service.ejb.GenerateEjb
 @ServiceInterceptors(TransactionInterceptor.class)
 public interface CreerEntreprise extends Service, DynamicService, EjbService {
 	
-	/**
-	 * @socle.service.transaction Required
-	 */		
-	@TransactionOption(TransactionOptions.MANDATORY)
+
+	@TransactionOption(TransactionOptions.REQUIRED)
 	public CreationEntrepriseInfo dedoublonnerEntreprise(Entreprise entreprise, boolean forcer);
 }
