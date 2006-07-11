@@ -10,7 +10,7 @@ import org.highway.debug.DebugHome;
 import org.highway.debug.DebugLog;
 import org.highway.debug.Log4jDebugLog;
 
-public class OneClassPerHierarchyTest extends TestCase
+public class OneTablePerSubClassTest extends TestCase
 {
 
 	private Database database;
@@ -57,17 +57,25 @@ public class OneClassPerHierarchyTest extends TestCase
 		assertTrue(session.select(Payment2.class, 102)==null);
 		
 		// insertion unitaire
-		int nbCashPayement = session.select("from Payment2").size();
+		int nbCashPayement = session.select("from CashPayment2").size();
+		int nbPayement = session.select("from Payment2").size();
+		int nbChequePayement = session.select("from ChequePayment2").size();
+		int nbCardPayement = session.select("from CreditCardPayment2").size();
+		
 		session.insert(cash);
-		assertEquals(session.select("from Payment2").size(), nbCashPayement+1);
+		assertEquals(session.select("from CashPayment2").size(), nbCashPayement+1);
+		assertEquals(session.select("from Payment2").size(), nbPayement+1);
 		session.delete(newCashPayment());
-		assertEquals(session.select("from Payment2").size(), nbCashPayement);
+		assertEquals(session.select("from CashPayment2").size(), nbCashPayement);
+		assertEquals(session.select("from Payment2").size(), nbPayement);
 		
 		// insertion multiple
-		int nbPayement = session.select("from Payment2").size();
 		session.insert(new Object[] {cash, cheque, card});
 		assertEquals(session.select("from Payment2").size(), nbPayement+3);
-
+		assertEquals(session.select("from CashPayment2").size(), nbCashPayement+1);
+		assertEquals(session.select("from CreditCardPayment2").size(), nbCardPayement+1);
+		assertEquals(session.select("from ChequePayment2").size(), nbChequePayement+1);
+		
 		//recherche
 		Object obj = session.select(CashPayment2.class, 100);
 		assertTrue(obj instanceof CashPayment2);
