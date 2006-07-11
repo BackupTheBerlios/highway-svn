@@ -48,6 +48,9 @@ public class OneClassPerHierarchyTest extends TestCase
 		
 		session.delete(new Object[] {cash, cheque, card});
 		
+		assertTrue(session.select(Payment.class, 100)==null);
+		assertTrue(session.select(Payment.class, 101)==null);
+		assertTrue(session.select(Payment.class, 102)==null);
 		
 		// insertion unitaire
 		int nbCashPayement = session.select("from Payment").size();
