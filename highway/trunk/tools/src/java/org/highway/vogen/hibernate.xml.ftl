@@ -1,4 +1,4 @@
-<@forAllTypes var="type" annotation="org.highway.database.MappedOn" includeInterfaces="true">
+<@forAllTypes var="type" annotation="org.highway.database.Mapped" includeInterfaces="true">
 <@file name="${type.generatedShortClassName}.hbm.xml" package="${type.package.qualifiedName}">
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-mapping PUBLIC

@@ -1,6 +1,6 @@
 package org.highway.vogen;
 
-import org.highway.database.DiscriminatorColumn;
+import org.highway.database.DiscriminatorValue;
 import org.highway.database.Identity;
 import org.highway.database.Mapped;
 import org.highway.database.MappedOn;
@@ -57,11 +57,11 @@ public class HibernateHelper {
 	public static boolean isSubclass(InterfaceDeclaration aDeclaration)
 	{
 		return superEntity(aDeclaration) != null
-				&& aDeclaration.getAnnotation(DiscriminatorColumn.class)!=null;
+				&& aDeclaration.getAnnotation(DiscriminatorValue.class)!=null;
 	}
 	public static boolean isJoinedSubclass(InterfaceDeclaration aDeclaration){
 		return superEntity(aDeclaration) != null
-				&& aDeclaration.getAnnotation(DiscriminatorColumn.class)==null;
+				&& aDeclaration.getAnnotation(DiscriminatorValue.class)==null;
 	}
 
 	public static String keyColumn(InterfaceDeclaration aDeclaration)  

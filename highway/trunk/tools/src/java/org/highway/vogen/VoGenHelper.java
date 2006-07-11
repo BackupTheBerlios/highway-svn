@@ -30,7 +30,6 @@ public class VoGenHelper
 	public static String getEntityClassName(InterfaceDeclaration decl)
 	{
 		String className = decl.getQualifiedName();
-
 		if (isDefInterface(decl))
 		{
 			className = removeDefSuffix(className);
@@ -126,7 +125,7 @@ public class VoGenHelper
 
 	public static String getResource(InterfaceDeclaration decl)
 	{
-		String result = VoGenHelper.getEntityClassName(decl);
+		String result = VoGenHelper.getGeneratedClassName(decl);
 		result = result.replace('.', '/');
 		result = MessageFormat.format(HIBERNATE_MAPPING_OUTPUT_FILE_NAME,
 				new Object[] {result});

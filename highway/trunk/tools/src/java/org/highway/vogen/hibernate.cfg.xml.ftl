@@ -9,7 +9,7 @@
 <hibernate-configuration>
 
 	<session-factory>
-<@forAllTypes var="type" annotation="org.highway.database.MappedOn" includeInterfaces="true">
+<@forAllTypes var="type" annotation="org.highway.database.Mapped" includeInterfaces="true">
 <mapping resource="${type.resourceHibernateFileName}"/>
 </@forAllTypes>
 	</session-factory>
