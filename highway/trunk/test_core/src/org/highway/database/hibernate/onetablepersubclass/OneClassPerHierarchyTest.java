@@ -1,4 +1,4 @@
-package org.highway.database.hibernate.onetableperclasshierarchy;
+package org.highway.database.hibernate.onetablepersubclass;
 
 import junit.framework.TestCase;
 
@@ -39,77 +39,74 @@ public class OneClassPerHierarchyTest extends TestCase
 	{
 		DatabaseSession session = database.openSession();
 		
-
-		
-		Payment1 cash = newCashPayment();
-		Payment1 cheque = newChequePayment();
-		Payment1 card = newCreditCardPayment();
-		if (session.select(Payment1.class, 100)!=null){
+		Payment2 cash = newCashPayment();
+		Payment2 cheque = newChequePayment();
+		Payment2 card = newCreditCardPayment();
+		if (session.select(Payment2.class, 100)!=null){
 			session.delete(cash);
 		}
-		if (session.select(Payment1.class, 101)!=null){
+		if (session.select(Payment2.class, 101)!=null){
 			session.delete(cheque);
 		}
-		if (session.select(Payment1.class, 102)!=null){
+		if (session.select(Payment2.class, 102)!=null){
 			session.delete(card);
 		}
 
-	
-		assertTrue(session.select(Payment1.class, 100)==null);
-		assertTrue(session.select(Payment1.class, 101)==null);
-		assertTrue(session.select(Payment1.class, 102)==null);
+		assertTrue(session.select(Payment2.class, 100)==null);
+		assertTrue(session.select(Payment2.class, 101)==null);
+		assertTrue(session.select(Payment2.class, 102)==null);
 		
 		// insertion unitaire
-		int nbCashPayement = session.select("from Payment1").size();
+		int nbCashPayement = session.select("from Payment2").size();
 		session.insert(cash);
-		assertEquals(session.select("from Payment1").size(), nbCashPayement+1);
+		assertEquals(session.select("from Payment2").size(), nbCashPayement+1);
 		session.delete(newCashPayment());
-		assertEquals(session.select("from Payment1").size(), nbCashPayement);
+		assertEquals(session.select("from Payment2").size(), nbCashPayement);
 		
 		// insertion multiple
-		int nbPayement = session.select("from Payment1").size();
+		int nbPayement = session.select("from Payment2").size();
 		session.insert(new Object[] {cash, cheque, card});
-		assertEquals(session.select("from Payment1").size(), nbPayement+3);
+		assertEquals(session.select("from Payment2").size(), nbPayement+3);
 
 		//recherche
-		Object obj = session.select(CashPayment1.class, 100);
-		assertTrue(obj instanceof CashPayment1);
+		Object obj = session.select(CashPayment2.class, 100);
+		assertTrue(obj instanceof CashPayment2);
 		assertTrue(obj.equals(cash));
-		Object obj2 = session.select(ChequePayment1.class, 101);
-		assertTrue(obj2 instanceof ChequePayment1);
+		Object obj2 = session.select(ChequePayment2.class, 101);
+		assertTrue(obj2 instanceof ChequePayment2);
 		assertTrue(obj2.equals(cheque));
-		Object obj3 = session.select(Payment1.class, 102);
-		assertTrue(obj3 instanceof CreditCardPayment1);
+		Object obj3 = session.select(Payment2.class, 102);
+		assertTrue(obj3 instanceof CreditCardPayment2);
 		assertTrue(obj3.equals(card));
 		
-		Object obj4 = session.select(Payment1.class, 100);
-		assertFalse(obj4 instanceof CreditCardPayment1);
+		Object obj4 = session.select(Payment2.class, 100);
+		assertFalse(obj4 instanceof CreditCardPayment2);
 		
 		session.getConnection().commit();
 	}
 
-	private Payment1 newCashPayment()
+	private Payment2 newCashPayment()
 	{
-		CashPayment1 paiement = new CashPayment1();
-		paiement.setPaiementId(100);
+		CashPayment2 paiement = new CashPayment2();
+		paiement.setPaymentId(100);
 		paiement.setAmount(new Integer(1500));
 		paiement.setCurrency("US DOLLARS");
 		return paiement;
 	}
 
-	private Payment1 newChequePayment()
+	private Payment2 newChequePayment()
 	{
-		ChequePayment1 paiement = new ChequePayment1();
-		paiement.setPaiementId(101);
+		ChequePayment2 paiement = new ChequePayment2();
+		paiement.setPaymentId(101);
 		paiement.setOrder("VALTECH");
 		paiement.setAmount(new Integer(1501));
 		return paiement;
 	}
 
-	private Payment1 newCreditCardPayment()
+	private Payment2 newCreditCardPayment()
 	{
-		CreditCardPayment1 paiement = new CreditCardPayment1();
-		paiement.setPaiementId(102);
+		CreditCardPayment2 paiement = new CreditCardPayment2();
+		paiement.setPaymentId(102);
 		paiement.setAmount(new Integer(1502));
 		paiement.setCreditCardType(("MASTERCARD"));
 		return paiement;
