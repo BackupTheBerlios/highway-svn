@@ -12,9 +12,8 @@ import org.highway.database.Mapped;
 import org.highway.database.MappedOn;
 import org.highway.database.MappingSpecialType;
 
-
-@MappedOn("MAPPING_TEST")
 @Mapped
+@MappedOn("MAPPING_TEST")
 public interface MappingTestVoDef extends ValueObject
 {
 	@Identity

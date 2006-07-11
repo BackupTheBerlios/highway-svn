@@ -39,4 +39,5 @@ create table highway.TRIM_TEST (
 	primary key (ID)
 );
 
+
 commit;
