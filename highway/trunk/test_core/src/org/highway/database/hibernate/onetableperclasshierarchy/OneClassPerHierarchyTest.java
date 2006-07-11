@@ -41,66 +41,66 @@ public class OneClassPerHierarchyTest extends TestCase
 		
 
 		
-		Payment cash = newCashPayment();
-		Payment cheque = newChequePayment();
-		Payment card = newCreditCardPayment();
+		Payment1 cash = newCashPayment();
+		Payment1 cheque = newChequePayment();
+		Payment1 card = newCreditCardPayment();
 		
 		session.delete(new Object[] {cash, cheque, card});
 		
-		assertTrue(session.select(Payment.class, 100)==null);
-		assertTrue(session.select(Payment.class, 101)==null);
-		assertTrue(session.select(Payment.class, 102)==null);
+		assertTrue(session.select(Payment1.class, 100)==null);
+		assertTrue(session.select(Payment1.class, 101)==null);
+		assertTrue(session.select(Payment1.class, 102)==null);
 		
 		// insertion unitaire
-		int nbCashPayement = session.select("from Payment").size();
+		int nbCashPayement = session.select("from Payment1").size();
 		session.insert(cash);
-		assertEquals(session.select("from Payment").size(), nbCashPayement+1);
+		assertEquals(session.select("from Payment1").size(), nbCashPayement+1);
 		session.delete(newCashPayment());
-		assertEquals(session.select("from Payment").size(), nbCashPayement);
+		assertEquals(session.select("from Payment1").size(), nbCashPayement);
 		
 		// insertion multiple
-		int nbPayement = session.select("from Payment").size();
+		int nbPayement = session.select("from Payment1").size();
 		session.insert(new Object[] {cash, cheque, card});
-		assertEquals(session.select("from Payment").size(), nbPayement+3);
+		assertEquals(session.select("from Payment1").size(), nbPayement+3);
 
 		//recherche
-		Object obj = session.select(CashPayment.class, 100);
-		assertTrue(obj instanceof CashPayment);
+		Object obj = session.select(CashPayment1.class, 100);
+		assertTrue(obj instanceof CashPayment1);
 		assertTrue(obj.equals(cash));
-		Object obj2 = session.select(ChequePayment.class, 101);
-		assertTrue(obj2 instanceof ChequePayment);
+		Object obj2 = session.select(ChequePayment1.class, 101);
+		assertTrue(obj2 instanceof ChequePayment1);
 		assertTrue(obj2.equals(cheque));
-		Object obj3 = session.select(Payment.class, 102);
-		assertTrue(obj3 instanceof CreditCardPayment);
+		Object obj3 = session.select(Payment1.class, 102);
+		assertTrue(obj3 instanceof CreditCardPayment1);
 		assertTrue(obj3.equals(card));
 		
-		Object obj4 = session.select(Payment.class, 100);
-		assertFalse(obj4 instanceof CreditCardPayment);
+		Object obj4 = session.select(Payment1.class, 100);
+		assertFalse(obj4 instanceof CreditCardPayment1);
 		
 		session.getConnection().commit();
 	}
 
-	private Payment newCashPayment()
+	private Payment1 newCashPayment()
 	{
-		CashPayment paiement = new CashPayment();
+		CashPayment1 paiement = new CashPayment1();
 		paiement.setPaiementId(100);
 		paiement.setAmount(new Integer(1500));
 		paiement.setCurrency("US DOLLARS");
 		return paiement;
 	}
 
-	private Payment newChequePayment()
+	private Payment1 newChequePayment()
 	{
-		ChequePayment paiement = new ChequePayment();
+		ChequePayment1 paiement = new ChequePayment1();
 		paiement.setPaiementId(101);
 		paiement.setOrder("VALTECH");
 		paiement.setAmount(new Integer(1501));
 		return paiement;
 	}
 
-	private Payment newCreditCardPayment()
+	private Payment1 newCreditCardPayment()
 	{
-		CreditCardPayment paiement = new CreditCardPayment();
+		CreditCardPayment1 paiement = new CreditCardPayment1();
 		paiement.setPaiementId(102);
 		paiement.setAmount(new Integer(1502));
 		paiement.setCreditCardType(("MASTERCARD"));

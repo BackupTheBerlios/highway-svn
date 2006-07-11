@@ -9,7 +9,7 @@ import org.highway.database.MappedOn;
 @Mapped
 @MappedOn("PAYMENT1")
 @DiscriminatorColumn(column="PAYMENT_TYPE", type="java.lang.String")
-public interface PaymentDef extends ValueObject
+public interface Payment1Def extends ValueObject
 {
 	@Identity
 	@MappedOn("ID")

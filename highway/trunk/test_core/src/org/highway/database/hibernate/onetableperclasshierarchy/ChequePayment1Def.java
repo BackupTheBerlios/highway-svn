@@ -6,7 +6,7 @@ import org.highway.database.MappedOn;
 
 @Mapped
 @DiscriminatorValue("CHEQUE")
-public interface ChequePaymentDef extends PaymentDef
+public interface ChequePayment1Def extends Payment1Def
 {
 	@MappedOn("ORDERNAME")
 	String getOrder();

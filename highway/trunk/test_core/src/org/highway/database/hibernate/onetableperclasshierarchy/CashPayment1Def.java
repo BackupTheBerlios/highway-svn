@@ -6,7 +6,7 @@ import org.highway.database.MappedOn;
 
 @Mapped
 @DiscriminatorValue("CASH")
-public interface CashPaymentDef extends PaymentDef
+public interface CashPayment1Def extends Payment1Def
 {
 	@MappedOn("CURRENCY")
 	String getCurrency();

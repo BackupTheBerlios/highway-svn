@@ -6,7 +6,7 @@ import org.highway.database.MappedOn;
 
 @Mapped
 @DiscriminatorValue("CREDIT")
-public interface CreditCardPaymentDef extends PaymentDef
+public interface CreditCardPayment1Def extends Payment1Def
 {
 	@MappedOn("CARDTYPE")
 	String getCreditCardType();
