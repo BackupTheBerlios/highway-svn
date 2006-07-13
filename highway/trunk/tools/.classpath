@@ -7,6 +7,6 @@
 	<classpathentry sourcepath="src/lib/freemarker-src.zip" kind="lib" path="src/lib/freemarker.jar"/>
 	<classpathentry sourcepath="src/lib/apt-jelly-2.1-src.zip" kind="lib" path="src/lib/apt-jelly-core-2.1.jar"/>
 	<classpathentry kind="lib" path="src/lib/apt-jelly-freemarker-2.1.jar"/>
-	<classpathentry kind="lib" path="src/lib/apt-jelly-jelly-2.1.jar"/>
+	<classpathentry sourcepath="src/lib/apt-jelly-2.1-src.zip" kind="lib" path="src/lib/apt-jelly-jelly-2.1.jar"/>
 	<classpathentry kind="output" path="bin/eclipse"/>
 </classpath>

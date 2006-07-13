@@ -20,7 +20,7 @@
      >
      	
      	<#if type.hasPrimitiveId>
-     	<@forAllMethods annotation="org.highway.database.Identity" var="method">
+     	<@forAllMethods annotation="org.highway.database.Identity" var="method" includeSuperclasses="true" includeSuperinterfaces="true">
         <id
             name="${method.propertyName}"
             column="<@annotationValue declaration=method annotation="org.highway.database.MappedOn" default="${method.propertyName}"/>"
@@ -35,7 +35,7 @@
 	    </@forAllMethods>
         <#elseif type.hasCompositeId>
         <composite-id>
-        	<@forAllMethods annotation="org.highway.database.Identity" var="method">
+        	<@forAllMethods annotation="org.highway.database.Identity" var="method" includeSuperclasses="true" includeSuperinterfaces="true">
             <key-property
                 name="${method.propertyName}"
                 column="<@annotationValue declaration=method annotation="org.highway.database.MappedOn" default="${method.propertyName}"/>"
@@ -53,7 +53,7 @@
                 insert="${ann.insert}"
         />
         </@ifHasAnnotation>
-        <@forAllMethods annotation="org.highway.database.MappedOn" var="method" annotationVar="ann">
+        <@forAllMethods annotation="org.highway.database.MappedOn" var="method" annotationVar="ann" includeSuperclasses="true" excludes="org.highway.database.Identity" includeSuperinterfaces="true">
         <property 
             name="${method.propertyName}"
             type="<@annotationValue declaration=method annotation="org.highway.database.MappingSpecialType" default="${method.propertyHibernateType}"/>"
@@ -72,7 +72,7 @@
         </@ifHasAnnotation>
     >
    
-       <@forAllMethods annotation="org.highway.database.MappedOn" var="method" annotationVar="ann">
+       <@forAllMethods annotation="org.highway.database.MappedOn" var="method" annotationVar="ann" excludes="org.highway.database.Identity">
         <property
             name="${method.propertyName}"
             type="<@annotationValue declaration=method annotation="org.highway.database.MappingSpecialType" default="${method.propertyHibernateType}"/>"
@@ -93,7 +93,7 @@
     >
 		<key column="<@annotationValue declaration=type annotation="org.highway.database.MappingKey" default="${type.keyColumn}"/>"/>
 
-       <@forAllMethods annotation="org.highway.database.MappedOn" var="method" annotationVar="ann">
+       <@forAllMethods annotation="org.highway.database.MappedOn" var="method" annotationVar="ann" excludes="org.highway.database.Identity">
         <property
             name="${method.propertyName}"
             type="<@annotationValue declaration=method annotation="org.highway.database.MappingSpecialType" default="${method.propertyHibernateType}"/>"
