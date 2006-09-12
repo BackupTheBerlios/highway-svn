@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src/java"/>
-	<classpathentry kind="lib" path="lib/ant-1.6.5.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk150"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/highway_core"/>
-	<classpathentry sourcepath="src/lib/freemarker-src.zip" kind="lib" path="src/lib/freemarker.jar"/>
-	<classpathentry sourcepath="src/lib/apt-jelly-2.1-src.zip" kind="lib" path="src/lib/apt-jelly-core-2.1.jar"/>
-	<classpathentry kind="lib" path="src/lib/apt-jelly-freemarker-2.1.jar"/>
-	<classpathentry sourcepath="src/lib/apt-jelly-2.1-src.zip" kind="lib" path="src/lib/apt-jelly-jelly-2.1.jar"/>
-	<classpathentry kind="output" path="bin/eclipse"/>
+	<classpathentry path="src/java" kind="src"/>
+	<classpathentry path="lib/ant-1.6.5.jar" kind="lib"/>
+	<classpathentry path="/highway_core" combineaccessrules="false" kind="src"/>
+	<classpathentry sourcepath="src/lib/freemarker-src.zip" path="src/lib/freemarker.jar" kind="lib"/>
+	<classpathentry sourcepath="src/lib/apt-jelly-2.1-src.zip" path="src/lib/apt-jelly-core-2.1.jar" kind="lib"/>
+	<classpathentry path="src/lib/apt-jelly-freemarker-2.1.jar" kind="lib"/>
+	<classpathentry sourcepath="src/lib/apt-jelly-2.1-src.zip" path="src/lib/apt-jelly-jelly-2.1.jar" kind="lib"/>
+	<classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5" kind="con"/>
+	<classpathentry path="TOOLS_LIB" kind="var"/>
+	<classpathentry path="bin/eclipse" kind="output"/>
 </classpath>
