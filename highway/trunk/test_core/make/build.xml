@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="highway_core_test" default="core.test.generate" basedir="..">
+<project name="highway_core_test" default="core.test.run" basedir="..">
 
 	<taskdef resource="org/highway/anttasks.properties">
 		<classpath path="../highway_tools/bin/pack/highway-tools.jar" />

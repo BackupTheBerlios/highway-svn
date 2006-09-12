@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="bin/gensrc"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk150"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/highway_core"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/highway_tools"/>
-	<classpathentry kind="lib" path="lib/junit-4.1.jar"/>
-	<classpathentry kind="lib" path="lib/mysql-connector-java-5.0.0-beta-bin.jar"/>
-	<classpathentry kind="output" path="bin/eclipse"/>
+	<classpathentry path="src" kind="src"/>
+	<classpathentry path="bin/gensrc" kind="src"/>
+	<classpathentry path="/highway_core" combineaccessrules="false" kind="src"/>
+	<classpathentry path="/highway_tools" combineaccessrules="false" kind="src"/>
+	<classpathentry path="lib/junit-4.1.jar" kind="lib"/>
+	<classpathentry path="lib/mysql-connector-java-5.0.0-beta-bin.jar" kind="lib"/>
+	<classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5" kind="con"/>
+	<classpathentry path="bin/eclipse" kind="output"/>
 </classpath>
